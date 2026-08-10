@@ -1,0 +1,45 @@
+﻿project: risk_budget_exploration
+phase: Phase1
+status: frozen_formal_plus_posthoc_closeout
+datasets:
+  - name: uci
+    path: data/raw/uci_default_credit_card.csv
+    target: default
+  - name: hmeq
+    path: data/raw/hmeq.csv
+    target: BAD
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+rounds: 10
+test_fraction: 0.25
+initial_visible_fraction: 0.20
+threshold: 0.5
+batch_partition: exact_10_way_np_array_split
+candidate_scope: current_round_rejected_only
+preprocessing: fit_visible_labels_only
+model:
+  type: XGBClassifier
+  n_estimators: 100
+  max_depth: 3
+  learning_rate: 0.1
+  tree_method: hist
+  n_jobs: 1
+  device: cuda:0
+treatments:
+  - Oracle
+  - NoExplore
+  - RandomExplore-2%
+  - RandomExplore-5%
+  - RandomExplore-10%
+random_exploration_rates: [0.02, 0.05, 0.10]
+hypotheses:
+  H1: selective-label feedback distorts visible TDR/FDRatio
+  H2: default-class recall/BA may degrade versus Oracle
+  H3: accuracy/AUC may remain stable while recall/TDR degrade
+  H4: calibration may deteriorate without ranking collapse
+  H5: simple random exploration may recover part of the Oracle gap
+post_hoc:
+  dual_evaluation: external_fixed_vs_internal_visible
+  affects_formal_results: false
+stop_after_phase1: true
+
+

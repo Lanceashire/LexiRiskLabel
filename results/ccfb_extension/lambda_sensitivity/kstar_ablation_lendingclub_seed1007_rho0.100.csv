@@ -1,0 +1,8 @@
+experiment,chosen_lambda,dataset,seed,rho,lambda,validation_pr_auc,validation_recall,validation_selected_count,validation_predicted_risk,validation_budget,validation_backend,selection_source
+kstar_ablation,10.0,lendingclub,1007,0.1,0.01,0.7883903306306416,0.6701030927835051,25,105304.27957475185,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,10.0,lendingclub,1007,0.1,0.1,0.7883903306306416,0.6701030927835051,25,105304.27957475185,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,10.0,lendingclub,1007,0.1,0.5,0.7883903306306416,0.6701030927835051,25,105304.27957475185,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,10.0,lendingclub,1007,0.1,1.0,0.7883903306306416,0.6701030927835051,25,105304.27957475185,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,10.0,lendingclub,1007,0.1,2.0,0.7961349023742756,0.711340206185567,25,104769.21957433224,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,10.0,lendingclub,1007,0.1,5.0,0.7886013826536625,0.6804123711340206,25,102786.355099082,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,10.0,lendingclub,1007,0.1,10.0,0.8029835655553782,0.6804123711340206,12,32855.739000439644,106199.38614308834,gpu+gpu,D0_inner_train_pseudopool_validation_only

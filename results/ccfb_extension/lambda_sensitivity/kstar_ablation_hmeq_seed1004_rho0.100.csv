@@ -1,0 +1,8 @@
+experiment,chosen_lambda,dataset,seed,rho,lambda,validation_pr_auc,validation_recall,validation_selected_count,validation_predicted_risk,validation_budget,validation_backend,selection_source
+kstar_ablation,0.01,hmeq,1004,0.1,0.01,0.6726210444685301,0.4864864864864865,7,38419.79061961174,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,0.01,hmeq,1004,0.1,0.1,0.6726210444685301,0.4864864864864865,7,38419.79061961174,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,0.01,hmeq,1004,0.1,0.5,0.6726210444685301,0.4864864864864865,7,38419.79061961174,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,0.01,hmeq,1004,0.1,1.0,0.6726210444685301,0.4864864864864865,7,38419.79061961174,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,0.01,hmeq,1004,0.1,2.0,0.6726210444685301,0.4864864864864865,7,38419.79061961174,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,0.01,hmeq,1004,0.1,5.0,0.6726210444685301,0.4864864864864865,7,38419.79061961174,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only
+kstar_ablation,0.01,hmeq,1004,0.1,10.0,0.6436861373267525,0.43243243243243246,2,6537.062156200409,38778.94838094711,gpu+gpu,D0_inner_train_pseudopool_validation_only

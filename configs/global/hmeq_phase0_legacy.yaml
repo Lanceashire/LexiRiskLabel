@@ -1,0 +1,38 @@
+dataset: HMEQ
+phase: formal
+target: BAD
+exposure: LOAN
+tau: 0.5
+rhos: [0.05, 0.10, 0.20]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+rounds: 10
+batch_partition: exact_10_way
+test_fraction: 0.25
+initial_visible_fraction: 0.20
+candidate_scope: current_round_rejected_only
+unexplored_rejected_fate: discarded
+permanent_baseline: CountOnly
+policies:
+  - NoExplore
+  - CountOnly
+  - CountOnly-MinRisk
+  - LeastRisky
+  - MostRisky
+  - Uncertainty
+  - RiskTilted-Uncertainty
+  - FAVE-v2.1
+risk_budget: rho_times_sum_predicted_default_probability_times_LOAN
+model:
+  type: XGBClassifier
+  n_estimators: 100
+  max_depth: 3
+  learning_rate: 0.1
+  tree_method: hist
+device: cuda:0
+preprocessing: visible_labels_only
+fave:
+  version: FAVE-v2.1
+  gamma: 1.0
+  delta: 0.5
+  reference_scope: current_batch
+  optimization: lexicographic_max_count_then_fave

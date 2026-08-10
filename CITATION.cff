@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software or research artifact, please cite the associated paper and this repository."
+title: "LexiRiskLabel: Risk-Budgeted Feedback Acquisition under Selective Labels"
+type: software
+authors:
+  - family-names: "Lanceashire"
+repository-code: "https://github.com/Lanceashire/LexiRiskLabel"
+license: MIT
+version: 0.1.0
+date-released: 2026-08-10
+abstract: >-
+  Reproducible code, configurations, frozen results, and fresh-seed evidence
+  for lexicographic risk-budget feedback acquisition under selective labels.

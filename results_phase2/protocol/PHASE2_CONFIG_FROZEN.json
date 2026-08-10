@@ -1,0 +1,17 @@
+﻿{
+  "phase": "Phase 2",
+  "datasets": {"uci": {"path": "data/raw/uci_default_credit_card.csv", "target": "default", "risk_definition": "unit_exposure_EL=p"}, "hmeq": {"path": "data/raw/hmeq.csv", "target": "BAD", "risk_definition": "EL_proxy=p*LOAN", "LGD": 1.0}},
+  "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "rounds": 10,
+  "rho": [0.025, 0.05, 0.10, 0.20],
+  "threshold": 0.5,
+  "model": {"type": "XGBClassifier", "n_estimators": 100, "max_depth": 3, "learning_rate": 0.1, "tree_method": "hist", "n_jobs": 1, "device": "cuda:0"},
+  "preprocessing": "fit current visible labels only",
+  "candidate_scope": "current_round_rejected_only",
+  "policies": ["NoExplore", "CountOnly", "CountOnly-MinRisk", "LeastRisky", "MostRisky", "Uncertainty", "RiskTilted-Uncertainty", "FAVE-v2.1"],
+  "fave": {"gamma": 1.0, "delta": 0.5, "reference": "current batch", "frozen": true},
+  "lrbe": {"stage1": "maximize feasible count K*", "stage2": "maximize utility subject to count K* and budget", "solver": "scipy.milp"},
+  "compute": {"gpu_preferred": true, "gpu_backend": "xgboost+cupy-cuda13x", "cuda_device": "cuda:0", "cpu_fallback_allowed": true, "cpu_fallback_recorded_per_row": true},
+  "posthoc_tuning": false,
+  "stop_after_phase2": true
+}

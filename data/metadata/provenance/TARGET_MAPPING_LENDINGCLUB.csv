@@ -1,0 +1,7 @@
+raw_status,mapped_class,action
+Charged Off,POSITIVE,INCLUDE
+Fully Paid,NEGATIVE,INCLUDE
+Current,UNRESOLVED,EXCLUDE
+In Grace Period,UNRESOLVED,EXCLUDE
+Late (16-30 days),UNRESOLVED,EXCLUDE
+Late (31-120 days),UNRESOLVED,EXCLUDE

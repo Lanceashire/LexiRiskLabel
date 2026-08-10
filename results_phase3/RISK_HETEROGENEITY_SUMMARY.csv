@@ -1,0 +1,4 @@
+dataset,exposure_type,mean_EAD,std_EAD,cv_EAD,iqr_EAD,corr_target_EAD
+uci,unit,1.0,0.0,0.0,0.0,
+ppdai,unit,1.0,0.0,0.0,0.0,
+lendingclub,loan_amnt,14676.412531691416,8506.689523153518,0.5796164086274254,12000.0,0.08391720275372251

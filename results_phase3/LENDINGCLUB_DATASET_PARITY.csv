@@ -1,0 +1,7 @@
+field,phase3a,phase3b,pass
+dataset_sha256,2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d,2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d,True
+eligible_rows,16566,16566,True
+positive_rows,3321,3321,True
+negative_rows,13245,13245,True
+target_mapping,Charged Off=1; Fully Paid=0,Charged Off=1; Fully Paid=0,True
+feature_list_sha256,7c73323fad270322b80cff3b1e52bad8fe674066fe6140c188b09334d4d59d3c,7c73323fad270322b80cff3b1e52bad8fe674066fe6140c188b09334d4d59d3c,True

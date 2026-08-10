@@ -1,0 +1,2 @@
+dataset,source_files,eligible_rows,positive_rows,negative_rows,global_sample_seed,cap_applied
+LendingClub,LC_Loan_sample_2014.csv|LC_Loan_sample_2015.csv,16566,3321,13245,20260809,NO

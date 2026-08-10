@@ -1,0 +1,9 @@
+PHASE 3 STATIC PATCH TEST REPORT
+
+Command:
+<PYTHON> -m pytest -q <PROJECT_ROOT>/tests
+
+Result:
+29 passed in 4.60s
+
+The test refresh did not execute a formal model runner.

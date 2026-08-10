@@ -1,0 +1,16 @@
+{
+  "extension_id": "CCFB_EXTENSION_20260810",
+  "purpose": "Fair fresh-seed validation of lexicographic K*, budget sensitivity, ECL reliability, and feedback-decision decoupling.",
+  "fresh_seeds": [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010],
+  "datasets": ["uci", "hmeq", "ppdai", "lendingclub"],
+  "rounds": 10,
+  "threshold": 0.5,
+  "base_rho": 0.1,
+  "budget_multipliers": [0.25, 0.5, 1.0, 2.0, 4.0],
+  "joint_lambda_grid": [0.01, 0.1, 0.5, 1.0, 2.0, 5.0, 10.0],
+  "joint_validation_metric": "PR-AUC on a held-out subset of D0 after simulated pseudo-acquisition; ties: higher recall, then lower lambda.",
+  "bootstrap_iterations": 10000,
+  "frozen_code": ["src/phase0_engine.py", "src/phase1_runner.py", "src/phase2_runner.py", "src/phase3_runner.py"],
+  "outer_test_forbidden_uses": ["preprocessing", "model fitting", "probability calibration fitting", "lambda selection", "threshold selection", "acquisition"],
+  "posthoc_tuning": false
+}

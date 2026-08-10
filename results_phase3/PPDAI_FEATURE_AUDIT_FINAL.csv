@@ -1,0 +1,32 @@
+feature,classification,included_in_frozen_primary,evidence
+sex,PRE_DECISION_VERIFIED,True,Static/source schema review
+occupation,PRE_DECISION_VERIFIED,True,Static/source schema review
+education,PRE_DECISION_VERIFIED,True,Static/source schema review
+marriage,PRE_DECISION_VERIFIED,True,Static/source schema review
+household,PRE_DECISION_VERIFIED,True,Static/source schema review
+income,PRE_DECISION_VERIFIED,True,Static/source schema review
+outcome,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+income_tm,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+outcome_tm,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+tm_encode_3,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+prior_account,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+prior_repay,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+credit_limit,PRE_DECISION_VERIFIED,True,Static/source schema review
+account_balance,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+minimun_repay,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+consume_count,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+account,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+adjust_account,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+circulated_interest,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+avaliable_balance,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+cash_limit,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+repay_state,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+browse_data,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+loan_time,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+time,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+yu_e,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+yu_e_categery,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+yu_e_tm,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+yu_e_tm_categery,AMBIGUOUS,True,Existing source audit only; no field-level decision-time proof supplied
+label,POST_OUTCOME,False,Static/source schema review
+exposure,DERIVED_EXPOSURE,False,Static/source schema review

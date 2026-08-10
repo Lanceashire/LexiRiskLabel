@@ -1,0 +1,2160 @@
+你现在执行本研究项目的一个连续科研任务：
+
+============================================================
+PHASE 2 CLOSEOUT
++
+PHASE 3 CROSS-DATASET EXTERNAL VALIDATION
+============================================================
+
+这是两个逻辑上独立、执行上连续的阶段。
+
+严格执行顺序：
+
+PHASE 2 CLOSEOUT
+        ↓
+PHASE 2 FINAL FREEZE
+        ↓
+FREEZE GATE
+        ↓
+PHASE 3 EXTERNAL VALIDATION
+
+绝对禁止：
+
+一边看 Phase 3 外部数据结果，
+一边返回修改 Phase 2 算法、结论或参数。
+
+============================================================
+GLOBAL SCIENTIFIC RULE
+============================================================
+
+Phase 2 以后，本项目正式进入：
+
+EVALUATION MODE
+
+而不是：
+
+DEVELOPMENT MODE。
+
+从这一刻起禁止：
+
+- 修改 FAVE；
+- 开发 FAVE-v3/v4/v5；
+- 调 gamma；
+- 调 delta；
+- 修改 RiskTilted exponent；
+- 调 tau；
+- 新增 policy；
+- 修改 LRBE；
+- 根据 PPDai/LendingClub 结果修改模型；
+- 针对数据集选择不同 acquisition rule；
+- 因为结果不显著增加 seeds；
+- 因为结果不好更换 dataset；
+- 从外部数据结果反向修改 hypothesis。
+
+============================================================
+PART A
+PHASE 2 CLOSEOUT
+============================================================
+
+Phase 2 正式模型运行已经结束。
+
+本阶段：
+
+不得重新训练正式 Phase 2 模型。
+
+只允许：
+
+- analysis correction；
+- report cleanup；
+- hypothesis freeze；
+- reproducibility cleanup；
+- final packaging。
+
+============================================================
+A1. Phase 2 Frozen Configuration
+============================================================
+
+Datasets:
+
+UCI Default
+HMEQ
+
+Seeds:
+
+0..19
+
+Rounds:
+
+T = 10
+
+Risk budgets:
+
+rho ∈ {
+0.025,
+0.05,
+0.10,
+0.20
+}
+
+Decision threshold:
+
+tau = 0.5
+
+Policies:
+
+NoExplore
+CountOnly
+CountOnly-MinRisk
+LeastRisky
+MostRisky
+Uncertainty
+RiskTilted-Uncertainty
+FAVE-v2.1
+
+FAVE parameters:
+
+gamma = 1.0
+delta = 0.5
+
+这些全部永久冻结。
+
+============================================================
+A2. Phase 2 已获得的正式结论
+============================================================
+
+必须保留以下结果。
+
+------------------------------------------------------------
+Finding P2-1
+------------------------------------------------------------
+
+Risk-budgeted exploration
+能够稳定改善：
+
+Visible TDR
+FDRatio
+
+即：
+
+feedback observability / feedback health。
+
+------------------------------------------------------------
+Finding P2-2
+------------------------------------------------------------
+
+跨 Phase 1 和 Phase 2：
+
+FEEDBACK RECOVERY
+!=
+DOWNSTREAM PERFORMANCE RECOVERY
+
+即：
+
+恢复更多 default-heavy feedback
+
+不等价于：
+
+Recall / BA / calibration
+等比例恢复。
+
+------------------------------------------------------------
+Finding P2-3
+------------------------------------------------------------
+
+FAVE-v2.1 没有证明：
+
+stable downstream superiority
+
+相对于：
+
+CountOnly-MinRisk
+
+以及：
+
+RiskTilted-Uncertainty。
+
+因此：
+
+FAVE_SUPERIORITY = NOT_SUPPORTED
+
+禁止在后续报告中声称：
+
+FAVE is a validated superior acquisition algorithm.
+
+------------------------------------------------------------
+Finding P2-4
+------------------------------------------------------------
+
+CountOnly-MinRisk 是强 baseline：
+
+Stage 1:
+
+maximize K*
+
+Stage 2:
+
+minimize expected risk
+among exact-K* feasible solutions.
+
+它通常：
+
+获取与复杂策略近似数量的标签，
+
+但承担更低 expected risk，
+
+同时 downstream performance
+没有稳定损失。
+
+因此：
+
+QUANTITY_FIRST
+=
+PROVISIONALLY_SUPPORTED
+
+------------------------------------------------------------
+Finding P2-5
+------------------------------------------------------------
+
+H-SCARCITY：
+
+Policy sophistication matters primarily
+under low-risk budgets
+
+在：
+
+UCI
+HMEQ
+
+均：
+
+NOT SUPPORTED。
+
+正式冻结：
+
+H_SCARCITY = NOT_SUPPORTED
+
+不得重新定义 low/high budget
+试图救回这个假设。
+
+============================================================
+A3. Phase 2 provisional outcome
+============================================================
+
+正式冻结：
+
+PROVISIONAL_OUTCOME = B/C_MIXED
+
+解释：
+
+B tendency:
+
+Simple risk-aware acquisition
+captures much of the observable value.
+
+C tendency:
+
+Quantity-first / safe-label acquisition
+is highly competitive.
+
+不能判：
+
+FAVE SUCCESS。
+
+============================================================
+A4. 修正 coverage analysis bug
+============================================================
+
+现有旧 exploration_coverage_ratio
+定义不正确。
+
+正式定义：
+
+ExplorationCoverageRatio
+=
+Σ n_explored
+/
+Σ n_rejected
+
+按：
+
+dataset
+seed
+rho
+policy
+
+重新从现有 Phase 2 all_rounds.csv 计算。
+
+禁止重跑模型。
+
+生成：
+
+coverage_vs_budget_corrected.csv
+
+字段至少：
+
+dataset
+seed
+rho
+policy
+cum_rejected
+cum_explored
+exploration_coverage_ratio
+
+============================================================
+A5. 旧 coverage 文件处理
+============================================================
+
+旧：
+
+coverage_vs_budget.csv
+
+保留，
+
+但标记：
+
+LEGACY_ANALYSIS_DEFINITION
+
+DO_NOT_USE_FOR_PAPER
+
+============================================================
+A6. Saturation 重新解释
+============================================================
+
+使用 corrected coverage 判断：
+
+20% budget 是否已经接近探索全部 rejects。
+
+如果没有：
+
+明确写：
+
+Small policy differences cannot simply be attributed
+to near-complete exploration saturation.
+
+不得使用旧错误 coverage 支撑 saturation claim。
+
+============================================================
+A7. UCI policy equivalence
+============================================================
+
+正式验证：
+
+CountOnly-MinRisk
+LeastRisky
+Uncertainty
+
+在 UCI unit-exposure setting 下
+是否产生相同 selection trajectory / outcomes。
+
+数学解释：
+
+UCI：
+
+EL_i = p_i
+
+而 reject region：
+
+p_i >= 0.5
+
+CountOnly-MinRisk：
+
+min p
+
+LeastRisky：
+
+maximize -p
+等价 min p
+
+Uncertainty：
+
+u(p)=p(1-p)
+
+在：
+
+p >= .5
+
+有：
+
+du/dp = 1 - 2p <= 0
+
+因此：
+
+maximize uncertainty
+也等价于：
+
+min p。
+
+所以理论上：
+
+CountOnly-MinRisk
+≡
+LeastRisky
+≡
+Uncertainty
+
+在该 setting 下拥有相同 ranking preference。
+
+============================================================
+A8. UCI equivalence audit
+============================================================
+
+生成：
+
+uci_policy_equivalence_audit.csv
+
+比较：
+
+20 seeds
+×
+4 budgets
+
+至少：
+
+n_explored
+risk_used
+Recall
+BA
+AUC
+PR-AUC
+Brier
+ECE
+TDR
+FDRatio
+
+使用固定数值 tolerance。
+
+如果全部一致：
+
+EQUIVALENCE_VERIFIED = YES
+
+============================================================
+A9. 科研意义
+============================================================
+
+正式写：
+
+Acquisition-policy distinctions depend on
+the acquisition-risk structure.
+
+当：
+
+EL = p
+
+时多个 policy 会数学退化。
+
+当：
+
+EL = p × EAD
+
+且 EAD heterogeneous 时，
+
+risk preference 与 PD preference
+才真正分离。
+
+因此：
+
+真实 heterogeneous-exposure datasets
+对 Phase 3 至关重要。
+
+============================================================
+A10. NoExplore duplicate audit
+============================================================
+
+Phase 2 如果 NoExplore 针对不同 rho
+重复执行：
+
+验证相同：
+
+dataset × seed
+
+下结果完全相同。
+
+生成：
+
+noexplore_duplicate_audit.csv
+
+若通过：
+
+标记：
+
+REDUNDANT_COMPUTATION_ONLY
+
+不是 protocol error。
+
+Phase 3 中：
+
+NoExplore 每 seed 只运行一次。
+
+============================================================
+A11. Phase 2 final hypothesis table
+============================================================
+
+生成：
+
+phase2_hypothesis_final.csv
+
+至少：
+
+H-FAVE:
+FAVE > strong baselines
+→ NOT SUPPORTED
+
+H-SCARCITY:
+complexity stronger at scarce budgets
+→ NOT SUPPORTED
+
+H-QUANTITY:
+quantity-first safe acquisition competitive
+→ PROVISIONALLY SUPPORTED
+
+H-DECOUPLING:
+feedback recovery != downstream recovery
+→ SUPPORTED
+
+H-POLICY:
+quality policies cause meaningful downstream differences
+→ WEAK / MIXED
+
+============================================================
+A12. Final Phase 2 core table
+============================================================
+
+生成：
+
+PHASE2_FINAL_CORE_TABLE.csv
+
+字段：
+
+dataset
+rho
+policy
+
+Recall_mean
+Recall_std
+
+BalancedAccuracy_mean
+BalancedAccuracy_std
+
+PR_AUC_mean
+PR_AUC_std
+
+Brier_mean
+Brier_std
+
+ECE_mean
+ECE_std
+
+FDRatio_mean
+FDRatio_std
+
+CumulativeLabels_mean
+CumulativeExpectedRisk_mean
+CorrectExplorationCoverage_mean
+
+============================================================
+A13. Final primary comparisons
+============================================================
+
+生成：
+
+PHASE2_FINAL_PRIMARY_COMPARISONS.csv
+
+只重点保留：
+
+FAVE vs CountOnly-MinRisk
+
+FAVE vs RiskTilted
+
+RiskTilted vs CountOnly-MinRisk
+
+针对：
+
+Recall
+FDRatio
+Brier
+
+报告：
+
+mean_diff
+median_diff
+bootstrap_95CI
+raw_p
+holm_p
+wins
+ties
+losses
+
+============================================================
+A14. Phase 2 final report
+============================================================
+
+生成：
+
+PHASE2_FINAL_CONCLUSION.md
+
+必须区分：
+
+STRONGLY SUPPORTED
+
+PROVISIONALLY SUPPORTED
+
+NOT SUPPORTED
+
+DATASET-DEPENDENT
+
+NEGATIVE RESULTS
+
+ANALYSIS CORRECTIONS
+
+============================================================
+A15. Phase 2 freeze declaration
+============================================================
+
+生成：
+
+ALGORITHM_FREEZE_DECLARATION.md
+
+内容明确：
+
+From this point onward:
+
+FAVE gamma = 1.0
+FAVE delta = 0.5
+RiskTilted exponent = 0.5
+tau = 0.5
+LRBE Stage 1 frozen
+LRBE Stage 2 frozen
+model family frozen
+policy suite frozen
+risk budgets frozen
+
+No external-validation result
+may alter these choices.
+
+============================================================
+A16. Phase 2 tests
+============================================================
+
+重新：
+
+pytest -q
+
+只运行测试。
+
+不要重新训练 Phase 2。
+
+保存：
+
+PHASE2_TEST_REPORT_FINAL.txt
+
+============================================================
+A17. Phase 2 final package
+============================================================
+
+输出：
+
+risk_budget_exploration_PHASE2_FINAL.zip
+
+============================================================
+A18. FREEZE GATE
+============================================================
+
+只有以下全部 TRUE：
+
+coverage_corrected
+
+UCI_equivalence_audited
+
+H_SCARCITY_frozen
+
+FAVE_not_tuned
+
+Phase2_docs_clean
+
+pytest_pass
+
+Algorithm_Freeze_Declaration_created
+
+PHASE2_FINAL_STATUS = PASS
+
+才能进入 Phase 3。
+
+否则：
+
+STOP。
+
+输出：
+
+PHASE3_BLOCKED_BY_PHASE2_CLOSEOUT
+
+============================================================
+PART B
+PHASE 3 — CROSS-DATASET EXTERNAL GENERALIZATION
+============================================================
+
+Phase 3 是真正的：
+
+FROZEN EXTERNAL VALIDATION。
+
+本阶段的核心不是：
+
+寻找一个让 FAVE 获胜的数据集。
+
+核心问题是：
+
+============================================================
+Do the Phase 1–2 findings generalize
+to new credit datasets when every algorithmic choice
+is frozen in advance?
+============================================================
+
+中文：
+
+当所有算法和超参数完全冻结后，
+
+Quantity-first、
+simple risk-aware acquisition、
+feedback-performance decoupling
+
+是否能在新的信贷数据上继续成立？
+
+============================================================
+B1. Phase 3 Scientific Questions
+============================================================
+
+RQ3-1
+
+Quantity-first safe acquisition
+是否能在新的数据集继续保持 competitive？
+
+RQ3-2
+
+CountOnly-MinRisk
+是否依旧具有优良：
+
+risk-performance tradeoff？
+
+RQ3-3
+
+RiskTilted 是否继续达到：
+
+与 FAVE 类似的 downstream utility？
+
+RQ3-4
+
+FAVE 是否终于在真正 external data
+展现稳定 incremental value？
+
+RQ3-5
+
+Feedback recovery
+!=
+downstream recovery
+
+是否继续出现？
+
+RQ3-6
+
+heterogeneous exposure
+是否使 acquisition policies
+真正产生可辨识差异？
+
+============================================================
+B2. Phase 3 datasets
+============================================================
+
+只使用：
+
+Dataset 3:
+PPDai
+
+Dataset 4:
+LendingClub
+
+不得再增加第五个 dataset。
+
+============================================================
+B3. PPDai provenance rule
+============================================================
+
+必须优先获取此前冻结的正确 PPDai source。
+
+目标源：
+
+Figshare dataset:
+
+"DefaultData and PPDaiData"
+
+author:
+Hongliang He
+
+公开记录：
+January 2021
+
+historical file reference:
+26049578
+
+此前论文描述大约：
+
+original ≈ 55,596
+
+processed/final ≈ 31,389
+
+约29个特征。
+
+必须：
+
+验证：
+
+source
+file hash
+schema
+sample count
+target
+feature names
+
+如果无法确认这是同一个 PPDai：
+
+============================================================
+DO NOT SUBSTITUTE ANOTHER DATASET
+============================================================
+
+输出：
+
+PPDAI_SOURCE_NOT_VERIFIED
+
+允许 Phase 3：
+
+继续 LendingClub，
+
+但 Phase 3 状态必须：
+
+PARTIAL_EXTERNAL_VALIDATION
+
+而不是假装 PPDai 已完成。
+
+============================================================
+B4. PPDai target / feature audit
+============================================================
+
+禁止猜：
+
+target mapping。
+
+必须从：
+
+source documentation
+
+确定：
+
+default target definition。
+
+保存：
+
+PPDAI_DATA_AUDIT.md
+
+字段分类：
+
+TARGET
+PRE_DECISION_FEATURE
+EXPOSURE_CANDIDATE
+IDENTIFIER
+POST_OUTCOME
+AMBIGUOUS
+
+只有：
+
+PRE_DECISION_FEATURE
+
+可以进入模型。
+
+============================================================
+B5. PPDai exposure
+============================================================
+
+首先寻找：
+
+真实申请时可见的：
+
+loan amount / requested amount / disbursed amount
+
+是否存在。
+
+若存在并确认：
+
+decision-time available
+
+则：
+
+EAD_proxy = loan amount
+
+EL_i = p_i × EAD_proxy
+
+LGD = 1 proxy。
+
+若不存在可信 exposure：
+
+不得制造 monetary variable。
+
+回退：
+
+UNIT EXPOSURE
+
+EL_i = p_i
+
+并明确：
+
+PPDai uses unit-exposure risk.
+
+============================================================
+B6. LendingClub cohort construction
+============================================================
+
+LendingClub 只使用：
+
+outcome 已充分观察的 mature loans。
+
+正式 target：
+
+positive:
+
+Charged Off
+Default
+
+negative:
+
+Fully Paid
+
+对于：
+
+Current
+In Grace Period
+Late
+censored / unresolved loans
+
+禁止当成 negative。
+
+这些未成熟 loan：
+
+从主实验排除。
+
+如果 dataset 使用不同 status labels：
+
+建立：
+
+TARGET_MAPPING_LENDINGCLUB.csv
+
+明确每个原始 status：
+
+POSITIVE
+NEGATIVE
+EXCLUDE
+
+不得静默映射。
+
+============================================================
+B7. LendingClub leakage audit
+============================================================
+
+这是 Phase 3 最关键的数据审计。
+
+每个字段必须分类为：
+
+PRE_DECISION
+
+POST_ORIGINATION
+
+OUTCOME
+
+IDENTIFIER
+
+AMBIGUOUS
+
+只有：
+
+PRE_DECISION
+
+进入 X。
+
+至少必须重点检查并通常删除：
+
+loan_status
+
+total_pymnt
+total_pymnt_inv
+
+total_rec_prncp
+total_rec_int
+total_rec_late_fee
+
+recoveries
+collection_recovery_fee
+
+last_pymnt_d
+last_pymnt_amnt
+next_pymnt_d
+
+out_prncp
+out_prncp_inv
+
+last_credit_pull_d
+
+以及任何：
+
+repayment
+collection
+recovery
+post-origination performance
+
+字段。
+
+issue_d：
+
+如使用，
+只允许：
+
+cohort/order metadata
+
+不得作为 predictor。
+
+生成：
+
+LENDINGCLUB_LEAKAGE_AUDIT.csv
+
+字段：
+
+column
+classification
+included_as_feature
+reason
+
+============================================================
+B8. LendingClub exposure
+============================================================
+
+优先使用：
+
+loan_amnt
+
+作为 decision-time requested-loan exposure proxy。
+
+定义：
+
+EL_i = p_i × loan_amnt_i
+
+LGD = 1
+
+禁止使用：
+
+out_prncp
+
+total_rec_prncp
+
+recoveries
+
+等 outcome-derived exposure。
+
+如果 loan_amnt 不存在：
+
+寻找合法 pre-decision amount。
+
+无法确认：
+
+则 STOP LendingClub experiment。
+
+============================================================
+B9. Dataset scale
+============================================================
+
+PPDai：
+
+如果验证正确，
+优先使用完整 eligible dataset。
+
+LendingClub：
+
+先生成 eligible mature cohort。
+
+如果 cohort <= 100,000：
+
+使用全部。
+
+如果 > 100,000：
+
+为了可计算性，
+在任何模型结果被查看前：
+
+固定抽样：
+
+N = 100,000
+
+使用：
+
+stratified deterministic sampling
+
+GLOBAL_SAMPLE_SEED = 20260809
+
+只抽一次。
+
+这个100k cohort：
+
+对全部20 seeds和全部policy固定。
+
+保存：
+
+LENDINGCLUB_COHORT_MANIFEST.csv
+
+禁止：
+
+针对每个算法重新抽样。
+
+============================================================
+B10. 为什么允许 fixed 100k cap
+============================================================
+
+这是：
+
+COMPUTE DESIGN RULE
+
+不是：
+
+performance-based selection。
+
+必须在运行任何 policy 前执行。
+
+不得看结果后修改：
+
+50k / 100k / 200k。
+
+============================================================
+B11. Dynamic simulation protocol
+============================================================
+
+Phase 3 primary experiment
+必须与 Phase 1–2 simulator 保持一致。
+
+每 dataset × seed：
+
+先：
+
+stratified split
+
+25%：
+
+fixed D_test
+
+永不训练。
+
+剩余：
+
+D_stream。
+
+从 D_stream：
+
+20%
+
+作为：
+
+D0 initial visible。
+
+其余：
+
+np.array_split(..., T=10)
+
+形成：
+
+10 pseudo-temporal applicant batches。
+
+如果数据本身有真实时间：
+
+本阶段 primary analysis
+仍使用统一 pseudo-temporal protocol
+
+以保证跨数据集 comparability。
+
+不要临时改成 chronological experiment。
+
+真实时间敏感性分析：
+
+留给后续，
+不属于 Phase 3 主任务。
+
+============================================================
+B12. Seeds
+============================================================
+
+正式：
+
+20 seeds
+
+0..19
+
+不允许：
+
+10 seeds debug 后
+因为结果不好更换 seed。
+
+允许：
+
+seed=0
+
+做 technical dry run。
+
+但正式统计必须：
+
+20/20。
+
+============================================================
+B13. Model freeze
+============================================================
+
+必须读取：
+
+ALGORITHM_FREEZE_DECLARATION.md
+
+以及：
+
+PHASE2_CONFIG_FROZEN.json
+
+验证：
+
+production model parameters
+与 Phase 2 相同。
+
+禁止：
+
+dataset-specific model tuning。
+
+============================================================
+B14. Policy suite
+============================================================
+
+Phase 3 保持完整冻结：
+
+NoExplore
+
+CountOnly
+
+CountOnly-MinRisk
+
+LeastRisky
+
+MostRisky
+
+Uncertainty
+
+RiskTilted-Uncertainty
+
+FAVE-v2.1
+
+NoExplore：
+
+每 seed 只运行一次。
+
+============================================================
+B15. Risk budgets
+============================================================
+
+完全冻结：
+
+rho =
+
+0.025
+0.05
+0.10
+0.20
+
+每 round：
+
+B_t =
+rho ×
+Σ_(i∈R_t) EL_i
+
+只使用：
+
+current-round rejected R_t。
+
+============================================================
+B16. LRBE
+============================================================
+
+Stage 1：
+
+K*_t =
+
+maximum feasible number of labels
+
+subject to：
+
+Σ z_i EL_i <= B_t
+
+Stage 2：
+
+固定：
+
+Σ z_i = K*_t
+
+再优化：
+
+V_i。
+
+任何 policy 都不得牺牲 K*
+来追求 quality。
+
+============================================================
+B17. FAVE identity gate
+============================================================
+
+Phase 3 正式 run 前再次验证：
+
+FAVE gamma = 1
+
+delta = .5
+
+RiskTilted != FAVE
+
+numerical parity test pass
+
+FAVE source hash
+与 Phase 2 frozen reference 一致。
+
+若失败：
+
+PHASE3_FAVE_IDENTITY_FAILURE
+
+立即 STOP。
+
+============================================================
+B18. Hidden-label isolation
+============================================================
+
+Phase 3 继续保证：
+
+policy never sees:
+
+true y
+of non-explored rejected applicants。
+
+只有：
+
+OracleEvaluator
+
+可以在 selection 后
+用于离线指标。
+
+============================================================
+B19. Primary evaluation
+============================================================
+
+始终使用：
+
+fixed external D_test。
+
+每 round
+记录：
+
+Recall
+Specificity
+Balanced Accuracy
+G-mean
+Precision
+Accuracy
+
+ROC-AUC
+PR-AUC
+
+Brier
+ECE
+Calibration slope
+Calibration intercept
+
+Visible TDR
+FDRatio
+
+============================================================
+B20. Risk / acquisition metrics
+============================================================
+
+每 round：
+
+n_rejected
+n_explored
+K*
+
+risk_budget
+expected_risk_used
+
+budget_utilization
+
+cumulative_labels
+
+cumulative_expected_risk
+
+correct_exploration_coverage
+
+selected_mean_PD
+
+selected_mean_EAD
+
+selected_default_rate
+[OracleEvaluator only]
+
+realized_bad_exposure
+[only when monetary EAD exists]
+
+============================================================
+B21. Phase 3 primary confirmatory comparisons
+============================================================
+
+重点只比较：
+
+C1:
+FAVE
+vs
+CountOnly-MinRisk
+
+C2:
+FAVE
+vs
+RiskTilted
+
+C3:
+RiskTilted
+vs
+CountOnly-MinRisk
+
+其他 policy：
+
+作为结构性 baseline。
+
+============================================================
+B22. Primary metrics
+============================================================
+
+Primary Decision:
+
+Final Recall
+
+Primary Feedback:
+
+Final FDRatio
+
+Primary Calibration:
+
+Final Brier
+
+Secondary：
+
+Balanced Accuracy
+ECE
+PR-AUC
+ROC-AUC
+
+============================================================
+B23. Statistical protocol
+============================================================
+
+每 dataset：
+
+20 paired seeds。
+
+使用：
+
+Wilcoxon signed-rank
+
+同时报告：
+
+mean difference
+median difference
+bootstrap 95% CI
+raw p
+Holm-adjusted p
+wins
+ties
+losses
+
+Bootstrap：
+
+10,000 resamples。
+
+============================================================
+B24. Holm families
+============================================================
+
+Recall：
+
+3 primary comparisons
+×
+4 budgets
+
+=
+12 tests / dataset
+
+形成一个 family。
+
+FDRatio：
+
+独立12-test family。
+
+Brier：
+
+独立12-test family。
+
+使用：
+
+statsmodels.stats.multitest.multipletests(
+method="holm"
+)
+
+禁止手写 Holm。
+
+============================================================
+B25. 不得将非显著写成等价
+============================================================
+
+p > .05
+
+只能说明：
+
+no statistically significant evidence
+of difference。
+
+不得直接写：
+
+methods are equivalent。
+
+如果 effect very small：
+
+可写：
+
+differences were small in magnitude
+
+但必须同时报告：
+
+CI。
+
+============================================================
+B26. Pareto analysis
+============================================================
+
+每 external dataset：
+
+Figure P1:
+
+Expected Risk
+vs
+Recall gain over NoExplore
+
+Figure P2:
+
+Expected Risk
+vs
+FDRatio gain
+
+Figure P3:
+
+Expected Risk
+vs
+Brier improvement
+
+若 monetary EAD：
+
+增加：
+
+Realized Bad Exposure
+vs
+Recall gain。
+
+标记 Pareto-efficient points。
+
+============================================================
+B27. Quantity-first external test
+============================================================
+
+这是 Phase 3 最重要的 hypothesis。
+
+定义：
+
+H3-QUANTITY：
+
+CountOnly-MinRisk remains competitive
+with more sophisticated acquisition strategies
+under frozen external validation.
+
+判断依据不是：
+
+单个 p-value。
+
+综合：
+
+Recall
+FDRatio
+Brier
+Risk
+
+以及：
+
+Pareto position。
+
+如果：
+
+CountOnly-MinRisk
+
+使用更低风险，
+
+但 downstream performance
+没有稳定明显损失，
+
+则：
+
+支持 quantity-first principle。
+
+============================================================
+B28. FAVE external test
+============================================================
+
+H3-FAVE：
+
+FAVE provides stable incremental downstream value
+over both:
+
+CountOnly-MinRisk
+RiskTilted
+
+under external validation.
+
+只有出现：
+
+consistent direction
+
+meaningful effect
+
+Pareto advantage
+
+and at least some statistical support
+
+才写：
+
+SUPPORTED。
+
+否则：
+
+NOT SUPPORTED / MIXED。
+
+============================================================
+B29. Feedback-performance decoupling
+============================================================
+
+H3-DECOUPLING：
+
+Policies that recover more feedback health
+do not necessarily achieve proportional
+downstream predictive recovery.
+
+检查：
+
+FDRatio gains
+
+vs：
+
+Recall
+Brier
+BA gains。
+
+如果 PPDai/LendingClub
+再次出现：
+
+higher FDRatio
+without higher Recall/Brier
+
+则这是：
+
+跨多个数据集复现的关键 finding。
+
+============================================================
+B30. Exposure-structure analysis
+============================================================
+
+记录每 dataset：
+
+CV(EAD)
+IQR(EAD)
+EAD range
+
+以及：
+
+corr(PD,EAD)
+
+用于描述：
+
+risk heterogeneity。
+
+目的：
+
+解释为什么：
+
+unit-exposure setting
+可能导致 policies collapse，
+
+而 heterogeneous EAD
+允许 policy differentiation。
+
+这里只做：
+
+descriptive mechanism evidence。
+
+不做新算法。
+
+============================================================
+B31. Exact PPDai failure rule
+============================================================
+
+如果正确 PPDai 下载失败：
+
+禁止：
+
+- 用其他 Kaggle “PPDai”替代；
+- 用 GiveMeSomeCredit 替代；
+- 用 German Credit 替代；
+- 偷偷换 dataset。
+
+记录：
+
+PPDAI_UNAVAILABLE
+
+继续 LendingClub。
+
+此时：
+
+PHASE3_STATUS =
+PARTIAL_EXTERNAL_VALIDATION
+
+而不是 FAIL，
+
+只要 LendingClub完整。
+
+============================================================
+B32. LendingClub failure rule
+============================================================
+
+如果 LendingClub：
+
+source
+target
+leakage
+或 exposure
+
+无法可靠确定，
+
+不得运行污染实验。
+
+输出：
+
+LENDINGCLUB_DATA_AUDIT_FAILURE。
+
+============================================================
+B33. Compute failure
+============================================================
+
+如果 FAVE 在大型 dataset
+计算不可承受：
+
+不得：
+
+临时降低 n_proto
+更换 EVI
+candidate subsampling
+修改 solver
+修改 FAVE
+
+除非这些规则 Phase 2 本就已有且被冻结。
+
+若没有：
+
+输出：
+
+PHASE3_COMPUTE_BLOCKED
+
+而不是偷偷换算法。
+
+============================================================
+B34. Phase 3 integrity audit
+============================================================
+
+生成：
+
+PHASE3_INTEGRITY_AUDIT.csv
+
+每：
+
+dataset
+seed
+rho
+round
+policy
+
+记录：
+
+current_round_only
+hidden_label_isolation
+risk_constraint_ok
+Kstar_valid
+fixed_test_ok
+split_ok
+model_hash_ok
+config_hash_ok
+fave_hash_ok
+dataset_hash
+protocol_ok
+
+============================================================
+B35. Main outputs
+============================================================
+
+目录：
+
+results_phase3/
+│
+├── protocol/
+│   ├── PHASE3_PROTOCOL.md
+│   ├── PHASE3_CONFIG_FROZEN.json
+│   ├── ALGORITHM_FREEZE_DECLARATION.md
+│   └── DATASET_PROVENANCE.md
+│
+├── ppdai/
+│
+├── lendingclub/
+│
+├── summary/
+│   ├── all_rounds.csv
+│   ├── final_by_seed.csv
+│   ├── final_summary.csv
+│   ├── primary_comparisons.csv
+│   ├── primary_comparisons_holm.csv
+│   ├── acquisition_summary.csv
+│   ├── pareto_points.csv
+│   └── external_validation_summary.csv
+│
+├── figures/
+│
+├── PHASE3_RESULTS.md
+├── PHASE3_STATISTICAL_REPORT.md
+├── PHASE3_EXTERNAL_VALIDATION_REPORT.md
+├── PHASE3_INTEGRITY_AUDIT.md
+└── PHASE3_FINAL_CONCLUSION.md
+
+============================================================
+B36. External validation report
+============================================================
+
+必须明确区分：
+
+DEVELOPMENT / BENCHMARK EVIDENCE:
+
+UCI
+HMEQ
+
+和：
+
+EXTERNAL VALIDATION EVIDENCE:
+
+PPDai
+LendingClub
+
+不得把四个数据集都说成：
+
+independent validation。
+
+============================================================
+B37. Final cross-phase table
+============================================================
+
+生成：
+
+CROSS_DATASET_FINAL_TABLE.csv
+
+包含：
+
+UCI
+HMEQ
+PPDai
+LendingClub
+
+每个：
+
+rho
+policy
+
+至少：
+
+Recall
+FDRatio
+Brier
+Expected Risk
+Labels Acquired
+
+用于 Phase 4 / paper。
+
+但：
+
+Phase 3 不能重新修改 UCI/HMEQ
+原始结果。
+
+============================================================
+B38. Final stop rules
+============================================================
+
+根据所有冻结证据：
+
+------------------------------------------------------------
+Outcome A
+------------------------------------------------------------
+
+如果至少3个数据集，
+尤其 external datasets：
+
+FAVE > CountOnly-MinRisk
+
+且：
+
+FAVE > RiskTilted
+
+方向稳定，
+
+有 Pareto advantage，
+
+部分统计支持，
+
+则：
+
+FINAL_DIRECTION =
+FAVE_ALGORITHMIC_CONTRIBUTION_SUPPORTED
+
+------------------------------------------------------------
+Outcome B
+------------------------------------------------------------
+
+如果 external validation 中：
+
+RiskTilted
+
+与 FAVE downstream performance
+接近或更好，
+
+且 FAVE 无稳定优势：
+
+FINAL_DIRECTION =
+SIMPLE_RISK_AWARE_POLICY_SUFFICIENT
+
+停止 FAVE development。
+
+------------------------------------------------------------
+Outcome C
+------------------------------------------------------------
+
+如果：
+
+CountOnly-MinRisk
+
+在 external validation 继续：
+
+risk更低
++
+downstream competitive
+
+则：
+
+FINAL_DIRECTION =
+QUANTITY_FIRST_PRINCIPLE_SUPPORTED
+
+停止 EVI development。
+
+------------------------------------------------------------
+Outcome Mixed
+------------------------------------------------------------
+
+如果：
+
+dataset results differ
+
+但差异能由：
+
+exposure heterogeneity
+selection severity
+feedback distortion
+
+等机制解释：
+
+FINAL_DIRECTION =
+CONDITIONAL_POLICY_VALUE
+
+留给 Phase 4 解释。
+
+------------------------------------------------------------
+Outcome Weak
+------------------------------------------------------------
+
+如果 external datasets 完全没有规律，
+
+且：
+
+risk / feedback / performance
+均无可解释关系：
+
+FINAL_DIRECTION =
+GENERALIZATION_WEAK
+
+如实报告。
+
+============================================================
+B39. Phase 3 不运行 Phase 4
+============================================================
+
+Phase 3 完成后：
+
+STOP。
+
+不要自动进行：
+
+mechanistic feature analysis
+
+Agent integration
+
+paper writing
+
+new algorithm tuning。
+
+============================================================
+B40. Final Phase 3 statuses
+============================================================
+
+允许：
+
+PHASE3_STATUS = PASS
+
+PHASE3_STATUS = PARTIAL_EXTERNAL_VALIDATION
+
+PHASE3_STATUS = FAIL_PROTOCOL
+
+PHASE3_STATUS = COMPUTE_BLOCKED
+
+============================================================
+B41. 最终输出两个独立 ZIP
+============================================================
+
+必须分别输出：
+
+1.
+
+risk_budget_exploration_PHASE2_FINAL.zip
+
+2.
+
+risk_budget_exploration_PHASE3.zip
+
+不要混成一个包。
+
+这样 Phase 2 development evidence
+和 Phase 3 external evidence
+可以独立审计。
+
+============================================================
+B42. 最终终端摘要
+============================================================
+
+最后只打印：
+
+============================================================
+PHASE 2 CLOSEOUT
+============================================================
+
+Original Phase2 model runs changed:
+NO
+
+Coverage correction:
+PASS / FAIL
+
+UCI equivalence:
+VERIFIED / NOT VERIFIED
+
+H-SCARCITY:
+NOT SUPPORTED
+
+FAVE superiority:
+NOT SUPPORTED
+
+Quantity-first:
+PROVISIONALLY SUPPORTED
+
+Feedback-performance decoupling:
+SUPPORTED
+
+Tests:
+X passed / X failed
+
+PHASE2_FINAL_STATUS:
+PASS / FAIL
+
+Phase2 ZIP:
+...
+
+
+============================================================
+PHASE 3 EXTERNAL VALIDATION
+============================================================
+
+Algorithm frozen:
+YES / NO
+
+PPDai:
+COMPLETE / UNAVAILABLE / FAILED
+
+LendingClub:
+COMPLETE / FAILED
+
+Seeds:
+20 / 20 per available dataset
+
+Budgets:
+2.5%
+5%
+10%
+20%
+
+FAVE identity:
+PASS / FAIL
+
+PPDai primary result:
+...
+
+LendingClub primary result:
+...
+
+FAVE vs CountOnly-MinRisk:
+...
+
+FAVE vs RiskTilted:
+...
+
+RiskTilted vs CountOnly-MinRisk:
+...
+
+Quantity-first external support:
+SUPPORTED / MIXED / NOT SUPPORTED
+
+Feedback-performance decoupling:
+SUPPORTED / MIXED / NOT SUPPORTED
+
+Final direction:
+A / B / C / CONDITIONAL / GENERALIZATION_WEAK
+
+PHASE3_STATUS:
+...
+
+READY FOR PHASE4:
+YES / NO
+
+Phase3 ZIP:
+risk_budget_exploration_PHASE3.zip
+
+然后 STOP。

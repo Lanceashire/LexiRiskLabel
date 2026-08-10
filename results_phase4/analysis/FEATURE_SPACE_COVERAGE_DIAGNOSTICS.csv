@@ -1,0 +1,5 @@
+dataset,selected_feature_variance,range_coverage,categorical_level_coverage,distance_to_visible,pairwise_diversity,status
+uci,,,,,,NOT_ESTIMABLE_SELECTED_IDS_AND_FEATURE_ROWS_NOT_RETAINED
+hmeq,,,,,,NOT_ESTIMABLE_SELECTED_IDS_AND_FEATURE_ROWS_NOT_RETAINED
+ppdai,,,,,,NOT_ESTIMABLE_SELECTED_IDS_AND_FEATURE_ROWS_NOT_RETAINED
+lendingclub,,,,,,NOT_ESTIMABLE_SELECTED_IDS_AND_FEATURE_ROWS_NOT_RETAINED
