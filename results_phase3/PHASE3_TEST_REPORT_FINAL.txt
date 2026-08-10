@@ -1,0 +1,3 @@
+# SUPERSEDED BY: PHASE3_FINAL_CONCLUSION.md
+
+This historical test report predates completed LendingClub validation. The authoritative report is `PHASE3_TEST_REPORT_FINAL_CLEANUP.txt`.

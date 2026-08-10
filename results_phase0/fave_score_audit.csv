@@ -1,0 +1,13 @@
+item,value,sha256_or_detail,status,notes
+reference_zip,<USER_PROVIDED_REFERENCE_ARCHIVE>,E8EB01B7B0019A554D0D49AC64DAF8B5F50C60647A4D7CAF202B783324404C65,PASS,User-provided frozen reference archive
+reference_core,run_fave_tuned_exact.py,37D7CB3793CDBC4050D4BC970A5718C80BD20D3166DAD4D14F4638BA8DEEB170,PASS,Core tuned FAVE implementation
+reference_base,run_fave_v2_clean_seed.py,C9730687B7772413740990354F43D9C617AA5691C7426A3498D75E8B1B96711F,PASS,Base Fisher/influence implementation
+gamma,1.0,,PASS,Frozen global future/reference risk exponent
+delta,0.5,,PASS,Frozen global candidate-risk curvature exponent
+candidate_scope,current batch rejected only,,PASS,Phase-0 current-round-only adaptation
+reference_scope,current batch,,PASS,No future-round candidates enter the score
+preprocessing_scope,visible applicants only,,PASS,Preprocessor/model fit on labels already observed
+hidden_labels,not passed to fave_value,,PASS,True labels used only after selection for evaluation
+optimization,lexicographic MILP,,PASS,Stage 1 max count; Stage 2 max FAVE value at count K*
+formula,wi*num/(1+wi*lev),,PASS,wi=p_i(1-p_i)p_i^delta; G=F^T diag(p_f^gamma)F/n
+phase0_sanity,2 seeds x 4 rho x 10 rounds,,PASS,80 FAVE rows; 0 protocol invariant failures

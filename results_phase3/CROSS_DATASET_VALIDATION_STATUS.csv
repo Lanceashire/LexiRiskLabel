@@ -1,0 +1,5 @@
+dataset,role,external_status,exposure_type,selection_regime,seeds_completed,budgets_completed,policies_completed,data_provenance_status,leakage_risk,primary_evidence_level,notes
+uci,development benchmark,NOT_EXTERNAL,UNIT,N/A,20,4,8,VERIFIED,FALSE,DEVELOPMENT,unit-exposure development benchmark
+hmeq,development / monetary validation,NOT_EXTERNAL,HETEROGENEOUS,ESTABLISHED,20,4,8,VERIFIED,FALSE,DEVELOPMENT_VALIDATION,historical frozen development validation
+ppdai,external boundary dataset,COMPLETE,UNIT,WEAK,20,4,8,PARTIAL,PARTIAL_TRUE,EXPLORATORY_EXTERNAL,decision-time availability of several source fields cannot be fully verified
+lendingclub,primary external validation,COMPLETE,HETEROGENEOUS,STRONG,20,4,8,VERIFIED,FALSE,CONFIRMATORY_EXTERNAL,20 seeds x 4 budgets x frozen policy suite complete

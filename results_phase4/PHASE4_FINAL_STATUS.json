@@ -1,0 +1,18 @@
+{
+  "phase4_status": "PASS_WITH_MECHANISTIC_LIMITATIONS",
+  "core_experimental_study_complete": true,
+  "ready_for_paper": true,
+  "new_experimental_phase_required": false,
+  "models_rerun": false,
+  "raw_phase1_3_results_changed": false,
+  "within_budget_sensitivity": "DONE",
+  "budget_centered_sensitivity": "DONE",
+  "seed_cluster_bootstrap": "DONE",
+  "bootstrap_iterations": 10000,
+  "quantity_analysis_corrected": "DONE",
+  "m7_terminology": "CORRECTED",
+  "m8_terminology": "CORRECTED",
+  "fave_mechanism_wording": "CORRECTED",
+  "boundary_framework": "POST-HOC PARTIALLY SUPPORTED",
+  "counterevidence": "UPDATED"
+}

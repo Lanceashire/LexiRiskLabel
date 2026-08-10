@@ -1,0 +1,32 @@
+column,classification,included_as_feature,reason
+sex,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+occupation,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+education,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+marriage,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+household,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+income,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+outcome,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+income_tm,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+outcome_tm,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+tm_encode_3,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+prior_account,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+prior_repay,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+credit_limit,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+account_balance,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+minimun_repay,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+consume_count,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+account,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+adjust_account,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+circulated_interest,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+avaliable_balance,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+cash_limit,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+repay_state,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+browse_data,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+loan_time,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+time,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+yu_e,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+yu_e_categery,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+yu_e_tm,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+yu_e_tm_categery,PRE_DECISION_FEATURE,True,source-provided applicant/account feature; no reliable post-outcome marker identified
+label,TARGET,False,default target from source label
+exposure,EXPOSURE_CANDIDATE,False,"unit exposure fallback, not a model feature"

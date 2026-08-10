@@ -1,0 +1,2 @@
+file,field,status,note
+results_phase3/summary/all_rounds.csv,exploration_coverage_ratio,LEGACY_WRONG_DEFINITION,explored / whole stream; do not use for paper

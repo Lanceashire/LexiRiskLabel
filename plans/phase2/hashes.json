@@ -1,0 +1,9 @@
+{
+  "config_sha256": "bef0e298976e8dccc5bc357cb4b77a9d828e6f389d133787a2c2b8e358d71110",
+  "datasets": {
+    "uci": "8c05bc24646b74bec483f240be19bd21483170f029c5a7e30c6553a8ab452e91",
+    "hmeq": "dfdbc2b7cdf728a15b53e323cde6127995715dfa6b178bd3c1e3d9916d0367aa"
+  },
+  "fave_reference_sha256": "43050343f0f54c2bc44e1c78ce14cce487138f8dbfbea2240f97b3abafae787f",
+  "runner_sha256": "3931a5cb5d8c76c862a6893e1c84712637c645f7742c2452bad5f13f69f414d0"
+}

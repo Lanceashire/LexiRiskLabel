@@ -1,0 +1,36 @@
+# Python caches and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and editor state
+.venv/
+venv/
+.idea/
+.vscode/
+*.code-workspace
+
+# Third-party datasets are intentionally not redistributed
+data/raw/
+data/processed/
+data/phase3/
+
+# Runtime-only artifacts
+logs/
+profiles/
+*.log
+*.pid
+
+# Historical/local packaging artifacts
+archive/
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

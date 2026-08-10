@@ -1,0 +1,18 @@
+{
+  "phase": "PHASE4",
+  "analysis_only": true,
+  "raw_phase1_3_changed": false,
+  "new_algorithm": false,
+  "diagnostic_replay_used": false,
+  "selected_id_overlap_estimable": false,
+  "quantity_first_mechanism": "SUPPORTED_PATTERN",
+  "fave_feedback_composition": "SUPPORTED_PATTERN",
+  "feedback_performance_decoupling": "SUPPORTED",
+  "selection_severity_boundary": "SUPPORTED_PATTERN",
+  "risk_heterogeneity_boundary": "SUPPORTED_PATTERN",
+  "feedback_sensitivity": "MIXED",
+  "evaluation_vs_genuine_degradation": "SUPPORTED",
+  "final_framework": "PARTIALLY_SUPPORTED",
+  "phase4_status": "PASS",
+  "core_experimental_study_complete": true
+}

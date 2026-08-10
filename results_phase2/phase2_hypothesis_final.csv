@@ -1,0 +1,6 @@
+hypothesis_id,hypothesis,status,evidence
+H-FAVE,FAVE > strong baselines,NOT_SUPPORTED,No stable statistically supported superiority over CountOnly-MinRisk and RiskTilted.
+H-SCARCITY,complexity stronger at scarce budgets,NOT_SUPPORTED,Scarcity contrasts do not show a consistent positive supported pattern.
+H-QUANTITY,quantity-first safe acquisition remains competitive,PROVISIONALLY_SUPPORTED,CountOnly-MinRisk is frequently on/near the Pareto frontier with lower expected risk.
+H-DECOUPLING,feedback recovery is not downstream recovery,SUPPORTED,Feedback-health gains and downstream gains are not proportional.
+H-POLICY,quality policies cause meaningful downstream differences,WEAK / MIXED,Differences are small and dataset/endpoint dependent.

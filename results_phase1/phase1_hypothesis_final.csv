@@ -1,0 +1,7 @@
+﻿hypothesis_id,hypothesis,status,evidence,scope
+H1,"Selective-label feedback distorts visible TDR/FDRatio",SUPPORTED,"NoExplore has lower visible TDR and FDRatio than Oracle on both datasets",formal
+H2,"Default-class recall/BA may degrade versus Oracle",DATASET_DEPENDENT,"Supported on HMEQ; not supported on UCI",formal
+H3,"Accuracy/AUC may remain stable while recall/TDR degrade",SUPPORTED,"ROC-AUC is comparatively stable while feedback-health metrics diverge",formal
+H4,"Calibration may deteriorate without ranking collapse",MIXED_DATASET_DEPENDENT,"Calibration separation is stronger on HMEQ and mixed on UCI",formal
+H5,"Simple random exploration may recover part of the Oracle gap",DATASET_DEPENDENT,"Feedback-health recovery is visible; downstream recovery is weak or dataset-dependent",formal
+P1,"Post-hoc dual evaluation: internal visible-only evaluation is not equivalent to external fixed-test evaluation",FINDING,"External parity passes exactly; internal-minus-external Oracle--NoExplore contrasts are systematically nonzero",post_hoc

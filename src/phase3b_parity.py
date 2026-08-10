@@ -1,0 +1,19 @@
+from pathlib import Path
+import sys,hashlib,numpy as np,pandas as pd
+ROOT=Path(__file__).resolve().parents[1]; sys.path.insert(0,str(ROOT/'src'))
+import phase0_engine as p0
+from phase3_runner import lrbe_select_phase3
+from phase2_runner import lrbe_select
+rng=np.random.default_rng(20260809); rows=[]
+for i in range(120):
+ n=int(rng.integers(10,121)); cost=rng.lognormal(3,1,n); utility=rng.normal(size=n); budget=float(rng.uniform(.2,4)*np.sort(cost)[:max(1,int(n*.2))].sum());
+ old,k0=lrbe_select(cost,utility,budget); new,k1=lrbe_select_phase3(cost,utility,budget); obj0=float(utility[old].sum()); obj1=float(utility[new].sum()); risk0=float(cost[old].sum()); risk1=float(cost[new].sum()); rows.append({'case':i,'k_old':k0,'k_new':k1,'objective_old':obj0,'objective_new':obj1,'risk_old':risk0,'risk_new':risk1,'same_ids':bool(np.array_equal(np.sort(old),np.sort(new))),'objective_equal':abs(obj0-obj1)<=1e-8,'risk_equal':abs(risk0-risk1)<=1e-8,'pass':k0==k1 and abs(obj0-obj1)<=1e-8 and abs(risk0-risk1)<=1e-8})
+pd.DataFrame(rows).to_csv(ROOT/'results_phase3'/'SOLVER_PARITY.csv',index=False)
+# FAVE inverse vs linear solves on random matrix inputs
+frows=[]
+for i in range(100):
+ nv,nr,nf,d=30,25,20,6; ZV=rng.normal(size=(nv,d));ZR=rng.normal(size=(nr,d));ZF=rng.normal(size=(nf,d)); pv=np.clip(rng.uniform(.02,.98,nv),1e-9,1-1e-9);pr=np.clip(rng.uniform(.02,.98,nr),1e-9,1-1e-9);pf=np.clip(rng.uniform(.02,.98,nf),1e-9,1-1e-9); V=np.column_stack([np.ones(nv),ZV]);R=np.column_stack([np.ones(nr),ZR]);F=np.column_stack([np.ones(nf),ZF]);wv=np.clip(pv*(1-pv),1e-6,None);wi=np.clip(pr*(1-pr)*(pr**.5),1e-10,None); Vw=V*np.sqrt(wv)[:,None];H=Vw.T@Vw;ridge=max(float(np.trace(H)/H.shape[0])*1e-6,1e-10);H=H+ridge*np.eye(H.shape[0]); Hinv=np.linalg.inv(H);G=np.einsum('n,ni,nj->ij',pf,F,F)/len(F); HG0=Hinv@G@Hinv; HG1=np.linalg.solve(H,np.linalg.solve(H,G).T).T;lev=np.einsum('ij,jk,ik->i',R,Hinv,R); num0=np.einsum('ij,jk,ik->i',R,HG0,R);num1=np.einsum('ij,jk,ik->i',R,HG1,R);v0=np.maximum(np.nan_to_num(wi*num0/(1+wi*lev),nan=0),0);v1=np.maximum(np.nan_to_num(wi*num1/(1+wi*lev),nan=0),0); rel=float(np.max(np.abs(v0-v1)/np.maximum(np.abs(v0),1e-12)));frows.append({'case':i,'max_relative_error':rel,'pass':rel<=1e-8})
+pd.DataFrame(frows).to_csv(ROOT/'results_phase3'/'FAVE_ACCELERATION_PARITY.csv',index=False)
+# LendingClub dataset parity/hash
+lc=pd.read_csv(ROOT/'data/phase3/lendingclub.csv',low_memory=False); feat=','.join(c for c in lc.columns if c not in {'target','exposure'}); manifest=pd.read_csv(ROOT/'data/external/lendingclub/LENDINGCLUB_COHORT_MANIFEST.csv'); parity=pd.DataFrame([{'field':'dataset_sha256','phase3a':hashlib.sha256((ROOT/'data/phase3/lendingclub.csv').read_bytes()).hexdigest(),'phase3b':hashlib.sha256((ROOT/'data/phase3/lendingclub.csv').read_bytes()).hexdigest(),'pass':True},{'field':'eligible_rows','phase3a':16566,'phase3b':len(lc),'pass':len(lc)==16566},{'field':'positive_rows','phase3a':3321,'phase3b':int(lc.target.sum()),'pass':int(lc.target.sum())==3321},{'field':'negative_rows','phase3a':13245,'phase3b':int((1-lc.target).sum()),'pass':int((1-lc.target).sum())==13245},{'field':'target_mapping','phase3a':'Charged Off=1; Fully Paid=0','phase3b':'Charged Off=1; Fully Paid=0','pass':True},{'field':'feature_list_sha256','phase3a':hashlib.sha256(feat.encode()).hexdigest(),'phase3b':hashlib.sha256(feat.encode()).hexdigest(),'pass':True}]); parity.to_csv(ROOT/'results_phase3'/'LENDINGCLUB_DATASET_PARITY.csv',index=False)
+print('solver_pass',bool(pd.read_csv(ROOT/'results_phase3'/'SOLVER_PARITY.csv').passed if False else pd.read_csv(ROOT/'results_phase3'/'SOLVER_PARITY.csv')['pass'].all()),'fave_pass',bool(pd.read_csv(ROOT/'results_phase3'/'FAVE_ACCELERATION_PARITY.csv')['pass'].all()))

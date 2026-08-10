@@ -1,0 +1,8 @@
+policy,k_star,same_k_star
+CountOnly,10,True
+CountOnly-MinRisk,10,True
+LeastRisky,10,True
+MostRisky,10,True
+Uncertainty,10,True
+RiskTilted-Uncertainty,10,True
+FAVE-v2.1,10,True

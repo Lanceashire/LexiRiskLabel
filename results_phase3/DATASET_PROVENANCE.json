@@ -1,0 +1,7 @@
+{
+  "ppdai_provenance": "PARTIAL",
+  "ppdai_primary_leakage_risk": true,
+  "lendingclub_status": "COMPLETE",
+  "lendingclub_evidence": "CONFIRMATORY_EXTERNAL",
+  "cleanup": "ANALYSIS_ONLY"
+}

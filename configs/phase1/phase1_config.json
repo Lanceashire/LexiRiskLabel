@@ -1,0 +1,58 @@
+{
+  "phase": "Phase 1 - Selective-label Feedback Mechanism Validation",
+  "datasets": {
+    "uci": "data/raw/uci_default_credit_card.csv",
+    "hmeq": "data/raw/hmeq.csv"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "rounds": 10,
+  "test_fraction": 0.25,
+  "initial_visible_fraction": 0.2,
+  "tau": 0.5,
+  "treatments": [
+    "Oracle",
+    "NoExplore",
+    "RandomExplore-2%",
+    "RandomExplore-5%",
+    "RandomExplore-10%"
+  ],
+  "random_rates": [
+    0.02,
+    0.05,
+    0.1
+  ],
+  "random_k": "max(1, round(rate * current_round_rejected_count)) when count > 0",
+  "batch_partition": "exact_10_way_np_array_split",
+  "candidate_scope": "current_round_rejected_only",
+  "model": {
+    "type": "XGBClassifier",
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.1,
+    "tree_method": "hist",
+    "n_jobs": 1
+  },
+  "preprocessing": "fit visible only",
+  "stop_after_phase1": true
+}

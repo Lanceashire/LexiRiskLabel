@@ -1,0 +1,27 @@
+{
+  "hypotheses": [
+    "H1 selective-label feedback distorts visible TDR/FDRatio",
+    "H2 default-class recall/BA may degrade versus Oracle",
+    "H3 accuracy/AUC may remain stable while recall/TDR degrade",
+    "H4 calibration may deteriorate without ranking collapse",
+    "H5 simple random exploration may recover part of the Oracle gap"
+  ],
+  "primary_endpoints": [
+    "recall",
+    "balanced_accuracy",
+    "visible_tdr",
+    "fd_ratio",
+    "brier",
+    "ece"
+  ],
+  "secondary_endpoints": [
+    "roc_auc",
+    "pr_auc",
+    "accuracy",
+    "specificity",
+    "calibration_slope",
+    "calibration_intercept"
+  ],
+  "formal_seeds": "0..19",
+  "post_phase1_stop": true
+}
