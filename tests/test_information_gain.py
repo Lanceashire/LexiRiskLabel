@@ -19,6 +19,16 @@ def test_seed_rule_is_deterministic_and_member_specific():
     assert IG.committee_seed(1001, 2, 3) != IG.committee_seed(1001, 2, 4)
 
 def test_registered_inputs_and_exposure():
+    missing = [
+        str(IG.BASE.DATASETS[dataset]["path"])
+        for dataset in IG.CONFIG["datasets"]
+        if not IG.BASE.DATASETS[dataset]["path"].is_file()
+    ]
+    if missing:
+        pytest.skip(
+            "Registered raw datasets are intentionally not distributed; "
+            "materialize them before running the data-level IG input audit."
+        )
     for dataset in IG.CONFIG["datasets"]:
         assert IG.validate_registered_input(dataset)["validated"]
 

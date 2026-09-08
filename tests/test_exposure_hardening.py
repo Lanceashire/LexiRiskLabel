@@ -17,6 +17,16 @@ SPEC.loader.exec_module(RUNNER)
 
 
 def test_registered_study_inputs_have_strictly_positive_exposure() -> None:
+    missing = [
+        str(RUNNER.DATASETS[dataset]["path"])
+        for dataset in ("uci", "hmeq", "ppdai", "lendingclub")
+        if not RUNNER.DATASETS[dataset]["path"].is_file()
+    ]
+    if missing:
+        pytest.skip(
+            "Registered raw datasets are intentionally not distributed; "
+            "materialize them before running the data-level exposure audit."
+        )
     for dataset in ("uci", "hmeq", "ppdai", "lendingclub"):
         _, _, _, exposure, _ = RUNNER.dataset_frame(dataset)
         assert np.isfinite(exposure).all()

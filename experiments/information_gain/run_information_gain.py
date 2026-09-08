@@ -302,7 +302,11 @@ def run(args):
         "state_audit": args.state_audit, "canonical_gpu_requested": bool(p2.USE_GPU),
         "canonical_gpu_available": bool(p2.GPU_AVAILABLE), "committee_backend": "cpu",
         "committee_seed_rule": CONFIG["committee_seed_rule"]}
-    (output / "run_config.json").write_text(json.dumps(run_config, indent=2), encoding="utf-8")
+    # Write a canonical LF-terminated byte stream so the recorded SHA-256 stays
+    # stable when a Windows checkout applies Git's text-file normalization.
+    (output / "run_config.json").write_bytes(
+        (json.dumps(run_config, indent=2) + "\n").encode("utf-8")
+    )
     if not p2.USE_GPU or not p2.GPU_AVAILABLE:
         raise RuntimeError("canonical GPU backend is required for this requested run")
     total = len(datasets) * len(seeds) * len(budgets) * len(POLICIES)

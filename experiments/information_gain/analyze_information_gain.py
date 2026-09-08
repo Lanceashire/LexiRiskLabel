@@ -103,7 +103,10 @@ def analyze(root, output):
         "predicted_budget_feasible_all_rows": bool(~frame.predicted_budget_violation.astype(bool).any()),
         "hidden_label_isolation_all_rows": bool(frame.hidden_label_isolation.astype(bool).all()),
         "ppdai_kept_separate": bool(final.loc[final.dataset.eq("ppdai"), "evidence_role"].eq("reconstructed_source_exploratory").all())}
-    (output / "integrity_summary.json").write_text(json.dumps(integrity, indent=2), encoding="utf-8")
+    # Keep manifest-tracked JSON byte-identical across operating systems.
+    (output / "integrity_summary.json").write_bytes(
+        (json.dumps(integrity, indent=2) + "\n").encode("utf-8")
+    )
     files = [{"path": p.name, "sha256": sha(p), "bytes": p.stat().st_size}
              for p in sorted(output.glob("*")) if p.is_file() and p.name != "manifest.csv"]
     pd.DataFrame(files).to_csv(output / "manifest.csv", index=False)
