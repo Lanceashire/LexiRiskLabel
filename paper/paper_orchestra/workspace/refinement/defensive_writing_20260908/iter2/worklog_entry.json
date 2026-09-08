@@ -1,0 +1,20 @@
+{
+  "addressed_weaknesses": [
+    "Reorganized the manuscript around one benchmark and three questions: quantity sacrifice, risk premium, and predictive return.",
+    "Renamed QualityFirst to ScoreFirst in the manuscript and added a compact strategy table.",
+    "Changed the title to The Quantity--Risk Trade-off in Feedback Acquisition under Selective Labels.",
+    "Rewrote the introduction into five functional paragraphs and directly compared ConBatch-BAL in Related Work.",
+    "Moved implementation-history detail out of the introduction and kept scope information near the design it qualifies."
+  ],
+  "integrated_answers": [
+    "The paper now treats LRBE as a comparison benchmark rather than its primary algorithmic novelty.",
+    "ScoreFirst refers to the score-optimizing policy family, while MinRisk supplies the same-count predicted-risk reference.",
+    "The abstract separates the LRBE-versus-ScoreFirst quantity question from the LRBE-versus-MinRisk risk question."
+  ],
+  "actions_taken": [
+    "Updated title and abstract in the canonical LaTeX source.",
+    "Replaced the introduction and related-work fragment with the requested structure.",
+    "Reordered method concepts and added the strategy table without changing experiments.",
+    "Recompiled and reran manuscript integrity and layout checks."
+  ]
+}

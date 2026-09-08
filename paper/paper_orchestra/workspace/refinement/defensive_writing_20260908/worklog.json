@@ -91,8 +91,100 @@
           "Ran the complete test suite and citation, reference, layout, anonymity, and source-integrity gates."
         ]
       }
+    },
+    {
+      "iter": 2,
+      "timestamp": "2026-09-08T06:28:52.593692+00:00",
+      "decision": "ACCEPT_IMPROVED",
+      "review": {
+        "axis_scores": {
+          "scientific_depth": {
+            "score": 85,
+            "justification": "The manuscript now defines a quantity reference and a same-count risk reference before introducing score-specific policies. The three evidence blocks are aligned with distinct inferential questions, while the claims remain tied to replay and observed outcomes."
+          },
+          "technical_execution": {
+            "score": 85,
+            "justification": "The feedback process, policy-specific budgets, score implementations, and audit conditions remain technically explicit after the restructuring. The new strategy table improves retrieval without changing the registered protocol."
+          },
+          "logical_flow": {
+            "score": 90,
+            "justification": "The title, abstract, five-paragraph introduction, method order, and Results subsections now follow the same quantity--risk--composition--prediction progression. Each primary contrast is introduced before its interpretation."
+          },
+          "writing_clarity": {
+            "score": 88,
+            "justification": "The prose uses one term for score-first policies and distinguishes quantity, composition, score, and predictive value. Results follow an observation-to-interpretation pattern with fewer repeated interval qualifications."
+          },
+          "evidence_presentation": {
+            "score": 88,
+            "justification": "The two-panel IG table remains complete, while the Results ordering puts quantity sacrifice before risk premium and predictive outcomes. ConBatch-BAL is positioned as a related budgeted batch reference rather than an unsupported baseline claim."
+          },
+          "academic_style": {
+            "score": 88,
+            "justification": "The manuscript reads as a coherent empirical comparison paper. Scope conditions are integrated where they affect interpretation, and the conclusion avoids marketing language or universal prescriptions."
+          }
+        },
+        "overall_score": 87.1,
+        "strengths": [
+          "A single comparison benchmark now organizes the whole manuscript.",
+          "The introduction states the research question and three contribution types without inflating algorithmic novelty.",
+          "The method table lets readers identify the role of each selector before reading implementation details.",
+          "Results distinguish quantity opportunity cost, risk premium, and downstream predictive value.",
+          "The manuscript directly situates ConBatch-BAL and other adjacent work while preserving the credit selective-feedback setting."
+        ],
+        "weaknesses": [
+          "The ten-seed primary IG block limits interval precision.",
+          "Random-order replay and immediate outcome revelation bound the operational interpretation.",
+          "PPDai remains a reconstructed-source exploratory cohort."
+        ],
+        "questions": [],
+        "decision": "Accept",
+        "da_critical": false
+      },
+      "score": {
+        "axis_scores": {
+          "scientific_depth": {
+            "score": 85
+          },
+          "technical_execution": {
+            "score": 85
+          },
+          "logical_flow": {
+            "score": 90
+          },
+          "writing_clarity": {
+            "score": 88
+          },
+          "evidence_presentation": {
+            "score": 88
+          },
+          "academic_style": {
+            "score": 88
+          }
+        },
+        "overall_score": 87.1
+      },
+      "actions": {
+        "addressed_weaknesses": [
+          "Reorganized the manuscript around one benchmark and three questions: quantity sacrifice, risk premium, and predictive return.",
+          "Renamed QualityFirst to ScoreFirst in the manuscript and added a compact strategy table.",
+          "Changed the title to The Quantity--Risk Trade-off in Feedback Acquisition under Selective Labels.",
+          "Rewrote the introduction into five functional paragraphs and directly compared ConBatch-BAL in Related Work.",
+          "Moved implementation-history detail out of the introduction and kept scope information near the design it qualifies."
+        ],
+        "integrated_answers": [
+          "The paper now treats LRBE as a comparison benchmark rather than its primary algorithmic novelty.",
+          "ScoreFirst refers to the score-optimizing policy family, while MinRisk supplies the same-count predicted-risk reference.",
+          "The abstract separates the LRBE-versus-ScoreFirst quantity question from the LRBE-versus-MinRisk risk question."
+        ],
+        "actions_taken": [
+          "Updated title and abstract in the canonical LaTeX source.",
+          "Replaced the introduction and related-work fragment with the requested structure.",
+          "Reordered method concepts and added the strategy table without changing experiments.",
+          "Recompiled and reran manuscript integrity and layout checks."
+        ]
+      }
     }
   ],
-  "halted_because": "All baseline writing weaknesses were addressed; remaining items are study-scope constraints rather than revision defects.",
-  "best_iter": 1
+  "halted_because": "The requested structural rewrite is complete; further changes would be editorial preference rather than evidence-driven repair.",
+  "best_iter": 2
 }

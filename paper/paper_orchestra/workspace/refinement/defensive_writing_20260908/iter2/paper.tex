@@ -1,0 +1,34 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,array,multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\ECL}{\mathrm{ECL}}
+\newcommand{\PD}{\mathrm{PD}}
+\newcommand{\EAD}{\mathrm{EAD}}
+\newcommand{\LGD}{\mathrm{LGD}}
+\newcommand{\paperfigure}[2]{\includegraphics[width=#2]{../figures/#1}}
+\title{The Quantity--Risk Trade-off in Feedback Acquisition under Selective Labels}
+\titlerunning{Risk-Budgeted Feedback Acquisition under Selective Labels}
+\author{Anonymous Authors}
+\authorrunning{Anonymous Authors}
+\institute{Anonymous Institution}
+\begin{document}
+\maketitle
+\begin{abstract}
+Lending decisions determine which repayment outcomes enter future training data. When feedback from a rejected region requires approving applicants, an acquisition score changes both the number of observed outcomes and the exposure used to obtain them. We define a maximum-feasible-count reference, $K^*$, and a same-count minimum-risk reference $M(k)$, then measure the quantity opportunity cost and predicted-risk premium of score-based selection. Random-order replay covers four credit datasets and five budget ratios; a registered five-policy block compares FAVE with bootstrap-committee information gain (IG). At $\rho=0.1$, LRBE-IG acquires 31.3, 49.5, and 40.1 more labels than ScoreFirst-IG on HMEQ, LendingClub, and UCI. Relative to MinRisk, it uses 28,765.5 and 27,025.7 additional predicted-risk units on HMEQ and LendingClub, while Recall and Brier changes vary by dataset and direction. Same-state audits and a controlled retraining experiment connect these policy outcomes to immediate selection choices. The evidence supports evaluating acquisition scores by feedback quantity, predicted-risk use, composition, and downstream performance together.
+\keywords{Selective labels \and Feedback acquisition \and Risk budgets \and Credit prediction}
+\end{abstract}
+\input{../sections/introduction_related}
+\input{../sections/related_work_addendum}
+\input{../sections/methods_protocol_v2}
+\input{../sections/data_provenance_note}
+\input{../sections/results_v3}
+\input{../sections/discussion_v3}
+\input{../sections/appendix_v2}
+\bibliographystyle{splncs04}
+\bibliography{../literature/refs,../literature/dataset_refs,../literature/closest_work}
+\end{document}

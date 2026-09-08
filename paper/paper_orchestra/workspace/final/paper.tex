@@ -11,7 +11,7 @@
 \newcommand{\EAD}{\mathrm{EAD}}
 \newcommand{\LGD}{\mathrm{LGD}}
 \newcommand{\paperfigure}[2]{\includegraphics[width=#2]{../figures/#1}}
-\title{How Many Labels Before Which Labels?\texorpdfstring{\\}{: }Risk-Budgeted Feedback Acquisition under Selective Labels}
+\title{The Quantity--Risk Trade-off in Feedback Acquisition under Selective Labels}
 \titlerunning{Risk-Budgeted Feedback Acquisition under Selective Labels}
 \author{Anonymous Authors}
 \authorrunning{Anonymous Authors}
@@ -19,7 +19,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Lending decisions determine which repayment outcomes enter future training data. When feedback from a rejected region requires approving applicants, an information-oriented selector must justify both the observations it forgoes and the predicted loss it incurs. We study this trade-off with lexicographic risk-budgeted feedback acquisition (LRBE), which computes the maximum feasible exploratory count before optimizing a secondary score. Random-order replay covers four credit datasets and five budget ratios, and a five-policy experiment compares FAVE with bootstrap-committee information gain (IG). At $\rho=0.1$, LRBE-IG acquires 31.3, 49.5, and 40.1 more labels than QualityFirst-IG on HMEQ, LendingClub, and UCI, respectively. Recall estimates span improvement and deterioration, and UCI Brier error increases by 0.000156 [0.000019, 0.000298]. Relative to minimum-risk selection, LRBE-IG uses 28,765.5 more predicted-risk units on HMEQ and 27,025.7 more on LendingClub, again with mixed Recall and Brier estimates. FAVE and randomized controls exhibit the same separation between preserving count and choosing composition. The results support evaluating acquisition by feedback quantity, predicted-risk use, composition, and downstream performance together.
+Lending decisions determine which repayment outcomes enter future training data. When feedback from a rejected region requires approving applicants, an acquisition score changes both the number of observed outcomes and the exposure used to obtain them. We define a maximum-feasible-count reference, $K^*$, and a same-count minimum-risk reference $M(k)$, then measure the quantity opportunity cost and predicted-risk premium of score-based selection. Random-order replay covers four credit datasets and five budget ratios; a registered five-policy block compares FAVE with bootstrap-committee information gain (IG). At $\rho=0.1$, LRBE-IG acquires 31.3, 49.5, and 40.1 more labels than ScoreFirst-IG on HMEQ, LendingClub, and UCI. Relative to MinRisk, it uses 28,765.5 and 27,025.7 additional predicted-risk units on HMEQ and LendingClub, while Recall and Brier changes vary by dataset and direction. Same-state audits and a controlled retraining experiment connect these policy outcomes to immediate selection choices. The evidence supports evaluating acquisition scores by feedback quantity, predicted-risk use, composition, and downstream performance together.
 \keywords{Selective labels \and Feedback acquisition \and Risk budgets \and Credit prediction}
 \end{abstract}
 \input{../sections/introduction_related}

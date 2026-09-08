@@ -1,8 +1,8 @@
 \section{Results}
 \label{sec:results}
 
-\subsection{The cost of sacrificing current feasible count}
-The central empirical question is whether a secondary acquisition objective earns the feedback quantity it gives up. Removing the count equality quantifies that cost. Relative to QualityFirst-FAVE, LRBE-FAVE acquires 67.1 [62.6, 71.4] additional labels on HMEQ, 209.6 [202.5, 216.1] on LendingClub, 2.0 [0.9, 3.1] on PPDai, and 56.4 [54.7, 58.2] on UCI. Recall favors LRBE-FAVE on HMEQ by 0.0175 [0.0041, 0.0297]; the other three Recall intervals contain zero. The count constraint guarantees maximum cardinality within each policy's current state. The cumulative differences reported here are empirical outcomes of the resulting policy trajectories, and composition-first selection does not produce a consistent predictive improvement across datasets.
+\subsection{How much quantity does score-first selection sacrifice?}
+The first question is how many feasible labels a score-first policy gives up. Removing the count equality quantifies that opportunity cost. Relative to ScoreFirst-FAVE, LRBE-FAVE acquires 67.1 [62.6, 71.4] additional labels on HMEQ, 209.6 [202.5, 216.1] on LendingClub, 2.0 [0.9, 3.1] on PPDai, and 56.4 [54.7, 58.2] on UCI. Recall favors LRBE-FAVE on HMEQ by 0.0175 [0.0041, 0.0297]; the other three Recall intervals contain zero. The count constraint guarantees maximum cardinality within each policy's current state. The cumulative differences reported here are empirical outcomes of the resulting policy trajectories, and score-first selection does not produce a consistent predictive improvement across datasets.
 
 The random-order control provides a second view. Against MinRisk, it acquires 87.0 fewer labels on HMEQ, 317.6 fewer on LendingClub, and 59.5 fewer on UCI; PPDai differs by 0.3. HMEQ Recall is lower by 0.0268 [-0.0395, -0.0140], while the other Recall intervals contain zero. The fixed-count random-score control remains within 2.7 labels of MinRisk in every dataset, and all Recall and Brier intervals contain zero. These are complete-policy comparisons over policy-specific trajectories.
 
@@ -20,7 +20,7 @@ The IG extension tests the quantity constraint with a score independent of FAVE'
 \toprule
 Dataset & $\Delta K$ & $\Delta\widehat R$ & $\Delta$Recall & $\Delta$Brier\\
 \midrule
-\multicolumn{5}{l}{\emph{Panel A: LRBE-IG $-$ QualityFirst-IG}}\\
+\multicolumn{5}{l}{\emph{Panel A: LRBE-IG $-$ ScoreFirst-IG}}\\
 HMEQ & 31.3 [28.3,34.5] & 5,267.5 [$-$6,697.3,16,208.6] & .00535 [$-$.00068,.01170] & $-$.000302 [$-$.000937,.000364]\\
 LendingClub & 49.5 [46.0,53.1] & $-$9,907.0 [$-$21,199.7,$-$1,269.3] & $-$.00073 [$-$.00524,.00425] & $-$.000070 [$-$.000251,.000103]\\
 UCI & 40.1 [36.8,43.6] & 1.624 [.241,2.869] & .00166 [$-$.00187,.00517] & .000156 [.000019,.000298]\\
@@ -39,10 +39,10 @@ PPDai$^\dagger$ & 0.4 [$-$0.6,1.5] & 1.024 [.497,1.606] & $-$.00052 [$-$.00270,.
 
 Panel B shows that LRBE-IG and MinRisk have close cumulative counts, while LRBE-IG spends more predicted risk on every dataset. The Recall and Brier estimates span improvement and deterioration. In this block, IG changes composition and risk use more clearly than it changes downstream prediction.
 
-The same-state audit fixes the MinRisk visible set, candidates, costs, and numerical budget. Across 100 states per dataset, LRBE-IG has zero count sacrifice. QualityFirst-IG gives up 3.46, 5.37, 4.04, and 0.02 applicants per state on HMEQ, LendingClub, UCI, and PPDai, respectively. Its mean Jaccard overlap with MinRisk is 0.436, 0.602, 0.135, and 0.224, confirming that the score changes both cardinality and composition at the anchor state. Alternative sets do not generate later audit states, so the audit ends at the selection outcome.
+The same-state audit fixes the MinRisk visible set, candidates, costs, and numerical budget. Across 100 states per dataset, LRBE-IG has zero count sacrifice. ScoreFirst-IG gives up 3.46, 5.37, 4.04, and 0.02 applicants per state on HMEQ, LendingClub, UCI, and PPDai, respectively. Its mean Jaccard overlap with MinRisk is 0.436, 0.602, 0.135, and 0.224, confirming that the score changes both cardinality and composition at the anchor state. Alternative sets do not generate later audit states, so the audit ends at the selection outcome.
 
 \subsection{Controlled conditions reproduce the selection trade-off}
-The one-step experiment holds the acquisition state and training randomness fixed while varying exposure heterogeneity and the evaluation weight of an underrepresented region. LRBE-IG selects 2.5 [1.45, 3.65] more applicants than QualityFirst-IG under unit exposure and 3.2 [1.75, 4.85] more under heterogeneous exposure. Relative to MinRisk, it uses 0.221 [0.165, 0.284] and 0.136 [0.101, 0.171] more predicted-risk units, respectively. All four primary Brier intervals span zero.
+The one-step experiment holds the acquisition state and training randomness fixed while varying exposure heterogeneity and the evaluation weight of an underrepresented region. LRBE-IG selects 2.5 [1.45, 3.65] more applicants than ScoreFirst-IG under unit exposure and 3.2 [1.75, 4.85] more under heterogeneous exposure. Relative to MinRisk, it uses 0.221 [0.165, 0.284] and 0.136 [0.101, 0.171] more predicted-risk units, respectively. All four primary Brier intervals span zero.
 
 The prespecified condition interactions are also uncertain. Increasing the target-region weight from 0.1 to 0.5 changes the IG-minus-MinRisk Brier contrast by 0.000126 [$-0.000005$, 0.000255] under unit exposure and $-0.000058$ [$-0.000217$, 0.000102] under heterogeneous exposure; the difference between those changes is $-0.000184$ [$-0.000413$, 0.000029]. These estimates leave the moderating roles of exposure and target weight unresolved. The incoming batch averages about 3,751 ordinary approvals, compared with exploratory $K^*$ means of 29.55 and 118.7, so the evaluated retraining intervention is small relative to the shared ordinary feedback.
 

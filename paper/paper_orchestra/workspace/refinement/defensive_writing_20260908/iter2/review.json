@@ -1,0 +1,26 @@
+{
+  "axis_scores": {
+    "scientific_depth": {"score": 85, "justification": "The manuscript now defines a quantity reference and a same-count risk reference before introducing score-specific policies. The three evidence blocks are aligned with distinct inferential questions, while the claims remain tied to replay and observed outcomes."},
+    "technical_execution": {"score": 85, "justification": "The feedback process, policy-specific budgets, score implementations, and audit conditions remain technically explicit after the restructuring. The new strategy table improves retrieval without changing the registered protocol."},
+    "logical_flow": {"score": 90, "justification": "The title, abstract, five-paragraph introduction, method order, and Results subsections now follow the same quantity--risk--composition--prediction progression. Each primary contrast is introduced before its interpretation."},
+    "writing_clarity": {"score": 88, "justification": "The prose uses one term for score-first policies and distinguishes quantity, composition, score, and predictive value. Results follow an observation-to-interpretation pattern with fewer repeated interval qualifications."},
+    "evidence_presentation": {"score": 88, "justification": "The two-panel IG table remains complete, while the Results ordering puts quantity sacrifice before risk premium and predictive outcomes. ConBatch-BAL is positioned as a related budgeted batch reference rather than an unsupported baseline claim."},
+    "academic_style": {"score": 88, "justification": "The manuscript reads as a coherent empirical comparison paper. Scope conditions are integrated where they affect interpretation, and the conclusion avoids marketing language or universal prescriptions."}
+  },
+  "overall_score": 87.1,
+  "strengths": [
+    "A single comparison benchmark now organizes the whole manuscript.",
+    "The introduction states the research question and three contribution types without inflating algorithmic novelty.",
+    "The method table lets readers identify the role of each selector before reading implementation details.",
+    "Results distinguish quantity opportunity cost, risk premium, and downstream predictive value.",
+    "The manuscript directly situates ConBatch-BAL and other adjacent work while preserving the credit selective-feedback setting."
+  ],
+  "weaknesses": [
+    "The ten-seed primary IG block limits interval precision.",
+    "Random-order replay and immediate outcome revelation bound the operational interpretation.",
+    "PPDai remains a reconstructed-source exploratory cohort."
+  ],
+  "questions": [],
+  "decision": "Accept",
+  "da_critical": false
+}

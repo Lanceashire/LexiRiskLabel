@@ -2,13 +2,13 @@
 
 This refinement used the PaperOrchestra content-refinement protocol on the canonical DASFAA manuscript. It changed exposition and evidence organization only; it introduced no new experiment, citation, or numerical result.
 
-## Accepted revision
+## Accepted revisions
 
-- Baseline score: 77.5 (Borderline).
-- Revised score: 85.4 (Accept within the internal refinement rubric).
-- Decision: `ACCEPT_IMPROVED`; the revised snapshot is retained as the canonical manuscript.
+- Score trajectory: 77.5 (iter0, Borderline) $\rightarrow$ 85.4 (iter1, `ACCEPT_IMPROVED`) $\rightarrow$ 87.1 (iter2, `ACCEPT_IMPROVED`).
+- Promoted snapshot: iter2.
+- Decision: `ACCEPT_IMPROVED`; the iter2 snapshot is retained as the canonical manuscript.
 
-The revision aligns the candidate-pool and numerical-budget description with the dynamic implementation, presents both primary IG contrasts across all four registered outcomes, and replaces reviewer-response-style disclaimers with direct descriptions of design scope and observed estimates.
+The revisions align the candidate-pool and numerical-budget description with the dynamic implementation, present both primary IG contrasts across all four registered outcomes, and organize the manuscript around a quantity--risk comparison benchmark. ScoreFirst is used consistently for the score-optimizing policy family.
 
 ## Verification
 
