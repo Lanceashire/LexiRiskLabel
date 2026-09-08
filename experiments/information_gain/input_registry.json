@@ -1,0 +1,6 @@
+{
+  "uci": {"rows": 30000, "sha256": "8c05bc24646b74bec483f240be19bd21483170f029c5a7e30c6553a8ab452e91", "parity": "exact_registered_byte_hash", "evidence_role": "development_benchmark"},
+  "hmeq": {"rows": 5960, "sha256": "dfdbc2b7cdf728a15b53e323cde6127995715dfa6b178bd3c1e3d9916d0367aa", "parity": "exact_registered_byte_hash", "evidence_role": "development_monetary_validation"},
+  "lendingclub": {"rows": 16566, "sha256": "2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d", "parity": "exact_registered_byte_hash; reconstructed from the documented 2014 and 2015 public samples", "evidence_role": "primary_external_validation"},
+  "ppdai": {"rows": 55596, "sha256": "07a2c70ad02cb858dfa18817a587f437c7ca1dc97c033360387f56cf177acdc2", "parity": "actual reconstructed processed hash; historical processed byte parity not established", "evidence_role": "reconstructed_source_exploratory"}
+}

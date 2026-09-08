@@ -1,0 +1,5 @@
+interaction,n_seeds,mean_difference,ci_low,ci_high,interval_excludes_zero
+H1_high_minus_low_exposure_QF_count_sacrifice,20,0.7,0.0,1.4,False
+H2_weight_0.5_minus_0.1_IG_Brier_contrast_low_exposure,20,0.00012605155405656098,-5.353481716937994e-06,0.000254801327647488,False
+H2_weight_0.5_minus_0.1_IG_Brier_contrast_high_exposure,20,-5.823110948187937e-05,-0.0002174453252297743,0.00010157414481846209,False
+H3_exposure_difference_in_H2,20,-0.00018428266353844036,-0.00041289545753805224,2.9287604048063683e-05,False

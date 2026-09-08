@@ -1,0 +1,5 @@
+dataset,path,rows,sha256,target,positive,negative,exposure_min,exposure_max,parity,evidence_role,validated
+hmeq,data/raw/hmeq/hmeq.csv,5960,dfdbc2b7cdf728a15b53e323cde6127995715dfa6b178bd3c1e3d9916d0367aa,BAD,1189,4771,1100.0,89900.0,exact_registered_byte_hash,development_monetary_validation,True
+uci,data/raw/uci/uci_default_credit_card.csv,30000,8c05bc24646b74bec483f240be19bd21483170f029c5a7e30c6553a8ab452e91,default,6636,23364,1.0,1.0,exact_registered_byte_hash,development_benchmark,True
+lendingclub,data/processed/lendingclub/lendingclub.csv,16566,2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d,target,3321,13245,1000.0,35000.0,exact_registered_byte_hash; reconstructed from the documented 2014 and 2015 public samples,primary_external_validation,True
+ppdai,data/processed/ppdai/ppdai.csv,55596,07a2c70ad02cb858dfa18817a587f437c7ca1dc97c033360387f56cf177acdc2,label,7183,48413,1.0,1.0,actual reconstructed processed hash; historical processed byte parity not established,reconstructed_source_exploratory,True

@@ -24,6 +24,10 @@ acquired?" instead of collapsing them into one risk--utility weight.
 
 - Frozen Phase 0--4 evidence: complete.
 - Fresh-seed CCFB extension: complete.
+- Independent information-gain primary block: complete (200 dynamic episodes
+  and 40 common-state audits).
+- Controlled mechanism-conditions block: complete (20 seeds, 160 GPU
+  acquisition/retraining branches, and 10,000-draw paired analysis).
 - Fresh seeds: `1001`--`1010`, disjoint from frozen seeds `0`--`19`.
 - Datasets: UCI Default Credit Card, HMEQ, PPDai, and LendingClub.
 - Formal extension outputs: 1,120 run CSVs and 12,320 round-level records.
@@ -46,6 +50,11 @@ budget is a deterministic upper bound on realized loss.
 4. **Predicted-budget feasibility is not realized-loss feasibility.** Across
    method--dataset--budget groups, the mean round-level realized budget
    violation rate is approximately `0.4798` (range `0.01`--`0.84`).
+5. **Acquisition-score gains need not become prediction gains.** In the
+   controlled common-state experiment, LRBE-IG increases its IG objective over
+   both MinRisk and a feasible random control, while the primary Brier
+   contrasts remain inconclusive. QualityFirst-IG sacrifices feasible labels
+   under both exposure conditions.
 
 The full evidence-aligned interpretation is in
 [`results/ccfb_extension/CCFB_extension_report.md`](results/ccfb_extension/CCFB_extension_report.md).
@@ -66,6 +75,8 @@ results_phase2/             Frozen policy-comparison results
 results_phase3/             Frozen external-validation results
 results_phase4/             Frozen mechanism-analysis results
 results/ccfb_extension/     Fresh-seed raw results, statistics, figures, report
+results/information_gain_primary_20260907/  Independent IG trajectories
+results/mechanism_conditions_primary_20260908/  Controlled mechanism evidence
 scripts/analysis/           Analysis entry points
 scripts/reproduce/          Deliberate reproduction entry points
 src/                        Frozen Phase 0--4 implementation

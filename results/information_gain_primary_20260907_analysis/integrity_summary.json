@@ -1,0 +1,38 @@
+{
+  "trajectory_files": 200,
+  "episodes": 200,
+  "datasets": [
+    "hmeq",
+    "uci",
+    "lendingclub",
+    "ppdai"
+  ],
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010
+  ],
+  "budgets": [
+    0.1
+  ],
+  "policies": [
+    "CountOnly-MinRisk",
+    "LRBE-FAVE",
+    "QualityFirst-FAVE",
+    "LRBE-IG",
+    "QualityFirst-IG"
+  ],
+  "committee_members": 20,
+  "bootstrap_draws": 10000,
+  "canonical_gpu_all_rows": true,
+  "predicted_budget_feasible_all_rows": true,
+  "hidden_label_isolation_all_rows": true,
+  "ppdai_kept_separate": true
+}

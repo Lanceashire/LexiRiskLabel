@@ -1,0 +1,37 @@
+{
+  "extension_id": "IG_PRIMARY_EXTENSION_20260907",
+  "datasets": [
+    "hmeq",
+    "uci",
+    "lendingclub",
+    "ppdai"
+  ],
+  "seeds": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010
+  ],
+  "budgets": [
+    0.1
+  ],
+  "policies": [
+    "CountOnly-MinRisk",
+    "LRBE-FAVE",
+    "QualityFirst-FAVE",
+    "LRBE-IG",
+    "QualityFirst-IG"
+  ],
+  "members": 20,
+  "state_audit": true,
+  "canonical_gpu_requested": true,
+  "canonical_gpu_available": true,
+  "committee_backend": "cpu",
+  "committee_seed_rule": "seed*100000 + round*1000 + member"
+}
