@@ -1,0 +1,13 @@
+{
+  "axis_scores": {
+    "scientific_depth": {"score": 77, "justification": "Controlled conditions and inferential boundaries are integrated."},
+    "technical_execution": {"score": 82, "justification": "The experiment and validation record now match the implementation."},
+    "logical_flow": {"score": 80, "justification": "Sections follow the two research questions and three evidence types."},
+    "writing_clarity": {"score": 80, "justification": "The prose is more direct and terminology is consistent."},
+    "evidence_presentation": {"score": 81, "justification": "Main results include effect sizes, uncertainty, and adverse outcomes."},
+    "academic_style": {"score": 82, "justification": "Revision-history and defensive phrasing were removed from the manuscript."}
+  },
+  "overall_score": 80.15,
+  "decision": "Accept",
+  "note": "Internal refinement diagnostic only; not an acceptance probability."
+}

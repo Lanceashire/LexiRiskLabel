@@ -1,0 +1,11 @@
+{
+  "hardened_runs": 8,
+  "all_hardened_runs_match_registered_pre_hardening_results": true,
+  "all_hardened_rounds_used_gpu": true,
+  "trajectory_cells": 40,
+  "incoming_batch_shared_cells": 40,
+  "candidate_pool_shared_cells": 4,
+  "candidate_pool_diverged_cells": 36,
+  "numeric_budget_shared_cells": 4,
+  "numeric_budget_diverged_cells": 36
+}

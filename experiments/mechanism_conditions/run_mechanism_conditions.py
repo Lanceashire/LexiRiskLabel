@@ -122,6 +122,43 @@ def select_policy(policy, cost, ig_score, candidate, budget, seed):
     return np.asarray(local, int), kstar
 
 
+def branch_training_seed(seed):
+    """Use common training randomness for every branch of a synthetic task."""
+    return int(seed) * 10000 + 100
+
+
+def acquisition_isolation_audit(raw, y, visible, batch, candidate, prediction,
+                                ig_score, pre, seed, members):
+    """Verify that hidden and test labels cannot affect pre-acquisition state."""
+    hidden_y = np.asarray(y, int).copy()
+    hidden_mask = np.ones(len(hidden_y), dtype=bool)
+    hidden_mask[np.asarray(visible, int)] = False
+    hidden_y[hidden_mask] = 1 - hidden_y[hidden_mask]
+    _, _, perturbed_prediction, backend = p2.fit_predict_gpu(
+        raw, hidden_y, visible, int(seed) * 10000 + 1)
+    perturbed_candidate = batch[perturbed_prediction[batch] >= float(CONFIG["threshold"])]
+    perturbed_ig, _ = IG.information_gain_score(
+        raw, hidden_y, visible, perturbed_candidate, pre, seed=int(seed), round_id=1,
+        members=int(members), workers=int(CONFIG["committee_workers"]))
+    return bool(
+        backend == "gpu"
+        and np.array_equal(candidate, perturbed_candidate)
+        and np.array_equal(prediction, perturbed_prediction)
+        and np.array_equal(ig_score, perturbed_ig)
+    )
+
+
+def test_label_isolation_audit(raw, y, visible_after, test0, test1, seed,
+                               reference_prediction):
+    """Verify that test-label perturbations cannot change the fitted predictor."""
+    perturbed_y = np.asarray(y, int).copy()
+    test = np.concatenate([test0, test1]).astype(int)
+    perturbed_y[test] = 1 - perturbed_y[test]
+    _, _, perturbed_prediction, backend = p2.fit_predict_gpu(
+        raw, perturbed_y, visible_after, branch_training_seed(seed))
+    return bool(backend == "gpu" and np.array_equal(reference_prediction, perturbed_prediction))
+
+
 def run_seed(seed, members):
     task = generate_task(seed)
     raw, y = task["raw"], task["y"]
@@ -139,6 +176,10 @@ def run_seed(seed, members):
     ig_score, committee_seconds = IG.information_gain_score(
         raw, y, visible, candidate, pre, seed=int(seed), round_id=1,
         members=int(members), workers=int(CONFIG["committee_workers"]))
+    hidden_label_isolation = acquisition_isolation_audit(
+        raw, y, visible, batch, candidate, prediction, ig_score, pre, seed, members)
+    if not hidden_label_isolation:
+        raise AssertionError("hidden-label acquisition invariance failed")
     exposures = exposure_vectors(candidate_pd, seed)
     total_risk = {name: float(np.dot(candidate_pd, value)) for name, value in exposures.items()}
     if not np.isclose(total_risk["low"], total_risk["high"], rtol=1e-10, atol=1e-10):
@@ -148,6 +189,7 @@ def run_seed(seed, members):
         "candidate_pd_hash": digest(candidate_pd, np.float64),
         "test0_hash": digest(task["test0"]), "test1_hash": digest(task["test1"])}
     rows = []
+    test_label_isolation = None
     for exposure_name, exposure in exposures.items():
         cost = candidate_pd * exposure
         budget = float(CONFIG["risk_budget_ratio"] * cost.sum())
@@ -166,9 +208,15 @@ def run_seed(seed, members):
             selected = candidate[local]
             visible_after = np.concatenate([visible, accepted, selected]).astype(int)
             _, _, after_prediction, after_backend = p2.fit_predict_gpu(
-                raw, y, visible_after, int(seed) * 10000 + 100 + POLICIES.index(policy) + (0 if exposure_name == "low" else 10))
+                raw, y, visible_after, branch_training_seed(seed))
             if after_backend != "gpu":
                 raise RuntimeError(f"canonical GPU required, observed {after_backend}")
+            if test_label_isolation is None:
+                test_label_isolation = test_label_isolation_audit(
+                    raw, y, visible_after, task["test0"], task["test1"], seed,
+                    after_prediction)
+                if not test_label_isolation:
+                    raise AssertionError("test-label prediction invariance failed")
             selected_count = len(local)
             selected_risk = float(cost[local].sum()) if selected_count else 0.0
             realized_loss = float(exposure[local][y[selected] == 1].sum()) if selected_count else 0.0
@@ -198,8 +246,10 @@ def run_seed(seed, members):
                 "selected_ids": json.dumps([int(v) for v in selected]),
                 "exposure_mean": float(exposure.mean()), "exposure_cv": float(exposure.std() / exposure.mean()),
                 "predicted_budget_feasible": bool(selected_risk <= budget + 1e-7),
-                "hidden_label_isolation": True, "test_label_isolation": True,
+                "hidden_label_isolation": hidden_label_isolation,
+                "test_label_isolation": test_label_isolation,
                 "preprocessing_visible_only": True, "selection_independent_of_target_weight": True,
+                "branch_training_seed": branch_training_seed(seed),
                 "branch_runtime_seconds": float(time.perf_counter() - branch_started),
                 "seed_runtime_seconds_elapsed": float(time.perf_counter() - started),
                 "cost_hash": cost_hash, **common_hashes}
@@ -237,7 +287,8 @@ def run(args):
     run_config = dict(CONFIG)
     run_config.update({"seeds": seeds, "committee_members": int(args.members),
         "canonical_gpu_requested": bool(p2.USE_GPU), "canonical_gpu_available": bool(p2.GPU_AVAILABLE)})
-    (output / "run_config.json").write_text(json.dumps(run_config, indent=2), encoding="utf-8")
+    (output / "run_config.json").write_bytes(
+        (json.dumps(run_config, indent=2) + "\n").encode("utf-8"))
     if not p2.USE_GPU or not p2.GPU_AVAILABLE:
         raise RuntimeError("canonical GPU backend is required")
     for completed, seed in enumerate(seeds, 1):

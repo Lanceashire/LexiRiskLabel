@@ -1,0 +1,25 @@
+{
+  "axis_scores": {
+    "scientific_depth": {"score": 77, "justification": "The revised paper distinguishes complete policy comparisons, same-state selector audits, and a controlled one-step experiment without converting uncertain interactions into positive findings."},
+    "technical_execution": {"score": 82, "justification": "FAVE, independent bootstrap-committee IG, randomized controls, exposure hardening, common branch seeding, and label-perturbation checks are integrated with their actual roles."},
+    "logical_flow": {"score": 80, "justification": "The paper now advances from the quantity-composition question to matched-score comparisons, selector mechanisms, and scope."},
+    "writing_clarity": {"score": 80, "justification": "Abstract, Introduction, Results, Discussion, and Conclusion use consistent terminology and fewer defensive transitions."},
+    "evidence_presentation": {"score": 81, "justification": "Key effect sizes and intervals are placed beside the questions they answer, including the adverse UCI Brier result and inconclusive controlled interactions."},
+    "academic_style": {"score": 82, "justification": "The prose is direct and preserves scientific boundaries without presenting a revision history in the manuscript."}
+  },
+  "overall_score": 80.15,
+  "strengths": [
+    "The research question is stated as a measurable trade-off rather than an algorithm-superiority claim.",
+    "Independent IG and randomized controls reduce dependence on the FAVE score construction.",
+    "Dynamic, same-state, and controlled evidence are assigned distinct inferential roles.",
+    "Negative and uncertain results remain visible in the main narrative."
+  ],
+  "weaknesses": [],
+  "questions": [],
+  "decision": "Accept",
+  "devils_advocate": {
+    "da_critical": false,
+    "finding": "Novelty remains empirical rather than algorithmic, but the revised claims match that contribution and do not assert causal composition effects or universal optimality."
+  },
+  "note": "Internal refinement diagnostic only; not an acceptance probability."
+}

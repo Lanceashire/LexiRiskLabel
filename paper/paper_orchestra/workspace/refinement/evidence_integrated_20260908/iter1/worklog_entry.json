@@ -1,0 +1,21 @@
+{
+  "addressed_weaknesses": [
+    "Reframed the paper around the measurable cost and return of sacrificing feasible feedback count.",
+    "Integrated the independent IG block as a matched-score comparison rather than a newly added baseline narrative.",
+    "Distinguished dynamic policy evaluation, same-state selector auditing, and controlled one-step retraining.",
+    "Reported the controlled experiment's uncertain interactions without novelty inflation.",
+    "Reduced repetitive defensive statements and concentrated scope in the appropriate sections."
+  ],
+  "integrated_answers": [
+    "Explained why later dynamic candidate pools and numerical budgets are policy specific.",
+    "Added the seed-controlled mechanism confirmation and exact 320-row parity result.",
+    "Added actual hidden-label and test-label perturbation validation.",
+    "Explained the scale of ordinary approvals relative to exploratory selections."
+  ],
+  "actions_taken": [
+    "Rewrote the Abstract, Introduction contribution framing, Discussion, and Conclusion.",
+    "Added the controlled design to Methods and its outcomes to Results.",
+    "Compressed the reproducibility appendix to satisfy the 16-page limit.",
+    "Compiled and visually inspected all 16 pages; ran 76 project tests."
+  ]
+}

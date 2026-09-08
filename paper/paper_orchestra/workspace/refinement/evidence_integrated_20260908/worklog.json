@@ -1,0 +1,15 @@
+{
+  "run": "evidence_integrated_20260908",
+  "pre_refinement_gate": {
+    "initial_status": "blocked_pending_repair",
+    "finding": "Controlled branches used policy-dependent training seeds and declarative isolation flags.",
+    "resolution": "A separate seed-controlled confirmation standardized branch randomness, executed label-perturbation audits, and reproduced all 320 endpoint rows exactly."
+  },
+  "iterations": [
+    {"iteration": 0, "overall_score": 70.15, "decision": "baseline"},
+    {"iteration": 1, "overall_score": 80.15, "decision": "ACCEPT_IMPROVED", "overall_delta": 10.0}
+  ],
+  "halt_reason": "No remaining presentation-only weaknesses requiring another iteration; further requests would change experimental scope.",
+  "promoted_iteration": 1,
+  "score_notice": "Scores are internal refinement diagnostics, not conference acceptance probabilities."
+}

@@ -1,0 +1,13 @@
+{
+  "axis_scores": {
+    "scientific_depth": {"score": 74, "justification": "The paper asks a clear quantity-composition question but does not yet incorporate the controlled condition evidence."},
+    "technical_execution": {"score": 76, "justification": "The independent IG block is present, while mechanism validation and branch-randomness control are absent from the manuscript."},
+    "logical_flow": {"score": 67, "justification": "The manuscript reads as successive additions to an earlier FAVE-centered account."},
+    "writing_clarity": {"score": 66, "justification": "Repeated negative constructions and scope reminders interrupt the empirical narrative."},
+    "evidence_presentation": {"score": 72, "justification": "Core dynamic results are reported, but the relationship among dynamic, same-state, and controlled evidence is not explicit."},
+    "academic_style": {"score": 61, "justification": "The tone is accurate but frequently resembles a response to reviewer objections."}
+  },
+  "overall_score": 70.15,
+  "decision": "Borderline",
+  "note": "Internal refinement diagnostic only; not an acceptance probability."
+}

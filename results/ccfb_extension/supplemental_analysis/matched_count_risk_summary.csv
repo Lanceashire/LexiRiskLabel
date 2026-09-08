@@ -1,0 +1,5 @@
+dataset,method_a,method_b,n_cells,mean_count_difference,mean_predicted_risk_difference,mean_recall_difference,mean_brier_difference,mean_fd_ratio_difference,same_split_test_hash,same_split_d0_hash,hidden_label_isolation,outer_test_metrics_only,all_gpu
+hmeq,LRBE-FAVE,CountOnly-MinRisk,10,1.1,32605.03533065319,-0.0006752475590379615,0.00018090158700942855,0.000567865938684331,True,True,True,True,True
+lendingclub,LRBE-FAVE,CountOnly-MinRisk,10,-0.1,31548.807499706745,2.7911418129245025e-05,0.00015806853771210827,0.0006457337826239251,True,True,True,True,True
+ppdai,LRBE-FAVE,CountOnly-MinRisk,10,0.0,0.6816546618938448,-0.0002182591639629104,-1.9923597574236783e-05,0.00023753261387875478,True,True,True,True,True
+uci,LRBE-FAVE,CountOnly-MinRisk,10,-0.3,2.1561122119426726,-0.00039917829291016285,-0.00017779022455215453,0.00011441243468141016,True,True,True,True,True

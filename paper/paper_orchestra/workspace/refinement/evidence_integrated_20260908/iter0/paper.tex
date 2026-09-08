@@ -1,0 +1,34 @@
+% WARNING: Potential failure mode 7 detected: the pre-IG framing must be updated to reflect the completed independent information-gain evidence block before submission.
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,array,multirow}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\ECL}{\mathrm{ECL}}
+\newcommand{\PD}{\mathrm{PD}}
+\newcommand{\EAD}{\mathrm{EAD}}
+\newcommand{\LGD}{\mathrm{LGD}}
+\newcommand{\paperfigure}[2]{\includegraphics[width=#2]{../figures/#1}}
+\title{How Many Labels Before Which Labels?\texorpdfstring{\\}{: }Risk-Budgeted Feedback Acquisition under Selective Labels}
+\titlerunning{Risk-Budgeted Feedback Acquisition under Selective Labels}
+\author{Anonymous Authors}
+\authorrunning{Anonymous Authors}
+\institute{Anonymous Institution}
+\begin{document}
+\maketitle
+\begin{abstract}
+Lending decisions determine which repayment outcomes become observable and hence which data are available for future learning. Existing work studies exploration under selective feedback, but an information-oriented approval rule can reduce the number of outcomes acquired under a risk constraint. We study this trade-off with lexicographic risk-budgeted feedback acquisition: at each policy state, first maximize the feasible label count under predicted applicant-level loss, then optimize a secondary score at that count. We compare policies in random-order offline replay across four credit datasets, five budget ratios, and separate development and confirmation seeds. At $\rho=0.1$, LRBE-FAVE acquires 67.1 more labels than QualityFirst-FAVE on HMEQ and 209.6 more on LendingClub. When quantity is preserved, FAVE uses more predicted risk than minimum-risk selection without a consistent cross-dataset Recall or Brier advantage. These whole-policy comparisons motivate a quantity-preserving reference for evaluating acquisition scores; they do not identify a causal effect of feedback composition. We also analyze raw feedback gains, rather than unstable reference-gap ratios, and distinguish predicted feasibility from ex-post realized-loss exceedance.
+\keywords{Selective labels \and Feedback acquisition \and Risk budgets \and Credit prediction}
+\end{abstract}
+\input{../sections/introduction_related}
+\input{../sections/related_work_addendum}
+\input{../sections/methods_protocol_v2}
+\input{../sections/data_provenance_note}
+\input{../sections/results_v3}
+\input{../sections/discussion_v3}
+\input{../sections/appendix_v2}
+\bibliographystyle{splncs04}
+\bibliography{../literature/refs,../literature/dataset_refs,../literature/closest_work}
+\end{document}

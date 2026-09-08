@@ -128,7 +128,8 @@ def analyze(root, output):
         "predicted_budget_feasible_all_rows": bool(frame.predicted_budget_feasible.astype(bool).all()),
         "hidden_and_test_label_isolation_all_rows": bool((frame.hidden_label_isolation.astype(bool) & frame.test_label_isolation.astype(bool)).all()),
         "maximum_abs_budget_identity_residual": float(np.abs(frame.budget_identity_residual).max())}
-    (output / "integrity_summary.json").write_text(json.dumps(integrity, indent=2), encoding="utf-8")
+    (output / "integrity_summary.json").write_bytes(
+        (json.dumps(integrity, indent=2) + "\n").encode("utf-8"))
     write_report(paired_frame, interaction_frame, integrity, output)
     manifest = [{"path": path.name, "sha256": sha(path), "bytes": path.stat().st_size}
                 for path in sorted(output.glob("*")) if path.is_file() and path.name != "manifest.csv"]
@@ -175,7 +176,7 @@ def write_report(paired, interactions, integrity, output):
     for row in interactions.itertuples():
         lines.append(f"| {row.interaction} | {row.mean_difference:.6g} | [{row.ci_low:.6g}, {row.ci_high:.6g}] |")
     lines += ["", "Intervals containing zero are treated as inconclusive. Same-state one-step results do not identify field causal effects or long-run dynamic policy value.", ""]
-    (output / "RESULTS.md").write_text("\n".join(lines), encoding="utf-8")
+    (output / "RESULTS.md").write_bytes(("\n".join(lines) + "\n").encode("utf-8"))
 
 
 if __name__ == "__main__":

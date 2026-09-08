@@ -1,0 +1,4 @@
+dataset,path,sha256,rows,exposure_column,raw_missing,non_numeric,nonfinite,negative,zero,positive,minimum,p01,median,p99,maximum,expected_sha256,hash_matches_registry,strictly_positive_finite
+HMEQ,data/raw/hmeq/hmeq.csv,dfdbc2b7cdf728a15b53e323cde6127995715dfa6b178bd3c1e3d9916d0367aa,5960,LOAN,0,0,0,0,0,5960,1100.0,3359.0000000000005,16300.0,60868.99999999987,89900.0,dfdbc2b7cdf728a15b53e323cde6127995715dfa6b178bd3c1e3d9916d0367aa,True,True
+PPDai,data/processed/ppdai/ppdai.csv,07a2c70ad02cb858dfa18817a587f437c7ca1dc97c033360387f56cf177acdc2,55596,exposure,0,0,0,0,0,55596,1.0,1.0,1.0,1.0,1.0,07a2c70ad02cb858dfa18817a587f437c7ca1dc97c033360387f56cf177acdc2,True,True
+LendingClub,data/processed/lendingclub/lendingclub.csv,2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d,16566,exposure,0,0,0,0,0,16566,1000.0,2000.0,12600.0,35000.0,35000.0,2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d,True,True

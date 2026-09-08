@@ -61,6 +61,7 @@ ABLATION_METHODS = [
 ]
 BUDGET_METHODS = ["CountOnly-MinRisk", "QualityFirst-Uncertainty", "QualityFirst-FAVE", "LRBE-FAVE"]
 REFERENCE_METHODS = ["NoExplore", "Oracle"]
+SUPPLEMENTAL_METHODS = ["RiskBounded-Random", "RiskBounded-Epsilon"]
 
 
 def _sha(path: Path) -> str:
@@ -69,6 +70,26 @@ def _sha(path: Path) -> str:
         for chunk in iter(lambda: fh.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def validate_exposure(values: pd.Series, *, dataset: str, column: str) -> np.ndarray:
+    """Return strictly positive finite exposure values or fail closed."""
+    numeric = pd.to_numeric(values, errors="coerce")
+    raw_missing = values.isna()
+    non_numeric = values.notna() & numeric.isna()
+    array = numeric.to_numpy(dtype=float)
+    nonfinite = ~np.isfinite(array)
+    nonpositive = np.isfinite(array) & (array <= 0.0)
+    if raw_missing.any() or non_numeric.any() or nonfinite.any() or nonpositive.any():
+        raise ValueError(
+            f"Invalid exposure in {dataset}.{column}: "
+            f"missing={int(raw_missing.sum())}, "
+            f"non_numeric={int(non_numeric.sum())}, "
+            f"nonfinite={int(nonfinite.sum())}, "
+            f"nonpositive={int(nonpositive.sum())}. "
+            "Exposure must be finite and strictly positive."
+        )
+    return array
 
 
 def dataset_frame(dataset: str) -> tuple[pd.DataFrame, str, np.ndarray, np.ndarray, pd.DataFrame]:
@@ -83,8 +104,9 @@ def dataset_frame(dataset: str) -> tuple[pd.DataFrame, str, np.ndarray, np.ndarr
     if cfg["exposure"] is None:
         exposure = np.ones(len(df), dtype=float)
     else:
-        exposure = pd.to_numeric(df[cfg["exposure"]], errors="coerce").fillna(0.0).to_numpy(float)
-        exposure = np.maximum(exposure, 0.0)
+        exposure = validate_exposure(
+            df[cfg["exposure"]], dataset=dataset, column=cfg["exposure"]
+        )
     return df, target, y, exposure, raw
 
 
@@ -155,6 +177,29 @@ def select(method: str, p: np.ndarray, cost: np.ndarray, candidate: np.ndarray, 
         utility = -cost
         local, k = p2.lrbe_select(cost, utility, budget)
         return local, k, utility, "lrbe_minrisk"
+    if method == "RiskBounded-Random":
+        # External-style randomized exploration within the current policy's
+        # candidate pool and predicted-risk budget. A deterministic hash gives a reproducible
+        # pseudo-random order without consuming labels or touching the test set.
+        scores = p2.deterministic_hash_scores(candidate, seed=int(visible[0]) if len(visible) else 0,
+                                               round_id=int(batch[0]) if len(batch) else 0)
+        order = np.argsort(scores, kind="mergesort")
+        chosen = []
+        remaining = float(budget)
+        for j in order:
+            if cost[j] <= remaining + 1e-12:
+                chosen.append(int(j)); remaining -= float(cost[j])
+        local = np.asarray(chosen, dtype=int)
+        return local, len(local), scores, "risk_bounded_random_greedy"
+    if method == "RiskBounded-Epsilon":
+        # Epsilon exploration: preserve the exact feasible K* cardinality,
+        # then perturb the min-risk objective with a fixed epsilon random score.
+        random_score = p2.deterministic_hash_scores(candidate, seed=int(visible[0]) if len(visible) else 0,
+                                                     round_id=int(batch[0]) + 7919 if len(batch) else 7919)
+        c_norm = normalize(cost)
+        utility = -(1.0 - 0.10) * c_norm + 0.10 * random_score
+        local, k = p2.lrbe_select(cost, utility, budget)
+        return local, k, utility, "risk_bounded_epsilon"
     if method.startswith("LRBE-"):
         kind = method.removeprefix("LRBE-")
         utility = quality_values(kind, p, cost, candidate, raw, visible, batch, pre, model)
@@ -231,6 +276,7 @@ def run_episode(dataset: str, seed: int, rho: float, method: str, experiment: st
     stream = fixed["stream"]
     d0_hash = hashlib.sha256(np.asarray(visible, dtype=np.int64).tobytes()).hexdigest()
     test_hash = hashlib.sha256(np.asarray(test, dtype=np.int64).tobytes()).hexdigest()
+    dataset_hash = _sha(DATASETS[dataset]["path"])
     pop_rate = float(y[stream].mean())
     lambda_rows = pd.DataFrame()
     joint_lambda = None
@@ -262,6 +308,8 @@ def run_episode(dataset: str, seed: int, rho: float, method: str, experiment: st
                 "cumulative_realized_loss": 0.0, "visible_default_rate": float(y[visible].mean()),
                 "fd_ratio": float(y[visible].mean() / pop_rate) if pop_rate else np.nan,
                 "split_test_hash": test_hash, "split_d0_hash": d0_hash, "risk_definition": DATASETS[dataset]["risk_definition"],
+                "dataset_input_sha256": dataset_hash, "exposure_validation_passed": True,
+                "incoming_batch_hash": "ROUND_ZERO", "candidate_pool_hash": "ROUND_ZERO",
                 "compute_backend": backend, "gpu_enabled": bool(p2.USE_GPU and p2.GPU_AVAILABLE),
                 "outer_test_used_only_for_metrics": True, "hidden_label_isolation": True,
             })
@@ -273,6 +321,8 @@ def run_episode(dataset: str, seed: int, rho: float, method: str, experiment: st
         p_batch = pred[batch]
         accepted = batch[p_batch < p1.TAU]
         candidate = batch[p_batch >= p1.TAU]
+        incoming_batch_hash = hashlib.sha256(np.asarray(batch, dtype=np.int64).tobytes()).hexdigest()
+        candidate_pool_hash = hashlib.sha256(np.asarray(candidate, dtype=np.int64).tobytes()).hexdigest()
         pc = p_batch[p_batch >= p1.TAU]
         cost = pc * exposure[candidate]
         budget = float(rho * cost.sum())
@@ -301,6 +351,8 @@ def run_episode(dataset: str, seed: int, rho: float, method: str, experiment: st
             "cumulative_realized_loss": float(cumulative_real), "visible_default_rate": float(y[visible].mean()),
             "fd_ratio": float(y[visible].mean() / pop_rate) if pop_rate else np.nan,
             "split_test_hash": test_hash, "split_d0_hash": d0_hash, "risk_definition": DATASETS[dataset]["risk_definition"],
+            "dataset_input_sha256": dataset_hash, "exposure_validation_passed": True,
+            "incoming_batch_hash": incoming_batch_hash, "candidate_pool_hash": candidate_pool_hash,
             "compute_backend": f"{backend_before}+{backend_after}", "gpu_enabled": bool(p2.USE_GPU and p2.GPU_AVAILABLE),
             "outer_test_used_only_for_metrics": True, "hidden_label_isolation": True,
             "selected_default_rate_oracle": float(y[selected].mean()) if len(selected) else np.nan,
@@ -361,6 +413,15 @@ def run_full(force: bool) -> None:
             print(f"CCFB extension completed {dataset} seed={seed}", flush=True)
 
 
+def run_supplemental(force: bool) -> None:
+    """Fresh external-style exploration baselines at the preregistered rho."""
+    for dataset in CONFIG["datasets"]:
+        for seed in CONFIG["fresh_seeds"]:
+            for method in SUPPLEMENTAL_METHODS:
+                one("supplemental_exploration", dataset, seed, CONFIG["base_rho"], method, force)
+            print(f"Supplemental exploration completed {dataset} seed={seed}", flush=True)
+
+
 def write_run_manifest() -> None:
     files = []
     for path in sorted(RAW.rglob("*.csv")) if RAW.exists() else []:
@@ -371,11 +432,11 @@ def write_run_manifest() -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["smoke", "full", "one"], required=True)
+    ap.add_argument("--mode", choices=["smoke", "full", "supplemental", "one"], required=True)
     ap.add_argument("--dataset", choices=sorted(DATASETS))
     ap.add_argument("--seed", type=int)
     ap.add_argument("--rho", type=float, default=CONFIG["base_rho"])
-    ap.add_argument("--method", choices=ABLATION_METHODS + BUDGET_METHODS + REFERENCE_METHODS)
+    ap.add_argument("--method", choices=ABLATION_METHODS + BUDGET_METHODS + REFERENCE_METHODS + SUPPLEMENTAL_METHODS)
     ap.add_argument("--experiment", default="manual")
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
@@ -384,6 +445,8 @@ def main() -> None:
         run_smoke(args.force)
     elif args.mode == "full":
         run_full(args.force)
+    elif args.mode == "supplemental":
+        run_supplemental(args.force)
     else:
         if args.dataset is None or args.seed is None or args.method is None:
             ap.error("--mode one requires --dataset, --seed, and --method")

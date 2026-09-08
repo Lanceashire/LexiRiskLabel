@@ -1,0 +1,20 @@
+\appendix
+\section{Secondary Score and Reproducibility}
+\label{app:fave}\label{app:repro}
+\paragraph{Frozen FAVE-v2.1 score.}
+Let $v_j=[1,x_j^\top]^\top$ be the augmented, preprocessed feature vector. For the current visible set $\mathcal L_t$ and label-free reference batch $\mathcal U_t$, define
+\begin{align}
+H_t&=\sum_{j\in\mathcal L_t}\max\{\widehat p_j(1-\widehat p_j),10^{-6}\}v_jv_j^\top,\\
+G_t&=|\mathcal U_t|^{-1}\sum_{j\in\mathcal U_t}\widehat p_jv_jv_j^\top,\qquad
+\eta=\max\{10^{-6}\operatorname{tr}(H_t)/d,10^{-10}\},\\
+A_t&=H_t+\eta I,\qquad
+\widetilde w_i=\max\{\widehat p_i(1-\widehat p_i)\widehat p_i^{0.5},10^{-10}\},\\
+q_i^{\mathrm{FAVE}}&=
+\frac{\widetilde w_i v_i^\top A_t^{-1}G_t A_t^{-1}v_i}
+{1+\widetilde w_i v_i^\top A_t^{-1}v_i}.
+\end{align}
+Here $d$ includes the intercept coordinate. Predicted probabilities are clipped to $[10^{-9},1-10^{-9}]$ before these operations; nonfinite score outputs are zeroed and scores are clipped below at zero. The default-weighting exponents and numerical regularization are fixed. This linearized feature-space construction is used with boosted-tree predictions as a scoring proxy; it is not an exact influence calculation for the tree-fitting procedure. The Joint comparator selects $\lambda\in\{0.01,0.1,0.5,1,2,5,10\}$ using only initial-set validation. The initial split is stratified where possible, with a deterministic random split as fallback.
+
+\paragraph{Input and trajectory audit.}
+Exact-input SHA-256 checks cover HMEQ, LendingClub and PPDai. All 78,122 records have numeric, finite, positive exposure; PPDai values are all one. UCI constructs ones directly. The strict input loader rejects invalid exposure rather than replacing it by zero. Eight validation trajectories (four datasets, seed 1001, MinRisk and FAVE) agree with the archived outputs in the checked counts, risk values, and predictive metrics. This check is not an additional statistical replication. Of 40 paired post-initial rounds, incoming-batch hashes agree in all 40, while candidates and numerical budgets agree in only four. This directly documents the policy-specific state evolution.
+The IG and controlled-condition archives retain their own registered seeds and are not pooled as independent replications. The controlled confirmation uses common branch randomness and label-perturbation checks; all 320 endpoint rows match the original block in selection, risk, Recall, and Brier score. Source hashes, full-precision tables, parameter grids, and executable tests accompany the archive.

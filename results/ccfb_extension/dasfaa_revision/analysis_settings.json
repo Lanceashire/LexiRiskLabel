@@ -1,0 +1,17 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 20260905,
+  "positive_gap_tolerance": 1e-10,
+  "primary_gain": "Recall/FDRatio: policy minus NoExplore; Brier: NoExplore minus policy",
+  "bootstrap_unit": "seed (all methods and budgets retained); budget means re-estimated each draw",
+  "interval": "95% percentile, unadjusted; exploratory descriptive associations",
+  "source_experiments": [
+    "budget_sweep",
+    "reference",
+    "kstar_ablation",
+    "supplemental_exploration"
+  ],
+  "frozen_results": "Not pooled with fresh; previous frozen correlations are historical, not revalidated here.",
+  "runtime": "Descriptive only. Historical runs are concurrent and selected runtime is end-to-end elapsed, not acquisition-only. Excludes probes, smoke, hardened confirmations, budget sweep duplicates, references.",
+  "training_runs_launched": 0
+}

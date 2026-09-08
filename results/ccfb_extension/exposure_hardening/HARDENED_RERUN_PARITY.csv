@@ -1,0 +1,9 @@
+dataset,method,rows,max_abs_numeric_difference,exact_fields_equal,dataset_hash_recorded,exposure_validation_all_passed,gpu_all_rounds,parity_passed
+uci,CountOnly-MinRisk,11,0.0,True,True,True,True,True
+uci,LRBE-FAVE,11,0.0,True,True,True,True,True
+hmeq,CountOnly-MinRisk,11,0.0,True,True,True,True,True
+hmeq,LRBE-FAVE,11,0.0,True,True,True,True,True
+ppdai,CountOnly-MinRisk,11,0.0,True,True,True,True,True
+ppdai,LRBE-FAVE,11,0.0,True,True,True,True,True
+lendingclub,CountOnly-MinRisk,11,0.0,True,True,True,True,True
+lendingclub,LRBE-FAVE,11,0.0,True,True,True,True,True

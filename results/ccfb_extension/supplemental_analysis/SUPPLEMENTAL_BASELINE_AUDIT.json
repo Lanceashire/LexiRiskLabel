@@ -1,0 +1,26 @@
+{
+  "supplemental_files": 80,
+  "expected_files": 80,
+  "datasets": [
+    "hmeq",
+    "lendingclub",
+    "ppdai",
+    "uci"
+  ],
+  "methods": [
+    "RiskBounded-Epsilon",
+    "RiskBounded-Random"
+  ],
+  "seed_count_by_dataset": {
+    "hmeq": 10,
+    "lendingclub": 10,
+    "ppdai": 10,
+    "uci": 10
+  },
+  "same_split_hash_per_dataset_seed": true,
+  "same_d0_hash_per_dataset_seed": true,
+  "hidden_label_isolation_all": true,
+  "outer_test_metrics_only_all": true,
+  "gpu_enabled_all": true,
+  "realized_violation_rate": 0.525
+}

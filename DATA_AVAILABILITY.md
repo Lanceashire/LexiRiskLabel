@@ -90,6 +90,21 @@ Use `scripts/data_preparation/materialize_data_layout.py` to verify one local
 copy per dataset and create both layouts.  The utility refuses hash mismatches
 unless the user explicitly overrides that safeguard.
 
+## Exposure integrity audit
+
+The exact registered HMEQ, PPDai, and LendingClub study inputs were audited
+for raw missing values, nonnumeric coercions, nonfinite values, negatives, and
+zeros. All five counts are zero across 78,122 records, and all three file
+digests match the registry. The machine-readable report is stored at
+`results/ccfb_extension/exposure_hardening/EXPOSURE_INPUT_AUDIT.csv` and is
+also copied into the canonical PaperOrchestra workspace.
+
+The current CCFB extension loader requires strictly positive finite exposure
+and raises an error on invalid input. This hardening does not change results on
+the registered files: eight GPU-backed confirmation runs reproduce their
+pre-hardening counterparts to numerical tolerance. Historical frozen runners
+remain provenance artifacts; new CCFB runs use the fail-closed loader.
+
 ## Metadata included in this repository
 
 See:

@@ -1,0 +1,90 @@
+\section{Risk-Budgeted Feedback Acquisition}
+\label{sec:problem}\label{sec:method}
+
+\subsection{Sequential observation and policy-specific budgets}
+At round $t$, policy $m$ receives an incoming batch $\mathcal U_t$ and fits a default predictor on its visible labeled set $\mathcal L_t^{(m)}$. An outcome $y_i=1$ denotes default. Ordinary approvals have predicted default probability below the fixed threshold $\tau=0.5$, which serves as a common operating point for every policy in the replay. The remaining applicants form the exploration candidates
+\begin{equation}
+\mathcal C_t^{(m)}=\{i\in\mathcal U_t:\widehat p_{it}^{(m)}\ge\tau\}.
+\end{equation}
+The policy selects exploratory approvals $\mathcal S_t^{(m)}\subseteq\mathcal C_t^{(m)}$. Only outcomes of ordinary and exploratory approvals are added to the next visible set. Rejected applicants are not carried over to a backlog. Outcomes are revealed within the simulation round; actual repayment delays are not modeled.
+
+Write $a_i$ for exposure and set $\LGD_i=1$. The planning cost, exploration budget, and selected risk are
+\begin{equation}
+\widehat c_{it}^{(m)}=\widehat p_{it}^{(m)}a_i,\qquad
+B_t^{(m)}=\rho\sum_{i\in\mathcal C_t^{(m)}}\widehat c_{it}^{(m)},\qquad
+\widehat R_t^{(m)}=\sum_{i\in\mathcal S_t^{(m)}}\widehat c_{it}^{(m)}.
+\label{eq:budget}
+\end{equation}
+The constraint $\widehat R_t^{(m)}\le B_t^{(m)}$ covers exploratory approvals only, not the entire lending portfolio. Defaulted exposure is evaluated separately as $R_t^{\mathrm{real},(m)}=\sum_{i\in\mathcal S_t^{(m)}}y_i a_i$. With unit LGD this is an experimental loss proxy, not recovery-adjusted net loss or full IFRS~9 accounting.
+
+Policies share the initial split and exogenous batches, but their feedback choices affect subsequent training sets, predictions, candidates and budgets. Pairing on dataset, seed and $\rho$ therefore compares complete policies under common incoming data. It does not fix their subsequent numerical budgets or isolate a causal effect of composition. Superscripts $m$ are suppressed below for within-policy optimization.
+
+\subsection{Lexicographic quantity and composition}
+LRBE first determines the maximum feasible exploratory count:
+\begin{equation}
+K_t^*=\max_{z\in\{0,1\}^{|\mathcal C_t|}}\sum_i z_i
+\quad\text{subject to}\quad \sum_i z_i\widehat c_{it}\le B_t.
+\label{eq:kstar}
+\end{equation}
+For nonnegative costs and unit count value, sorting costs and taking the longest feasible prefix solves this stage in $O(n\log n)$ time. This elementary cardinality construction is used as a reference, not claimed as a new optimization algorithm. A fixed, outcome-blind secondary score $q_i$ then determines the composition:
+\begin{equation}
+\max_z\sum_i z_iq_i
+\quad\text{subject to}\quad \sum_i z_i=K_t^*,\quad
+\sum_i z_i\widehat c_{it}\le B_t,\quad z_i\in\{0,1\}.
+\label{eq:stage2}
+\end{equation}
+The equality prevents the secondary objective from sacrificing feasible count \emph{at the current policy state}. It does not force distinct policies to acquire identical cumulative counts after their histories diverge. Both stages use only currently available features and predictions, never unobserved candidate outcomes or test labels.
+
+\subsection{Acquisition policies}
+\textbf{CountOnly-MinRisk} minimizes predicted risk among maximum-count sets by setting $q_i=-\widehat c_i$. It is abbreviated MinRisk in tables. \textbf{LRBE-Uncertainty} uses $q_i=\widehat p_i(1-\widehat p_i)$. \textbf{LRBE-FAVE} uses the frozen FAVE-v2.1 score, a feature-space local information proxy (Appendix~\ref{app:fave}). Its Fisher-style geometry is a surrogate constructed from predictions and covariates, not the Hessian of the fitted boosted-tree model or a guarantee of retraining improvement.
+
+\textbf{LRBE-IG} uses empirical committee mutual information. At each round, 20 models are fitted to same-size bootstrap samples of the current visible set. If $p_i^{(r)}$ is member $r$'s default probability and $H(p)=-p\log p-(1-p)\log(1-p)$, then
+\begin{equation}
+q_i^{\mathrm{IG}}=H\!\left(\frac{1}{20}\sum_{r=1}^{20}p_i^{(r)}\right)-\frac{1}{20}\sum_{r=1}^{20}H\!\left(p_i^{(r)}\right).
+\label{eq:ig}
+\end{equation}
+Committee members use the canonical XGBoost hyperparameters and only visible labels. The committee determines acquisition scores only; the single canonical model continues to define candidates, predicted costs, and final evaluation. Scores add across selected applicants, so this comparator is a single-item IG sum rather than joint BatchBALD. \textbf{QualityFirst-IG} maximizes the same nonnegative score under the risk constraint without the count equality. IG is an independent acquisition baseline, not a claimed contribution.
+
+\textbf{Quality-first policies} maximize the corresponding nonnegative uncertainty or FAVE utility under the risk constraint without the count equality. \textbf{Joint-Best-Val-Uncertainty} maximizes $\sum_i z_i(\bar q_i-\lambda\bar c_i)$ over positive-score candidates, where bars denote within-pool min--max normalization. Its parameter is chosen using only the initial visible set, split into 60\% training, 20\% pseudo-candidates and 20\% validation. Validation PR-AUC determines the choice, with Recall and then smaller $\lambda$ as tie-breakers. These are diagnostic comparators for the acquisition objectives, not implementations of all prior exploration algorithms.
+
+Two additional controls vary randomization. \textbf{RiskBounded-Random} visits candidates in a reproducible pseudo-random order and accepts each if its cost fits the remaining budget. \textbf{RiskBounded-Epsilon} instead preserves $K_t^*$ and uses $q_i=-0.9\bar c_i+0.1u_i$, where $u_i$ is a deterministic hash-based random score. We retain its archive name but call it the \emph{random-score} control in prose: 0.1 is an objective weight, not a 10\% random-approval probability or conventional epsilon-greedy rule. \textbf{NoExplore} reveals ordinary approvals only. \textbf{Oracle} also reveals every candidate outcome and ignores the exploration budget; it is a full-feedback diagnostic, not a guaranteed upper bound on test performance.
+
+\section{Experimental Design}
+\label{sec:experiments}
+\subsection{Data and replay protocol}
+\begin{table}[t]
+\caption{Exact input cohorts and exposure semantics. Raw risk units are not comparable across datasets.}
+\label{tab:datasets}
+\centering
+\begin{tabular}{lrl}
+\toprule
+Dataset & Records & Exposure and evidence role\\
+\midrule
+HMEQ & 5,960 & LOAN amount; development\\
+LendingClub & 16,566 & loan-amount proxy; external validation\\
+UCI & 30,000 & unit exposure; development\\
+PPDai & 55,596 & unit exposure; exploratory external\\
+\bottomrule
+\end{tabular}
+\end{table}
+For each seed, a random permutation assigns 25\% of records to a fixed outer test set. The first 20\% of the remaining stream form the initial visible set, with a minimum of 100 records; all remaining records are split into ten incoming batches. The initial visible set is therefore a random cohort sample rather than the output of a historical approval rule. Policy-dependent selective observation begins only when the policies process the ten subsequent batches: ordinary approvals are observed automatically, whereas exploratory approvals are chosen from the threshold-defined candidate set. Thus the experiment is \emph{random-order offline replay}, not historical-time evaluation.
+
+Fresh confirmation seeds 1001--1010 are disjoint from development seeds 0--19. The fresh design includes an objective comparison at $\rho=0.1$, a four-policy sweep over $\rho\in\{0.025,0.05,0.1,0.2,0.4\}$, and NoExplore/Oracle references. The two randomization controls use the same fresh seeds at $\rho=0.1$. A separate primary IG block at $\rho=0.1$ reruns MinRisk, LRBE-FAVE, QualityFirst-FAVE, LRBE-IG, and QualityFirst-IG together, yielding 200 dynamic episodes. Historical control outputs are not spliced into that block. Development analyses are retained separately because their protocols differ from the fresh uncertainty estimates. All reported analyses use the registered seeds, policies, and archived raw outputs.
+
+A controlled one-step experiment uses synthetic tasks with prespecified seeds 2001--2020. Each task contains a selectively observed initial set, one incoming batch, and separate test strata for an initially underrepresented region and its complement. It crosses unit exposure with normalized lognormal exposure and evaluates region-1 weights of 0.1 and 0.5. MinRisk, LRBE-IG, QualityFirst-IG, and a maximum-count random-score selector share the fitted pre-acquisition state, candidates, costs, numerical budget, and branch-training seed. The experiment measures immediate count sacrifice and predicted-risk use, followed by one retraining step; it tests specified condition interactions rather than long-run policy behavior.
+
+\subsection{Model, optimization and observation controls}
+All fresh policies use XGBoost with 100 trees, maximum depth 3, learning rate 0.1, binary logistic objective, and histogram-based training. Numeric features receive median imputation and standardization; categorical features receive a missing-value category and one-hot encoding. Target, ID and the designated exposure column are excluded from predictors. Preprocessing is fitted on visible records only. Each round fits a pre-acquisition model for selection and a post-acquisition model for test evaluation. The outer test set never selects parameters or candidates; population default rates and selected outcomes are used only in offline diagnostics.
+
+Maximum-count selection uses a sorted-cost prefix with a $10^{-10}$ numerical allowance. The common second-stage binary program and quality-first/joint programs use SciPy's mixed-integer solver; an unsuccessful solve raises an error. Risk auditing permits a $10^{-6}$ absolute allowance. Candidate costs are strictly positive under the validated exposures and rejection threshold, so zero budgets yield zero feasible count. Empty candidate sets also yield no exploratory selections. GPU training and supported FAVE matrix operations accelerate computation, while optimization remains CPU-side. The registered bootstrap committee runs on CPU with four concurrent workers; the canonical model remains on GPU. Appendix~\ref{app:repro} records implementation and validation details.
+
+\subsection{Outcomes and statistical comparisons}
+We report cumulative exploratory count, cumulative predicted risk, final-test default Recall, and Brier score. Recall is $TP/(TP+FN)$ at $\tau=0.5$; Brier is the mean squared error of default probabilities. The acquired default fraction describes the selected outcomes. A separate feedback diagnostic, $F$, is the default fraction in the entire visible set divided by the default fraction in the non-test stream. It therefore includes ordinary approvals and the initial set, not only exploratory selections. Neither $F$ nor mean selected predicted probability establishes exact applicant overlap or an independent composition effect.
+
+At each dataset and budget ratio, final policy differences are paired over seeds. Tables show mean differences and pointwise 95\% percentile bootstrap intervals from 10,000 seed resamples. Counts that are close descriptively are not called experimentally matched; intervals crossing zero are not equivalence or noninferiority tests. The comparisons are exploratory across multiple metrics and conditions, so isolated interval exclusions are not familywise significance claims.
+
+The IG block adds a same-state mechanism audit. At each round of the MinRisk trajectory, all five selectors receive the same visible set, candidates, cost vector, and numerical budget. We record count sacrifice $D(S)=K_t^*-|S|$, composition premium $P(S)=\widehat R(S)-M(|S|)$, where $M(k)$ is the minimum predicted risk of a size-$k$ set, maximum-count slack, selected IDs, and Jaccard overlap with MinRisk. This audit describes immediate selector behavior; because alternative selections do not update the anchor trajectory, it is not a downstream counterfactual.
+
+The controlled experiment applies the same 10,000-draw paired seed bootstrap to LRBE-IG minus QualityFirst-IG count, LRBE-IG minus MinRisk predicted risk and Brier score, and the prespecified exposure-by-region-weight interactions. Its confirmation run holds training randomness fixed across branches. Candidate-label perturbations leave predictions, candidates, IG scores, and selections unchanged; test-label perturbations leave the fitted predictor unchanged.
+
+For feedback--prediction associations, the primary variables are raw gains from the same-seed NoExplore reference: $\Delta F=F_m-F_N$, $\Delta\mathrm{Recall}=\mathrm{Recall}_m-\mathrm{Recall}_N$, and $\Delta\mathrm{Brier}=\mathrm{Brier}_N-\mathrm{Brier}_m$. Positive Brier gain means improvement. Spearman associations are computed separately within dataset and budget, retaining all methods belonging to a resampled seed in each of 10,000 cluster-bootstrap draws. Budget-centered associations are secondary descriptions, not causal estimates. Reference-gap ratios are supplemental only: $(M_m-M_N)/(M_O-M_N)$ is interpretable as recovery only when the oriented Oracle gap is positive; nonpositive or numerically unresolved gaps are N/A. The primary raw-gain analysis avoids dividing by these unstable reference differences.

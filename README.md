@@ -26,12 +26,13 @@ acquired?" instead of collapsing them into one risk--utility weight.
 - Fresh-seed CCFB extension: complete.
 - Independent information-gain primary block: complete (200 dynamic episodes
   and 40 common-state audits).
-- Controlled mechanism-conditions block: complete (20 seeds, 160 GPU
-  acquisition/retraining branches, and 10,000-draw paired analysis).
+- Controlled mechanism-conditions block and seed-controlled confirmation:
+  complete (20 seeds, 160 GPU acquisition/retraining branches, 320 endpoint
+  rows, label-perturbation audits, and 10,000-draw paired analysis).
 - Fresh seeds: `1001`--`1010`, disjoint from frozen seeds `0`--`19`.
 - Datasets: UCI Default Credit Card, HMEQ, PPDai, and LendingClub.
 - Formal extension outputs: 1,120 run CSVs and 12,320 round-level records.
-- Compatibility tests: 39 passed in the validated environment.
+- Current project and submission checks: 76 passed in the validated environment.
 
 This repository supports paper drafting and private collaboration.  It does
 not claim that FAVE is a universally superior policy or that a predicted ECL
@@ -66,7 +67,7 @@ configs/                    Frozen configurations and protocols
 data/metadata/              Dataset provenance, hashes, target/leakage audits
 experiments/                Phase descriptions and the CCFB extension runner
 figures/                    Cross-phase paper assets
-paper/                      Paper asset index
+paper/paper_orchestra/      Canonical anonymous LaTeX manuscript and PDF
 plans/                      Preregistration and experimental plans
 reports/                    Canonical report pointers
 results_phase0/             Frozen compatibility results
@@ -77,6 +78,7 @@ results_phase4/             Frozen mechanism-analysis results
 results/ccfb_extension/     Fresh-seed raw results, statistics, figures, report
 results/information_gain_primary_20260907/  Independent IG trajectories
 results/mechanism_conditions_primary_20260908/  Controlled mechanism evidence
+results/mechanism_conditions_seed_controlled_confirmation_20260908/  Confirmed mechanism evidence
 scripts/analysis/           Analysis entry points
 scripts/reproduce/          Deliberate reproduction entry points
 src/                        Frozen Phase 0--4 implementation

@@ -1,0 +1,17 @@
+{
+  "analysis": "reviewer_requested_identification_checks",
+  "raw_results_unchanged": true,
+  "matched_count_risk_cells": 40,
+  "pareto_points": 80,
+  "pareto_efficient_points": 31,
+  "datasets": [
+    "hmeq",
+    "lendingclub",
+    "ppdai",
+    "uci"
+  ],
+  "methods": [
+    "LRBE-FAVE"
+  ],
+  "interpretation": "Matched cells isolate composition/risk differences after holding split, seed, budget and (for LRBE policies) K* fixed; Pareto table spans all existing fresh budget-sweep points."
+}

@@ -74,3 +74,15 @@ Machine-readable results are in
 `mechanism_conditions.pdf` and `.png` visualize count sacrifice, composition
 premium, and the Brier contrasts. Smoke outputs are diagnostic only and are
 excluded from the formal evidence block.
+
+## Seed-controlled confirmation
+
+The confirmation block standardizes the post-selection training seed across all
+policy and exposure branches and replaces declarative isolation flags with
+candidate/test-label perturbation checks. All 320 endpoint rows reproduce the
+original selected count, predicted risk, IG-score sum, Brier score, and Recall
+exactly. The registered interaction conclusions are therefore unchanged: the
+quantity and predicted-risk contrasts are present, while the primary Brier and
+interaction intervals include zero. Confirmed machine-readable results are in
+`results/mechanism_conditions_seed_controlled_confirmation_20260908/` and its
+corresponding `_analysis` directory.

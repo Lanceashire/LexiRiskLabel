@@ -52,3 +52,51 @@ def test_budget_identity():
 def test_bootstrap_is_deterministic():
     values = np.array([1.0, 2.0, 3.0])
     assert AN.paired_bootstrap(values, draws=1000) == AN.paired_bootstrap(values, draws=1000)
+
+
+def test_branch_training_seed_is_shared_across_policies_and_exposures():
+    assert RUN.branch_training_seed(2001) == RUN.branch_training_seed(2001)
+    assert RUN.branch_training_seed(2001) != RUN.branch_training_seed(2002)
+
+
+def test_hidden_label_audit_perturbs_only_nonvisible_labels(monkeypatch):
+    raw = RUN.generate_task(2999)["raw"].iloc[:8].copy()
+    y = np.array([0, 1, 0, 1, 0, 1, 0, 1])
+    visible = np.array([0, 1])
+    batch = np.array([2, 3, 4, 5])
+    prediction = np.array([0.1, 0.2, 0.6, 0.7, 0.2, 0.8, 0.3, 0.4])
+    candidate = np.array([2, 3, 5])
+    ig_score = np.array([0.01, 0.02, 0.03])
+
+    def fake_fit(_raw, observed_y, observed_visible, _seed):
+        np.testing.assert_array_equal(observed_y[visible], y[visible])
+        np.testing.assert_array_equal(observed_y[2:], 1 - y[2:])
+        return object(), object(), prediction.copy(), "gpu"
+
+    def fake_ig(_raw, observed_y, observed_visible, observed_candidate, _pre, **_kwargs):
+        np.testing.assert_array_equal(observed_y[visible], y[visible])
+        np.testing.assert_array_equal(observed_candidate, candidate)
+        return ig_score.copy(), 0.0
+
+    monkeypatch.setattr(RUN.p2, "fit_predict_gpu", fake_fit)
+    monkeypatch.setattr(RUN.IG, "information_gain_score", fake_ig)
+    assert RUN.acquisition_isolation_audit(
+        raw, y, visible, batch, candidate, prediction, ig_score, object(), 2999, 3)
+
+
+def test_test_label_audit_uses_identical_training_labels(monkeypatch):
+    raw = RUN.generate_task(2999)["raw"].iloc[:8].copy()
+    y = np.array([0, 1, 0, 1, 0, 1, 0, 1])
+    visible_after = np.array([0, 1, 2, 3])
+    test0, test1 = np.array([4, 5]), np.array([6, 7])
+    prediction = np.linspace(0.1, 0.8, 8)
+
+    def fake_fit(_raw, observed_y, observed_visible, observed_seed):
+        np.testing.assert_array_equal(observed_y[visible_after], y[visible_after])
+        np.testing.assert_array_equal(observed_y[np.r_[test0, test1]], 1 - y[np.r_[test0, test1]])
+        assert observed_seed == RUN.branch_training_seed(2999)
+        return object(), object(), prediction.copy(), "gpu"
+
+    monkeypatch.setattr(RUN.p2, "fit_predict_gpu", fake_fit)
+    assert RUN.test_label_isolation_audit(
+        raw, y, visible_after, test0, test1, 2999, prediction)
