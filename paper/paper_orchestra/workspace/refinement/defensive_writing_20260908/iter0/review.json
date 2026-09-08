@@ -1,0 +1,32 @@
+{
+  "axis_scores": {
+    "scientific_depth": {"score": 82, "justification": "The dynamic replay, independent IG block, same-state audit, and seed-controlled experiment provide complementary evidence. One Results sentence still risks treating a current-state cardinality guarantee as an explanation for cumulative trajectory ordering."},
+    "technical_execution": {"score": 83, "justification": "The paper documents policy-specific state evolution, exposure validation, label isolation, and paired bootstrap analysis. The evidence roles are technically clear, although the PPDai hash statement should identify the registered artifact more precisely."},
+    "logical_flow": {"score": 78, "justification": "The paper proceeds coherently from problem formulation to dynamic and controlled evidence. Repeated qualifications interrupt several result paragraphs and move attention away from the empirical comparisons."},
+    "writing_clarity": {"score": 72, "justification": "Terminology is mostly consistent, but the prose repeatedly relies on negative constructions such as 'not claimed', 'not a counterfactual', and 'does not establish'."},
+    "evidence_presentation": {"score": 75, "justification": "The main IG table reports quantity against one comparator and risk against another, while Recall and Brier remain in prose. Readers cannot inspect the four outcomes for either primary contrast in one place."},
+    "academic_style": {"score": 70, "justification": "The tone is careful but often resembles a response to anticipated reviewer objections. Method facts and effect estimates should carry more of the qualification."}
+  },
+  "overall_score": 77.5,
+  "strengths": [
+    "Independent IG and randomized controls reduce dependence on the FAVE score.",
+    "Dynamic replay and same-state analyses have distinct, correctly described evidence roles.",
+    "The paper reports adverse and uncertain results rather than selecting favorable endpoints.",
+    "Exposure and label-isolation audits are integrated into the protocol."
+  ],
+  "weaknesses": [
+    "The core IG table does not jointly show quantity, predicted risk, Recall, and Brier for each primary contrast.",
+    "The Results section overconnects a current-state K-star guarantee to cumulative dynamic ordering.",
+    "Repeated negative qualifications create a defensive cadence across Methods, Results, and Discussion.",
+    "Selection overlap and intervention scale are not integrated closely enough with the downstream null and adverse estimates.",
+    "The PPDai hash statement does not distinguish the registered reconstructed artifact from historical processed evidence."
+  ],
+  "questions": [
+    "What complete quantity-risk-performance profile is observed for each primary IG comparison?",
+    "How different are the selected sets when IG changes composition?",
+    "How large is the exploratory intervention relative to ordinary feedback?",
+    "Which aspects of the PPDai input are exactly hash-verified?"
+  ],
+  "decision": "Borderline",
+  "da_critical": false
+}

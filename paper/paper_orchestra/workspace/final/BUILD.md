@@ -14,4 +14,4 @@ Run the complete project and submission gates in the required environment:
 D:\envs_dirs\no_1\python.exe -m pytest -q -p no:cacheprovider D:\ecomic\github\LexiRiskLabel\tests
 ```
 
-Current verified state (2026-09-08): 16 pages, 193-word source abstract under the project test tokenizer, 76 tests passed, anonymous PDF, no unresolved citations/references, and no overfull boxes. Two nonfatal underfull-vbox warnings remain at natural section/page breaks. The manuscript integrates the five-policy IG block and the seed-controlled mechanism confirmation.
+Current verified state (2026-09-08): 16 pages, 188-word source abstract under the project test tokenizer, 76 tests passed, anonymous PDF, no unresolved citations/references, and no overfull boxes. Two nonfatal underfull-vbox warnings remain at natural section/page breaks. The manuscript integrates the five-policy IG block and the seed-controlled mechanism confirmation, and its dynamic-policy description matches the policy-specific candidate and budget implementation.

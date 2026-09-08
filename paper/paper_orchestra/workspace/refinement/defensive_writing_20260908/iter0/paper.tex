@@ -1,0 +1,33 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,array,multirow}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\ECL}{\mathrm{ECL}}
+\newcommand{\PD}{\mathrm{PD}}
+\newcommand{\EAD}{\mathrm{EAD}}
+\newcommand{\LGD}{\mathrm{LGD}}
+\newcommand{\paperfigure}[2]{\includegraphics[width=#2]{../figures/#1}}
+\title{How Many Labels Before Which Labels?\texorpdfstring{\\}{: }Risk-Budgeted Feedback Acquisition under Selective Labels}
+\titlerunning{Risk-Budgeted Feedback Acquisition under Selective Labels}
+\author{Anonymous Authors}
+\authorrunning{Anonymous Authors}
+\institute{Anonymous Institution}
+\begin{document}
+\maketitle
+\begin{abstract}
+Lending decisions determine which repayment outcomes become available for future learning. Under a predicted-loss budget, selecting applicants for information value may improve feedback composition while reducing observable outcomes. We study this trade-off with lexicographic risk-budgeted feedback acquisition (LRBE), which computes the maximum feasible exploratory count before optimizing a secondary score. Random-order replay covers four credit datasets and five budget ratios. A five-policy experiment replaces FAVE's linearized score with bootstrap-committee information gain (IG). At $\rho=0.1$, LRBE-IG acquires 31.3 more labels than QualityFirst-IG on HMEQ, 49.5 on LendingClub, and 40.1 on UCI, but the corresponding Recall intervals include zero; its UCI Brier score is slightly worse. Relative to minimum-risk selection, LRBE-IG uses 28,765.5 more predicted-risk units on HMEQ and 27,025.7 more on LendingClub without a Recall or Brier interval excluding zero. FAVE and randomized controls show a similar distinction between preserving count and choosing composition. Minimum-risk maximum-count selection therefore provides a practical reference: an acquisition score should be evaluated by the feedback it displaces, the predicted risk it consumes, and its downstream predictive return.
+\keywords{Selective labels \and Feedback acquisition \and Risk budgets \and Credit prediction}
+\end{abstract}
+\input{../sections/introduction_related}
+\input{../sections/related_work_addendum}
+\input{../sections/methods_protocol_v2}
+\input{../sections/data_provenance_note}
+\input{../sections/results_v3}
+\input{../sections/discussion_v3}
+\input{../sections/appendix_v2}
+\bibliographystyle{splncs04}
+\bibliography{../literature/refs,../literature/dataset_refs,../literature/closest_work}
+\end{document}

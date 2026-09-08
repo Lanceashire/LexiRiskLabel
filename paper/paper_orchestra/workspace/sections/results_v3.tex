@@ -2,41 +2,49 @@
 \label{sec:results}
 
 \subsection{The cost of sacrificing current feasible count}
-The central empirical question is whether a secondary acquisition objective earns the feedback quantity it gives up. Removing the count equality quantifies that cost. Relative to QualityFirst-FAVE, LRBE-FAVE acquires 67.1 [62.6, 71.4] additional labels on HMEQ, 209.6 [202.5, 216.1] on LendingClub, 2.0 [0.9, 3.1] on PPDai, and 56.4 [54.7, 58.2] on UCI. Recall favors LRBE-FAVE on HMEQ by 0.0175 [0.0041, 0.0297]; the other three Recall intervals contain zero. The quantity ordering follows from the current-state count constraint. The empirical result is that giving up this quantity does not yield a consistent predictive improvement across the four datasets.
+The central empirical question is whether a secondary acquisition objective earns the feedback quantity it gives up. Removing the count equality quantifies that cost. Relative to QualityFirst-FAVE, LRBE-FAVE acquires 67.1 [62.6, 71.4] additional labels on HMEQ, 209.6 [202.5, 216.1] on LendingClub, 2.0 [0.9, 3.1] on PPDai, and 56.4 [54.7, 58.2] on UCI. Recall favors LRBE-FAVE on HMEQ by 0.0175 [0.0041, 0.0297]; the other three Recall intervals contain zero. The count constraint guarantees maximum cardinality within each policy's current state. The cumulative differences reported here are empirical outcomes of the resulting policy trajectories, and composition-first selection does not produce a consistent predictive improvement across datasets.
 
-The random-order control provides a second view. Against MinRisk, it acquires 87.0 fewer labels on HMEQ, 317.6 fewer on LendingClub, and 59.5 fewer on UCI; PPDai differs by 0.3. HMEQ Recall is lower by 0.0268 [-0.0395, -0.0140], while the other Recall intervals contain zero. The fixed-count random-score control instead remains within 2.7 labels of MinRisk in every dataset, and all Recall and Brier intervals contain zero. These controls compare complete policies rather than isolate cardinality from later state changes.
+The random-order control provides a second view. Against MinRisk, it acquires 87.0 fewer labels on HMEQ, 317.6 fewer on LendingClub, and 59.5 fewer on UCI; PPDai differs by 0.3. HMEQ Recall is lower by 0.0268 [-0.0395, -0.0140], while the other Recall intervals contain zero. The fixed-count random-score control remains within 2.7 labels of MinRisk in every dataset, and all Recall and Brier intervals contain zero. These are complete-policy comparisons over policy-specific trajectories.
 
-FAVE and MinRisk have close observed cumulative counts, but this is an empirical similarity rather than a matching constraint across policies. FAVE's count differences are 1.1 [-0.9, 3.0] on HMEQ, $-0.1$ [-2.5, 2.6] on LendingClub, 0.0 [-1.0, 1.1] on PPDai, and $-0.3$ [-2.0, 1.5] on UCI. It uses more predicted risk in all four datasets, while every Recall interval contains zero. Three Brier intervals contain zero; UCI favors FAVE by $-0.00018$ [$-0.00028$, $-0.00008$]. This retains the dataset-specific benefit without implying a consistent cross-dataset return.
+FAVE and MinRisk have close observed cumulative counts, an empirical similarity across their policy-specific trajectories. FAVE's count differences are 1.1 [-0.9, 3.0] on HMEQ, $-0.1$ [-2.5, 2.6] on LendingClub, 0.0 [-1.0, 1.1] on PPDai, and $-0.3$ [-2.0, 1.5] on UCI. It uses more predicted risk in all four datasets, while every Recall interval contains zero. Three Brier intervals contain zero; UCI favors FAVE by $-0.00018$ [$-0.00028$, $-0.00008$]. The UCI estimate is a dataset-specific benefit amid otherwise uncertain Brier differences.
 
 \subsection{Independent information gain separates quantity from score choice}
-The IG extension tests whether the quantity result depends on FAVE's linearized score. All five policies are rerun in a single evidence block at $\rho=0.1$; Table~\ref{tab:ig-primary} reports the two preregistered contrasts. Relative to QualityFirst-IG, LRBE-IG acquires 31.3 [28.3, 34.5] additional labels on HMEQ, 49.5 [46.0, 53.1] on LendingClub, and 40.1 [36.8, 43.6] on UCI. PPDai differs by 0.2 [0.0, 0.5] in its small-feedback regime. No corresponding Recall interval excludes zero. Brier intervals also contain zero except on UCI, where LRBE-IG is higher by 0.000156 [0.000019, 0.000298]. Thus preserving $K_t^*$ changes acquired quantity on the three informative-count datasets, but the present experiment does not establish a predictive gain from that additional feedback.
+The IG extension tests the quantity constraint with a score independent of FAVE's linearization. All five policies are rerun together at $\rho=0.1$. Panel A of Table~\ref{tab:ig-primary} shows sizeable feedback increases for LRBE-IG on HMEQ, LendingClub, and UCI. Recall estimates span both directions, while UCI Brier error increases by 0.000156 [0.000019, 0.000298]. PPDai remains a small-feedback exploratory case.
 
-\begin{table}[t]
-\caption{Primary IG mechanism contrasts at $\rho=0.1$ ($n=10$ paired seeds). All differences use LRBE-IG as the left policy; entries are means with pointwise 95\% intervals.}
+\begin{table}[H]
+\caption{Primary IG contrasts at $\rho=0.1$ ($n=10$ paired seeds). Entries are mean left-minus-right differences with pointwise 95\% intervals. Positive $\Delta$Brier denotes higher error.}
 \label{tab:ig-primary}
-\centering\small
-\begin{tabular}{lrr}
+\centering\scriptsize
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrr}
 \toprule
-Dataset & $\Delta K$ vs. QF-IG & $\Delta\widehat R$ vs. MinRisk\\
+Dataset & $\Delta K$ & $\Delta\widehat R$ & $\Delta$Recall & $\Delta$Brier\\
 \midrule
-HMEQ & 31.3 [28.3,34.5] & 28,765.5 [19,361,39,425]\\
-LendingClub & 49.5 [46.0,53.1] & 27,025.7 [19,238,35,010]\\
-UCI & 40.1 [36.8,43.6] & 1.827 [1.004,2.733]\\
-PPDai$^\dagger$ & 0.2 [0.0,0.5] & 1.024 [0.497,1.606]\\
+\multicolumn{5}{l}{\emph{Panel A: LRBE-IG $-$ QualityFirst-IG}}\\
+HMEQ & 31.3 [28.3,34.5] & 5,267.5 [$-$6,697.3,16,208.6] & .00535 [$-$.00068,.01170] & $-$.000302 [$-$.000937,.000364]\\
+LendingClub & 49.5 [46.0,53.1] & $-$9,907.0 [$-$21,199.7,$-$1,269.3] & $-$.00073 [$-$.00524,.00425] & $-$.000070 [$-$.000251,.000103]\\
+UCI & 40.1 [36.8,43.6] & 1.624 [.241,2.869] & .00166 [$-$.00187,.00517] & .000156 [.000019,.000298]\\
+PPDai$^\dagger$ & 0.2 [0.0,0.5] & .050 [.000,.132] & $-$.00056 [$-$.00139,.00000] & $-$.000029 [$-$.000066,.000000]\\
+\midrule
+\multicolumn{5}{l}{\emph{Panel B: LRBE-IG $-$ CountOnly-MinRisk}}\\
+HMEQ & 0.2 [$-$1.6,1.7] & 28,765.5 [19,361.2,39,425.1] & $-$.00518 [$-$.01423,.00388] & $-$.000068 [$-$.000479,.000292]\\
+LendingClub & $-$2.9 [$-$6.0,0.1] & 27,025.7 [19,238.3,35,010.3] & .00045 [$-$.00286,.00488] & $-$.000029 [$-$.000174,.000120]\\
+UCI & $-$1.2 [$-$3.0,0.5] & 1.827 [1.004,2.733] & $-$.00025 [$-$.00270,.00222] & $-$.000098 [$-$.000262,.000059]\\
+PPDai$^\dagger$ & 0.4 [$-$0.6,1.5] & 1.024 [.497,1.606] & $-$.00052 [$-$.00270,.00142] & $-$.000064 [$-$.000134,.000005]\\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \vspace{1mm}
-\parbox{\linewidth}{\scriptsize $^\dagger$Reconstructed-source exploratory evidence with unit exposure; not pooled with historical PPDai results.}
+\parbox{\linewidth}{\scriptsize $^\dagger$The registered reconstructed PPDai artifact provides unit-exposure exploratory evidence and is analyzed separately from the historical PPDai block. Risk units are dataset-specific.}
 \end{table}
 
-Against MinRisk, LRBE-IG has a close cumulative count but spends more predicted risk on every dataset (Table~\ref{tab:ig-primary}). None of the Recall or Brier intervals excludes zero. The independent score therefore changes composition and risk use without a detectable downstream return in this block.
+Panel B shows that LRBE-IG and MinRisk have close cumulative counts, while LRBE-IG spends more predicted risk on every dataset. The Recall and Brier estimates span improvement and deterioration. In this block, IG changes composition and risk use more clearly than it changes downstream prediction.
 
-The same-state audit fixes the MinRisk visible set, candidates, costs, and numerical budget. Across 100 states per dataset, LRBE-IG has zero count sacrifice. QualityFirst-IG gives up 3.46, 5.37, 4.04, and 0.02 applicants per state on HMEQ, LendingClub, UCI, and PPDai, respectively, while changing selection overlap. Because alternative sets do not generate later audit states, this is a mechanism check rather than a downstream counterfactual.
+The same-state audit fixes the MinRisk visible set, candidates, costs, and numerical budget. Across 100 states per dataset, LRBE-IG has zero count sacrifice. QualityFirst-IG gives up 3.46, 5.37, 4.04, and 0.02 applicants per state on HMEQ, LendingClub, UCI, and PPDai, respectively. Its mean Jaccard overlap with MinRisk is 0.436, 0.602, 0.135, and 0.224, confirming that the score changes both cardinality and composition at the anchor state. Alternative sets do not generate later audit states, so the audit ends at the selection outcome.
 
 \subsection{Controlled conditions reproduce the selection trade-off}
-The one-step experiment holds the acquisition state and training randomness fixed while varying exposure heterogeneity and the evaluation weight of an underrepresented region. LRBE-IG selects 2.5 [1.45, 3.65] more applicants than QualityFirst-IG under unit exposure and 3.2 [1.75, 4.85] more under heterogeneous exposure. Relative to MinRisk, it uses 0.221 [0.165, 0.284] and 0.136 [0.101, 0.171] more predicted-risk units, respectively. None of the four primary Brier intervals excludes zero.
+The one-step experiment holds the acquisition state and training randomness fixed while varying exposure heterogeneity and the evaluation weight of an underrepresented region. LRBE-IG selects 2.5 [1.45, 3.65] more applicants than QualityFirst-IG under unit exposure and 3.2 [1.75, 4.85] more under heterogeneous exposure. Relative to MinRisk, it uses 0.221 [0.165, 0.284] and 0.136 [0.101, 0.171] more predicted-risk units, respectively. All four primary Brier intervals span zero.
 
-The prespecified condition interactions are also uncertain. Increasing the target-region weight from 0.1 to 0.5 changes the IG-minus-MinRisk Brier contrast by 0.000126 [$-0.000005$, 0.000255] under unit exposure and $-0.000058$ [$-0.000217$, 0.000102] under heterogeneous exposure; the difference between those changes is $-0.000184$ [$-0.000413$, 0.000029]. Thus the controlled setting reproduces the immediate quantity--risk trade-off but does not show that these two conditions determine its predictive return. The incoming batch averages about 3,751 ordinary approvals, compared with exploratory $K^*$ means of 29.55 and 118.7, so the evaluated retraining intervention is small relative to the shared ordinary feedback.
+The prespecified condition interactions are also uncertain. Increasing the target-region weight from 0.1 to 0.5 changes the IG-minus-MinRisk Brier contrast by 0.000126 [$-0.000005$, 0.000255] under unit exposure and $-0.000058$ [$-0.000217$, 0.000102] under heterogeneous exposure; the difference between those changes is $-0.000184$ [$-0.000413$, 0.000029]. These estimates leave the moderating roles of exposure and target weight unresolved. The incoming batch averages about 3,751 ordinary approvals, compared with exploratory $K^*$ means of 29.55 and 118.7, so the evaluated retraining intervention is small relative to the shared ordinary feedback.
 
 \subsection{Budget sensitivity}
 The budget ratio has a much larger and more consistent relation with acquired quantity than the secondary score. HMEQ MinRisk grows from 57.4 labels at $\rho=0.025$ to 374.0 at $\rho=0.4$; FAVE grows from 58.0 to 375.8. LendingClub MinRisk grows from 207.6 to 1,253.1 and FAVE from 206.3 to 1,253.3. Recall moves less and method ordering changes across budgets. Figure~\ref{fig:budgetsweep} shows representative HMEQ and LendingClub trajectories. The sweep changes both the scale of feedback and the subsequent policy state, so it is a sensitivity analysis rather than a quantity-only intervention.
@@ -44,14 +52,14 @@ The budget ratio has a much larger and more consistent relation with acquired qu
 \begin{figure}[t]
 \centering
 \paperfigure{fig_budget_sweep_feedback_recall.png}{\linewidth}
-\caption{Mean cumulative exploratory count and final Recall across budget ratios for HMEQ and LendingClub (ten fresh seeds). Larger budgets increase feedback, while MinRisk and FAVE do not have a uniform Recall ordering.}
+\caption{Mean cumulative exploratory count and final Recall across budget ratios for HMEQ and LendingClub (ten fresh seeds). Larger budgets increase feedback; the Recall ordering of MinRisk and FAVE varies across budgets.}
 \label{fig:budgetsweep}
 \end{figure}
 
-\subsection{Feedback diagnostics do not have a single translation pattern}
-Normalized recovery divides policy changes by an Oracle--NoExplore gap, and is not interpretable as recovery when Oracle is not better. In the present data, the Recall gap is nonpositive in 10 of 40 dataset--seed references: two LendingClub seeds, two PPDai seeds, including one zero, and six UCI seeds. Oracle gaps are also nonpositive in 21 of 40 ROC-AUC and 15 of 40 PR-AUC references. We therefore use raw gains from NoExplore as the primary analysis and reserve normalized recovery for positive-gap cells.
+\subsection{Feedback diagnostics vary across datasets and outcomes}
+Normalized recovery divides policy changes by an Oracle--NoExplore gap and represents recovery when that oriented gap is positive. In the present data, the Recall gap is nonpositive in 10 of 40 dataset--seed references: two LendingClub seeds, two PPDai seeds, including one zero, and six UCI seeds. Oracle gaps are also nonpositive in 21 of 40 ROC-AUC and 15 of 40 PR-AUC references. We therefore use raw gains from NoExplore as the primary analysis and reserve normalized recovery for positive-gap cells.
 
-Figure~\ref{fig:rawgain} relates visible-set default-ratio gain to Recall and Brier improvement at $\rho=0.1$. HMEQ has a positive Recall association, $\rho_s=0.397$ [0.013, 0.660], but its Brier association is uncertain, 0.062 [$-0.175$, 0.381]. LendingClub, PPDai, and UCI Recall intervals contain zero at this budget, as do all four Brier intervals. Across the five within-budget analyses, HMEQ Recall estimates range from 0.389 to 0.514 and all intervals exclude zero. LendingClub instead has negative Recall associations at $\rho=0.025$ and 0.05, followed by uncertain estimates. PPDai's smallest-budget cells have near-degenerate ranks and yield perfect coefficients, so those boundary values are not interpreted as general evidence.
+Figure~\ref{fig:rawgain} relates visible-set default-ratio gain to Recall and Brier improvement at $\rho=0.1$. HMEQ has a positive Recall association, $\rho_s=0.397$ [0.013, 0.660], but its Brier association is uncertain, 0.062 [$-0.175$, 0.381]. LendingClub, PPDai, and UCI Recall intervals contain zero at this budget, as do all four Brier intervals. Across the five within-budget analyses, HMEQ Recall estimates range from 0.389 to 0.514 and all intervals exclude zero. LendingClub instead has negative Recall associations at $\rho=0.025$ and 0.05, followed by uncertain estimates. PPDai's smallest-budget cells have near-degenerate ranks and yield perfect boundary coefficients.
 
 \begin{figure}[t]
 \centering
@@ -60,12 +68,12 @@ Figure~\ref{fig:rawgain} relates visible-set default-ratio gain to Recall and Br
 \label{fig:rawgain}
 \end{figure}
 
-These associations concern a diagnostic of the complete visible set, which includes the initial set and ordinary approvals. A larger ratio is not necessarily closer to the population target, and policy-specific predictors make selected mean PD an unsuitable cross-policy identity measure. Feedback diagnostics align with Recall in some regimes but are not a stable proxy across datasets, budgets and outcomes. The correlations do not estimate a causal composition effect.
+These associations concern a diagnostic of the complete visible set, which includes the initial set and ordinary approvals. A larger ratio can move toward or away from the population target, and policy-specific predictors make selected mean PD an unsuitable cross-policy identity measure. Feedback diagnostics align with Recall in some regimes and diverge in others. We report the correlations as descriptive relationships between complete-policy outcomes.
 
 \subsection{Predicted feasibility and realized default exposure}
-All non-Oracle selections obey the fitted point-cost constraint within audit tolerance. Across 104 equally sized method--dataset--budget groups, the mean rate at which realized defaulted exposure exceeds the policy's numerical predicted budget is 0.4798, with group rates ranging from 0.01 to 0.84. Because each group contains 100 seed--round observations, the unweighted group mean also equals the observation-weighted mean for these included cells. The range is descriptive, not a confidence interval.
+All non-Oracle selections obey the fitted point-cost constraint within audit tolerance. Across 104 equally sized method--dataset--budget groups, the mean rate at which realized defaulted exposure exceeds the policy's numerical predicted budget is 0.4798, with group rates ranging from 0.01 to 0.84. Because each group contains 100 seed--round observations, the unweighted group mean also equals the observation-weighted mean for these included cells. The range summarizes observed groups rather than sampling uncertainty.
 
-This comparison evaluates an ex-post loss exceedance against a budget constructed from fitted expected costs, rather than against a realized-loss quantile. The exceedance rate therefore shows that point-estimate feasibility does not ensure ex-post loss-cap compliance. It does not separately identify model miscalibration, stochastic default variation, exposure assumptions, or dependence among loans.
+This comparison evaluates an ex-post loss exceedance against a budget constructed from fitted expected costs rather than a realized-loss quantile. The exceedance rate shows the gap between point-estimate feasibility and ex-post loss-cap compliance, combining model calibration, stochastic default variation, exposure assumptions, and dependence among loans.
 
 \paragraph{Descriptive computation time.}
 Recorded episode wall time includes training, selection, evaluation, and system effects. Mean LendingClub times in the IG block are 44.0 s for MinRisk, 82.8 s for LRBE-FAVE, and 498.6 s for LRBE-IG; these are end-to-end episode descriptions rather than isolated acquisition latency.

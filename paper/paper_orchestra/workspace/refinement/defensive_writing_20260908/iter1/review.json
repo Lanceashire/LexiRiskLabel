@@ -1,0 +1,26 @@
+{
+  "axis_scores": {
+    "scientific_depth": {"score": 84, "justification": "The paper now connects dynamic policy trajectories, a same-state selector audit, and the controlled retraining experiment without treating them as interchangeable causal designs. The independent committee-IG block and randomized controls directly probe the quantity mechanism."},
+    "technical_execution": {"score": 85, "justification": "Policy-specific state evolution, exposure validation, label isolation, exact input roles, and paired seed-level inference are stated consistently. The manuscript now distinguishes the registered reconstructed PPDai artifact from historical processed evidence."},
+    "logical_flow": {"score": 84, "justification": "The introduction poses the quantity-versus-composition question, Results answer it through aligned evidence blocks, and Discussion explains why selection changes can coexist with small downstream effects. Repetitive audit-history narration has been removed from the main argument."},
+    "writing_clarity": {"score": 86, "justification": "Claims are expressed through observed quantities and precise evidence roles. The previous defensive cadence has been substantially reduced, and the candidate-pool/budget description now matches the implementation."},
+    "evidence_presentation": {"score": 88, "justification": "The main IG table now presents count, predicted risk, Recall, and Brier for both preregistered contrasts. Selection overlap and intervention scale are placed next to the findings they explain."},
+    "academic_style": {"score": 85, "justification": "The prose reads as a self-contained research report rather than a response to anticipated objections. Necessary scope boundaries are stated as design facts, with adverse and uncertain estimates retained."}
+  },
+  "overall_score": 85.4,
+  "strengths": [
+    "The same acquisition question is tested with FAVE, independent committee information gain, and randomized controls.",
+    "Dynamic policy comparisons and same-state selector audits have clearly separated evidence roles.",
+    "The primary IG contrasts can be inspected across quantity, risk, Recall, and Brier in one table.",
+    "Selection overlap and intervention scale provide concrete explanations for composition changes and small predictive effects.",
+    "The paper reports unfavorable and uncertain results without converting them into equivalence claims."
+  ],
+  "weaknesses": [
+    "The primary IG inference uses ten paired seeds per dataset, so interval precision remains limited.",
+    "The replay abstracts from repayment delay and historical approval chronology, which bounds deployment interpretation.",
+    "PPDai remains reconstructed-source exploratory evidence rather than byte-identical historical replication."
+  ],
+  "questions": [],
+  "decision": "Accept",
+  "da_critical": false
+}
