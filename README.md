@@ -22,6 +22,30 @@ acquired?" instead of collapsing them into one risk--utility weight.
 
 ## Status
 
+### Small development experiments added 2026-10-26
+
+The independent [research v2 implementation](experiments/research_v2/README.md)
+evaluates RB-BRIDGE, RB-CORR, and a small closed-loop RB-GATE prototype.
+The [experiment report](results/research_v2/analysis/实验汇总.md) contains all
+positive and negative findings, with [paired descriptive contrasts](results/research_v2/analysis/paired_descriptive_contrasts.csv)
+and [local artifact verification](results/research_v2/verification.json).
+The [publication scope](results/research_v2/PUBLICATION.md) explains which
+aggregate artifacts are included; per-applicant logs and prediction arrays
+remain local.
+The real-data development block comprises 84 ten-round episodes across HMEQ,
+UCI, and LendingClub, two new seeds per task, and one budget (`rho=0.1`).
+Six small mechanism environments use three development seeds each.
+
+These are development results, not confirmatory or state-of-the-art claims.
+RB-BRIDGE did not outperform MinRisk in the two-seed mean on any of the three
+real tasks; the tested RB-CORR correction worsened Brier; the small RB-GATE
+study did not establish an advantage over myopic acquisition. Newly reconstructed
+inputs have distinct byte hashes, and the new protocol/schema is kept separate
+from the frozen study. Third-party data and private planning conversations are
+not redistributed. Historical evidence below is unchanged.
+
+### Frozen study status
+
 - Frozen Phase 0--4 evidence: complete.
 - Fresh-seed CCFB extension: complete.
 - Independent information-gain primary block: complete (200 dynamic episodes

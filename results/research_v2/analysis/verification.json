@@ -1,0 +1,17 @@
+{
+  "verified": true,
+  "episodes": 84,
+  "round_records": 840,
+  "actual_training_devices": [
+    "cuda:0"
+  ],
+  "predicted_budget_violations": 0,
+  "saved_predictions_recomputed": true,
+  "fixed_O_C_cost_budget_equal_across_methods": true,
+  "correction_factorial_shares_realized_acquisition": true,
+  "finite_design_probabilities_verified": true,
+  "test_and_reference_isolation_verified": true,
+  "hidden_label_perturbation_three_algorithms": "passed",
+  "frozen_approval_channel_value_zero": true,
+  "note": "These are artifact verification checks, not independent statistical replications."
+}

@@ -1,0 +1,68 @@
+{
+  "dataset_sha256": "d199fc73f12eb2d016a2b7b43cc68f18dc3dcb4bf6a7881d6e97ef3cba4eab1f",
+  "schema": [
+    "MORTDUE",
+    "VALUE",
+    "REASON",
+    "JOB",
+    "YOJ",
+    "DEROG",
+    "DELINQ",
+    "CLAGE",
+    "NINQ",
+    "CLNO",
+    "DEBTINC"
+  ],
+  "seed": 2202,
+  "method": "CORR-base-plain",
+  "protocol": "correction",
+  "config": {
+    "experiment_id": "research_v2_small_20261026",
+    "status": "development_only",
+    "mechanism_seeds": [
+      2101,
+      2102,
+      2103
+    ],
+    "real_seeds": [
+      2201,
+      2202
+    ],
+    "rho": 0.1,
+    "rounds": 10,
+    "threshold": 0.5,
+    "development_fraction": 0.2,
+    "test_fraction": 0.2,
+    "initial_pool_fraction": 0.25,
+    "initial_observed_fraction": 0.5,
+    "reference_count": 128,
+    "ridge": 1.0,
+    "partners": 8,
+    "exchanges": 1,
+    "mixture_steps": 12,
+    "coverage_epsilon": 0.15,
+    "gate_worlds": 16,
+    "model": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "device": "cuda"
+    },
+    "mechanism": {
+      "visible": 160,
+      "candidate": 80,
+      "ordinary": 160,
+      "reference": 256,
+      "test": 1500
+    },
+    "scope": "Three conversation algorithms and document-required controls; six mechanism environments; one main budget; two real development seeds. No confirmatory benchmark expansion."
+  },
+  "split_hashes": {
+    "initial": "5ab1ec5ca7b90edcc2ddf33d48c2c4987132900321afd5f09909cbf0aa32a156",
+    "test": "7b9944ba59fec39e594454bb3d75d3a616811953197bbfa437f0dacf3eaf700a",
+    "development": "6d8c27ebba88d59083b739c024c1b1d6d1c060da9a9f9e0309a9c17abdba0f81",
+    "stream": "82a5aaccbe2727e7419dd06bc41f1b607a348f4199d48f8df9bc4cda69311b28"
+  },
+  "code_hash": "85471a49282fe9c1ff833bd8798fcf86872730526d443e9e06696680483f667d"
+}

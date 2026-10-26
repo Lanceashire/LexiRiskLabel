@@ -1,0 +1,80 @@
+{
+  "dataset_sha256": "f6c131c25f5ea6716c1439d986550832a5ba1ed218fbbfc3013bb92bb78dcee2",
+  "schema": [
+    "LIMIT_BAL",
+    "SEX",
+    "EDUCATION",
+    "MARRIAGE",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6"
+  ],
+  "seed": 2201,
+  "method": "ParBaLS-cost",
+  "protocol": "fixed",
+  "config": {
+    "experiment_id": "research_v2_small_20261026",
+    "status": "development_only",
+    "mechanism_seeds": [
+      2101,
+      2102,
+      2103
+    ],
+    "real_seeds": [
+      2201,
+      2202
+    ],
+    "rho": 0.1,
+    "rounds": 10,
+    "threshold": 0.5,
+    "development_fraction": 0.2,
+    "test_fraction": 0.2,
+    "initial_pool_fraction": 0.25,
+    "initial_observed_fraction": 0.5,
+    "reference_count": 128,
+    "ridge": 1.0,
+    "partners": 8,
+    "exchanges": 1,
+    "mixture_steps": 12,
+    "coverage_epsilon": 0.15,
+    "gate_worlds": 16,
+    "model": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "device": "cuda"
+    },
+    "mechanism": {
+      "visible": 160,
+      "candidate": 80,
+      "ordinary": 160,
+      "reference": 256,
+      "test": 1500
+    },
+    "scope": "Three conversation algorithms and document-required controls; six mechanism environments; one main budget; two real development seeds. No confirmatory benchmark expansion."
+  },
+  "split_hashes": {
+    "initial": "69041f738b0dcc99f2c9a576af9de87e3ac6b0b82e135887f9e2a38242aa5f01",
+    "test": "545638e20c478946bbe685fc32cd63867d8ff664291b7a9ae2df1373eb485d95",
+    "development": "bd4561b0171834651067f7066bb47f2c43eab5a153ef6d1db4f0607bf1e6f326",
+    "stream": "5a416ff670b29ff9da28523292dba31e8aa4fd15dc55ae9925d10674912761d4"
+  },
+  "code_hash": "85471a49282fe9c1ff833bd8798fcf86872730526d443e9e06696680483f667d"
+}

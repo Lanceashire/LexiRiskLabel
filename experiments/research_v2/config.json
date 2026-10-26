@@ -1,0 +1,23 @@
+{
+  "experiment_id": "research_v2_small_20261026",
+  "status": "development_only",
+  "mechanism_seeds": [2101, 2102, 2103],
+  "real_seeds": [2201, 2202],
+  "rho": 0.1,
+  "rounds": 10,
+  "threshold": 0.5,
+  "development_fraction": 0.2,
+  "test_fraction": 0.2,
+  "initial_pool_fraction": 0.25,
+  "initial_observed_fraction": 0.5,
+  "reference_count": 128,
+  "ridge": 1.0,
+  "partners": 8,
+  "exchanges": 1,
+  "mixture_steps": 12,
+  "coverage_epsilon": 0.15,
+  "gate_worlds": 16,
+  "model": {"n_estimators": 100, "max_depth": 3, "learning_rate": 0.1, "n_jobs": 1, "device": "cuda"},
+  "mechanism": {"visible": 160, "candidate": 80, "ordinary": 160, "reference": 256, "test": 1500},
+  "scope": "Three conversation algorithms and document-required controls; six mechanism environments; one main budget; two real development seeds. No confirmatory benchmark expansion."
+}

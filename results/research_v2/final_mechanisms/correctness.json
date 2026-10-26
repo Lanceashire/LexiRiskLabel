@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "bridge_single_gains": [
+    9.998000399920016e-05,
+    9.998000399920016e-05,
+    0.009900990099009903
+  ],
+  "bridge_pair_value": 0.6666666666666665,
+  "point_greedy_value": 0.009999000198969932,
+  "complementarity_transition": [
+    {
+      "ordinary_information": 0.0,
+      "gamma": 0.6664667066586681
+    },
+    {
+      "ordinary_information": 9998.0,
+      "gamma": 2.2223703802226602e-05
+    },
+    {
+      "ordinary_information": 9999.0,
+      "gamma": -1.1102230246251565e-16
+    },
+    {
+      "ordinary_information": 10000.0,
+      "gamma": -2.2220740839684616e-05
+    },
+    {
+      "ordinary_information": 20000.0,
+      "gamma": -0.13334133301334627
+    }
+  ],
+  "small_pool_exact_proxy_optimum": 1.1199651295416757,
+  "small_pool_exact_set": [
+    2,
+    9,
+    10,
+    11
+  ],
+  "pair_solve_max_error": 1.4988010832439613e-15,
+  "corr_exact_expectation_error": 5.551115123125783e-17,
+  "ordinary_first_ranking_before": [
+    0.5,
+    0.44751381215469616
+  ],
+  "ordinary_first_ranking_after": [
+    9.706853038245002e-05,
+    0.44751381215469616
+  ],
+  "zero_direction_gain": 0.0,
+  "same_pool_exact_optimum": 0.0013963207054507893,
+  "same_pool_heuristic_gaps": {
+    "Vopt": 0.0,
+    "RB-BRIDGE": 0.0,
+    "BRIDGE-random": 0.0
+  },
+  "label_visibility": "selectors have no hidden-label fields"
+}

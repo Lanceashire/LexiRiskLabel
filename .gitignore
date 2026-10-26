@@ -16,6 +16,7 @@ venv/
 data/raw/
 data/processed/
 data/phase3/
+data/research_v2/
 
 # Runtime-only artifacts
 logs/

@@ -1,0 +1,51 @@
+{
+  "config": {
+    "experiment_id": "research_v2_small_20261026",
+    "status": "development_only",
+    "mechanism_seeds": [
+      2101,
+      2102,
+      2103
+    ],
+    "real_seeds": [
+      2201,
+      2202
+    ],
+    "rho": 0.1,
+    "rounds": 10,
+    "threshold": 0.5,
+    "development_fraction": 0.2,
+    "test_fraction": 0.2,
+    "initial_pool_fraction": 0.25,
+    "initial_observed_fraction": 0.5,
+    "reference_count": 128,
+    "ridge": 1.0,
+    "partners": 8,
+    "exchanges": 1,
+    "mixture_steps": 12,
+    "coverage_epsilon": 0.15,
+    "gate_worlds": 16,
+    "model": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "device": "cuda"
+    },
+    "mechanism": {
+      "visible": 160,
+      "candidate": 80,
+      "ordinary": 160,
+      "reference": 256,
+      "test": 1500
+    },
+    "scope": "Three conversation algorithms and document-required controls; six mechanism environments; one main budget; two real development seeds. No confirmatory benchmark expansion."
+  },
+  "code": {
+    "core.py": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c",
+    "run_mechanisms.py": "4f771cbb2dbbe58b1d9507c8615b7bab6bce8ec290cd74dddc507411fd86d2f4",
+    "prepare_data.py": "524218b9138a896463b9391df0f42be22414cfdf56ea86b605d87e90bf1f53bb",
+    "run_real.py": "5a213f299e49b9f4cfa77476b88a60facb96f7e076123469926bac619353f95e"
+  },
+  "hash": "4b56d88b32fd4d0dbb21a990e0026d186830808347f252e332c12ca2b1d74552"
+}

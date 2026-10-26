@@ -1,0 +1,1457 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 474,
+    "sha256": "3671728006bc89a122797b6886454479b382fe9c7920e8f2cf4fb6da33dc5cff"
+  },
+  {
+    "path": "README.md",
+    "bytes": 9102,
+    "sha256": "20e493736404fe0fac12ee0bf0149a831bfeb55834bfde6630c5461bee72bfdf"
+  },
+  {
+    "path": "experiments/research_v2/README.md",
+    "bytes": 5736,
+    "sha256": "174fd67296a67befb3e4ea7060de5b3ad8c610137c214097736ca9a1691329fa"
+  },
+  {
+    "path": "experiments/research_v2/analyze.py",
+    "bytes": 17086,
+    "sha256": "9860db3aefe85547cc10ae0acb19e0156ef1449a62e35591d8be0d9e122a42a3"
+  },
+  {
+    "path": "experiments/research_v2/config.json",
+    "bytes": 866,
+    "sha256": "215a153c86e20233ccd7fffdfbcb52bdb3d16655ffc56836357a0a2d0f90e752"
+  },
+  {
+    "path": "experiments/research_v2/core.py",
+    "bytes": 21278,
+    "sha256": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c"
+  },
+  {
+    "path": "experiments/research_v2/fetch_data.sh",
+    "bytes": 1456,
+    "sha256": "837f91ac85430473ab1b8434e774e55eddd963cf90ece8be32687d1c8eb352ef"
+  },
+  {
+    "path": "experiments/research_v2/prepare_data.py",
+    "bytes": 3268,
+    "sha256": "524218b9138a896463b9391df0f42be22414cfdf56ea86b605d87e90bf1f53bb"
+  },
+  {
+    "path": "experiments/research_v2/reproduce_small.sh",
+    "bytes": 1115,
+    "sha256": "91fd0b541df19cb1b6b0df5e188154a7fad138e18a241e471e3cedcc8cb9216b"
+  },
+  {
+    "path": "experiments/research_v2/run_focused.py",
+    "bytes": 2305,
+    "sha256": "6d5686f7701845bfe211fd1ca2938401a011fc57bbe5b3b7fb238d51e31154f3"
+  },
+  {
+    "path": "experiments/research_v2/run_mechanisms.py",
+    "bytes": 12863,
+    "sha256": "4f771cbb2dbbe58b1d9507c8615b7bab6bce8ec290cd74dddc507411fd86d2f4"
+  },
+  {
+    "path": "experiments/research_v2/run_real.py",
+    "bytes": 13890,
+    "sha256": "5a213f299e49b9f4cfa77476b88a60facb96f7e076123469926bac619353f95e"
+  },
+  {
+    "path": "experiments/research_v2/verify_results.py",
+    "bytes": 5024,
+    "sha256": "9f7c8952da30716efb0f39010e1eae506e2ad8a986e3acf1eebd47ecad90e987"
+  },
+  {
+    "path": "results/research_v2/PUBLICATION.md",
+    "bytes": 1370,
+    "sha256": "675e234f4fda8a6cdaf8bf8974fb0e7070e88d3aca4da286558d0a2284f5b8d8"
+  },
+  {
+    "path": "results/research_v2/analysis/correction_factorial.png",
+    "bytes": 102177,
+    "sha256": "d45f75c173028cf1a766a584292cf3f29088026262cc4dc4e51587c4372cc8b5"
+  },
+  {
+    "path": "results/research_v2/analysis/data_provenance.json",
+    "bytes": 2152,
+    "sha256": "2371e8e6b98cf5207a31451b95cabd0831b3502b76416edbb67b6f66e7390143"
+  },
+  {
+    "path": "results/research_v2/analysis/environment.lock.txt",
+    "bytes": 369,
+    "sha256": "01de033e05ff717dfa85c41855ed78ca34bd14ee0aef7d1f9c828794077070fb"
+  },
+  {
+    "path": "results/research_v2/analysis/episode_summary.csv",
+    "bytes": 18775,
+    "sha256": "93961930793023ef0b81b19422341bf161b2cc110aabe71d278f5af4d745c3bf"
+  },
+  {
+    "path": "results/research_v2/analysis/fixed_comparison.png",
+    "bytes": 97681,
+    "sha256": "79e7eae7c84e4a835b19154049aee960be0e0e411bc503c903b70f0e2b6823ef"
+  },
+  {
+    "path": "results/research_v2/analysis/focused_rows.csv",
+    "bytes": 2289,
+    "sha256": "8a55247ff791a0a7077a0efe110140066db64dc8f89dcec9900063eacb06deeb"
+  },
+  {
+    "path": "results/research_v2/analysis/gate_feedback_channel.png",
+    "bytes": 81191,
+    "sha256": "22c99bf834584bab102b7490c5fe02d4bead47ac75a86b3a62fa96e1be332d43"
+  },
+  {
+    "path": "results/research_v2/analysis/gpu.csv",
+    "bytes": 97,
+    "sha256": "f50f916ec824696c2ca1d7356326af813fd3ec853ad821c5a61b5cdbbf030e05"
+  },
+  {
+    "path": "results/research_v2/analysis/mechanism_rows.csv",
+    "bytes": 30212,
+    "sha256": "07b0d5214226e6f9019eb193b11195bbefb7a4a7676ba22d375c90ed2a219b24"
+  },
+  {
+    "path": "results/research_v2/analysis/mechanism_summary.csv",
+    "bytes": 11362,
+    "sha256": "6ad4a8b40a81752138e869cf8832c6eef0287ca28b61209fc96ff7a9bd3ccd60"
+  },
+  {
+    "path": "results/research_v2/analysis/method_summary.csv",
+    "bytes": 5933,
+    "sha256": "0f105b04d5ea0bce5cb084f8a26640b53003b934aede5725761e330eecdfa174"
+  },
+  {
+    "path": "results/research_v2/analysis/paired_descriptive_contrasts.csv",
+    "bytes": 3081,
+    "sha256": "d872fbc5d9728a6b122bf95c31e0cafb11c304cc9271fc78fb4c8b499e2cd3ee"
+  },
+  {
+    "path": "results/research_v2/analysis/results.csv",
+    "bytes": 5933,
+    "sha256": "0f105b04d5ea0bce5cb084f8a26640b53003b934aede5725761e330eecdfa174"
+  },
+  {
+    "path": "results/research_v2/analysis/resume_refusal.json",
+    "bytes": 151,
+    "sha256": "210611e7375c8dbb4f9d3118a454fc785e4cf10b79e9afac3f4c68eb4779925c"
+  },
+  {
+    "path": "results/research_v2/analysis/source_metadata.json",
+    "bytes": 673,
+    "sha256": "8166f1da2e26fbd38791edaef1c48a1b37573239c15b34679554c94a81051ee6"
+  },
+  {
+    "path": "results/research_v2/analysis/verification.json",
+    "bytes": 599,
+    "sha256": "9d3ca55fe59b412a29298d1649c8fa8468552c75f56af0e467fb501ca181556e"
+  },
+  {
+    "path": "results/research_v2/analysis/实验汇总.md",
+    "bytes": 10483,
+    "sha256": "f5cbdd53612ad80a6e93f6f4ebd62f41365197bb7d0fd7f792945290d78cb46b"
+  },
+  {
+    "path": "results/research_v2/final_mechanisms/completion.json",
+    "bytes": 96,
+    "sha256": "e2c261ae9a79826cce24faedb41cbaf9046fcd540dd36723e5724c514b8accdf"
+  },
+  {
+    "path": "results/research_v2/final_mechanisms/correctness.json",
+    "bytes": 1336,
+    "sha256": "ec6fd883094abb635c4fd80ebe12d5b7915f8851f938a044575f300bcc26c828"
+  },
+  {
+    "path": "results/research_v2/final_mechanisms/identity.json",
+    "bytes": 1487,
+    "sha256": "a38e1a9958ccbc09fff4acf8538f8b41c4d958ad1e406532136bc825f359b0d3"
+  },
+  {
+    "path": "results/research_v2/final_mechanisms/mechanism_rows.csv",
+    "bytes": 30212,
+    "sha256": "07b0d5214226e6f9019eb193b11195bbefb7a4a7676ba22d375c90ed2a219b24"
+  },
+  {
+    "path": "results/research_v2/final_mechanisms/mechanism_summary.csv",
+    "bytes": 11362,
+    "sha256": "6ad4a8b40a81752138e869cf8832c6eef0287ca28b61209fc96ff7a9bd3ccd60"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-base-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "08fa309ba74587af089deeb6f2674e60c67ad0dba0e9bc839238e20fc6fffd88"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-base-corrected/identity.json",
+    "bytes": 1806,
+    "sha256": "5c227602dfad2dac981526d13b5a2ef88ccc4baf758d7e8c36735132979da0bf"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-base-corrected/trajectory.csv",
+    "bytes": 5650,
+    "sha256": "2c65b6a6f0308afc1f76599b3c4df2c405869714a7bf07ecba9c56a418f8deb5"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-base-plain/completion.json",
+    "bytes": 72,
+    "sha256": "d990b201215f3e906d8bbf9d9e42dbcd96a52a2182dcbeb11c2954b6a57ffc1b"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-base-plain/identity.json",
+    "bytes": 1802,
+    "sha256": "efca1a33865e37624398d541da883bbbf21f82129a17f6625c446435b28cdb99"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-base-plain/trajectory.csv",
+    "bytes": 5612,
+    "sha256": "9ead85d97ba0369721d1d9b5b0b4cc453c8b50ca70d8704a3a36da495b6f5d76"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-opt-plain/completion.json",
+    "bytes": 71,
+    "sha256": "d4f6b9a218a9b290f9204db9d99da1b246cdfdcacf8f768baa35a794abd3ba6e"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-opt-plain/identity.json",
+    "bytes": 1801,
+    "sha256": "4e31ea760dedd0feaa54f70605be23ac93c4f03e83ee430ebf28ce05a9b6ecbc"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-opt-plain/trajectory.csv",
+    "bytes": 5747,
+    "sha256": "716532e5fbd52989e386cd1193dc0d4b9d97e1698c80d102d1e353049ea4c45b"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-vopt-corrected/completion.json",
+    "bytes": 72,
+    "sha256": "5d096cc6e04dd54aabc94ed29f37f13f3d86732bf543ece57c0df0d26d89bc0b"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-vopt-corrected/identity.json",
+    "bytes": 1806,
+    "sha256": "0047d833da0e7bcf3d1a18cf77346e892ea3a25e7b26bccde6a4ae0973b026c1"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_CORR-vopt-corrected/trajectory.csv",
+    "bytes": 5836,
+    "sha256": "e160e9f5e3db98db9f49447857e81739b5320396b506a57d08b071d02100e4ca"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_OrdinaryOnly/completion.json",
+    "bytes": 72,
+    "sha256": "313436cb15149b9e40c0cadeb808b7ccffb4fc28609d8de9246e8c3f8fdf9ec5"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_OrdinaryOnly/identity.json",
+    "bytes": 1799,
+    "sha256": "95f3466b6a9d5e44ec4020ac0bc7c2d662ea8be1132d54ffddc53e8ce7770ed9"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_OrdinaryOnly/trajectory.csv",
+    "bytes": 4392,
+    "sha256": "de464b6419d1a5dccea773cce94b0c2e9d2094cc7a61bcd209d7f265d070ccf1"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_RB-CORR/completion.json",
+    "bytes": 71,
+    "sha256": "b28985e9142961edba363c46d84c55bf68d063b4030673be199e3a3be189f04c"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_RB-CORR/identity.json",
+    "bytes": 1794,
+    "sha256": "b91b6b3240b30ff72b18b4199739a0211f794456ba80992e0efa1592b295e44c"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_correction_RB-CORR/trajectory.csv",
+    "bytes": 5679,
+    "sha256": "0e6197039e884155f3a0af816b5771b7ce4dbe02ec4a12c50c82c083f4498652"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_BAIT-cost/completion.json",
+    "bytes": 71,
+    "sha256": "cf7dce7eeebf2e9153a5a8e0a28d003720d26ce6308f6c6b33806904ed04584b"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_BAIT-cost/identity.json",
+    "bytes": 1791,
+    "sha256": "6379c707dc78eab996289efeb1caa7ff5949207cad103f51a6475538f57a834e"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_BAIT-cost/trajectory.csv",
+    "bytes": 5613,
+    "sha256": "78823d306a0f2ed61e0968e64ba19b5580792051755c5541059468d1ebde3895"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_LRBE-IG/completion.json",
+    "bytes": 70,
+    "sha256": "ac839205d0d0acfd9a104cbaf595f7b28176b693a7352cc5b666ff9b91e85175"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_LRBE-IG/identity.json",
+    "bytes": 1789,
+    "sha256": "a1bdef48fcc01c5e89aacdb1baf4af386f6525960aa501a079f12bfde036d33d"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_LRBE-IG/trajectory.csv",
+    "bytes": 4790,
+    "sha256": "a017c422b0edb3c2f8b8b84ca054e542995b3e9a980041c5f1d8038cdd32ea0d"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_MinRisk/completion.json",
+    "bytes": 71,
+    "sha256": "b7b192a74265a424fe74ca5c68541b6f3c97c6e9e992d564f6787c2192b24e54"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_MinRisk/identity.json",
+    "bytes": 1789,
+    "sha256": "6927f9ac2c243884f873fb1ff5edfec0c955a6dced35d955fc1c2d24ee3b97ee"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_MinRisk/trajectory.csv",
+    "bytes": 4683,
+    "sha256": "78ed06e526aa777ec6be8360d9a7711b4a44743b1686071af1e7715f62d0ca96"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_OrdinaryOnly/completion.json",
+    "bytes": 72,
+    "sha256": "c0d42c79e02179ba1024088055d0bcaf7801d7c7176465857046dd8d4f7ee407"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_OrdinaryOnly/identity.json",
+    "bytes": 1794,
+    "sha256": "cb6f7b996f091ec245e3f3a00601c6e7e2d2f2ecbae304cb6a02ee3eb73787ae"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_OrdinaryOnly/trajectory.csv",
+    "bytes": 4352,
+    "sha256": "756974e07bd59a5fe10feb0f67efa87311b3678d0a59cb615f4eb566ffb831a1"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_ParBaLS-cost/completion.json",
+    "bytes": 71,
+    "sha256": "f74bad001c698e24438cbe1df0f29fda9356d7cb985240ab120ce7ffc6221bf5"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_ParBaLS-cost/identity.json",
+    "bytes": 1794,
+    "sha256": "f425165d4ba94869ea298e6029a5737483ae2e11203c0a94030307f36d064550"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_ParBaLS-cost/trajectory.csv",
+    "bytes": 5764,
+    "sha256": "3628d85c16e51c39294343386afd38a07ee05f3b5cdea932c3db69e91337c668"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_RB-BRIDGE/completion.json",
+    "bytes": 71,
+    "sha256": "9e32754b144e066f27f48150ff204226b7ae45d3ca0b3a7d21fec5cf91ae518f"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_RB-BRIDGE/identity.json",
+    "bytes": 1791,
+    "sha256": "e60ea2cf4dc3116f25efe7b8ffbccce18092d3e3d9f7e7ae5776ed59bfea1a5e"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_RB-BRIDGE/trajectory.csv",
+    "bytes": 5200,
+    "sha256": "de11ea4b1ccfc6b26a8d43fc2280fd18504ef08f27d91e10cdf0b609ae99b93b"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_ScoreFirst-IG/completion.json",
+    "bytes": 71,
+    "sha256": "c28ce497462a24d7c446f4941b05084fc18c95e39e1b22036e739cd4b3ce3023"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_ScoreFirst-IG/identity.json",
+    "bytes": 1795,
+    "sha256": "203455b39a69db437e3b65b33dba02fb2eca14aeb86d0c260853d397a9e0e8c8"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_ScoreFirst-IG/trajectory.csv",
+    "bytes": 4861,
+    "sha256": "2599b1838312606172940d2c3f01333ba5c66f481b59d57671aad4c14851e23f"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_Vopt/completion.json",
+    "bytes": 72,
+    "sha256": "a335d0e34cec505a36e8563c8170fbf2d41e6120a2576ebb9d1f051905a391da"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_Vopt/identity.json",
+    "bytes": 1786,
+    "sha256": "a3c1330e6d02611477769df651122db80cd09ede0f4684afb769c0ab86d43b19"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2201_fixed_Vopt/trajectory.csv",
+    "bytes": 5136,
+    "sha256": "8f6c2b81437e0d574418a37d842414bc9d8ac57f4a601a372fc8b7738c9760b0"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-base-corrected/completion.json",
+    "bytes": 72,
+    "sha256": "98bea4905c31b284bdc6e4ae8ff9f675ca26efe1246887c20dfb350d52702ff8"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-base-corrected/identity.json",
+    "bytes": 1806,
+    "sha256": "e0847b1ccb3f6f08e1a8ce673ca4c80c5dfdd02b5cd45935c91f89a0356e2aca"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-base-corrected/trajectory.csv",
+    "bytes": 5792,
+    "sha256": "1ff080d7d2a66f47433e26ffab46d0aaed59f46f00bc7d333666339c507de67f"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-base-plain/completion.json",
+    "bytes": 71,
+    "sha256": "d5688be397a519f42ed813fda6aeea92e4e8a3dccef1743710b696ce84910c15"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-base-plain/identity.json",
+    "bytes": 1802,
+    "sha256": "cfdb4ae401404dce006abc476fcb2423049cdb23f9b2c5085cc487be88dabc0e"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-base-plain/trajectory.csv",
+    "bytes": 5748,
+    "sha256": "393ff4e8105e00e30af3d0965d8d367bcd771152d1fd74bec5872ecb6a26c41e"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-opt-plain/completion.json",
+    "bytes": 70,
+    "sha256": "ece30e4fbd6d7f65f5f866325ca95821045e5226d4ee0d32e0b1f7afcd7cd1c2"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-opt-plain/identity.json",
+    "bytes": 1801,
+    "sha256": "f8a6e77bf479344e6a51698a4b4b392003496b05c0506889b5504abd5311dc8d"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-opt-plain/trajectory.csv",
+    "bytes": 5908,
+    "sha256": "5487a78dde840cdb104c8b8cf46769d9c1d06cf5e60d4080c0341df6ebbd1be1"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-vopt-corrected/completion.json",
+    "bytes": 72,
+    "sha256": "624ebb7c332eaebd457fa4863bacaf4ee0d7c3a5ed696a4291c56da5bc4ccee9"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-vopt-corrected/identity.json",
+    "bytes": 1806,
+    "sha256": "c6edd9085f582379304027b2fd42de925b505eab2c8ff88976865f3eaefa275d"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_CORR-vopt-corrected/trajectory.csv",
+    "bytes": 5909,
+    "sha256": "e073b70f574c6e681950fb7aa20a2bf02999eb1620d6f9b3285b8b3a0b24f682"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "8102fcf581074a6ac035c6593282cc7bf0960da525b8a070cc8b3b95667262cd"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_OrdinaryOnly/identity.json",
+    "bytes": 1799,
+    "sha256": "3bdbbb578428412569fe2bb6d25c2523820af2d31c5079cc9c6d02349d14e7a1"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_OrdinaryOnly/trajectory.csv",
+    "bytes": 4493,
+    "sha256": "e23132491c1ea20c9c8cc730a4d328ebbb52b68d4df3001acdbc703d8eee3c36"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_RB-CORR/completion.json",
+    "bytes": 70,
+    "sha256": "1832f34e64efc1d4ec91b6cf5bdce2935b7af35118d47573470074de5646c946"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_RB-CORR/identity.json",
+    "bytes": 1794,
+    "sha256": "8761747260407f97b92b901dd808a5afcc07db73d60ce3a71710abc2a8cf74db"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_correction_RB-CORR/trajectory.csv",
+    "bytes": 5846,
+    "sha256": "deb4e1631f4c1e301459cfce22e43e5c3b64165c444fc264786f7966ec40e40b"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_BAIT-cost/completion.json",
+    "bytes": 71,
+    "sha256": "53302c67d9865ceabe9a3e3b31af2d788c4d1b9a9a54841401d430c23b5429e4"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_BAIT-cost/identity.json",
+    "bytes": 1791,
+    "sha256": "63f6a5233d9774cdf095c747fff4fdfd06550999936b19aeb36e73bc20e97fa9"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_BAIT-cost/trajectory.csv",
+    "bytes": 5760,
+    "sha256": "bbb4d986c3497311dcff416ecf647590476a16c3d129d3a67ade7b3df76cb711"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_LRBE-IG/completion.json",
+    "bytes": 71,
+    "sha256": "d40643aa183293cdaaccba05abe8ea3f25f15f90f316d72b76292eac085a78e5"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_LRBE-IG/identity.json",
+    "bytes": 1789,
+    "sha256": "9fbd4378fc2dad9e188bc7518d86790226b9b813239f939d892daa8c9b19d9be"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_LRBE-IG/trajectory.csv",
+    "bytes": 4893,
+    "sha256": "18ee6fc59c554727503c05e1f2d83ad44a220a23c2dcfd875a10c2390215f407"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_MinRisk/completion.json",
+    "bytes": 70,
+    "sha256": "46282f4884d7a1cf7286113de06be133d46c0a0a1aadf3387c6a2c3e57e5aa44"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_MinRisk/identity.json",
+    "bytes": 1789,
+    "sha256": "1473a6d6696d73ab54df911cda2b7dfe9db2e3e055495456de699976afd66396"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_MinRisk/trajectory.csv",
+    "bytes": 4824,
+    "sha256": "42885bd5f14b4bc2161874c2b10b12651b5f5f53c95d25dc6b06cb59e99c35df"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "f84eb0a19540d809bf7fe406929854038657f4f59b3e6640a41cc0875a611a47"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_OrdinaryOnly/identity.json",
+    "bytes": 1794,
+    "sha256": "c6d2071d2879cc7da13400b3b92ac9f3ab29456b30a84b8fc5f245954783b7db"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_OrdinaryOnly/trajectory.csv",
+    "bytes": 4460,
+    "sha256": "355ae4af1a4f1281ee286e2c7483629e3e844ba6a761e25b3d4142a539f63701"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_ParBaLS-cost/completion.json",
+    "bytes": 71,
+    "sha256": "60a74776952b5103c35e6825f6bb534bfff02b3ac743385abcaa8b341a6cecf1"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_ParBaLS-cost/identity.json",
+    "bytes": 1794,
+    "sha256": "bb7c2668c1bcd0cfde7e15f35a76872e8a4f96f25d070a177a43cfc6bc8b956c"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_ParBaLS-cost/trajectory.csv",
+    "bytes": 5884,
+    "sha256": "dd19c4f51f3bcbe25e17186533f518b2b22985fd6f2dafe32337a89af03081ce"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_RB-BRIDGE/completion.json",
+    "bytes": 71,
+    "sha256": "af0c588e1c631b1d104174edebbefb8e8d8fb39ef8bab2abc3b168665a7371b4"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_RB-BRIDGE/identity.json",
+    "bytes": 1791,
+    "sha256": "dea0431a5fd184c84ca6609ecd82145b9aa62c20f09b9cf42f361ad1e09baf78"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_RB-BRIDGE/trajectory.csv",
+    "bytes": 5324,
+    "sha256": "59dad2c369771f6fb6d69c7c32a18337c3cb371ea0bab133a1e92e3663db3d45"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_ScoreFirst-IG/completion.json",
+    "bytes": 71,
+    "sha256": "2a8e0119b0ae4946262977c82e9183bc2757fb05f65808698e04783ce31cadfb"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_ScoreFirst-IG/identity.json",
+    "bytes": 1795,
+    "sha256": "c5920368fff20bad62cfc4488fa130607895805003f60b2727d70527bf6dc1ce"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_ScoreFirst-IG/trajectory.csv",
+    "bytes": 5003,
+    "sha256": "908a2fe57310a398fc8f05a756b3c7045172e96195ae59943e4280f89305160c"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_Vopt/completion.json",
+    "bytes": 71,
+    "sha256": "f78df59a981887538b81fe2862cf05cd781495d227f94b9cf0a0468caa101c99"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_Vopt/identity.json",
+    "bytes": 1786,
+    "sha256": "76377d11dcb7c4b28ffa7f5bfebf2a27489774c1e7a4a71bd6fb147e89add14f"
+  },
+  {
+    "path": "results/research_v2/final_real/hmeq_2202_fixed_Vopt/trajectory.csv",
+    "bytes": 5271,
+    "sha256": "e985526e31b342d0338fea0be419ad30d004c445e1407d7b22a1db19720b07e9"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-base-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "f1285051d86aa0414c96ee819bedd992dec0f60e7885a84e65ff3a01d30db2f2"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-base-corrected/identity.json",
+    "bytes": 2061,
+    "sha256": "1211db9b6e6640410cdeba22eb60e23a7a5d973f144abab0e18868be8adf26af"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-base-corrected/trajectory.csv",
+    "bytes": 5880,
+    "sha256": "cc3d44e7810ee409b71a68457ba6358cc3fd4c0f45158bba859b123569f76717"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-base-plain/completion.json",
+    "bytes": 71,
+    "sha256": "c4532f84ed282f8d6a4ef5488605c1449002456d3b92b17ee280fdedb9ca7b67"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-base-plain/identity.json",
+    "bytes": 2057,
+    "sha256": "70cdf53feb32da865a459edb0c5b8616681fa1a7c91637197bc145a647d897cb"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-base-plain/trajectory.csv",
+    "bytes": 5842,
+    "sha256": "bdda6587571ade10d4f7e75b7e88122c0f9ebe82ab519806a243219da250c5f6"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-opt-plain/completion.json",
+    "bytes": 71,
+    "sha256": "2b2fed307f832ec08e8da7c3cf428f119276d3d8e25475ad3183400ea10420d7"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-opt-plain/identity.json",
+    "bytes": 2056,
+    "sha256": "1475225d7404aa2ae9e89d0fb3aaa8178a6f3a338f40abebb7e40853302bf1eb"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-opt-plain/trajectory.csv",
+    "bytes": 5987,
+    "sha256": "f08a346529b6bfc20d081283a3b504846ef61d56b8e40cb3a913dd7efe5221c1"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-vopt-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "7f30e18fa1d8ffeb6eabd91ea5a905343400a50cd03d821f1282e83280e708d5"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-vopt-corrected/identity.json",
+    "bytes": 2061,
+    "sha256": "9726723d08accd1c4bee7f5adad12bf9f30d53f8645eeb6ee223efc99f6fdb82"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_CORR-vopt-corrected/trajectory.csv",
+    "bytes": 6050,
+    "sha256": "ae8d162cf2e5cef3cffc97be549cc2baf7ea7a2df53d287730b802f78431c9ee"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_OrdinaryOnly/completion.json",
+    "bytes": 70,
+    "sha256": "f03eda1d6b957c130de19dbfe2bac3498b60f130648d558bd91f839fa5c519b6"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_OrdinaryOnly/identity.json",
+    "bytes": 2054,
+    "sha256": "59bbe1c823f3d4e9697de698a049d3f48466a7f91573ce92a7b8642f6b76a652"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_OrdinaryOnly/trajectory.csv",
+    "bytes": 4608,
+    "sha256": "b24e2c40ff77a74d1b3b9b5a345c74a0849bdce3a3f38279b0d3e5fa740528e9"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_RB-CORR/completion.json",
+    "bytes": 71,
+    "sha256": "6306c492384d146934fb5b46eefecbc3ea9f1647911b657eb02a817886005a11"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_RB-CORR/identity.json",
+    "bytes": 2049,
+    "sha256": "599c5a0c4acd3683285e0efcc566a4478e2f7f148405c290c01127d8bb278feb"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_correction_RB-CORR/trajectory.csv",
+    "bytes": 5920,
+    "sha256": "69a08afe6ed818a6823da0619f53f8a6cb037b78e1e89735d875c9631fc1bbea"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_BAIT-cost/completion.json",
+    "bytes": 71,
+    "sha256": "ee447ad6a41e585156351d1091dda9eb4953f82fbcca447f586d9d78779ae063"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_BAIT-cost/identity.json",
+    "bytes": 2046,
+    "sha256": "0cd8de97b5e350e9e12503f09eadcf12cbf88ef4b9881f983b3ea8e1f5745fa9"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_BAIT-cost/trajectory.csv",
+    "bytes": 5845,
+    "sha256": "ec218abd070fdd4cec01cf73876df767661f7d1e75bbb103d40fbaafeecd3a8c"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_LRBE-IG/completion.json",
+    "bytes": 71,
+    "sha256": "ae4bdad9b4ae46d10ce2a3a00723e113ac79d9083bad53c767234cac372f4d70"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_LRBE-IG/identity.json",
+    "bytes": 2044,
+    "sha256": "cd98f54b5c378e76dc945a36fd087d3264428383e36e09e4591e8b7f2ac09277"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_LRBE-IG/trajectory.csv",
+    "bytes": 5023,
+    "sha256": "3dc4965030f5dcb450d97e01a805d4522ee4002f46c982d9dd8fc7e4f146fb7b"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_MinRisk/completion.json",
+    "bytes": 71,
+    "sha256": "63376a4356fe0a119a17c93f9c2942743643605f36ec49e67a1a3ce575b6b8a1"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_MinRisk/identity.json",
+    "bytes": 2044,
+    "sha256": "789dfed93ceadc2b017aebcd3411a12d45bfd59df933efda1646ba6362413dc8"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_MinRisk/trajectory.csv",
+    "bytes": 4899,
+    "sha256": "96317e6ea025f7ad5f9b21048d4acb641deea53d9b74755059e4c31c1583d561"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "4d1524de37ef31760b3eb06f2f857699271b9f27e605dbb3839827f660accc4f"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_OrdinaryOnly/identity.json",
+    "bytes": 2049,
+    "sha256": "990284238b5bac8b3ac94342612e445a7eb8451bb353442c67f316f4f6bcbd5d"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_OrdinaryOnly/trajectory.csv",
+    "bytes": 4564,
+    "sha256": "79fbeda8b6437d5407e6de0f6861c9a0a2eff0ab924f674b3ec6c9a78586b12e"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_ParBaLS-cost/completion.json",
+    "bytes": 71,
+    "sha256": "a675534e96d4fd259f32b9a204710e50f0bc5b0aea02dbcebbc22417498f4f03"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_ParBaLS-cost/identity.json",
+    "bytes": 2049,
+    "sha256": "0c526248aa0d7b6c3ecc5eed8b780043943d348a4894e84f02e9c59c68c409db"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_ParBaLS-cost/trajectory.csv",
+    "bytes": 5968,
+    "sha256": "2aa93d5f6b827a5d1c2ac2c715410d13fecf6575ce8536d2f115b91ace60a32b"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_RB-BRIDGE/completion.json",
+    "bytes": 70,
+    "sha256": "e4bd6f0da204ef90957520694cbd8b3f3f4d1f1acaee14740a6c9b0d282a8bc3"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_RB-BRIDGE/identity.json",
+    "bytes": 2046,
+    "sha256": "9b787a93e5f909436d12138c6a1a69085c018d79091f99fd5c4b9bdc77d7a577"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_RB-BRIDGE/trajectory.csv",
+    "bytes": 5422,
+    "sha256": "41ca8c74daeff39422672b987eaab3b2333908b0f07ee787a1f0e52392d3f3b6"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_ScoreFirst-IG/completion.json",
+    "bytes": 71,
+    "sha256": "618c72308d105d10de3aec226d16d7a9c203a48bb78cdb5155172ece1b1d95af"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_ScoreFirst-IG/identity.json",
+    "bytes": 2050,
+    "sha256": "539a97cc7203c5121e9b6d94383b1bc49a9f8275033feb43ed0bea9825f9552a"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_ScoreFirst-IG/trajectory.csv",
+    "bytes": 5080,
+    "sha256": "a24c58829057bbb857845c3c45064eaeb2422bcafd80c2b8c1a00c5948ca1a97"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_Vopt/completion.json",
+    "bytes": 71,
+    "sha256": "f44a6ab1d2d380c03cae35dc45423f87a58b1a3bf3016d9ddc314f464287e301"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_Vopt/identity.json",
+    "bytes": 2041,
+    "sha256": "be1245a876d06ebeb77897523a79a3b77926da6e670baf7e29d909fb4a9513c4"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2201_fixed_Vopt/trajectory.csv",
+    "bytes": 5357,
+    "sha256": "ccea0a465c5e3b4722aa400c46d75d55989af5cfca2882a149b566ebfe1050bd"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-base-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "0633e0ecca0d04f276b2d3732a2cd197ba522169f11981243d66f52bc0a38d8f"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-base-corrected/identity.json",
+    "bytes": 2061,
+    "sha256": "d053f0c8d2485c526843d13df071df07d23a78a48346f0d47d656490e8cc0d93"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-base-corrected/trajectory.csv",
+    "bytes": 5946,
+    "sha256": "217f8f09922500b3574f3de0a901daf693d5dd0e54a1e08c826ea308a83cd0ef"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-base-plain/completion.json",
+    "bytes": 71,
+    "sha256": "98c0d8e9c5db092e40642f3f018365358e18931d6f95fd1525ff20ea69586a2c"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-base-plain/identity.json",
+    "bytes": 2057,
+    "sha256": "40b747b7ffe14a9fde0c0b55f16146987a3e1bf8a2dc328de816b05441eee836"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-base-plain/trajectory.csv",
+    "bytes": 5909,
+    "sha256": "15874e1b275d26d8996f9c4decd22edafa29bd01ed40f915cdc72dfb3a02a8fb"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-opt-plain/completion.json",
+    "bytes": 71,
+    "sha256": "be3516662d64d8fe395220fcd19c116714be92d9cff6d94eb3c9c9aaa50b590f"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-opt-plain/identity.json",
+    "bytes": 2056,
+    "sha256": "4517497e6502c2985a30facc11ab54ea9a21743824435e80d63939462d345d19"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-opt-plain/trajectory.csv",
+    "bytes": 5998,
+    "sha256": "3a1682a1f9eb74b8cdf92ba94fc6f5756627ce5bc5818e031711664b834da497"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-vopt-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "360a276186334cdbd35e3e1d7450f678542a6c9cc0ee33ea869a1d5df70e6134"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-vopt-corrected/identity.json",
+    "bytes": 2061,
+    "sha256": "ff952ad2c9904842107a32ab3bd37fed4787478ba9e78729735635c7bf0bb078"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_CORR-vopt-corrected/trajectory.csv",
+    "bytes": 5942,
+    "sha256": "d0902c059c32ab6dcd502b4a469973fdceb7a52e3167251287403cf37649dba1"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_OrdinaryOnly/completion.json",
+    "bytes": 70,
+    "sha256": "beee78238fbe5070f8f500f4d6a40b85db0cb1464568ac687c87776e8a3b3a64"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_OrdinaryOnly/identity.json",
+    "bytes": 2054,
+    "sha256": "46dbc79ce6840466bfe09180e4181c778cb34fe5c23c9aea7405fa713e411af4"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_OrdinaryOnly/trajectory.csv",
+    "bytes": 4588,
+    "sha256": "ade60ce995f5bccfa908829102c6a5c8abd7911183edeae8f86318837a1eb5e0"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_RB-CORR/completion.json",
+    "bytes": 71,
+    "sha256": "705416ee715148bf5aa441bca4195e5004496014fffdc1564d7b2162c764b2ed"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_RB-CORR/identity.json",
+    "bytes": 2049,
+    "sha256": "f7b657407a5a597e4319a4ec33c633bd7f9b988d979cbbbf7feffd2422fbf832"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_correction_RB-CORR/trajectory.csv",
+    "bytes": 5917,
+    "sha256": "4f4c9889f98c31e48b9f5ae23f89f97d19c6bfa98ef2609e0f65dab76d3a3139"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_BAIT-cost/completion.json",
+    "bytes": 71,
+    "sha256": "a63a6d88aeb0c7cb3025b2a7002377a47bee5d20ce528982a4ac188d59bcd5a8"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_BAIT-cost/identity.json",
+    "bytes": 2046,
+    "sha256": "d8d2f531bcb34b644b8986f1b0874d60fce23e6fab79e1b6f683d5f11947e54b"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_BAIT-cost/trajectory.csv",
+    "bytes": 5837,
+    "sha256": "09e080bf257ff4cc1f9df36b3439b54f5721c7f6418c2af78cf2258fc1014729"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_LRBE-IG/completion.json",
+    "bytes": 70,
+    "sha256": "2d1ba9fc01ba07c289fb0f7ddac62bcd5fc5d30e21916e18c71f3051903133a7"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_LRBE-IG/identity.json",
+    "bytes": 2044,
+    "sha256": "7747f4e976f3f531848380fe284813d910deae230b6a84d12bdfd01767f645db"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_LRBE-IG/trajectory.csv",
+    "bytes": 5003,
+    "sha256": "878402f95f5d2e205e9d77eb91c8865e1441b3f223c1e7c9149d027bf31a2ccc"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_MinRisk/completion.json",
+    "bytes": 71,
+    "sha256": "e221f21978478c0081160305e03b5e8e4baa685902642539cfecc469b1080026"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_MinRisk/identity.json",
+    "bytes": 2044,
+    "sha256": "c4ff0f47691d0ecb0a5abb6b79db0b0718584a00749a190da92f41be8b6cb614"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_MinRisk/trajectory.csv",
+    "bytes": 4875,
+    "sha256": "743a02fc5d17c206dfa4e16bc4ae86da9f79da6ea0dcc03de56d26d4368b258a"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "33f25a04b7578dcdff16089f724b84f527b940fd5cc8b11780084b1b46ce3f86"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_OrdinaryOnly/identity.json",
+    "bytes": 2049,
+    "sha256": "99613c248b793d33f1cdbaa6c11c3cbe532a5bf933c838cb9627173dafde8279"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_OrdinaryOnly/trajectory.csv",
+    "bytes": 4548,
+    "sha256": "3a47ede7e120055e3d048576a0b8f9ff4eab5428d5bd81b57c7eec92b30a895b"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_ParBaLS-cost/completion.json",
+    "bytes": 68,
+    "sha256": "72cb8cf8eab6feab923d1688f8d83f6885c056bab295559768bc6cbfffba3c70"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_ParBaLS-cost/identity.json",
+    "bytes": 2049,
+    "sha256": "29bdd043de92e1a52053d2e5fa41fd2c6fae0dd6d7d300703ebeb12e1bf42a35"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_ParBaLS-cost/trajectory.csv",
+    "bytes": 5958,
+    "sha256": "283fab06c46c251cf22e508ea9b0b4966b2cb91be16d2415199a92a9c0dc0218"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_RB-BRIDGE/completion.json",
+    "bytes": 70,
+    "sha256": "5d9f481fd0d4d983dc3090567a44fd95825073bcbbec8e77f645658685acec09"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_RB-BRIDGE/identity.json",
+    "bytes": 2046,
+    "sha256": "d1a1f4f24812964e1b6de32a63f94889ffbd2a10c5df0ae9cedcf4861baa82b4"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_RB-BRIDGE/trajectory.csv",
+    "bytes": 5396,
+    "sha256": "c1b4fb8bb8b8ba08c2891e1607065952c16142127f72fc2b40b635d3b1f06ce4"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_ScoreFirst-IG/completion.json",
+    "bytes": 71,
+    "sha256": "abcb5c8e136df0508df2f7e594c0a462706db393452365dec9c1b866fec27786"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_ScoreFirst-IG/identity.json",
+    "bytes": 2050,
+    "sha256": "33fde043895db3fe1730feb9f3256cc13405662852d44b99090ed64761d6c80f"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_ScoreFirst-IG/trajectory.csv",
+    "bytes": 5073,
+    "sha256": "bb8ce1ea539d4d3924a23b413340eaef7719d0e69def114d853c4bab2dd1615f"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_Vopt/completion.json",
+    "bytes": 71,
+    "sha256": "f35d7cb2236e7519b89b0fe36fdc2df892606b57a9c563f3c6ab50d1f6ca2450"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_Vopt/identity.json",
+    "bytes": 2041,
+    "sha256": "c45ccf4823be15722c1417d2f8159e219a63d4d2acad445b5c6cabcde9697b2b"
+  },
+  {
+    "path": "results/research_v2/final_real/lendingclub_2202_fixed_Vopt/trajectory.csv",
+    "bytes": 5340,
+    "sha256": "3f1c46c5095ec794cb0c7a5ebc805c6164733e336cad240e12ff9da04aaeab8b"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-base-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "9fce1dabd10a6372690290d095996af717433ecbe62a5665c8189ba00c622dd8"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-base-corrected/identity.json",
+    "bytes": 2011,
+    "sha256": "71f4300ea93591f18b6bf9012cb1a4db7aa12dc9d793e210df55578cb7d920f0"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-base-corrected/trajectory.csv",
+    "bytes": 5590,
+    "sha256": "e3c96663cf8a84566ae96f2436469006e45b0c1cd1c95ab95c4def71044655fc"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-base-plain/completion.json",
+    "bytes": 71,
+    "sha256": "b494d264a120e704c0688f9b9a4c87842708917433b6181d4e93e3ba52d8340b"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-base-plain/identity.json",
+    "bytes": 2007,
+    "sha256": "8dc41df154211fef5ab4ab9b659878fe0e2d66105e37c1796eeda9408213aefa"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-base-plain/trajectory.csv",
+    "bytes": 5555,
+    "sha256": "e1ad563567b49fdfb8bb12f4e1c803f03db86c7eafdda30b7d85000601c1c959"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-opt-plain/completion.json",
+    "bytes": 71,
+    "sha256": "874e8a1536d5b364f13e701bd71ef0bce18978e92a57e1dd08c6a5e4781b3bc7"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-opt-plain/identity.json",
+    "bytes": 2006,
+    "sha256": "6b574d8027a056f53adf11b485daa2ef547f9c65e3f485bbde27d364eef23723"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-opt-plain/trajectory.csv",
+    "bytes": 5804,
+    "sha256": "dcd581741bac381388e6ce962c05740844f7006c6fd3a98a93d514cb90f90395"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-vopt-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "db120674cb5519220ff771c8cf9e0789d246f5aa64e9e2cbc5eebe989cf3e1ca"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-vopt-corrected/identity.json",
+    "bytes": 2011,
+    "sha256": "ddb56fd678e3c294238f4a79cdd56d9c89b90354a5b0e95d2d7002f879b2c338"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_CORR-vopt-corrected/trajectory.csv",
+    "bytes": 5745,
+    "sha256": "5c81f7bc2efd9fc1837786d27f5f508c3142a48255458afcafc60ff66c918287"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "c1dfdd10864e70f4375aa52c0b0eb3c3253535d9cf0951bb1298b725667b8012"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_OrdinaryOnly/identity.json",
+    "bytes": 2004,
+    "sha256": "7bd3eaf0da63c1798752cb6c0c15210a9fc0a0c86d4c2d0bf527110ac361c57d"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_OrdinaryOnly/trajectory.csv",
+    "bytes": 4470,
+    "sha256": "66d1103200c1fd60555bb7e4d8fc165687826e9804a12b1af99cbead9848d0e9"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_RB-CORR/completion.json",
+    "bytes": 70,
+    "sha256": "e931505aedd20c943bdecb73df21d7a2c8c0f28cef8f89a03b31e050a16c80e7"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_RB-CORR/identity.json",
+    "bytes": 1999,
+    "sha256": "dae95376f853450972472677671a19be5ff82154ab804d89a8c7a1c4729acb23"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_correction_RB-CORR/trajectory.csv",
+    "bytes": 5722,
+    "sha256": "1145d0067f3e7af3b31566baedcc1116de9e39775d4f6b09c2ce8e169c1c9309"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_BAIT-cost/completion.json",
+    "bytes": 71,
+    "sha256": "b0d461e7e3a5b3c5d801e9000908264ea3f5ac42babcd0517e7f13207119def6"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_BAIT-cost/identity.json",
+    "bytes": 1996,
+    "sha256": "a436a970fd69b9bfe25edc5042ce38f51418d58f3d8ffe72a289446b96101001"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_BAIT-cost/trajectory.csv",
+    "bytes": 5642,
+    "sha256": "7d3f85aa40115f40bafc290ad0e6fa3b77ff8da228573996ce0d231dc1c50efd"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_LRBE-IG/completion.json",
+    "bytes": 71,
+    "sha256": "89cdee0fde644573f6fe168a6fd50460c48c4ab60b6808bfe5b107a0d74c412e"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_LRBE-IG/identity.json",
+    "bytes": 1994,
+    "sha256": "8e8f5e83e9ed2a91526fc14e84fd20afe9d9c0d50bde32b50caaf2103fb4aef5"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_LRBE-IG/trajectory.csv",
+    "bytes": 4816,
+    "sha256": "4fa651be3494482632feac4dc0a842305c46649b238d3903b1742f7d0ff5792d"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_MinRisk/completion.json",
+    "bytes": 71,
+    "sha256": "1e54f4c589cff33c3129fad1c66ab3658a624dc6b5eceeb15b4fa7af4984177c"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_MinRisk/identity.json",
+    "bytes": 1994,
+    "sha256": "2746a481226e376433e4c60e5adf7e194bf0fee0b8d4f13afcbca4186d4fdfec"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_MinRisk/trajectory.csv",
+    "bytes": 4684,
+    "sha256": "ac0e0f0cbde508258f917ed06ae9190ae38382705dd7cb6aa0bcddb5307552bf"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "2aea9484f16058c69bce72a83d8a1b6a2fa81c3db62883a2854c5c41515eda54"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_OrdinaryOnly/identity.json",
+    "bytes": 1999,
+    "sha256": "fab0b7f6cc0e23c6de182d8156855942bc29cf38843d25a7eec9b45bfcd29814"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_OrdinaryOnly/trajectory.csv",
+    "bytes": 4423,
+    "sha256": "bc3e42f6607257b63c11b15e0143ddcc0ccd748c57f43c556bf343c70bdc05b6"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_ParBaLS-cost/completion.json",
+    "bytes": 70,
+    "sha256": "2179fef78425f34cfc037a464ea1dc5e83d48185a16e17c77f008ec6477d7554"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_ParBaLS-cost/identity.json",
+    "bytes": 1999,
+    "sha256": "e5abaf105c184c3057826e36a5aee026cb21718d758d5559a054e441c03fce12"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_ParBaLS-cost/trajectory.csv",
+    "bytes": 5763,
+    "sha256": "caf755a870c1109975c9e17fcffd76422d0626f8b4744662d726221d08d71841"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_RB-BRIDGE/completion.json",
+    "bytes": 71,
+    "sha256": "2e9051d9812ce4f0ba4de1c25a61240129959a58bea4eb5fd733301acdb7dc31"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_RB-BRIDGE/identity.json",
+    "bytes": 1996,
+    "sha256": "db1d95bbc0c4676b4c2a6a127507b2aa4b5d0fb627742d5fb082481fb1914201"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_RB-BRIDGE/trajectory.csv",
+    "bytes": 5207,
+    "sha256": "a4171b92062b4c4b39723fe94538bda0a23dce0f8d28eeb3addad98ba200daad"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_ScoreFirst-IG/completion.json",
+    "bytes": 70,
+    "sha256": "ff612efced27693a2eefd12137b2c9a753b2c06efb6e6e9d16c1fa9ee12cdd43"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_ScoreFirst-IG/identity.json",
+    "bytes": 2000,
+    "sha256": "0c98da035be484ef8a09a31abcd6df6e0c7d6e00182c8fd02dc21e2fd9269541"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_ScoreFirst-IG/trajectory.csv",
+    "bytes": 4873,
+    "sha256": "c9d8a05cde4721a2bdf8947825417d3e9c70ae50f29cd2469b448c90ca0fcbb6"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_Vopt/completion.json",
+    "bytes": 71,
+    "sha256": "bae185dbb339cd5f9a32c79429ea8914c3285962ecf2e2935aaca7043d726167"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_Vopt/identity.json",
+    "bytes": 1991,
+    "sha256": "ed0bbf345ef3611d5959b5d8eed3196477fd89f50fe4ebf5621719f1ce831cae"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2201_fixed_Vopt/trajectory.csv",
+    "bytes": 5137,
+    "sha256": "bcdde906523bf630f2507bc6dcad1cf815f460ab486af9023715a8bf6163e395"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-base-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "dae981ddee1bada1d92d74b0d1f35482d17fd1cc9a59a7717ba51c2d8cb7a832"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-base-corrected/identity.json",
+    "bytes": 2011,
+    "sha256": "fc2836b4255fadc1987740e614be28d8d165542f81cae98c507f07eca12576c1"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-base-corrected/trajectory.csv",
+    "bytes": 5527,
+    "sha256": "558e9ccaf24bd5ed1c9a180d18c8ee3534bf0a42c03b894cfe345c45fc3daf8d"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-base-plain/completion.json",
+    "bytes": 71,
+    "sha256": "e212d18c0284295e495b2286aad5538db9dd0270df5a2d16710ddb023b1eac44"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-base-plain/identity.json",
+    "bytes": 2007,
+    "sha256": "165aaf31358667f34b4afd4d5ad62ef18af652d6c187b92b6fab3d322184cbd0"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-base-plain/trajectory.csv",
+    "bytes": 5491,
+    "sha256": "b96e913f0fda748fafbe1547b3e69926903e1100df993d7bfc18e205c7d3b6e0"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-opt-plain/completion.json",
+    "bytes": 70,
+    "sha256": "be7bc7586cff4dc435c2b907f7d67d1c089c11e254a186ebb8869b99cc4b0e58"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-opt-plain/identity.json",
+    "bytes": 2006,
+    "sha256": "64140abac1c9b05fa6a1a47cd17f17cad6ba1d115f19bdd48d60894726f94f40"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-opt-plain/trajectory.csv",
+    "bytes": 5664,
+    "sha256": "50dacec5026e19ce2bc903ae7af227eef3f02549ca535029db5d16f912c21914"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-vopt-corrected/completion.json",
+    "bytes": 71,
+    "sha256": "a3064298cfce6a40d52c0cbb74a986c1e9754bec2d39cd8674d292cda77ff494"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-vopt-corrected/identity.json",
+    "bytes": 2011,
+    "sha256": "2c324014b41514f99412c42fbbd9ac4a01e65586b7cec1858811d26ebefddafa"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_CORR-vopt-corrected/trajectory.csv",
+    "bytes": 5608,
+    "sha256": "13c2b715a127988ee55e97206e9dc6cef828abb6ebfec4aa5bcb386321771e79"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "291c283d745c9510f5e7079a3bea544becf7ba395c1e202ad76ccfc968b08af2"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_OrdinaryOnly/identity.json",
+    "bytes": 2004,
+    "sha256": "415c60affeab64e11137a320de3dc6e987536080fa90dc584e13e1b8be670fef"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_OrdinaryOnly/trajectory.csv",
+    "bytes": 4318,
+    "sha256": "4d4b5cf5870aaef67dc94384b1ae65b3ab8c80e7091f160431c469cb046aa1b3"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_RB-CORR/completion.json",
+    "bytes": 71,
+    "sha256": "81bcc4669061bab21b4d5d2c205ed41c8eb77d6a51430be08d96b695896c712e"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_RB-CORR/identity.json",
+    "bytes": 1999,
+    "sha256": "229989693e94801b602698873920d179a7cb18d4f78f4fe3f448cea25444601b"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_correction_RB-CORR/trajectory.csv",
+    "bytes": 5594,
+    "sha256": "7cb5c6d9953ab34247005d7e2dd4ba38cde2df82b26ee4cbb21a6875accf0df6"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_BAIT-cost/completion.json",
+    "bytes": 71,
+    "sha256": "35be1722c38dd1d4d44e28e68ea21fea7931fb0f3955f9cac6a99ded4277c99b"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_BAIT-cost/identity.json",
+    "bytes": 1996,
+    "sha256": "57c4cdc96a24f2a916bafb1fb877c7e7f5e7a7b94feea7ab08a4c0682407b138"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_BAIT-cost/trajectory.csv",
+    "bytes": 5504,
+    "sha256": "ae3e9db46f92f38488b0d75fe72f0d13e2241e71b0d2bb7b677e0382430ae05e"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_LRBE-IG/completion.json",
+    "bytes": 70,
+    "sha256": "4ce8371cec6be936e32741affdd4844baf6ebe585658ae54295f0e68eaf17e09"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_LRBE-IG/identity.json",
+    "bytes": 1994,
+    "sha256": "093f90cf71c376c63352e9f87cb5aecb30e002e4a627b659fa674dc883c05d4e"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_LRBE-IG/trajectory.csv",
+    "bytes": 4678,
+    "sha256": "08a033c2ce6726ef41b28d6824780ac9dd67aad3e7a0cc2853b3382c6cf435c7"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_MinRisk/completion.json",
+    "bytes": 71,
+    "sha256": "204c6fff71a0fe04805a3bbfd72e261455c1b46dfbadae66a3379e984c7e272b"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_MinRisk/identity.json",
+    "bytes": 1994,
+    "sha256": "6ae515f2060472766c36acf24b513486b5bbb881c62f12d2c250908b038b1324"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_MinRisk/trajectory.csv",
+    "bytes": 4554,
+    "sha256": "772a0de708f8a6179186c166e48a32e22ac4156e8d89818cabacbf90db5a659c"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_OrdinaryOnly/completion.json",
+    "bytes": 71,
+    "sha256": "36429e9147be27e696a935c8e59f2f52dc483ec9e5aecace5d6701ca96d76ad7"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_OrdinaryOnly/identity.json",
+    "bytes": 1999,
+    "sha256": "04c060e3579e23f321077efe0de421a9104e07fef816b768e23976f2caaaf32c"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_OrdinaryOnly/trajectory.csv",
+    "bytes": 4288,
+    "sha256": "4c324d65bf0cfd12999b4ffa344a45e0fbf11a54a0d4317fe8d7645fed6c6af2"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_ParBaLS-cost/completion.json",
+    "bytes": 71,
+    "sha256": "90c24fddc20cd76e75dd41a8bf6018c3e160bb68bed6cedf3c06a05714064db9"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_ParBaLS-cost/identity.json",
+    "bytes": 1999,
+    "sha256": "94bd6571c15355f2d6adc4276014790b9821ba5b1b69c1b2edacc6a065171e06"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_ParBaLS-cost/trajectory.csv",
+    "bytes": 5636,
+    "sha256": "cf87775b6775b75bf268e7213466d2e6514c216280667ee77bb6ef2cc700a218"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_RB-BRIDGE/completion.json",
+    "bytes": 71,
+    "sha256": "707f63db5d63797ab309b2ecb65d3d3441e9f2e65ccee8af9f30abe11cc1de92"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_RB-BRIDGE/identity.json",
+    "bytes": 1996,
+    "sha256": "711b9df35d197c44c10872e2e174c336f48e6dd8dac0c51c8b6d0de282d83832"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_RB-BRIDGE/trajectory.csv",
+    "bytes": 5087,
+    "sha256": "ad452ed229bbffd54ffaf5f94c5672028a095558ff96c0806bd70e1eb8063097"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_ScoreFirst-IG/completion.json",
+    "bytes": 70,
+    "sha256": "1872550a49e016de00e15f63517946a4793f0cfaa6f2c16ff974442ffff28d72"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_ScoreFirst-IG/identity.json",
+    "bytes": 2000,
+    "sha256": "fc1ac76029d745d44a65d9514203dad7b8436e03ed906bbcf95d4ba7f274df9b"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_ScoreFirst-IG/trajectory.csv",
+    "bytes": 4744,
+    "sha256": "a989099dba456da25120dd296a0d19d4381b16fcdf75cb1d808287e08476f329"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_Vopt/completion.json",
+    "bytes": 71,
+    "sha256": "08c9453e7cc69a50776a14cedf451d936e46d27e5cf76efeffc49c4d486dcbc9"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_Vopt/identity.json",
+    "bytes": 1991,
+    "sha256": "2bbbcc2687227f31cf375f17b3414a8d642e2cb9bd67ff3a5c422eefb5c1ec69"
+  },
+  {
+    "path": "results/research_v2/final_real/uci_2202_fixed_Vopt/trajectory.csv",
+    "bytes": 5007,
+    "sha256": "544958708916bb792d9fb14070fcfccc5960927c2ddb4a5de7dd2e5042ade3e8"
+  },
+  {
+    "path": "results/research_v2/focused/focused_rows.csv",
+    "bytes": 2289,
+    "sha256": "8a55247ff791a0a7077a0efe110140066db64dc8f89dcec9900063eacb06deeb"
+  },
+  {
+    "path": "results/research_v2/focused/identity.json",
+    "bytes": 1211,
+    "sha256": "a8fb9219fa5e69170456cca37625963b18f118b256da42acd78f4e318e3c92c5"
+  },
+  {
+    "path": "results/research_v2/verification.json",
+    "bytes": 599,
+    "sha256": "9d3ca55fe59b412a29298d1649c8fa8468552c75f56af0e467fb501ca181556e"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "inputs": [
+    {
+      "dataset": "hmeq",
+      "rows": 5960,
+      "sha256": "d199fc73f12eb2d016a2b7b43cc68f18dc3dcb4bf6a7881d6e97ef3cba4eab1f",
+      "registered_sha256": "dfdbc2b7cdf728a15b53e323cde6127995715dfa6b178bd3c1e3d9916d0367aa",
+      "exact_byte_parity": false,
+      "role": "new v2 source reconstruction; do not merge with frozen runs unless exact parity is established"
+    },
+    {
+      "dataset": "uci",
+      "rows": 30000,
+      "sha256": "f6c131c25f5ea6716c1439d986550832a5ba1ed218fbbfc3013bb92bb78dcee2",
+      "registered_sha256": "8c05bc24646b74bec483f240be19bd21483170f029c5a7e30c6553a8ab452e91",
+      "exact_byte_parity": false,
+      "role": "new v2 source reconstruction; do not merge with frozen runs unless exact parity is established"
+    },
+    {
+      "dataset": "lendingclub",
+      "rows": 16566,
+      "sha256": "19c3704ab28a14e8bb61ca49b2f103a94b666a7342129b9eebe2d9ada0fb9720",
+      "registered_sha256": "2a2907dfeeb2b25a415e8802a2bc982a67fb08d10631a2b2a08aee47a103594d",
+      "exact_byte_parity": false,
+      "role": "new v2 source reconstruction; do not merge with frozen runs unless exact parity is established"
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/sassoftware/sas-viya-dmml-pipelines/blob/master/data/hmeq.csv",
+      "local": "work/data/hmeq_sas.csv",
+      "sha256": "aecb99e8e6b3ccf5f3c0f8ee189bbcd6b7b457fccc5f8a61d8c9f1a0b27074cd"
+    },
+    {
+      "url": "https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients",
+      "local": "work/data/uci.zip",
+      "sha256": "56c885f84457f6680f8438f02bfcdac9579323d8a94465ee5f26e32baa727602"
+    },
+    {
+      "url": "https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LC_Loan_sample_2014.csv",
+      "local": "work/data/LC_Loan_sample_2014.csv",
+      "sha256": "809aae9a3668f88adaf2eb9da81e0e36c75fc8fb02e873979474e3087d9260dc"
+    },
+    {
+      "url": "https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LC_Loan_sample_2015.csv",
+      "local": "work/data/LC_Loan_sample_2015.csv",
+      "sha256": "ec743c0f6b29de0fdbac924132c3f563e9b5bf884492d76cc8c5f1975d8eff9e"
+    }
+  ]
+}

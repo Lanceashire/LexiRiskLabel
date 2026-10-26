@@ -1,0 +1,14 @@
+{
+  "original_repository": "https://github.com/Lanceashire/LexiRiskLabel",
+  "base_commit": "f01c2ba233684904b7bc2c601d59c98b57a85671",
+  "original_tracked_files_unchanged": true,
+  "python": "3.14.8",
+  "document_sha256": "742724d7b93f5a19e2c31a02db063a125ae56b6c1a9abbdd965705ebf32a74ce",
+  "scope": "development experiments only; final results have no confirmatory claims",
+  "final_result_directories": [
+    "results/research_v2/final_real",
+    "results/research_v2/final_mechanisms",
+    "results/research_v2/focused"
+  ],
+  "third_party_input_files": "available locally under data/research_v2; omitted from portable archive, provenance and fetch script included"
+}

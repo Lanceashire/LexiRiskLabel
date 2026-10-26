@@ -1,0 +1,6 @@
+{
+  "expected_failure": true,
+  "reason": "resume identity mismatch",
+  "changed_configuration": "threshold 0.5 to 0.51",
+  "training_started": false
+}
