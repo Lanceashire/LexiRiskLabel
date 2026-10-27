@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "new_selector_slots": 54,
+  "new_fit_slots": 108,
+  "actual_unique_LR_fits": 49,
+  "actual_unique_GPU_fits": 49,
+  "within_stage_cache_hits": 10,
+  "inherited_actual_reference_slots": 72,
+  "independent_seed_clusters": 3,
+  "seconds": 3.0772401320000426,
+  "confirmation": false
+}

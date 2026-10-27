@@ -1,0 +1,23 @@
+{
+  "stage": "approval_ordinary_volume_and_cost_association_controls",
+  "basis": "DOCX 8.2 next planned controls; reuse 500-low/high neutral cells, add nested 4000 and one representative cost intervention",
+  "seeds": [2101, 2102, 2103],
+  "ordinary_counts": [500, 4000],
+  "nested": "each 500 ordinary case is exactly the first 500 rows and common uniforms of its 4000 counterpart",
+  "coverage": ["low_target_overlap", "high_target_overlap"],
+  "price_control_state": "ordinary=500, low_target_overlap only, chosen before results; do not expand cross-product",
+  "cost_cases": ["neutral_original", "positive_direction_association"],
+  "cost_intervention": "within five fixed business-PD rank bins, sort the same exposures by predeclared abs(target feature); no algorithm score or hidden label used",
+  "exposure_multiset_preserved": true,
+  "final_cost": "business_PD * permuted exposure; report resulting cost-marginal changes; exact cost multiset not assumed preserved",
+  "numerical_budget": "same original neutral-case B, never rescale with altered sum(cost)",
+  "methods": ["OrdinaryOnly", "MinRisk", "C0B0", "C0B1", "C1B0", "C1B1"],
+  "learners": ["LR", "XGB"],
+  "max_new_selector_slots": 54,
+  "max_new_fit_slots": 108,
+  "inherited_actual_reference_slots": 72,
+  "parameter_search": false,
+  "new_candidates": 0,
+  "confirmation": false,
+  "remaining": "middle overlap, nonlinear misspecification, independent confirmation; no claim of full 14-condition confirmation"
+}

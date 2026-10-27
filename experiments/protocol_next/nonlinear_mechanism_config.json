@@ -1,0 +1,18 @@
+{
+  "stage": "approval_constrained_nonlinear_misspecification_subset",
+  "basis": "DOCX 8.2 planned nonlinear subset, same two ordinary direction cases; no additional solver or algorithm",
+  "seeds": [2101, 2102, 2103],
+  "ordinary": 500,
+  "features_and_pricing": "unchanged approval_mechanism_config generator; all D/O approved, C rejected by common fixed business score",
+  "truth_logit": "original linear logit + 0.8*(target_coordinate^2-1)",
+  "coupling": "same features and Bernoulli uniforms as linear mechanism; all labels regenerated from nonlinear truth; D-only selector theta refit to visible nonlinear labels",
+  "representation": "keep original five features for all selectors and LR, do not add squared term; same S transferred to original GPU XGB",
+  "methods": ["OrdinaryOnly", "MinRisk", "C0B0", "C0B1", "C1B0", "C1B1"],
+  "primary": "within-nonlinear-state excess Brier versus known true probability; sampled-label Brier secondary",
+  "max_selector_slots": 36,
+  "max_fit_slots": 72,
+  "new_candidates": 0,
+  "confirmation": false,
+  "scope": "planned small misspecification subset; not a universal ranking and not a pure model-effect intervention across different truth laws",
+  "no_outcome_adaptive_expansion": true
+}

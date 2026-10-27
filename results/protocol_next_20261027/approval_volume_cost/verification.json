@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "nested_500_in_4000_rows_and_labels": true,
+  "approval_gates_inherited": true,
+  "common_D_C_Q_test": true,
+  "same_exposure_multiset": true,
+  "identical_numerical_B": true,
+  "final_cost_marginals_disclosed": true,
+  "all_choices_locked_before_training": true,
+  "actual_GPU_verified": true,
+  "saved_prediction_max_error": 0.0,
+  "all_sources_unchanged": true
+}

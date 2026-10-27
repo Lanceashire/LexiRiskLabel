@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "paired_feature_pools_preserved_from_linear_case": true,
+  "D_only_selector_refit_to_nonlinear_labels": true,
+  "all_ordinary_approved": true,
+  "all_candidates_rejected": true,
+  "empty_O_null_selection": true,
+  "all_choices_before_training": true,
+  "same_representation_for_selectors_and_LR": true,
+  "actual_GPU_backend_checked": true,
+  "saved_prediction_max_error": 0.0,
+  "sources_unchanged": true
+}

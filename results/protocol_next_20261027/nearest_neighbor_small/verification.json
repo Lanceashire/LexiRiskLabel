@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "parent_identity": true,
+  "all_six_actions_locked_before_evaluation": true,
+  "candidate_and_reference_not_subsampled": true,
+  "same_pending_information_access": true,
+  "same_frozen_training_and_preprocessing": true,
+  "saved_prediction_error": 0.0,
+  "actual_GPU_backend_checked": true,
+  "V_eval_development_reused": true,
+  "upstream_exact_MCMC_reproduction": false,
+  "criterion": {
+    "direct_mutual_information_max_error": 7.047314121155779e-17,
+    "equal_cost_constant_range": 2.220446049250313e-16,
+    "equal_cost_upstream_argmax_matches": true,
+    "heterogeneous_cost_uses_full_nonnegative_MI": true
+  },
+  "sources_unchanged": true
+}

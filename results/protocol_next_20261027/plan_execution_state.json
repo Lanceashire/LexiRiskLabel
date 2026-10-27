@@ -1,0 +1,35 @@
+{
+  "instruction": "continue original experiment plan; completed-stage reports are not a pause request",
+  "completed_this_batch": [
+    {
+      "stage": "approval_mechanism_small",
+      "completion_sha256": "9fea487bc9ff5b456c037830bf19cc80e8c65fc0b796711e910b62d4f18e58bb",
+      "verification_sha256": "a8264d7ff2d99e3c6be537daf30a1741a516fe74f92ff8ef071d711fecc7ba2c"
+    },
+    {
+      "stage": "nearest_neighbor_small",
+      "completion_sha256": "3de1aeb8f82a3168c37fd7a870f52e402d32f538ee5ba55dade1df0bf182fe2d",
+      "verification_sha256": "5ea40f3ad161d18c0ad6491504f17d6ab3f406d0d6e2c5156e38d432fe15e03d"
+    },
+    {
+      "stage": "approval_volume_cost",
+      "completion_sha256": "a3fd5912cf6ccf95425f46d547096e90439aa67dc20ae50bf916906d618bb17f",
+      "verification_sha256": "9e05ec5ec094c4a2ac50f1cea713a60c8c64a859409f310a47714dbc4fe64fbe"
+    },
+    {
+      "stage": "nonlinear_mechanism_small",
+      "completion_sha256": "82c2e021a8459c08be9b1db0e84c17bbdeef44cec621fe55c1f0401fdd700a52",
+      "verification_sha256": "4f454b2d4a88259fc283825a29342353d488c31c464cec15963a35e9a0705a57"
+    }
+  ],
+  "new_actual_LR_fits": 118,
+  "new_actual_GPU_fits": 118,
+  "algorithm_candidate_search_expanded": false,
+  "confirmation_claim": false,
+  "next_queue": [
+    "remaining scheduled middle-coverage controls",
+    "frozen-method ten-round comparison including adapted nearest neighbor",
+    "independent confirmation under its registered information and statistical protocol"
+  ],
+  "scope": "continue scheduled comparisons, retaining negative results; no requirement to first discover a winning new method; do not invent new modules"
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "all_ordinary_approved": true,
+  "all_candidates_rejected": true,
+  "fixed_common_business_model_for_gate_and_prices": true,
+  "same_ordinary_count_and_business_PD": true,
+  "same_D_C_Q_test_and_cost_across_coverage": true,
+  "empty_O_selection_null_control": true,
+  "all_selections_locked_before_training": true,
+  "same_solver_in_four_cells": true,
+  "actual_GPU_verified": true,
+  "saved_prediction_max_error": 0.0,
+  "all_source_hashes_unchanged": true
+}

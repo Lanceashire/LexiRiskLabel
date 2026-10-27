@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "states": 6,
+  "new_unique_LR_fits": 2,
+  "new_unique_GPU_fits": 2,
+  "reused_actual_reference_slots": 68,
+  "internal_hypothetical_LR_refits": 330,
+  "seconds": 4.285691042999588,
+  "independent_data_seed_values_per_task": 2,
+  "confirmation": false
+}
