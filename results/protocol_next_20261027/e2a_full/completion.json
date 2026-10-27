@@ -1,0 +1,26 @@
+{
+  "completed": true,
+  "full_MD_suggested_grid_completed": true,
+  "seeds": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105,
+    2106,
+    2107,
+    2108,
+    2109,
+    2110
+  ],
+  "independent_seed_clusters": 10,
+  "endpoint_slots": 300,
+  "reused_pilot_endpoints": 90,
+  "new_endpoints": 210,
+  "new_unique_LR_fits": 111,
+  "new_LR_cache_hits": 99,
+  "new_GPU_fits": 0,
+  "max_prediction_metric_error": 0.0,
+  "max_inverse_error": 6.661338147750939e-16,
+  "confirmation": false
+}
