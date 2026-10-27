@@ -1,0 +1,205 @@
+{
+  "scope": "only new diagnostic code, reports, dataset-level summaries, figures and verification conclusions; no detailed branch/state logs, intervention/training hashes, raw/private inputs or historical metadata inventory",
+  "files": [
+    {
+      "path": "experiments/protocol_next/README.md",
+      "bytes": 3748,
+      "sha256": "6324c14bb15aa79418fd0294613332fc84471dec09c28643eb790bacbf46d8b2"
+    },
+    {
+      "path": "experiments/protocol_next/REPORTING.md",
+      "bytes": 922,
+      "sha256": "236ab0008b2fd8c46f4029d34994b9e06496417a2584b6a2fca99d19cb88cb03"
+    },
+    {
+      "path": "experiments/protocol_next/analyze_e2d.py",
+      "bytes": 10537,
+      "sha256": "97e52f42cf4a02d7eb160534af1949627081e83670f44cbad1fd30732f8e507d"
+    },
+    {
+      "path": "experiments/protocol_next/analyze_next.py",
+      "bytes": 25488,
+      "sha256": "7423bb916de00fc99768345a94e14602ef28e85dbacdcfebbacc364ecc05bc29"
+    },
+    {
+      "path": "experiments/protocol_next/audit.py",
+      "bytes": 6405,
+      "sha256": "b33414432a17c9a7f66d7334ab849742d562dbd1ea56c44421eec76140353631"
+    },
+    {
+      "path": "experiments/protocol_next/e2c_config.json",
+      "bytes": 550,
+      "sha256": "fafb3a9ca1e5a0992ba3d5491189033f02dd688ea027df25e3bcddd5a1cde863"
+    },
+    {
+      "path": "experiments/protocol_next/e2d_config.json",
+      "bytes": 855,
+      "sha256": "6e8fdb319fdedd45472a63096aeea4566b32b55a82574c4e6824114f76043d56"
+    },
+    {
+      "path": "experiments/protocol_next/experiment_protocol_zh.md",
+      "bytes": 18468,
+      "sha256": "052b064834a804f613e016aee007cee79b4fb201205d4135c7d3517886d8c9e8"
+    },
+    {
+      "path": "experiments/protocol_next/gate_protocol.py",
+      "bytes": 1895,
+      "sha256": "b24962def07bd2290781d36ed3f4ca56813021185153eaa6542d50ebb6a8cf1a"
+    },
+    {
+      "path": "experiments/protocol_next/protocol.json",
+      "bytes": 1368,
+      "sha256": "178ef0f5ee1aeefe45bdb3f89b97b2e0e7b8a333c35a1c0961cec8a7662ec21d"
+    },
+    {
+      "path": "experiments/protocol_next/run_e1.py",
+      "bytes": 8097,
+      "sha256": "08794586595d044e2db135264ae5753f78188daad41fa17dea3ce6e792cc7b7c"
+    },
+    {
+      "path": "experiments/protocol_next/run_e1b.py",
+      "bytes": 9955,
+      "sha256": "8a445494976b63456d30b648eeb6a39f567e53f53d5016be54bd4ce113634635"
+    },
+    {
+      "path": "experiments/protocol_next/run_e2b.py",
+      "bytes": 10505,
+      "sha256": "0438430932d3c290d19576b5cfc927ead83d2cdfa737504a0882119754cf09ec"
+    },
+    {
+      "path": "experiments/protocol_next/run_e2c.py",
+      "bytes": 8105,
+      "sha256": "579cfaa23bf8ba82b88af60f7babc9e44b017be5e403600404d5ecb1038b71f7"
+    },
+    {
+      "path": "experiments/protocol_next/run_e2d.py",
+      "bytes": 11007,
+      "sha256": "6031d818dbbb5004779739cc50c5ceef1f94116400a6a57391ae9dedb0bb961d"
+    },
+    {
+      "path": "experiments/protocol_next/runtime.py",
+      "bytes": 12491,
+      "sha256": "b76a68ce7e7a0de09e0e67d410accf97a6a922d209f17f9936db3c79fc6cce01"
+    },
+    {
+      "path": "results/protocol_next_20261027/PUBLICATION.md",
+      "bytes": 1712,
+      "sha256": "fe7429874479063873b63d758fb186df996068c83cc2c7aa9f490507a19bfe9f"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e1_descriptive_summary.csv",
+      "bytes": 5884,
+      "sha256": "7d6b9f8c8b21b6068e12bd5759246b436df218f3ef550003b7a1dc49c2416308"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e1_learner_forks.png",
+      "bytes": 202767,
+      "sha256": "16e2ed60ed015d79fd0f72266e216d26140f8074204e11d4aca79c9d2fa8a71b"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e1b_independent_validation.png",
+      "bytes": 62383,
+      "sha256": "2b56b776ebef473940b516575d1e0989258d4461d83c2c4fedf2d1fb5d40006d"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e1b_reference_summary.csv",
+      "bytes": 387,
+      "sha256": "25eb069fbf96aeb9707329ebbfe133dfaa5d9811b171e26efce7d0dc2c2b12af"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e2b_proxy_vs_actual.png",
+      "bytes": 82453,
+      "sha256": "19a1dc8c2914ba28b204b0eb939836335290bc89e523c5486b8c824616b0d24e"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e2c_descriptive_summary.csv",
+      "bytes": 6251,
+      "sha256": "71e0aa87578d1cc0e0ddff8ccf137d92d1c09146d2e4a1a6d7524ceb75044902"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/e2c_representation_reference.png",
+      "bytes": 122166,
+      "sha256": "bacf9d8b1914c7fd9b01a2323526a59fd83085670cc2c1417f1079e11f4d23a7"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/stage_decisions.json",
+      "bytes": 1385,
+      "sha256": "8baa9b4f4db73c75d156696457343549d5503057d5c785157a3d1912a95112b1"
+    },
+    {
+      "path": "results/protocol_next_20261027/analysis/阶段实验报告.md",
+      "bytes": 14550,
+      "sha256": "90259ff2e51c6ffacf6f7f4690c6093d928c4a18713d99284fd9b661b65b9983"
+    },
+    {
+      "path": "results/protocol_next_20261027/audit_report.json",
+      "bytes": 3270,
+      "sha256": "30cfd4428a085277ffbd00fa2a417edc3681fc1803690033001d474ec17b6f5b"
+    },
+    {
+      "path": "results/protocol_next_20261027/completion.json",
+      "bytes": 390,
+      "sha256": "89f277993d4538d2f1084f5325fa45d145d43e1fa857c6356a208ab05012e496"
+    },
+    {
+      "path": "results/protocol_next_20261027/e1b/completion.json",
+      "bytes": 376,
+      "sha256": "a55cf51f956ca017b9877010b59baadf9bc3adc2b508f96a0c11255fed980d5f"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2b/completion.json",
+      "bytes": 319,
+      "sha256": "4defe9bc6b4c0664235a9a670cd6dce167a82058e7d3f7054221399e1eda72b2"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2c/completion.json",
+      "bytes": 295,
+      "sha256": "e5d7ad53e9b7c48449b0f7c31a72c01e66561ea07a2bd505952258b8e85a69ea"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/analysis/E2d_数量与构成实验报告.md",
+      "bytes": 5746,
+      "sha256": "88dc8cbd280fc82e737fcd1597941964ad29822fb81482d99fed2752fad8fca1"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/analysis/decision.json",
+      "bytes": 389,
+      "sha256": "694e23b8e18fa1555084e1657ea0dbbf6378fb961ed86eb42aced6a8e74d7dfe"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/analysis/quantity_composition_xgb.png",
+      "bytes": 360933,
+      "sha256": "ea0f78e917165e2d34f31e0f19ee8a6f4cc5634af2bafab251f7a19ada684ee0"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/analysis/risk_matched_summary.csv",
+      "bytes": 608,
+      "sha256": "506108ef40e7ee969d30b741d8fb77f93799690904c2aefa430053cbe637ffd4"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/analysis/same_count_summary.csv",
+      "bytes": 599,
+      "sha256": "0ce2ae51045735c4af52b8bbcbcde95930f27302d7c2426ebdf3eca50cc06c20"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/completion.json",
+      "bytes": 337,
+      "sha256": "ed90da0d863bd57ac705c64921e456bd34f0d30e04038c041efce67617e15d04"
+    },
+    {
+      "path": "results/protocol_next_20261027/e2d/verification.json",
+      "bytes": 338,
+      "sha256": "c1d770d1a1ca962a7645d236ff2a9739e517a93e4b0e7f8e5b277f25f9a6e2bc"
+    },
+    {
+      "path": "results/protocol_next_20261027/final_verification.json",
+      "bytes": 644,
+      "sha256": "ad9cccc745cec0a64f370a7e426ae50a4917b9b364852ba69da556364355a33a"
+    },
+    {
+      "path": "results/protocol_next_20261027/revision_notes.json",
+      "bytes": 248,
+      "sha256": "356665b2f8692cbb3b59f3fe06fef6f32b029a6348b9bf2a3c41c42ab0ed9088"
+    }
+  ]
+}

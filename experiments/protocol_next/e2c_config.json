@@ -1,0 +1,14 @@
+{
+  "anchor_round": 5,
+  "conditions": ["raw_ref128", "leaf_ref128", "raw_ref512"],
+  "selectors": ["OrdinaryOnly", "MinRisk", "Vopt", "RB-BRIDGE"],
+  "leaf_trees": 20,
+  "leaf_depth": 2,
+  "head_ridge": 1.0,
+  "selection_reference_n": 128,
+  "reference_sensitivity_n": 512,
+  "fit_xgboost_on_original_features": true,
+  "no_hyperparameter_search": true,
+  "no_new_solver": true,
+  "scope": "Six pre-fixed round-5 anchors; representation contrast and reference-size contrast separately. Same selected set for LR head and full raw-feature XGBoost."
+}

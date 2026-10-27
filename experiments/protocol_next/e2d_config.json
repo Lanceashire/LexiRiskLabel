@@ -1,0 +1,18 @@
+{
+  "stage": "E2d_quantity_composition",
+  "anchor_round": 5,
+  "count_fractions": [0.6, 0.8, 1.0],
+  "deduplicate_counts": true,
+  "include_zero_baseline": true,
+  "methods": ["MinRisk-k", "IG-k", "Vopt-k"],
+  "vopt_rule": "conditional marginal gain per risk with exact-count completion feasibility; no exchanges",
+  "ig_rule": "maximize cached bootstrap IG with exact cardinality and common risk budget; MILP optimality required",
+  "matched_control_targets": ["IG-k", "Vopt-k"],
+  "risk_match_absolute_tolerance_budget_fraction": 0.01,
+  "matched_control_rule": "uniform draw from all distinct feasible one-for-one swaps within tolerance of target cost",
+  "matched_control_draws_per_target": 1,
+  "selector_seed_offset": 92731,
+  "milp_time_limit_seconds": 30,
+  "failure_rule": "mark not_estimable; do not widen tolerance",
+  "confirmation": false
+}

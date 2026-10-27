@@ -1,0 +1,12 @@
+{
+  "completed": true,
+  "states": 6,
+  "conditions": 3,
+  "method_slots": 72,
+  "nominal_fit_slots": 144,
+  "actual_new_learner_fits": 36,
+  "reused_learner_fits": 108,
+  "separate_D_only_leaf_model_fits": 6,
+  "full_XGB_always_uses_original_features": true,
+  "hyperparameter_search": false
+}

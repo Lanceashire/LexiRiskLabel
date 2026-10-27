@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "states": 18,
+  "four_cell_method_slots": 72,
+  "nominal_fit_slots": 144,
+  "actual_new_fits": 0,
+  "reused_fits": 144,
+  "positive_gamma_evaluations": 22116,
+  "capped_cells": 0,
+  "pair_route_decision": "positive surrogate complementarity exists; actual benefit must be checked separately"
+}

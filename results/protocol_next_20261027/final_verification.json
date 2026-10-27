@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "e1_shared_selection_and_training_hashes": true,
+  "e1_saved_prediction_metrics_recomputed": true,
+  "same_geometry_pair_construction_effect_exactly_zero_in_e2b": true,
+  "e2c_shared_selection_across_learners": true,
+  "leaf_models_D_only_and_maximum_80_features": true,
+  "all_actual_XGB_training_cuda": true,
+  "lr_backend": "cpu",
+  "source_code_data_config_and_anchor_identity_checked": true,
+  "e1b_choice_uses_V_search_only": true,
+  "e1b_V_search_and_V_eval_disjoint": true,
+  "e1b_validation_predictions_recomputed": true,
+  "no_confirmatory_inference": true,
+  "private_individual_artifacts_remain_local": true
+}

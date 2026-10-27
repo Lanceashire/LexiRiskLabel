@@ -1,0 +1,9 @@
+{
+  "completed": true,
+  "states": 6,
+  "actual_unique_sets": 96,
+  "actual_fits": 192,
+  "validation_selected_references": 12,
+  "outer_T_used_for_selection_or_scoring": false,
+  "note": "New validation predictions require fitting these fixed training sets; E1 persisted T predictions, not fitted models or V predictions. Refit slots do not add independent data clusters."
+}

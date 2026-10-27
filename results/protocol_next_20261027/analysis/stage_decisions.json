@@ -1,0 +1,14 @@
+{
+  "E0": "completed, PASS_FOR_E1 with explicit retained legacy GATE/BRIDGE findings",
+  "E1": "completed, development paired estimates only",
+  "E2b": "completed; positive Gamma exists but pair construction has zero incremental selection/prediction effect; exchange is distinct and sometimes worsens actual Brier",
+  "E2c": "completed at six pre-fixed round-5 states; neither frozen leaves nor Q_ref enlargement establish a general improvement",
+  "BRIDGE_search": "stop enlarging partners/exchange grid; current gains cannot be attributed to complementary-group construction",
+  "next_priority": "Use the independent-validation differences to constrain at most one learner-matched acquisition-value estimator; do not promote a new candidate or launch confirmation from these two-seed diagnostics",
+  "E1b": "completed on all six registered round-5 anchors, sixteen unique feasible sets, independent V_search/V_eval; no stable cross-task XGB advantage",
+  "E2a_full_grid": "not run; mathematical controls retained but not mislabeled a new 300-endpoint confirmation",
+  "E2d": "not run; no count-protection modification promoted",
+  "CORR": "frozen negative result; no scale-up or new alpha search",
+  "GATE": "no new E4 experiments; common future protocol interface audited only",
+  "confirmation": "720 ten-round episodes remain disabled; no winning new candidate has been frozen"
+}

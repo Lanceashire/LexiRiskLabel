@@ -1,0 +1,12 @@
+{
+  "E2d_complete": true,
+  "new_candidate_frozen": false,
+  "switch_dataset_now": false,
+  "expand_pair_search": false,
+  "confirmation_started": false,
+  "two_seed_development_only": true,
+  "quantity_improved_curves_XGB": 9,
+  "quantity_total_curves_XGB": 18,
+  "monotone_improving_curves_XGB": 2,
+  "analyzer_hash": "97e52f42cf4a02d7eb160534af1949627081e83670f44cbad1fd30732f8e507d"
+}

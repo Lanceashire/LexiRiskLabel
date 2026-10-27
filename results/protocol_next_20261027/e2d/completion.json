@@ -1,0 +1,14 @@
+{
+  "completed": true,
+  "states": 6,
+  "independent_trajectory_clusters": 6,
+  "independent_seed_values": 2,
+  "unique_state_k_cells": 18,
+  "selection_slots": 91,
+  "nominal_fit_slots": 182,
+  "actual_new_fits": 126,
+  "reused_fits": 56,
+  "unique_training_interventions": 88,
+  "matched_controls": 31,
+  "not_estimable_controls": 5
+}

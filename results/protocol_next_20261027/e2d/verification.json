@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "exact unique k",
+    "common budget",
+    "same actions and training rows across learners",
+    "saved-prediction Brier recomputation",
+    "actual CUDA backend",
+    "matched-risk tolerance and exactly one swap",
+    "selection locks present"
+  ],
+  "selection_slots": 91,
+  "learner_slots": 182
+}

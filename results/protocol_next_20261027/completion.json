@@ -1,0 +1,15 @@
+{
+  "completed": true,
+  "states": 18,
+  "nominal_fit_slots": 432,
+  "actual_unique_fits": 386,
+  "fit_cache_hits": 46,
+  "unique_interventions": 193,
+  "selected_method_slots": 216,
+  "independent_trajectory_clusters": 6,
+  "independent_seed_values": 2,
+  "random_draws": 5,
+  "ig_committee_fits_separate": 72,
+  "ig_seconds": 3.3513026359999003,
+  "elapsed_seconds": 20.202430090000007
+}

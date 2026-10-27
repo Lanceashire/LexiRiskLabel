@@ -1,0 +1,6 @@
+{
+  "e2c_release_order_fix": true,
+  "all_144_selected_hashes_and_endpoint_values_unchanged": true,
+  "obsolete_stage_location": "work/next_protocol/retained/e2c_before_release_order_fix",
+  "obsolete_repeated_fits_not_independent_evidence": true
+}

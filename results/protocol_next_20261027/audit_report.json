@@ -1,0 +1,116 @@
+{
+  "status": "PASS_FOR_E1",
+  "hidden_label_perturbation": {
+    "candidate": {
+      "passed": true,
+      "selectors": 8,
+      "committee_recomputed": true
+    },
+    "ordinary": {
+      "passed": true,
+      "selectors": 8,
+      "committee_recomputed": true
+    },
+    "outer_test": {
+      "passed": true,
+      "selectors": 8,
+      "committee_recomputed": true
+    }
+  },
+  "identity_changes_rejected": {
+    "configuration": true,
+    "code": true,
+    "datasets": true
+  },
+  "lock_before_release": true,
+  "duplicate_collection_rejected": true,
+  "identical_training_cached": true,
+  "same_action_deduplicated": true,
+  "linear_and_exhaustive_checks": {
+    "passed": true,
+    "bridge_single_gains": [
+      9.998000399920016e-05,
+      9.998000399920016e-05,
+      0.009900990099009903
+    ],
+    "bridge_pair_value": 0.6666666666666665,
+    "point_greedy_value": 0.009999000198969932,
+    "complementarity_transition": [
+      {
+        "ordinary_information": 0.0,
+        "gamma": 0.6664667066586681
+      },
+      {
+        "ordinary_information": 9998.0,
+        "gamma": 2.2223703802226602e-05
+      },
+      {
+        "ordinary_information": 9999.0,
+        "gamma": -1.1102230246251565e-16
+      },
+      {
+        "ordinary_information": 10000.0,
+        "gamma": -2.2220740839684616e-05
+      },
+      {
+        "ordinary_information": 20000.0,
+        "gamma": -0.13334133301334627
+      }
+    ],
+    "small_pool_exact_proxy_optimum": 1.1199651295416757,
+    "small_pool_exact_set": [
+      2,
+      9,
+      10,
+      11
+    ],
+    "pair_solve_max_error": 1.4988010832439613e-15,
+    "corr_exact_expectation_error": 5.551115123125783e-17,
+    "ordinary_first_ranking_before": [
+      0.5,
+      0.44751381215469616
+    ],
+    "ordinary_first_ranking_after": [
+      9.706853038245002e-05,
+      0.44751381215469616
+    ],
+    "zero_direction_gain": 0.0,
+    "same_pool_exact_optimum": 0.0013963207054507893,
+    "same_pool_heuristic_gaps": {
+      "Vopt": 0.0,
+      "RB-BRIDGE": 0.0,
+      "BRIDGE-random": 0.0
+    },
+    "label_visibility": "selectors have no hidden-label fields"
+  },
+  "future_parameters": {
+    "future_batch_size": 160,
+    "capacity": 80,
+    "risk_cap": 20.0,
+    "threshold": 0.5,
+    "planning_horizon": 2,
+    "actual_future_release": true,
+    "future_approval": "dynamic",
+    "selection_worlds": 16,
+    "verification_worlds": 8
+  },
+  "one_step_and_actual_future_release_separated": true,
+  "future_capacity_and_risk_enforced": true,
+  "corr_pi_zero_explicitly_recorded": true,
+  "corr_unbiased_claim_domain": "positive-probability support only",
+  "legacy_findings": [
+    {
+      "issue": "BRIDGE pair search and exchange confounded",
+      "status": "frozen result retained; four-cell diagnostic required before group-search attribution"
+    },
+    {
+      "issue": "GATE planning 64/32/8 vs actual environment 160/80/20",
+      "status": "explicit common FutureProtocol implemented; legacy result not reinterpreted as corrected E4"
+    },
+    {
+      "issue": "legacy no-release changed planner only",
+      "status": "actual environment release is an independent parameter; scale-up remains disabled"
+    }
+  ],
+  "scope": "implementation audit; mathematical checks do not establish learning improvement"
+}
