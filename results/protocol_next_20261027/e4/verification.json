@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "same 160/80/20/0.5 planning/environment parameters",
+    "shared deduplicated candidate family and common random uniforms",
+    "disjoint selection/model-verification/true-verification RNG streams",
+    "no actual O/C/future label input in planner API",
+    "choices locked before actual future generation/release",
+    "H1 and H2 actual environments both release future labels",
+    "no-release actually excludes future rows and preserves direct predictions",
+    "fixed future approvals identical across actions within learner",
+    "matched-S feedback control",
+    "same actions for LR/GPU XGB",
+    "all current/future risk budgets enforced",
+    "total ordinary plus exploration risk/loss reported",
+    "saved prediction errors recomputed"
+  ],
+  "oracle_scope": "known synthetic label generator only, not available for real credit decisions"
+}

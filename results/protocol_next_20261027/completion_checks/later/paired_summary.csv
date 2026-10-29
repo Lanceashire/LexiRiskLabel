@@ -1,0 +1,4 @@
+dataset,reference,ALC_gain,final_gain,positive_streams,negative_streams,risk_difference
+lendingclub,MinRisk,9.102745427785885e-05,-1.0688224416077752e-06,2,0,-31255.325078219175
+lendingclub,OrdinaryOnly,1.8279791742639717e-05,-8.601392296729571e-05,2,0,65363.898369669914
+lendingclub,ParBaLS,3.8764997030760195e-05,-2.8766115926712188e-05,1,1,-40131.26909211278

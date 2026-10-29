@@ -1,0 +1,9 @@
+{
+  "completed_cases_at_resume": 24,
+  "completed_ten_round_episodes_at_resume": 306,
+  "frozen_identity_unchanged": true,
+  "completed_cases_after_resume": 60,
+  "completed_ten_round_episodes_after_resume": 720,
+  "metadata_snapshot_captured": "after resumed completion, not before pause",
+  "case_completion_resource_counts_scope": "attempt-local; accepted round records audited separately; do not claim exact physical counts across interrupted retries"
+}

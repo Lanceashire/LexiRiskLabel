@@ -1,0 +1,8 @@
+{
+  "predeclared_gate_passed": false,
+  "candidate_frozen_for_confirmation": false,
+  "action": "stop this fantasy candidate; do not expand worlds/candidate batches after seeing outcomes",
+  "V_eval_positive_seed_states": 2,
+  "new_dataset_started": false,
+  "confirmation_started": false
+}

@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "independent_underlying_states": 3,
+  "development_seeds": 3,
+  "actual_policy_learner_slots": 60,
+  "actual_unique_LR_fits": 24,
+  "actual_unique_GPU_XGB_fits": 27,
+  "actual_model_cache_hits": 63,
+  "internal_planning_LR_refits": 2160,
+  "internal_world_fits_are_not_independent_benchmarks": true,
+  "confirmation": false,
+  "real_data_expansion": false
+}

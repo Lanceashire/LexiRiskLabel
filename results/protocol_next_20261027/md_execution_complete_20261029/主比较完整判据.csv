@@ -1,0 +1,7 @@
+dataset,comparison,mean_gain,conditional_L95,conditional_U95,conditional_p_Holm,delta,conditional_CI_below_zero,conditional_CI_within_delta_band,Holm_rejects_zero_at_005,conditional_L95_exceeds_delta
+hmeq,FantasyCandidate_vs_MinRisk,-0.00010866788024347813,-0.00019240352752108457,-2.1927281201877117e-05,0.08995502248875561,0.00041129769855403604,True,True,False,False
+hmeq,FantasyCandidate_vs_ParBaLS,-1.2488957636339935e-05,-0.00011511196787579161,9.262565086836906e-05,1.0,0.00041129769855403604,False,True,False,False
+lendingclub,FantasyCandidate_vs_MinRisk,-2.9976855318283934e-05,-8.732560961950652e-05,2.5368467854911566e-05,1.0,0.0007294754336922526,False,True,False,False
+lendingclub,FantasyCandidate_vs_ParBaLS,1.0145938503201743e-05,-4.955465774009261e-05,6.741467211956424e-05,1.0,0.0007294754336922526,False,True,False,False
+uci,FantasyCandidate_vs_MinRisk,-1.0991847780880427e-05,-3.5882039825448264e-05,1.4481159876277274e-05,1.0,0.0006624705158472765,False,True,False,False
+uci,FantasyCandidate_vs_ParBaLS,-3.2515064175973085e-05,-5.876085916744962e-05,-4.8191282512813685e-06,0.09995002498750626,0.0006624705158472765,True,True,False,False

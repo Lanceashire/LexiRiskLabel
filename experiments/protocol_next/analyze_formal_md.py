@@ -93,7 +93,11 @@ def main():
                 'delta':delta,'conditional_classification':status,'full_training_uncertainty_assessed':False})
     pd.DataFrame(primary_boot).to_csv(out/'primary_conditional_test_intervals.csv',index=False)
     pd.DataFrame(sensitivity).to_csv(out/'delta_sensitivity.csv',index=False)
-    total={key:sum(c[key] for c in completed) for key in ['actual_new_real_GPU_fits','actual_new_fantasy_GPU_fits','actual_new_committee_GPU_fits','initial_tuning_GPU_fits','initial_teacher_GPU_fits','internal_neighbor_LR_refits']}
+    attempt_totals={key:sum(c[key] for c in completed) for key in ['actual_new_real_GPU_fits','actual_new_fantasy_GPU_fits','actual_new_committee_GPU_fits','initial_tuning_GPU_fits','initial_teacher_GPU_fits','internal_neighbor_LR_refits']}
+    round_audit=json.loads((out/'round_record_audit.json').read_text());assert round_audit['passed']
+    total={'retained_round_segments':round_audit['resources_retained_segments'],
+           'case_attempt_metadata':attempt_totals,'exact_physical_retry_cost_known':False,
+           'scope':'retained accepted segments; overwritten unfinished retry work is not an independent experiment and its full physical cost is not recoverable'}
     write_json(out/'verification.json',{'passed':True,'all_720_predictions_rescored':True,'max_rescore_error':max_error,
         'all_registered_cases_complete':True,'all_budgets_feasible':True,'all_actual_training_GPU_verified':True,
         'frozen_source_identity_unchanged':source_unchanged,'no_iid_t_test_on_folds':True,'test_bootstrap_conditions_on_models':True,
@@ -131,7 +135,7 @@ ALC Brier为十个重训轮次总体Brier的平均，不含初始轮；低为好
 
 ## 核验和资源
 
-全部720条预测逐轮重新计分，最大误差{max_error:.3g}；每轮预算、唯一采集、标签时序、组/参考/测试分离、实际GPU后端和冻结代码身份检查通过。真实重训、内部幻想、委员会、D0调参分别计数：{json.dumps(total,ensure_ascii=False)}。这些拟合次数不是独立基准或新数据样本。
+全部720条预测逐轮重新计分，最大误差{max_error:.3g}；7200轮的预算、唯一采集、可见历史重建、组/参考/测试分离、实际GPU后端和冻结代码身份检查通过。真实重训、内部幻想、委员会、D0调参分别计数：{json.dumps(total,ensure_ascii=False)}。暂停后续跑的案例计数原本只覆盖最后一次进程尝试，因此同时从保留逐轮记录重算有效段调用数；未完成段在暂停重试中的额外物理成本无法完整恢复，不将它们伪装成新的独立实验。以上不是所有重试的精确总算力，也不是独立基准或新数据样本。
 
 最终结果、补充预算及不利折均保留；不在结果后修改模型网格、伪标签世界、目标预算或候选家族。完整预测、逐轮选集与标签本地保留，公开必要材料不含第三方原始行。
 '''

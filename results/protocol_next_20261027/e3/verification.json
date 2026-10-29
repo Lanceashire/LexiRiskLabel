@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "max_exact_design_formula_error": 7.105427357601002e-15,
+  "checks": [
+    "frozen parent identity",
+    "pi and all pi_ij from full finite mixture",
+    "all atoms risk feasible",
+    "all draws locked before labels",
+    "same selection/pi/g/learner across target branches",
+    "no candidate labels outside S used in training",
+    "crossfit historical residuals on visible D",
+    "V_eval and outer T disjoint from training",
+    "actual CUDA regressor backend",
+    "saved prediction Brier recomputation",
+    "exact target bias/variance and full design Brier variance"
+  ],
+  "historical_multi_round_CORR_replayed": false
+}

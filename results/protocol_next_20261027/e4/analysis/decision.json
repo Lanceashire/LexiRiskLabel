@@ -1,0 +1,12 @@
+{
+  "E4_completed": true,
+  "registered_oracle_gate_passed": false,
+  "oracle_horizon_mean_gain": -3.921535502668223e-06,
+  "oracle_positive_seed_count": 0,
+  "underlying_seed_count": 3,
+  "expand_horizon_worlds_or_candidate_family": false,
+  "real_data_confirmation_started": false,
+  "action": "stop expanding current GATE route; no real-data or large confirmation expansion",
+  "scope": "finite-family, finite-world, three-seed mechanism; not a proof that all foresight policies lack value",
+  "analyzer_hash": "0f2c962a3358d2b446a58895258bedc9faee768194e34cdb0af63d1d34ab19ec"
+}

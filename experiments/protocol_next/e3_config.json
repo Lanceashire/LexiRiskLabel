@@ -1,0 +1,23 @@
+{
+  "stage": "E3_CORR_fixed_state_diagnostic",
+  "anchor_round": 5,
+  "acquisition_repeats": 3,
+  "draw_seed_offset": 63193,
+  "design": "frozen core.corr_select optimized mixture; exact finite pi and pi_ij; same design for all target branches",
+  "branches": {"Observed": null, "Plugin": 0.0, "FullCorrection": 1.0, "Shrink025": 0.25, "Shrink050": 0.5},
+  "learner": "XGBRegressor",
+  "objective": "reg:squarederror",
+  "sample_weight": "unit weight for every training row in every branch",
+  "target_clipping": false,
+  "evaluation_prediction_clipping": [0.0, 1.0],
+  "g": "fixed D-only regularized logistic regression from the registered anchor",
+  "historical_residual_crossfit_folds": 3,
+  "primary_evaluation": "pre-existing E1b V_eval block, disjoint from training/Q_ref/outer T; reused development validation, not a fresh confirmation set",
+  "secondary_evaluation": "outer T; no branch or alpha selection on T",
+  "cache_identical_training_sets_and_targets": true,
+  "cumulative_scope": "single-state fork, no reconstructed multi-round CORR history",
+  "offline_hidden_residuals": "exact design audit only, after all branch fits, never used by acquisition or training",
+  "continuation_gate": "same predeclared shrink alpha has positive mean V_eval gain vs Observed in all 3 datasets and both seed gains positive in at least 2 datasets; FullCorrection beats Plugin in at least 2 dataset means; otherwise stop correction mainline",
+  "confirmation": false,
+  "scale_up": false
+}

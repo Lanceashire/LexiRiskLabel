@@ -1,0 +1,17 @@
+{
+  "registered_cases": 60,
+  "expected_main_episodes": 360,
+  "expected_secondary_episodes": 360,
+  "expected_total_episodes": 720,
+  "all_splits_registered_before_new_T_outcomes": true,
+  "inner_model_tuning": "D0 labels only, preprocessing refit inside three inner folds",
+  "acquisition_parameters": "one frozen configuration per method, no acquisition parameter search",
+  "failed_candidate_status": "only previously attempted learner-matched candidate, development gate failed; retained as fixed negative candidate for prescribed evaluation, never described as a winning candidate",
+  "LC_monthly_forward_splits": true,
+  "fresh_external_blind_claim": false,
+  "delta": {
+    "hmeq": 0.00041129769855403604,
+    "uci": 0.0006624705158472765,
+    "lendingclub": 0.0007294754336922526
+  }
+}

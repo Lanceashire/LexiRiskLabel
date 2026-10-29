@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "source_and_code_frozen": true,
+  "all_cases_information_budget_checks": true,
+  "all_predictions_rescored_in_engine": true,
+  "max_rescore_error": 0.0,
+  "actual_CUDA_training_checked": true,
+  "target_hyperparameter_labels_used": false,
+  "prior_main_results_unchanged": true,
+  "claim": "internal transfer robustness"
+}

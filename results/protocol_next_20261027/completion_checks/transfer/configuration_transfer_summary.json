@@ -1,0 +1,62 @@
+[
+  {
+    "held_out_task": "hmeq",
+    "source_tasks": [
+      "lendingclub",
+      "uci"
+    ],
+    "ridge": 10,
+    "XGB": {
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "tree_method": "hist",
+      "device": "cuda",
+      "objective": "binary:logistic",
+      "eval_metric": "logloss",
+      "max_depth": 2,
+      "n_estimators": 100
+    },
+    "source_D0_tuning_cases": 40,
+    "source_tuning_commitment": "3be1aa9369a6c6bf7aa5cc5b6609058e74800e2e242f96bced5f22edd2ac1d8c"
+  },
+  {
+    "held_out_task": "uci",
+    "source_tasks": [
+      "hmeq",
+      "lendingclub"
+    ],
+    "ridge": 10,
+    "XGB": {
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "tree_method": "hist",
+      "device": "cuda",
+      "objective": "binary:logistic",
+      "eval_metric": "logloss",
+      "max_depth": 2,
+      "n_estimators": 100
+    },
+    "source_D0_tuning_cases": 40,
+    "source_tuning_commitment": "a793a9a8dd6d226a64ffcb5e5bc566481ab6367c018ab48e79a0c42b0e69c9e2"
+  },
+  {
+    "held_out_task": "lendingclub",
+    "source_tasks": [
+      "hmeq",
+      "uci"
+    ],
+    "ridge": 10,
+    "XGB": {
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "tree_method": "hist",
+      "device": "cuda",
+      "objective": "binary:logistic",
+      "eval_metric": "logloss",
+      "max_depth": 2,
+      "n_estimators": 100
+    },
+    "source_D0_tuning_cases": 40,
+    "source_tuning_commitment": "17777a345dd67c1de64d31a0cb62238e07f0ce3ff6855bb176d5039fae58ec5f"
+  }
+]

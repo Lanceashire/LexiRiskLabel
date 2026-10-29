@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "mode": "transfer",
+  "episodes": 36,
+  "cases": 6,
+  "identity_hash": "decca922ede71aadabec90552675666813bb76b1d54094c6d8a468dcdc828c46",
+  "new_method_candidates": 0,
+  "reference_budget": 0.1,
+  "target_hyperparameter_search": false
+}

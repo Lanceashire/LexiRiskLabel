@@ -1,0 +1,24 @@
+{
+  "E3_completed": true,
+  "continuation_gate": {
+    "Shrink025": {
+      "positive_dataset_means": 1,
+      "datasets_with_both_seeds_positive": 0,
+      "full_correction_beats_plugin_datasets": 1,
+      "passed": false
+    },
+    "Shrink050": {
+      "positive_dataset_means": 0,
+      "datasets_with_both_seeds_positive": 0,
+      "full_correction_beats_plugin_datasets": 1,
+      "passed": false
+    }
+  },
+  "correction_mainline_continue": false,
+  "action": "close current correction improvement mainline; retain finite-mixture design and audit tools",
+  "next_protocol_stage": "E4 small paired planning diagnostic; no scale-up",
+  "E4_started": false,
+  "alpha_selected_on_outer_T": false,
+  "fresh_validation_claim": false,
+  "analyzer_hash": "1392e58ca90e0f723096a7711fcb59f9b641788ce38520ca1b570a61e6cd1665"
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "max_reused_prediction_score_error": 9.298117831235686e-16,
+  "checks": [
+    "parent source/data identity",
+    "D-only fantasy model",
+    "common O/C Bernoulli uniforms across batches",
+    "same actual XGB retraining program",
+    "CUDA backend checked",
+    "all six choices locked before validation files read",
+    "independent check worlds not used for choice",
+    "all proposed sets within same budgets",
+    "V_eval predictions matched by exact selected hash and recomputed",
+    "outer T secondary only",
+    "no fresh-validation claim"
+  ],
+  "independent_seed_clusters": 6,
+  "development_seed_values_per_task": 2
+}

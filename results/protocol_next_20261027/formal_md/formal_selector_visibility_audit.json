@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "state": "hmeq_repeat1_fold1_stream1_round1",
+  "mutation": "simultaneously flip O/C and outer T labels, retain D labels/features/prices",
+  "selectors": [
+    {
+      "selector": "OrdinaryOnly",
+      "same_selection": true,
+      "selected_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "committee_and_fantasy_recomputed": true
+    },
+    {
+      "selector": "MinRisk",
+      "same_selection": true,
+      "selected_hash": "fcc74333cab8ad3ee411643e1531b5f2b943a64943cabac6c20264c3d9ea15c3",
+      "committee_and_fantasy_recomputed": true
+    },
+    {
+      "selector": "LRBE-IG",
+      "same_selection": true,
+      "selected_hash": "3085c40c4023c6835798d5c62fb762bbb5b170ba8307be0c2eca13b3c4d7e8fa",
+      "committee_and_fantasy_recomputed": true
+    },
+    {
+      "selector": "Vopt",
+      "same_selection": true,
+      "selected_hash": "4b53e352d32b805ae8fec360762ec19fbadf604e5cfb59bf746e1e772d5c14f7",
+      "committee_and_fantasy_recomputed": true
+    },
+    {
+      "selector": "ParBaLS",
+      "same_selection": true,
+      "selected_hash": "95b5663fa88db7500972c9773f497cc1532693126e39efeef7fbf7a456885c0e",
+      "committee_and_fantasy_recomputed": true
+    },
+    {
+      "selector": "FantasyCandidate",
+      "same_selection": true,
+      "selected_hash": "cef65b7a359f0f0daf29248e111cf9cb1137fa81bc14d77616958becf1dbfea2",
+      "committee_and_fantasy_recomputed": true
+    }
+  ],
+  "actual_audit_GPU_fits": 24,
+  "outcome_trajectories_modified": false,
+  "audit_fits_are_not_new_experiments": true,
+  "source_identity_unchanged": true,
+  "auditor_sha256": "332c18fe9dd837d18412e54a256e7daf5bdfaab438fd8900c134aa89f27afb32"
+}

@@ -1,0 +1,142 @@
+{
+  "config": {
+    "experiment_id": "MD_sections_9_10_12_complete_pipeline_20261027",
+    "controlling_protocol_sha256": "052b064834a804f613e016aee007cee79b4fb201205d4135c7d3517886d8c9e8",
+    "datasets": [
+      "hmeq",
+      "uci",
+      "lendingclub"
+    ],
+    "outer_folds": 5,
+    "outer_repeats": 2,
+    "replay_streams": 2,
+    "rounds": 10,
+    "main_budget": 0.1,
+    "main_methods": [
+      "OrdinaryOnly",
+      "MinRisk",
+      "LRBE-IG",
+      "Vopt",
+      "ParBaLS",
+      "FantasyCandidate"
+    ],
+    "secondary_budgets": [
+      0.025,
+      0.4
+    ],
+    "secondary_methods": [
+      "MinRisk",
+      "ParBaLS",
+      "FantasyCandidate"
+    ],
+    "expected_main_episodes": 360,
+    "expected_secondary_episodes": 360,
+    "expected_total_episodes": 720,
+    "candidate_status": "only previously attempted learner-matched candidate, development gate failed; retained as fixed negative candidate for prescribed evaluation, never described as a winning candidate",
+    "candidate_search_or_modification": false,
+    "candidate_proposals": [
+      "OrdinaryOnly",
+      "MinRisk",
+      "Vopt",
+      "RB-BRIDGE"
+    ],
+    "candidate_selection_worlds": 2,
+    "candidate_check_worlds": "unused check worlds omitted from deployment computation; same selection worlds and choice rule, no change to action policy",
+    "initial_pool_fraction": 0.25,
+    "initial_visible_fraction": 0.5,
+    "reference_count": 128,
+    "reference_availability": "R sampled within initial feature pool, groups excluded from all observed labels and arrivals; no future outer-test features",
+    "approval": "same D0-trained tuned XGB business model fixed through replay, threshold .5; price=business_PD*exposure; B=rho*rejected_pool_cost",
+    "preprocessing": "fit only permitted D0; each inner validation fold refits its own preprocessor",
+    "inner_folds": 3,
+    "lr_ridge_grid": [
+      0.1,
+      1,
+      10
+    ],
+    "xgb_grid": [
+      {
+        "max_depth": 2,
+        "n_estimators": 100
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 300
+      },
+      {
+        "max_depth": 3,
+        "n_estimators": 100
+      },
+      {
+        "max_depth": 3,
+        "n_estimators": 300
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 100
+      },
+      {
+        "max_depth": 5,
+        "n_estimators": 300
+      }
+    ],
+    "xgb_fixed": {
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "tree_method": "hist",
+      "device": "cuda",
+      "objective": "binary:logistic",
+      "eval_metric": "logloss"
+    },
+    "acquisition_parameter_search": "none; one fixed acquisition configuration per method from completed development; do not tune on current hidden labels",
+    "IG_bootstrap_members": 4,
+    "neighbor_universes": 10,
+    "neighbor_posterior_draws": 32,
+    "neighbor_backend": "explicit common-feature Laplace/cost/pending adaptation, not upstream NUTS",
+    "outer_non_temporal_split": "two registered stratified group 5-fold repeats; available entity IDs plus exact feature duplicates grouped",
+    "lendingclub_time_split": "use separately preserved loan ID and issue_d; 5 strictly forward disjoint-month windows per repeat; repeat0 initial 4 months, repeat1 initial 5 months; remaining months partitioned into five windows",
+    "lendingclub_arrivals": "chronological issue month, random ties within month; immediate label revelation retrospective assumption, not strict online maturity validation",
+    "scope": "internal repeated full-process evaluation on previously inspected datasets; not new external institution or first blind test",
+    "primary": "mean overall Brier over rounds 1..10",
+    "secondary": [
+      "final Brier",
+      "frozen rejection-region Brier",
+      "predicted and realized ordinary/exploration risk",
+      "selected count"
+    ],
+    "delta": "0.5% of old development fixed OrdinaryOnly ALC Brier, frozen before new outcomes; .1%/1% sensitivity",
+    "primary_contrasts": [
+      "FantasyCandidate_vs_MinRisk",
+      "FantasyCandidate_vs_ParBaLS"
+    ],
+    "uncertainty": "complete paired fold/repeat/stream effects; optional applicant-group paired test resampling conditional on fitted models; never iid t-test over 20 correlated folds or claim full training uncertainty",
+    "CORR_Gate_scale_up": false
+  },
+  "sources": {
+    "experiments/protocol_next/run_formal_md.py": "33e6cd0e723548c28a95f0b82c3b2d3553c0c99f57cd21d5a5c7d2a5e49adb34",
+    "experiments/protocol_next/formal_md_config.json": "4dd7042179dc574d611dd32664f867bfdd430acc9c5ce0cf7e15e8b615a9a8ce",
+    "experiments/protocol_next/runtime.py": "b76a68ce7e7a0de09e0e67d410accf97a6a922d209f17f9936db3c79fc6cce01",
+    "experiments/protocol_next/run_fantasy.py": "e12b4da1ec5b1d933d1a68bb5b3ad47ac8514ef48870709915e86e10f8b80063",
+    "experiments/protocol_next/run_nearest_neighbor.py": "289e032bcd762a3683599fed5619dace3775cf58156439c8eef656463865eb95",
+    "experiments/research_v2/core.py": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c",
+    "experiments/research_v2/run_real.py": "5a213f299e49b9f4cfa77476b88a60facb96f7e076123469926bac619353f95e"
+  },
+  "data": {
+    "hmeq": "d199fc73f12eb2d016a2b7b43cc68f18dc3dcb4bf6a7881d6e97ef3cba4eab1f",
+    "uci": "f6c131c25f5ea6716c1439d986550832a5ba1ed218fbbfc3013bb92bb78dcee2",
+    "lendingclub": "19c3704ab28a14e8bb61ca49b2f103a94b666a7342129b9eebe2d9ada0fb9720"
+  },
+  "LC_time_ID_source": "fbec58fdb7a5b4e95cf8d291264f9450c914ab794c6b891bf7d5353d7ed8099b",
+  "delta": {
+    "hmeq": 0.00041129769855403604,
+    "uci": 0.0006624705158472765,
+    "lendingclub": 0.0007294754336922526
+  },
+  "delta_source_hash": "0f105b04d5ea0bce5cb084f8a26640b53003b934aede5725761e330eecdfa174",
+  "versions": {
+    "numpy": "2.5.4",
+    "xgboost": "3.4.1",
+    "sklearn": "1.9.1"
+  },
+  "identity_hash": "7e94f6e9c093761dac7c769957afb46c150d80c77b13904b386fcd0d5c35263a"
+}

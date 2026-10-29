@@ -1,0 +1,37 @@
+{
+  "completed_executable_checklist": true,
+  "main_episodes": 360,
+  "supplementary_episodes": 360,
+  "transfer_episodes": 36,
+  "later_episodes": 12,
+  "formal_rounds": 7200,
+  "total_complete_episodes": 768,
+  "no_false_strict_online_or_training_uncertainty_claim": true,
+  "checks": {
+    "formal_MD": {
+      "path": "formal_md/verification.json",
+      "sha256": "e73074d771a1ef416b108c699d464a120dd17a467712a307e18dc1bade27a9ae"
+    },
+    "round_audit": {
+      "path": "formal_md/round_record_audit.json",
+      "sha256": "16d8743403400d43f6b7e3d61b4a11c152ee7a60531b193f6f0d5315ce3ca575"
+    },
+    "selector_audit": {
+      "path": "formal_md/formal_selector_visibility_audit.json",
+      "sha256": "1987abf8eaceb1d2094f720c8f7f5a39fd94eb96456e1a1c106004fcc33a3f65"
+    },
+    "transfer": {
+      "path": "completion_checks/transfer/verification.json",
+      "sha256": "6edada30d87469f6768f10caf267a47d853451a2854475b1a5a68e68f73219ba"
+    },
+    "later": {
+      "path": "completion_checks/later/verification.json",
+      "sha256": "481524ed7ca56004c3e90532e6b58d229b994f99b9d9787f201de0aa9d7e2714"
+    },
+    "E2a_full": {
+      "path": "e2a_full/verification.json",
+      "sha256": "a009cda6852d6046c5a775c91d9480f55f18b8ef9f35ae521480fc58780e3e9d"
+    }
+  },
+  "finalizer_sha256": "da45d86dfbfed0018d970f2d8be9af5224950e3a786b53c9d86276194498c229"
+}

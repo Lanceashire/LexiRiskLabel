@@ -1,0 +1,15 @@
+{
+  "url": "https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LC_Loan_sample_2016.csv",
+  "download_sha256": "8a63bf37c16c8623d12fd07cea43b9210b2959cf6f726d4bf560cbd1ed7f7ae2",
+  "historical_rows": 16566,
+  "external_eligible_rows": 9168,
+  "historical_train_rows_after_group_exclusion": 16566,
+  "test_is_all_eligible_2016": true,
+  "source_dtype_roles_preserved": true,
+  "source_latest_month": 551,
+  "target_earliest_month": 552,
+  "no_target_labels_for_training_or_parameter_choice": true,
+  "labels_mature_at_snapshot_not_known_availability_dates": true,
+  "label_availability_assumption": "final loan status only; actual label availability dates unknown. Report retrospective immediate-label temporal sensitivity, never strict as-of online maturity validation or actual historical reject counterfactuals.",
+  "entity_limit": "loan ID and exact-feature duplicate groups; borrower linkage unavailable"
+}

@@ -1,0 +1,21 @@
+{
+  "stage": "small_true_learner_fantasy_diagnostic",
+  "protocol_basis": "section 12 first priority: few preregistered batches, true-learner fantasy retraining, common fantasy O and S",
+  "anchor_round": 5,
+  "proposal_sources": ["OrdinaryOnly", "MinRisk", "Vopt", "RB-BRIDGE"],
+  "deduplicate_identical_sets": true,
+  "selection_worlds": 2,
+  "verification_worlds": 2,
+  "world_generator": "D-only logistic Laplace model; no actual O/C/V/T labels",
+  "label_release": "all six choices locked before any validation/test outcomes are read",
+  "score": "mean squared probability difference on existing Q_ref versus the fantasy-world probability; expected Brier ranking differs only by a common world constant",
+  "learner": "same frozen 100-tree GPU XGBClassifier as E1; actual retraining on D+fantasy O+fantasy S",
+  "actual_evaluation": "reuse exact E1b candidate-set XGB V_eval predictions; match global selected hash and recompute scores; outer T is secondary from E1",
+  "development_only": true,
+  "new_fantasy_fit_slots_upper_bound": 96,
+  "new_actual_outcome_fits": 0,
+  "gate": "positive mean V_eval extra gain vs MinRisk in all three datasets and at least four of six seed-state gains positive; otherwise stop this candidate without expanding worlds or proposals",
+  "confirmation": false,
+  "new_candidate_count": 1,
+  "no_adaptive_expansion": true
+}

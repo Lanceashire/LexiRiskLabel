@@ -1,0 +1,79 @@
+{
+  "configuration": {
+    "stage": "MD_section9_transfer_and_later_cohort_completion",
+    "controlling_protocol_sha256": "052b064834a804f613e016aee007cee79b4fb201205d4135c7d3517886d8c9e8",
+    "methods": [
+      "OrdinaryOnly",
+      "MinRisk",
+      "LRBE-IG",
+      "Vopt",
+      "ParBaLS",
+      "FantasyCandidate"
+    ],
+    "rho": 0.1,
+    "rounds": 10,
+    "replay_streams": 2,
+    "transfer": {
+      "rotations": 3,
+      "target_tasks": [
+        "hmeq",
+        "uci",
+        "lendingclub"
+      ],
+      "source_configuration": "mode of D0-only selected model configurations over the other two tasks' completed registered outer cases; ties by original declared grid order; never use target or source outer-T outcomes",
+      "target_cases": "the two pre-registered streams in repeat1/fold1; chosen before reviewing their transfer outcomes",
+      "target_model_fit": "source-chosen ridge and XGB configuration, fit on target D0, then replay allowed feedback; no target hyperparameter tuning",
+      "acquisition_parameters": "original globally frozen configuration, no search or modification",
+      "episodes": 36,
+      "claim": "internal transfer robustness; all old tasks were previously inspected, not first external validation"
+    },
+    "later_cohort": {
+      "url": "https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LC_Loan_sample_2016.csv",
+      "training_source": "existing mature 2014/2015 source rows only",
+      "target_source": "all eligible 2016 rows held out from model fitting, preprocessing fitting, references and acquisition",
+      "schema": [
+        "loan_amnt",
+        "term",
+        "int_rate",
+        "grade",
+        "emp_length",
+        "home_ownership",
+        "annual_inc",
+        "purpose",
+        "dti",
+        "delinq_2yrs",
+        "fico_range_low",
+        "fico_range_high",
+        "inq_last_6mths",
+        "mths_since_last_delinq",
+        "mths_since_last_record",
+        "open_acc",
+        "pub_rec",
+        "revol_bal",
+        "revol_util",
+        "total_acc",
+        "initial_list_status"
+      ],
+      "dtype_definition": "source 2014/2015 schema only; coerce target numeric columns to those source types before combining, so held-out values cannot determine preprocessing feature roles",
+      "eligible_statuses": [
+        "Charged Off",
+        "Fully Paid"
+      ],
+      "target_label": "Charged Off=1, Fully Paid=0, same as old cohorts",
+      "eligibility": "issue_d year=2016, deduplicate loan ID, finite positive loan_amnt exposure, same frozen 21 decision-time features",
+      "target_is_never_used_for_parameter_choice": true,
+      "local_model_parameters": "D0-only 3-fold grid from historical training cohort, exactly as original formal protocol",
+      "target_evaluation": "prior-cohort acquisition trajectories evaluated on untouched later-year outcomes; no 2016 labels enter replay",
+      "episodes": 12,
+      "label_time_limit": "final loan status only; actual label availability dates unknown. Report retrospective immediate-label temporal sensitivity, never strict as-of online maturity validation or actual historical reject counterfactuals."
+    },
+    "new_method_or_target_search": false,
+    "supplementary_budget_search": false,
+    "evaluation_policy": "report every fixed method and both streams; retain unfavorable results; no outcome-based data-source substitution",
+    "registration_note": "freeze before downloading or viewing 2016 outcomes; no new scientific objective beyond the supplied MD section9"
+  },
+  "config_sha256": "c49b415a24a46dcefd883aa0a735fd2f4b79b6de8e664962cccf787ded094cbc",
+  "source_protocol_sha256": "052b064834a804f613e016aee007cee79b4fb201205d4135c7d3517886d8c9e8",
+  "target_2016_file_existed_before_registration": false,
+  "external_outcomes_viewed_before_registration": false
+}

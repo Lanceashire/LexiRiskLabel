@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "all_720_predictions_rescored": true,
+  "max_rescore_error": 0.0,
+  "all_registered_cases_complete": true,
+  "all_budgets_feasible": true,
+  "all_actual_training_GPU_verified": true,
+  "frozen_source_identity_unchanged": true,
+  "no_iid_t_test_on_folds": true,
+  "test_bootstrap_conditions_on_models": true,
+  "no_first_blind_or_external_claim": true,
+  "resource_totals": {
+    "retained_round_segments": {
+      "retained_real_fit_calls": 6259,
+      "retained_fantasy_fit_calls": 10310,
+      "retained_committee_fit_calls": 2364,
+      "D0_tuning_fit_calls": 1080,
+      "initial_teacher_fit_calls": 60,
+      "retained_neighbor_LR_refits": 144750
+    },
+    "case_attempt_metadata": {
+      "actual_new_real_GPU_fits": 6082,
+      "actual_new_fantasy_GPU_fits": 10104,
+      "actual_new_committee_GPU_fits": 2284,
+      "initial_tuning_GPU_fits": 1080,
+      "initial_teacher_GPU_fits": 60,
+      "internal_neighbor_LR_refits": 142250
+    },
+    "exact_physical_retry_cost_known": false,
+    "scope": "retained accepted segments; overwritten unfinished retry work is not an independent experiment and its full physical cost is not recoverable"
+  },
+  "analysis_source_hash": "f3e2b7dded1d37a6d3f3cd38aa8ba6bcb992ae284f3376ee6c4cf1fa74317a3a"
+}

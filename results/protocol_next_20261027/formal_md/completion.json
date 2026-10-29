@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "completed_cases": 60,
+  "completed_episodes": 720,
+  "expected_episodes": 720,
+  "main_episodes": 360,
+  "secondary_episodes": 360,
+  "identity_hash": "7e94f6e9c093761dac7c769957afb46c150d80c77b13904b386fcd0d5c35263a",
+  "all_cases_use_fresh_full_replay": true
+}

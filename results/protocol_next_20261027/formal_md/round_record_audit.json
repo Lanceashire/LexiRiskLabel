@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": 60,
+  "episodes": 720,
+  "rounds": 7200,
+  "all_D_histories_reconstructed": true,
+  "all_group_time_reference_test_boundaries_checked": true,
+  "all_unique_sampling_and_budget_checks": true,
+  "max_risk_roundtrip_error": 0.0,
+  "max_realized_ledger_error": 0.0,
+  "resources_retained_segments": {
+    "retained_real_fit_calls": 6259,
+    "retained_fantasy_fit_calls": 10310,
+    "retained_committee_fit_calls": 2364,
+    "D0_tuning_fit_calls": 1080,
+    "initial_teacher_fit_calls": 60,
+    "retained_neighbor_LR_refits": 144750
+  },
+  "physical_retry_fit_count_exact": false,
+  "resource_limit": "retained accepted round segments only; interrupted overwritten partial fits not recoverable and not counted as independent evidence",
+  "price_preprocessor_hash_scope": "deterministic source/data/initial-order/parameter identities; actual per-round candidate costs independently hashed",
+  "same_state_baseline_not_fabricated": true,
+  "per_fit_durations_not_fabricated": true,
+  "exporter_sha256": "139ce9e7d18058b95b3e0d1ead357894d816703d8c71dbbcab9a21a1b8bc9513"
+}

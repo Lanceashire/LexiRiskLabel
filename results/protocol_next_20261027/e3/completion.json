@@ -1,0 +1,15 @@
+{
+  "completed": true,
+  "states": 6,
+  "acquisition_draws": 18,
+  "nominal_fit_slots": 90,
+  "actual_unique_regressor_fits": 74,
+  "fit_cache_hits": 16,
+  "historical_crossfit_LR_fits": 18,
+  "independent_trajectory_clusters": 6,
+  "development_seed_values": 2,
+  "draws_per_state": 3,
+  "unique_sampled_sets": 17,
+  "confirmation": false,
+  "scale_up": false
+}

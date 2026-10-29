@@ -1,0 +1,13 @@
+{
+  "completed": true,
+  "states": 6,
+  "nominal_fantasy_fit_slots": 84,
+  "actual_unique_GPU_fantasy_fits": 84,
+  "fantasy_fit_cache_hits": 0,
+  "new_actual_outcome_fits": 0,
+  "frozen_actual_candidate_scores_reused": 21,
+  "selection_worlds": 2,
+  "verification_worlds": 2,
+  "elapsed_seconds": 4.377086417998726,
+  "confirmation": false
+}
