@@ -1,0 +1,7 @@
+dataset,case_id,reference,ALC_gain,final_gain,risk_difference
+lendingclub,lendingclub_repeat1_fold1_stream1,MinRisk,8.424380802352083e-05,-1.3693090096245086e-05,-39832.6879248023
+lendingclub,lendingclub_repeat1_fold1_stream1,ParBaLS,8.273869315833515e-05,-6.29744508335861e-05,-42828.73875498772
+lendingclub,lendingclub_repeat1_fold1_stream1,OrdinaryOnly,9.40849995678672e-06,-0.00016332264810048347,31945.403280854225
+lendingclub,lendingclub_repeat1_fold1_stream2,MinRisk,9.781110053219688e-05,1.1555445213029536e-05,-22677.962231636047
+lendingclub,lendingclub_repeat1_fold1_stream2,ParBaLS,-5.208699096814762e-06,5.442218980161728e-06,-37433.79942923784
+lendingclub,lendingclub_repeat1_fold1_stream2,OrdinaryOnly,2.7151083528492714e-05,-8.705197834107947e-06,98782.3934584856

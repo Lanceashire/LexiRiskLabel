@@ -1,0 +1,19 @@
+dataset,comparison,relative_old_ordinary_threshold,delta,conditional_classification,full_training_uncertainty_assessed
+hmeq,FantasyCandidate_vs_MinRisk,0.001,8.225953971080721e-05,conditional loss,False
+hmeq,FantasyCandidate_vs_MinRisk,0.005,0.00041129769855403604,conditional loss,False
+hmeq,FantasyCandidate_vs_MinRisk,0.01,0.0008225953971080721,conditional loss,False
+hmeq,FantasyCandidate_vs_ParBaLS,0.001,8.225953971080721e-05,uncertain,False
+hmeq,FantasyCandidate_vs_ParBaLS,0.005,0.00041129769855403604,conditional near-equivalence,False
+hmeq,FantasyCandidate_vs_ParBaLS,0.01,0.0008225953971080721,conditional near-equivalence,False
+lendingclub,FantasyCandidate_vs_MinRisk,0.001,0.00014589508673845054,conditional near-equivalence,False
+lendingclub,FantasyCandidate_vs_MinRisk,0.005,0.0007294754336922526,conditional near-equivalence,False
+lendingclub,FantasyCandidate_vs_MinRisk,0.01,0.0014589508673845052,conditional near-equivalence,False
+lendingclub,FantasyCandidate_vs_ParBaLS,0.001,0.00014589508673845054,conditional near-equivalence,False
+lendingclub,FantasyCandidate_vs_ParBaLS,0.005,0.0007294754336922526,conditional near-equivalence,False
+lendingclub,FantasyCandidate_vs_ParBaLS,0.01,0.0014589508673845052,conditional near-equivalence,False
+uci,FantasyCandidate_vs_MinRisk,0.001,0.0001324941031694553,conditional near-equivalence,False
+uci,FantasyCandidate_vs_MinRisk,0.005,0.0006624705158472765,conditional near-equivalence,False
+uci,FantasyCandidate_vs_MinRisk,0.01,0.001324941031694553,conditional near-equivalence,False
+uci,FantasyCandidate_vs_ParBaLS,0.001,0.0001324941031694553,conditional loss,False
+uci,FantasyCandidate_vs_ParBaLS,0.005,0.0006624705158472765,conditional loss,False
+uci,FantasyCandidate_vs_ParBaLS,0.01,0.001324941031694553,conditional loss,False

@@ -1,0 +1,13 @@
+learner,dataset,target_method,gain,cells,seed_clusters,wins
+LR,hmeq,IG-k,-4.3937200773000916e-05,6,2,3
+LR,hmeq,Vopt-k,1.560584901274739e-05,4,2,3
+LR,lendingclub,IG-k,3.0037435434004944e-05,6,2,5
+LR,lendingclub,Vopt-k,2.7367107373323558e-05,3,1,3
+LR,uci,IG-k,1.7224224489973776e-06,6,2,4
+LR,uci,Vopt-k,-2.0770377044158444e-05,6,2,1
+XGB,hmeq,IG-k,-0.00017619530990000318,6,2,2
+XGB,hmeq,Vopt-k,-0.00018322932677599518,4,2,3
+XGB,lendingclub,IG-k,-4.144119818983346e-05,6,2,3
+XGB,lendingclub,Vopt-k,0.0004810109574986676,3,1,3
+XGB,uci,IG-k,8.575203186996413e-06,6,2,3
+XGB,uci,Vopt-k,-1.0687586880502494e-05,6,2,3

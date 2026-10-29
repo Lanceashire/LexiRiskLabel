@@ -1,0 +1,7 @@
+seed,planner,same_current_action,selection_world_horizon_gain,same_model_check_horizon_gain,true_check_horizon_gain,true_check_conditional_MC_SE,true_check_current_quality_gain,true_check_differential_future_update_gain,true_worlds_positive,true_worlds_negative,true_worlds_tied,true_world_n,selection_positive_check_negative
+2101,estimated_Laplace,False,0.00013165867672408795,0.0004593664912190689,-0.00041488644319603646,0.0002155321243252581,-0.0020605746557006794,0.0016456882125046425,1,7,0,8,True
+2101,oracle_true_generator,False,0.00017425199365117008,-1.1764606508004977e-05,-1.1764606508004977e-05,2.2306162140429216e-05,8.7420355478637e-05,-9.918496198664197e-05,1,7,0,8,True
+2102,estimated_Laplace,False,6.57172885438124e-05,-7.952679548293042e-05,-5.172220671012713e-05,0.0002882276607309231,-0.00028713033804396866,0.00023540813133384147,1,7,0,8,True
+2102,oracle_true_generator,True,0.0,0.0,0.0,0.0,0.0,0.0,0,0,8,8,False
+2103,estimated_Laplace,False,5.422362408530264e-05,-7.4476892237871e-05,0.0004401645641230761,0.0003099946792119657,0.000693354309742255,-0.000253189745619179,8,0,0,8,False
+2103,oracle_true_generator,True,0.0,0.0,0.0,0.0,0.0,0.0,0,0,8,8,False
