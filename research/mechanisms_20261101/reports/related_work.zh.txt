@@ -1,0 +1,132 @@
+文献查重与创新定位审查（2026-11-01，Asia/Shanghai）
+
+结论
+有前人研究，而且与M1、M2和拟议M3的重叠相当实质。不能继续把“信息会替代/互补”“信息量不等于预测收益”“普通反馈与探索应联合考虑”“昂贵样本与低价样本的取舍”当作新发现。
+本轮核对18篇一手来源，阅读层级逐条记录。它是定向相关工作审查，不是穷尽性系统综述或首创证明。没有发现完整复现本项目全部生成器、固定历史标签、冻结选择、K定义和干预链的同一论文；这不足以断言组合原创，更不足以给出原创百分比。
+
+问题与判断
+1. M1“多了普通信息，探索价值可能降低、无影响或升高”：一般思想已有信息替代/互补理论（L01）；A最优设计缺乏普遍递减收益也早有研究（L02）。M1反例应定位为机制说明和可复算实例。
+2. M1目标加权逆信息风险R(H)=tr(G H^-1)：与转导设计（L03）和BAIT（L04，尤其式3）高度重叠。公式、Fisher获取目标、考虑已有数据不能作为新理论或全新算法卖点。
+3. M2信息几何与实际分类风险不同：条件泛化误差、偏差方差、协变量偏移已有研究（L05–L07）；目标预测与信息目标区别已有EPIG和损失驱动BAL（L08–L09）。Huang2026附录C.3甚至明确讨论外部评价分布与模型信念的差异，不能只说前人研究信息、我们研究风险。
+4. M2具体反转链：本项目4096世界的固定业务斜率干预、域外贡献定位、完整风险账本，以及XGB条件恢复，属于当前已经获得的具体证据。检索尚未建立它们被同一前人结果直接涵盖，也没有证明它们足以构成独立理论创新。最稳妥的定位是“已知理论下可审计的迁移失效与条件恢复研究”。
+5. 等待中的反馈改变探索价值：L10已有标签到达时效用评估和等待标签模拟，L11–L12已有利用选择性日志避免冗余查询。我们的O由普通流程产生且标签未到，与这些设定有差别；需要证明该差别带来非平凡结论，不能仅凭术语不同申报首创。
+6. M3成本与信息的对应关系：异质标注成本（L15）、预算批量获取（L16）和风险受限的部分反馈探索（L14）均已有先例。只得到“价格影响收益”不能提供有力新贡献。当前可检验的问题是：在确定会到达的普通反馈、固定成本多重集合和预算下，成本与剩余目标信息的对应关系，是否改变Pending-aware相对基线的外部风险收益；在同数量、同支出比较后还剩多少。
+7. 不使用“首次机制驱动”“首次预算阶段研究”等宽泛说法。2026年的L17已经直接以机制、预算阶段和方法排名为主题；它的泛化界代理与本项目风险恒等式不同，不能当作本项目因果证据。
+
+保留与删除的主张
+可保留：具体模型下的信息几何实例；原八项的正、反和排除判定；固定历史风险对象下LR的反转、干预、域边界；XGB贡献因素与复合恢复；证据和实现的可复算性。
+应删除/降级：新的一般信息价值理论；首次发现互补；新的逆Fisher/目标加权风险公式；首次考虑待反馈；所有学习器唯一反转原因；通用16%外推阈值；已证明价格效应；把新增实验数量直接当创新强度。
+尚需研究而不是当前已成立：相对最接近方法仍有何必要的新结论；边界是否跨生成器、学习器和真实任务稳定；合成条件风险分解是否能支持一个明确而非仅重新记账的命题；M3价格效应能否超出数量与支出的解释。
+
+推进建议
+M1/M2可以按有限主张归档，不再为追求单一普适原因无限追加。M3进入设计准备，先对照BAIT、EPIG/损失驱动BAL、验证延迟、日志主动学习、ConBatch-BAL和部分反馈风险探索，写清新增问题与可证伪标准。保留原条件和负结果，正式训练前完成独立登记。若最终只剩经典结论在本项目上的再演示，应调整论文定位为实证机制与边界研究，不宜宣称理论突破。
+
+逐篇一手来源与重叠判断
+
+[L01] Chen & Waggoner (2016). Informational Substitutes. FOCS 2016; expanded arXiv 2017
+来源：https://arxiv.org/abs/1703.08636
+核读：正文§2.2、§2.3、§4及附录B
+已有：信息替代、互补及约束下信息选择已有一般形式化；最优决策的事前信息价值单调。
+本项目定位：M1三维例子是特定二次损失的实例，不能声称首次发现互补，也不能把M2估计器风险反转写成否定经典信息价值单调性。
+
+[L02] Chamon & Ribeiro (2017). Approximate Supermodularity Bounds for Experimental Design. NIPS 2017
+来源：https://papers.nips.cc/paper_files/paper/2017/hash/0d9095b0d6bbe98ea0c9c02b11b59ee3-Abstract.html
+核读：正文§2、§3、§5
+已有：目标加权线性估计误差及A/E最优设计不普遍超模，已有近似超模和贪心保证。
+本项目定位：非递减边际收益的反例、逆信息矩阵与贪心并非新理论；本项目小网格验证不能升级为普适优化保证。
+
+[L03] Yu, Bi & Tresp (2006). Active Learning via Transductive Experimental Design. ICML 2006
+来源：https://doi.org/10.1145/1143844.1143980
+核读：正文§3及§4.1，式12–14
+已有：已有面向目标预测的设计；已有样本通过核残差化改变新样本选择。
+本项目定位：不能只把“考虑已有信息”或“按目标分布选样”作为创新；该文主要线性/核回归，未直接提供本项目固定历史标签下的LR反转判定。
+
+[L04] Ash, Goel, Krishnamurthy & Kakade (2021). Gone Fishing: Neural Active Learning with Fisher Embeddings. NeurIPS 2021
+来源：https://papers.nips.cc/paper_files/paper/2021/hash/4afe044911ed2c247005912512ace23b-Abstract.html
+核读：正文§4式2–4、§5算法1
+已有：直接推导Gaussian Bayes风险的目标加权逆矩阵形式，并用于分类的Fisher批量选择。
+本项目定位：与M1基础公式高度重叠。Pending-aware中的未来O条件化、风险成本及有限样本外部Brier风险边界需要分别说明，不能将BAIT型目标重新命名为新算法。
+
+[L05] Sugiyama (2006). Active Learning in Approximately Linear Regression Based on Conditional Expectation of Generalization Error. JMLR 7:141–166
+来源：https://www.jmlr.org/papers/v7/sugiyama06a.html
+核读：正文§1、§2.3、§3及数值讨论
+已有：主动学习中的协变量偏移、偏差与方差、条件于训练输入的泛化误差已有理论和方法。
+本项目定位：本文的条件化对象主要是训练输入；本项目还固定历史D标签和由其选择的集合。不能把“偏差影响设计”作为新原理；本项目LR真模型包含于拟合族，不能笼统归因于模型错设。
+
+[L06] Pauwels, Lajaunie & Vert (2014). A Bayesian active learning strategy for sequential experimental design in systems biology. BMC Systems Biology 8:102
+来源：https://link.springer.com/article/10.1186/s12918-014-0102-6
+核读：正文Background、Error criterion，式6
+已有：已有同时处理估计偏差和方差的损失驱动实验设计。
+本项目定位：本项目经典偏差方差分解不具原创性；该文生物动力学参数估计不等于本项目普通反馈覆盖与分类风险反转。
+
+[L07] Liu, Reyzin & Ziebart (2015). Shift-Pessimistic Active Learning Using Robust Bias-Aware Prediction. AAAI 2015
+来源：https://ojs.aaai.org/index.php/AAAI/article/view/9609
+核读：摘要、引言及图1说明
+已有：已展示选择性采样与乐观外推使逻辑回归产生很大预测损失，并提出偏移悲观方法。
+本项目定位：外推失准、即使模型能拟合总体仍可能采样失败，并非本项目首次提出。该文图1不是本项目固定S、O500→4000的K对比及参数干预。
+
+[L08] Bickford Smith et al. (2023). Prediction-Oriented Bayesian Active Learning. AISTATS 2023, PMLR 206
+来源：https://proceedings.mlr.press/v206/bickfordsmith23a.html
+核读：摘要、正文引言及预测信息目标
+已有：已有EPIG：参数信息增益可能偏离目标预测，需将目标输入分布纳入获取目标。
+本项目定位：“信息量不等于预测收益”已有直接先例。EPIG不是本项目固定业务风险预算的直接同名算法，比较时需要实际预算适配。
+
+[L09] Huang, Bickford Smith & Rainforth (2026). Loss-Driven Bayesian Active Learning. AISTATS 2026, PMLR 300
+来源：https://proceedings.mlr.press/v300/huang26b.html
+核读：正文§2、§3.1及附录C.3
+已有：已有由终端损失导出获取目标的决策论框架，且区分模型信念与外部评价分布。
+本项目定位：重叠很近，不能声称首次把预测损失或外部风险引入信息价值。其一般框架并不自动给出本项目有限样本干预的方向和大小。
+
+[L10] Pham, Kottke, Krempl & Sick (2022). Stream-based active learning for sliding windows under the influence of verification latency. Machine Learning 111:2011–2036; online 2021
+来源：https://link.springer.com/article/10.1007/s10994-021-06099-z
+核读：摘要、引言图1、数据可见性定义
+已有：已有在标签到达时评价获取效用、模拟等待标签以避免重复获取的方法。
+本项目定位：Pending-aware的一般动机已有直接先例。本项目O是既定普通流程反馈，需说明与滑动窗口、漂移、先前主动查询标签的区别，并实证说明这些区别产生何种新增结果。
+
+[L11] Yan, Chaudhuri & Javidi (2018). Active Learning with Logged Data. ICML 2018, PMLR 80
+来源：https://proceedings.mlr.press/v80/yan18a.html
+核读：正文§1及§2
+已有：已有用选择性日志数据指导新实验，并避免重复查询日志中充分代表的区域。
+本项目定位：把普通反馈与主动探索结合、集中补足覆盖缺口，均已有方法。该文的已观测日志与本项目尚未到达标签的O存在时序区别，时序本身不等于贡献。
+
+[L12] Yan, Chaudhuri & Javidi (2019). The Label Complexity of Active Learning from Observational Data. NeurIPS 2019
+来源：https://papers.neurips.cc/paper_files/paper/2019/hash/1019c8091693ef5c5f55970346633f92-Abstract.html
+核读：正文§1、§2
+已有：已有观察策略偏差校正、方差控制及对覆盖不足区域的选择性查询。
+本项目定位：不能把“普通数据覆盖不到就需要探索”当作新结论；本项目特定条件风险和冻结动作比较仍需单列。
+
+[L13] Jiang, Jiang & Pacchiano (2021). Learning the Truth From Only One Side of the Story. AISTATS 2021, PMLR 130
+来源：https://proceedings.mlr.press/v130/jiang21b.html
+核读：正文引言、§3损失定义、§5–6的设定与结论
+已有：已有单侧标签、GLM选择偏差与适应性探索的理论和实验。
+本项目定位：选择性标签与信贷探索不是新问题；该文累计单侧决策损失与本项目外部Brier风险及单次固定预算不同；本文没有独立逐条复证其全部定理。
+
+[L14] Keswani, Mehrotra & Celis (2024). Fair Classification with Partial Feedback: An Exploration-Based Data Collection Approach. ICML 2024, PMLR 235
+来源：https://proceedings.mlr.press/v235/keswani24a.html
+核读：正文§2–3，FDR约束、效用定义及探索框架
+已有：已有部分反馈下探索、群体覆盖、假阳性比例约束及分类收敛保证。
+本项目定位：“有风险的探索”已有强先例。该文明确讨论信贷、普通正向决策标签和额外探索，重叠不能淡化。其迭代FDR约束与本项目单次固定业务PD×EAD之和预算不同，具体新增机制仍需证明。
+
+[L15] Settles, Craven & Friedland (2008). Active Learning with Real Annotation Costs. NIPS Workshop on Cost-Sensitive Learning 2008
+来源：https://burrsettles.com/pub/settles.nips08ws.pdf
+核读：正文§1及实验结论
+已有：已有真实标签成本异质性，以及昂贵候选可能信息量高、少标签不等于低成本的讨论。
+本项目定位：M3若只证明价格配置影响效果，创新很弱；人工标注时间与业务风险预算语义不同，需说明该差别如何改变可行性和结论。
+
+[L16] Morato, Andriotis & Khademi (2025). ConBatch-BAL: Batch Bayesian Active Learning under Budget Constraints. arXiv:2507.04929v1; 此处按预印本引用
+来源：https://arxiv.org/abs/2507.04929
+核读：正文§3、§4算法2及§5成本场景
+已有：已有成本异质的预算约束批量Bayesian主动学习及多种成本环境。
+本项目定位：预算下选信息多的样本已有直接算法。该文贪心按联合信息分数受剩余预算限制，不能误称与本项目每成本边际分数完全同一算法。
+
+[L17] Machnio, Nielsen & Ghazi (2026). A Mechanism-Driven Theory of Phase Transitions in Active Learning. arXiv:2607.00144v1; 作者记录Accepted at ECCV 2026
+来源：https://arxiv.org/abs/2607.00144
+核读：正文§3.1–3.4及附录A.2
+已有：已有用泛化界分量和可测代理研究主动学习预算阶段与方法排名变化的机制框架。
+本项目定位：“机制驱动”及“预算阶段转变”本身也不是空白。本项目风险恒等式、固定集合O干预不同于该文界及代理；本文未独立验证其全部定理，不能借其理论为本项目作证明。
+
+[L18] Bickford Smith et al. (2025). Rethinking Aleatoric and Epistemic Uncertainty. ICML 2025, PMLR 267
+来源：https://proceedings.mlr.press/v267/bickford-smith25a.html
+核读：正文§3.5–3.7、§5.4，式4–5；与L09附录C.3交叉追踪
+已有：已有决策论视角区分模型主观不确定性、外部预测表现与数据离散程度；式4–5明确给出外部超额损失。
+本项目定位：“模型内信息/不确定性与外部预测误差不同”已有直接理论来源；本项目特定锚定修正与非线性风险账本仍需单列，不能借区别本身宣称创新。

@@ -1,0 +1,57 @@
+{
+  "stage": "M3",
+  "experiments_complete": true,
+  "all_registered_worlds_retained": true,
+  "primary_family": 2,
+  "secondary_family": 50,
+  "single_fixed_endpoint": true,
+  "worlds": 2560,
+  "raw_audit_passed": true,
+  "source_hashes_unchanged": true,
+  "scientific_primary_verdicts": [
+    {
+      "role": "primary",
+      "learner": "LR",
+      "contrast": "price",
+      "n_worlds": 2560,
+      "registered_worlds": 2560,
+      "mean": 7.555009199975793e-06,
+      "SE": 9.470454503545356e-07,
+      "low": 5.350471130917271e-06,
+      "high": 9.759547269034314e-06,
+      "family": 2,
+      "family_alpha": 0.04,
+      "delta": 0.0001,
+      "verdict": "positive_direction_only",
+      "estimand_scope": "all registered worlds"
+    },
+    {
+      "role": "primary",
+      "learner": "XGB",
+      "contrast": "price",
+      "n_worlds": 2560,
+      "registered_worlds": 2560,
+      "mean": 2.6454891804447358e-05,
+      "SE": 2.601007736485783e-05,
+      "low": -3.4091522001268704e-05,
+      "high": 8.700130561016343e-05,
+      "family": 2,
+      "family_alpha": 0.04,
+      "delta": 0.0001,
+      "verdict": "within_registered_equivalence_band",
+      "estimand_scope": "all registered worlds"
+    }
+  ],
+  "secondary_verdict_counts": {
+    "within_registered_equivalence_band": 20,
+    "positive_direction_only": 13,
+    "meaningful_positive": 6,
+    "negative_direction_only": 5,
+    "meaningful_negative": 3,
+    "meaningful_positive_excluded": 2,
+    "meaningful_negative_excluded": 1
+  },
+  "unmatched_states": 1,
+  "M4_M5_complete": false,
+  "no_unresolved_claim_promoted": true
+}

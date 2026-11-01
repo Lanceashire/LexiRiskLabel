@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "historical_world_directory_ids_checked": 5652,
+  "historical_roots": [
+    "LOCAL_WORKSPACE/2026-10-31/codex-threads-01a190bc-13c1-7980-b16c/work/m2_reversal_followup",
+    "LOCAL_WORKSPACE/2026-10-31/zhe/work/runs",
+    "LOCAL_WORKSPACE/2026-10-31/ji-x/work/M2_mechanism_bridge"
+  ],
+  "reserved_disjoint_ranges": [
+    [
+      19900001,
+      19900002
+    ],
+    [
+      20000001,
+      20000032
+    ],
+    [
+      21000001,
+      21004096
+    ]
+  ],
+  "collisions": [],
+  "separate_SeedSequence_world_identifiers": true
+}

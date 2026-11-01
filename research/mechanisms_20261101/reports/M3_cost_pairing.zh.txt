@@ -1,0 +1,90 @@
+M3成本关联机制研究报告
+2026-11-01
+
+已完成固定样本量确认：2560个独立新世界，每世界4次标签重复；32世界方差试验不并入确认。
+主条件为原生成器、O=4000、target方向、原LR ridge1与原100树/深度3/学习率0.1/256分箱CUDA XGB。
+三成本条件、十二方法/控制；所有选择在本世界未来标签抽样与重训前锁定。完整执行、逐世界原始风险重构和源哈希核对已通过。
+
+一 主问题和指标
+J=R(MinRisk)-R(Pending-aware)；price=J_cheap-J_expensive，双侧检验。R为对真概率的目标excess Brier。
+主家族两学习器合计alpha=.04，次家族50对比alpha=.01，均为独立世界配对t近似同时区间；单固定终点，无按显著性扩样。delta=0.0001。
+cheap/expensive是按abs(z1)配价的历史名称；它是预定几何代理，不等于已知的实际信息价值。
+
+二 主结果
+LR: price=+0.000007555，同时区间[+0.000005350, +0.000009760]；positive_direction_only。
+XGB: price=+0.000026455，同时区间[-0.000034092, +0.000087001]；within_registered_equivalence_band。
+
+正price表示Pending-aware相对MinRisk的优势在几何低价条件更大；负price表示该相对优势在几何高价条件更大。必须同时看各成本条件的J与绝对风险，不能把相对优势的变化直接解释为整体预测更好。
+
+三 各成本条件和机制控制
+conditioning=R_D-only-R_PA；conditioning_batch_interaction=(R_D-only-R_PA)-(R_Static-D-R_Static-Pending)。fixed_count/gain_budget/same_count/spendcap/matched分别为相应比较方法风险减PA风险。price_conditioning为cheap与expensive条件化收益之差。
+LR
+  J/information_cheap: +0.000006212 [+0.000003478, +0.000008947], n=2560, positive_direction_only
+  J/information_expensive: -0.000001343 [-0.000003617, +0.000000932], n=2560, within_registered_equivalence_band
+  J/neutral: +0.000001574 [-0.000000963, +0.000004112], n=2560, within_registered_equivalence_band
+  conditioning/information_cheap: +0.000005491 [+0.000002841, +0.000008141], n=2560, positive_direction_only
+  conditioning/information_expensive: +0.000023870 [+0.000019116, +0.000028624], n=2560, positive_direction_only
+  conditioning/neutral: +0.000014364 [+0.000010407, +0.000018321], n=2560, positive_direction_only
+  conditioning_batch_interaction/information_cheap: +0.000000994 [-0.000001964, +0.000003952], n=2560, within_registered_equivalence_band
+  conditioning_batch_interaction/information_expensive: +0.000007122 [+0.000003549, +0.000010695], n=2560, positive_direction_only
+  conditioning_batch_interaction/neutral: +0.000002652 [-0.000000623, +0.000005927], n=2560, within_registered_equivalence_band
+  fixed_count/information_cheap: +0.000004707 [+0.000002301, +0.000007113], n=2560, positive_direction_only
+  fixed_count/information_expensive: -0.000001255 [-0.000002944, +0.000000433], n=2560, within_registered_equivalence_band
+  fixed_count/neutral: +0.000000947 [-0.000001226, +0.000003120], n=2560, within_registered_equivalence_band
+  gain_budget/information_cheap: -0.000002844 [-0.000006055, +0.000000366], n=2560, within_registered_equivalence_band
+  gain_budget/information_expensive: +0.000014061 [+0.000009338, +0.000018784], n=2560, positive_direction_only
+  gain_budget/neutral: +0.000009224 [+0.000004997, +0.000013452], n=2560, positive_direction_only
+  matched/information_cheap: +0.000003944 [+0.000000962, +0.000006926], n=2560, positive_direction_only
+  matched/information_expensive: +0.000000497 [-0.000002228, +0.000003223], n=2559, within_registered_equivalence_band
+  matched/neutral: +0.000002481 [-0.000000590, +0.000005552], n=2560, within_registered_equivalence_band
+  price_conditioning: -0.000018379 [-0.000023449, -0.000013309], n=2560, negative_direction_only
+  same_count/information_cheap: +0.000008196 [+0.000005344, +0.000011048], n=2560, positive_direction_only
+  same_count/information_expensive: -0.000000781 [-0.000003093, +0.000001530], n=2560, within_registered_equivalence_band
+  same_count/neutral: +0.000002696 [+0.000000132, +0.000005260], n=2560, positive_direction_only
+  spendcap/information_cheap: +0.000006343 [+0.000003612, +0.000009074], n=2560, positive_direction_only
+  spendcap/information_expensive: -0.000001127 [-0.000003408, +0.000001153], n=2560, within_registered_equivalence_band
+  spendcap/neutral: +0.000001631 [-0.000000920, +0.000004182], n=2560, within_registered_equivalence_band
+XGB
+  J/information_cheap: +0.000002247 [-0.000086401, +0.000090894], n=2560, within_registered_equivalence_band
+  J/information_expensive: -0.000024208 [-0.000077513, +0.000029097], n=2560, within_registered_equivalence_band
+  J/neutral: -0.000133137 [-0.000193315, -0.000072958], n=2560, negative_direction_only
+  conditioning/information_cheap: -0.000015832 [-0.000101864, +0.000070200], n=2560, meaningful_positive_excluded
+  conditioning/information_expensive: +0.001523566 [+0.001404207, +0.001642926], n=2560, meaningful_positive
+  conditioning/neutral: +0.000817471 [+0.000719682, +0.000915260], n=2560, meaningful_positive
+  conditioning_batch_interaction/information_cheap: +0.000110822 [+0.000017603, +0.000204041], n=2560, positive_direction_only
+  conditioning_batch_interaction/information_expensive: +0.000405398 [+0.000284134, +0.000526661], n=2560, meaningful_positive
+  conditioning_batch_interaction/neutral: +0.000046037 [-0.000058730, +0.000150804], n=2560, meaningful_negative_excluded
+  fixed_count/information_cheap: -0.000046993 [-0.000131702, +0.000037716], n=2560, meaningful_positive_excluded
+  fixed_count/information_expensive: -0.000013734 [-0.000058959, +0.000031491], n=2560, within_registered_equivalence_band
+  fixed_count/neutral: -0.000142615 [-0.000201130, -0.000084100], n=2560, negative_direction_only
+  gain_budget/information_cheap: -0.000197732 [-0.000281055, -0.000114409], n=2560, meaningful_negative
+  gain_budget/information_expensive: +0.001011644 [+0.000896480, +0.001126808], n=2560, meaningful_positive
+  gain_budget/neutral: +0.001047212 [+0.000957474, +0.001136950], n=2560, meaningful_positive
+  matched/information_cheap: -0.000231890 [-0.000298671, -0.000165108], n=2560, meaningful_negative
+  matched/information_expensive: -0.000055910 [-0.000100269, -0.000011551], n=2559, negative_direction_only
+  matched/neutral: -0.000040138 [-0.000085432, +0.000005155], n=2560, within_registered_equivalence_band
+  price_conditioning: -0.001539398 [-0.001676254, -0.001402542], n=2560, meaningful_negative
+  same_count/information_cheap: +0.000197564 [+0.000131388, +0.000263740], n=2560, meaningful_positive
+  same_count/information_expensive: +0.000023429 [-0.000019563, +0.000066421], n=2560, within_registered_equivalence_band
+  same_count/neutral: -0.000038195 [-0.000079693, +0.000003302], n=2560, within_registered_equivalence_band
+  spendcap/information_cheap: +0.000012641 [-0.000074181, +0.000099463], n=2560, within_registered_equivalence_band
+  spendcap/information_expensive: -0.000017987 [-0.000069462, +0.000033489], n=2560, within_registered_equivalence_band
+  spendcap/neutral: -0.000122582 [-0.000181135, -0.000064029], n=2560, negative_direction_only
+
+四 解释与适用范围
+成本置换保留同一成本/暴露多重集合、总预算和最大可购数量K*；单个候选的有效EAD随配对改变。真实违约概率、特征、历史D、普通O、目标Q/T和未来标签均在成本条件间共享。
+由排序成本决定的最大数量K*及最大可替换人数m*，在同一世界的各成本条件相同。实际选择数量、相对MinRisk换入/移出人数和构成风险溢价另见selection_composition表。该表是锁定选集的描述性后处理，不新增确认性假设。
+价格效应是在这些控制下的策略相对风险对比。数量、支出及匹配控制用于识别相应算法比较中的资源通道，不能把它们直接升级为一般自然直接因果效应。
+Static-D/Static-Pending与批更新版本采用相同可行填充与稳定ID规则，以隔离批内更新。FixedK-Pending约束同一启发式达到K*，其差异不是所有固定数量算法的全局最优代价。
+GainBudget-Pending是同一目标代理、按原始边际值在预算可行候选中选择的比较工具；不声称复现或战胜ConBatch-BAL、ParBaLS-EPIG。强近邻和真实任务验证仍属总方案后续工作。
+成本预算约束业务模型的预测PD×有效EAD之和；真实期望损失和实现损失另外报告。没有利润模型，不把Brier差异称为利润。
+M3主检验比较方法相对收益；探索相对OrdinaryOnly的绝对收益可由公开风险表作描述，未在本家族新增确认性达标检验。
+
+五 样本与复核
+独立确认世界21000001..21002560；工程世界、试验世界及M2世界全部排除。
+完成世界中的唯一拟合身份：LR 315556，XGB 315556；工程核验及中断重试不作新增样本，拟合数与标签重复不当作独立样本。
+全量原始记录审计最大风险重构误差：0；未匹配成本状态：1。
+tables保留全部逐世界对比和逐方法均值；protocols保留冻结登记；code保留冻结源；四个事先按ID选定的首世界含完整原始样例。全部原始预测本地保留，哈希索引公开。
+
+六 阶段结论
+M3已完成登记的有限研究与推断；成立程度按每项区间和终止判定报告，未识别结果不会因阶段完成而变成正向结论。M4/M5、真实任务外部确认及完整总方案尚未完成。

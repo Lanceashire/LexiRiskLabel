@@ -1,0 +1,46 @@
+{
+  "archives": [
+    {
+      "archive": "M1_M2_synthesis_20261101.zip",
+      "original_sha256": "5bc0d548b93283665643f6505d9433584fadbd0e0b0547b9aa324c7c35f6a239",
+      "public_sha256": "f8df79bad37969a977985971050a462e8e1a7a41ff9e34dc146162003320e132",
+      "redacted_members": 2
+    },
+    {
+      "archive": "M2_original_completion_20261031.zip",
+      "original_sha256": "e2bf9628a165f97b266c8953458b5db44b532505e2903982cf91d9ab0e812e2a",
+      "public_sha256": "1a06439eb5c4e70316b7f2bcad6fc049f1761d41165cfd795a64cf61bfa25941",
+      "redacted_members": 37
+    },
+    {
+      "archive": "M2_reversal_20261031.zip",
+      "original_sha256": "3115a0de7001bdab7f7c36a85aef7c7516a32d4d800503d23bc11ad58f5e007a",
+      "public_sha256": "289d2c9341d2521cfaa7d40277f8d73e843216c127083111de73220707581eb4",
+      "redacted_members": 76
+    },
+    {
+      "archive": "M3_cost_pairing_20261101.zip",
+      "original_sha256": "f52a93075534b15fe03f193c94fee73e43291df86c1d359ba49280743357696e",
+      "public_sha256": "51af81d7588ae13c1f84728e2642684a075ad17058d6c7d9f8762d312e562ed2",
+      "redacted_members": 5
+    }
+  ],
+  "loose_files": [
+    {
+      "file": "m3/code/engineering_checks.py",
+      "original_sha256": "27ab169453cf8bf9f36eb22096f5b44c6e0ac340c1f3050c31e6aaecd844fd57",
+      "public_sha256": "7f8bd1284bfae2b44ca4f94072038614687d69d40b377e393e797137276d3691"
+    },
+    {
+      "file": "m3/code/register.py",
+      "original_sha256": "814faa80bcf4201a76c188b79ed6d88c7cba82ed8fc1694f53ed7479ccb68a23",
+      "public_sha256": "2409c7d5fa6ba8e1c258856314cda0cfad53024c36166442c366dd7fb80709c0"
+    },
+    {
+      "file": "m3/code/world_id_collision_audit.json",
+      "original_sha256": "87541674d50b858b5c3a97195228584a9ef41c82b74d4542e07f97f7acad8c3b",
+      "public_sha256": "4172ecae51a77b2179782152de5fda230f537e8741ebe34f85e20c9a8bf52a54"
+    }
+  ],
+  "scope": "Public export metadata only; private originals unchanged; full archive verification rerun after redaction."
+}

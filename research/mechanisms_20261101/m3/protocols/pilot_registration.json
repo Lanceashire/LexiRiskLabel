@@ -1,0 +1,184 @@
+{
+  "version": "M3_cost_pairing_v1_20261101",
+  "registration_frozen": true,
+  "config": {
+    "world_ids": [
+      31001,
+      31002,
+      31003,
+      31004,
+      31005,
+      31006
+    ],
+    "world_role": "development only; never pool into independent confirmation",
+    "D": 800,
+    "C": 400,
+    "Q_ref": 1024,
+    "T": 5000,
+    "ordinary_sizes": [
+      500,
+      4000
+    ],
+    "directions": {
+      "target": [
+        1,
+        0,
+        0
+      ],
+      "irrelevant": [
+        0,
+        0,
+        1
+      ],
+      "unlock": [
+        0.4472135954999579,
+        -0.8944271909999159,
+        0
+      ]
+    },
+    "truth_theta": [
+      -1,
+      0.8,
+      1.4,
+      0,
+      0
+    ],
+    "approval_threshold": 0.5,
+    "business_PD_ordinary": "sigmoid(-1+a), a uniform[-2,0.8]",
+    "business_PD_candidate": 0.75,
+    "candidate_a": 2.0986122886681096,
+    "EAD_uniform": [
+      0.5,
+      1.5
+    ],
+    "rho": 0.1,
+    "direction_radius_sd": 1.2,
+    "D_generator": "a uniform[-2,.8], z1 N(0,.12), z2=z1+N(0,.05), z3 N(0,1)",
+    "C_generator": "a=1+log(3), z1 N(0,1.2), z2,z3 independent N(0,1)",
+    "Q_T_generator": "a uniform[-2,2.2], z1 N(0,1.2), z2=z3=0",
+    "O_generator": "a uniform[-2,.8], z=r*d, r N(0,1.2); shared a,r,Uniform labels and nested prefix across ordinary sizes",
+    "preprocessing": "identity coordinates fixed before pilot; no O/C/Q/T fitted transformation",
+    "lr_ridge": 1.0,
+    "lr_loss": "sum logistic loss plus ridge/2 times squared norm, including intercept; C=1/ridge fixed",
+    "xgb": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "n_jobs": 1,
+      "tree_method": "hist",
+      "device": "cuda",
+      "max_bin": 256
+    },
+    "methods": [
+      "OrdinaryOnly",
+      "MinRisk",
+      "D-only",
+      "Pending-aware"
+    ],
+    "solver": "adaptive singleton gain per cost; same updates, limits, stopping and stable ID ties; only O conditioning differs",
+    "M3_condition": {
+      "ordinary_n": 4000,
+      "direction": "target"
+    },
+    "cost_order_environment": "absolute target coordinate; no learner or evaluation score used; EAD and final cost multiset fixed",
+    "primary_metric": "excess Brier against known p; sampled Brier retained separately",
+    "primary_mechanism_contrasts_LR": [
+      "K_sub=-(I_target-I_irrelevant)",
+      "K_unlock=I_unlock-I_irrelevant",
+      "price=J_information_cheap-J_information_expensive (two-sided)"
+    ],
+    "I": "D-only exploration gain at O=4000 minus at O=500; same D-only select_hash across both O sizes",
+    "J": "MinRisk risk minus Pending-aware risk",
+    "nominal_fit_slots": 384,
+    "delta_mechanism": 0.0001,
+    "delta_role": "prospective development planning loss unit only; confirmatory threshold must be frozen before fresh confirmation",
+    "inference": "world-level paired differences; exploratory t intervals, Holm p and Bonferroni intervals; n=6 is variance pilot, no promotion or confirmation",
+    "confirmation_n": null,
+    "confirmation_world_ids": null,
+    "planning": "use upper 95 percent bound for world contrast standard deviation plus registered three-comparison multiplicity; no effect-based sample extension",
+    "ordinary_n": 4000
+  },
+  "cost_conditions": [
+    "neutral",
+    "information_cheap",
+    "information_expensive"
+  ],
+  "delta": 0.0001,
+  "primary_family": 2,
+  "primary_alpha": 0.04,
+  "secondary_family": 50,
+  "secondary_alpha": 0.01,
+  "primary_estimand": "price = [R(MinRisk)-R(Pending-aware)]_information_cheap - [R(MinRisk)-R(Pending-aware)]_information_expensive",
+  "primary_direction": "two-sided",
+  "label_rng_tag": 94001,
+  "matching_solver": {
+    "time_limit": 0.5,
+    "mip_rel_gap": 0.1
+  },
+  "same_world_common_labels_and_features_across_costs_and_methods": true,
+  "same_cost_multiset_and_absolute_budget": true,
+  "effective_EAD": "cost/0.75, exposure multiset preserved while individual exposure pairing changes",
+  "budget_interpretation": "sum business-model PD times effective EAD, not a realized loss guarantee",
+  "comparators": "D-only/PA are classic target-weighted information design instances; Static versions isolate batch updating; GainBudget-Pending is a raw marginal gain under feasibility comparator, not a reproduction of ConBatch-BAL or ParBaLS",
+  "claim_scope": "cost-pairing mechanism in original M3 anchor, no new SOTA/ParBaLS superiority or full overall-plan completion claim",
+  "stop_rule": "all fixed registered worlds once; no interim significance testing, no outcome-based extension or selected costs/learners",
+  "terminal_rule": "at registered N report support, reverse, effect excluded, equivalence or unresolved. Completed bounded study never means all mechanisms positive or identified.",
+  "planning": {
+    "pilot_worlds": 32,
+    "confirmation_label_M": 4,
+    "min_confirmation_worlds": 256,
+    "max_confirmation_worlds": 4096,
+    "target_halfwidth": 0.0001,
+    "rounding_grid": 256,
+    "rule": "max across learners of [z_(1-.04/4) * upper95_SD / .0001]^2; chi-square Gaussian SD bound; cap fixed before pilot; use first4 of8 label reps to match confirmation variance, never use effect mean"
+  },
+  "parent_protocol_sha256": "91fc919962a5a6920d22494c516ed5a316714c370f426536539f403d70e66b23",
+  "source_hashes": {
+    "study.py": "80df864777f2e386d1db90035ce07515d00e908ea6e4cde1f9c065878e4a3de5",
+    "analyze.py": "cf56915792a4bfe1179e6fdd34271a763c7794afd3a1403012a6af44ff053053",
+    "driver.py": "56d978c2d66f3dc3b66a16b35111c38b0f79f41b3ff4872d67e8543fe43d827d",
+    "engineering_checks.py": "27ab169453cf8bf9f36eb22096f5b44c6e0ac340c1f3050c31e6aaecd844fd57",
+    "register.py": "814faa80bcf4201a76c188b79ed6d88c7cba82ed8fc1694f53ed7479ccb68a23",
+    "deps/core.py": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c",
+    "deps/exact.py": "b70f6d2122ee888ee9c4d6ff6f6dbd98b81949545b65e6220ae0b0a0df4afbf7",
+    "deps/stage_gate.py": "9a7b57f884b61430f7f94f0b6e16ab90d4f415024d893b727f57194e45835898",
+    "stage_governance_v1.json": "1606eca939f518a50930f4680ccb6192b7ba3e6959697a8cc501b30f1079cfbb",
+    "world_id_collision_audit.json": "87541674d50b858b5c3a97195228584a9ef41c82b74d4542e07f97f7acad8c3b"
+  },
+  "role": "variance_pilot",
+  "label_M": 8,
+  "world_ids": [
+    20000001,
+    20000002,
+    20000003,
+    20000004,
+    20000005,
+    20000006,
+    20000007,
+    20000008,
+    20000009,
+    20000010,
+    20000011,
+    20000012,
+    20000013,
+    20000014,
+    20000015,
+    20000016,
+    20000017,
+    20000018,
+    20000019,
+    20000020,
+    20000021,
+    20000022,
+    20000023,
+    20000024,
+    20000025,
+    20000026,
+    20000027,
+    20000028,
+    20000029,
+    20000030,
+    20000031,
+    20000032
+  ]
+}

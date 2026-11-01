@@ -1,0 +1,7 @@
+先读M3_研究报告.txt。
+python verify_portable.py 重算全部52项同时区间与风险对比恒等式，无GPU。
+python verify_portable.py --examples 额外重构四个原始样例，需要requirements中的学习器依赖，无新训练。
+冻结实验可通过code/driver.py和protocols/confirmation_v1_registration.json重放到新目录；要求原版本软件与CUDA。register.py记录原工作区规划来源，新环境直接使用已冻结协议即可。
+协议config块保留原开发方案中的world_ids、methods和nominal_fit_slots等来源字段；本次执行身份以顶层world_ids、actual_methods、role和冻结源码为准，不能把继承的开发次数当本次执行规模。
+完整原始输入、标签和预测保留本地；公开其全部哈希和四个原始样例。
+历史M1/M2的阶段禁止标记是当时冻结记录；本次M3另有用户授权与版本化治理，不修改历史哈希。

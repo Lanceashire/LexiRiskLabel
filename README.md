@@ -7,8 +7,10 @@ when outcomes are observed only for approved applicants.  The project asks how
 to acquire additional ground-truth feedback while respecting a per-round
 credit-risk budget.
 
-The central method is **Lexicographic Risk-Budget Exploration (LRBE)**.  It
-first computes the maximum safely acquirable feedback count
+Current mechanism research examines when additional risk-budgeted exploration adds value beyond routine feedback. Maximum-count acquisition is treated as a baseline and an ablation, with conditional value and model-specific risk boundaries examined in the [M1–M3 evidence package](research/mechanisms_20261101/README.md).
+
+The historical **Lexicographic Risk-Budget Exploration (LRBE)** baseline
+first computes the maximum feasible feedback count under its predicted-risk budget
 
 \[
 K_t^*=\max_z\sum_i z_i
@@ -17,10 +19,14 @@ K_t^*=\max_z\sum_i z_i
 \]
 
 then fixes `K*` and optimizes feedback quality.  This separates the questions
-"how many labels can be acquired safely?" and "whose labels should be
+"how many labels fit the predicted-risk budget?" and "whose labels should be
 acquired?" instead of collapsing them into one risk--utility weight.
 
 ## Status
+
+### M1–M3 mechanism evidence added 2026-11-01
+
+The [integrated report and archives](research/mechanisms_20261101/README.md) consolidate the exact M1 study, bounded M2 reversal investigations, and a newly registered M3 cost-pairing confirmation with 2,560 independent worlds and four label replicates per world. All 52 M3 contrasts, positive/negative/unresolved outcomes, frozen source, and audit records are retained. M4/M5 and the full real-task/strong-neighbor programme remain open. These M-stage labels are separate from the historical Phase 0–4 labels below.
 
 ### Small development experiments added 2026-10-26
 

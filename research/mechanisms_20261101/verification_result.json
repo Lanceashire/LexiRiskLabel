@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "all_four_archives_extracted_and_recomputed": true,
+  "checksummed_files": 39,
+  "stages": {
+    "M1_M2_synthesis_20261101.zip": {
+      "passed": true,
+      "manifest_files": 38,
+      "M1_conditions": 18,
+      "M1_subsets_recomputed": 73728,
+      "M1_fixed_value_max_error": 0.0,
+      "M1_all_gain_max_error": 0.0,
+      "M1_subset_cost_max_error": 3.552713678800501e-15,
+      "M1_optimum_max_error": 0.0,
+      "M1_bound_violation": 0.0,
+      "bridge_worlds": 4096,
+      "bridge_max_error": 6.678685382510707e-17,
+      "original_M2_verdict_counts": {
+        "supports_meaningful_registered_direction": 2,
+        "opposite_direction": 4,
+        "meaningful_registered_positive_excluded": 2
+      },
+      "primary_literature_sources": 18,
+      "M3_preparation_entry_passed": true,
+      "M3_training_entry_blocked": [
+        "pilot_training",
+        "confirmation_training"
+      ],
+      "model_fits_run": 0,
+      "GPU_required": false,
+      "scope": "This verifies evidence transfer and stated bounds, not literature priority or a fresh full rerun of M2."
+    },
+    "M2_original_completion_20261031.zip": {
+      "passed": true,
+      "manifest_files": 116,
+      "all_eight_intervals_recomputed": true,
+      "maximum_interval_error": 0,
+      "diagnostic_decompositions_recomputed": true,
+      "all_32_adjacent_intervals_recomputed_from_condition_gains": true,
+      "primary_fresh_worlds": 32768,
+      "diagnostic_worlds": 64
+    },
+    "M2_reversal_20261031.zip": {
+      "passed": true,
+      "manifest_files": 199,
+      "main_primary_contrasts_recomputed": 47,
+      "both_registered_looks_recomputed": true,
+      "domain_intervals_recomputed": 24,
+      "independent_anchor_and_factual_intervals_recomputed": 21,
+      "histogram_intervals_recomputed": 8,
+      "maximum_interval_error": 0.0,
+      "exact_accounting_and_domain_partition_verified": true,
+      "mean_K_precision_change_verified": true,
+      "no_GPU_or_original_absolute_paths_needed": true
+    },
+    "M3_cost_pairing_20261101.zip": {
+      "passed": true,
+      "registered_worlds": 2560,
+      "primary_intervals_recomputed": 2,
+      "secondary_intervals_recomputed": 50,
+      "maximum_interval_error": 0.0,
+      "maximum_estimand_accounting_error": 3.469446951953614e-18,
+      "manifest_files": 75,
+      "raw_example_worlds_reconstructed": 4,
+      "no_GPU_or_new_training_required": true,
+      "scope": "all published interval estimates and per-world risk contrasts; full raw record audit was completed locally and indexed separately"
+    }
+  },
+  "new_training_performed": false
+}

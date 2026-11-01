@@ -1,0 +1,27 @@
+{
+  "version": "M3_authorized_20261101_v1",
+  "order": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "current_stage": "M3",
+  "historical_status": {
+    "M0": "complete; prior interface and evidence audits",
+    "M1": "complete; exact bounded study",
+    "M2": "complete; eight original terminal verdicts, bounded reversal studies with unresolved strong claims retained"
+  },
+  "M3_training_authorized": true,
+  "authorization": "那就继续做m3把，然后把m3做完来再进行一次推断把材料综合提交到github上面去",
+  "parent_original_governance_sha256": "350bd25759e280a4b2724dd1bbd9b7b04ea8621e9effd5e2da70eaa12b7ad892",
+  "original_M2_acceptance_sha256": "48b9a8010409c1002420f41255c3dcd9393f19e1ca49ddc0e5f49f7d9685e5f9",
+  "unresolved_not_promoted": [
+    "XGB unique directional root",
+    "single histogram effect",
+    "universal estimator explanation"
+  ],
+  "later_stages_authorized": false
+}
