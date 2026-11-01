@@ -1,7 +1,7 @@
 {
   "files": {
     "PUBLIC_REDACTION.json": "e61b83c456f0d4736b197759da590aba50635d59fcd78599a1d09c5172b29a4f",
-    "PUBLISHING_SCOPE.txt": "74a008c12a6e1b6c7414d815f687f77676c94c8e0ffbb59390d5b096f7bdd1c5",
+    "PUBLISHING_SCOPE.txt": "c1c4621c3082e448c692fc2024004dd204cae5ca44e5b3acccb3bd3d2657f069",
     "README.md": "a861e2c2fac1f3a6a9ddb6ba599b8a9ad1eb7c55fe993b77b661493e14156042",
     "archives/M1_M2_synthesis_20261101.zip": "f8df79bad37969a977985971050a462e8e1a7a41ff9e34dc146162003320e132",
     "archives/M2_original_completion_20261031.zip": "1a06439eb5c4e70316b7f2bcad6fc049f1761d41165cfd795a64cf61bfa25941",
@@ -37,7 +37,7 @@
     "reports/M1_M3_synthesis.zh.txt": "b99540cddebd02dbe3d2f8263cc5361da7f55ad529a5cba2518f069655a606dc",
     "reports/M3_cost_pairing.zh.txt": "a2a97db98db01d7a037c35cd469232a29005bb12096c6e811991f4dbbb9ff27a",
     "reports/related_work.zh.txt": "42731276018da2b834a462bbe124ee2606fe03ef6853faf64a3c001dbb1e5079",
-    "reports/research_narrative.zh.txt": "525b492beedd6968658ae6bba1fb5c0d85a577d2238fe34f3ca73f25c47c7932",
+    "reports/research_narrative.zh.txt": "2ef0bd8b357efb47fd91add70ee86294eb968335dcee6865fd0ba16a883d41b9",
     "verify_all.py": "445f2ed7eae770612e1af089f8d4da1f74c980840551b58f5457e9db952c660e"
   },
   "excluded_generated": [
