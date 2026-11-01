@@ -1,0 +1,96 @@
+{
+  "version": "M5_pre_label_scope_v1",
+  "written_utc": "2026-11-01T15:46:03.837Z",
+  "goal": "Mechanism consistency and 10-round complete replay; no new acquisition algorithm",
+  "controlling_plan": "V2 2026-10-29 section 11",
+  "M4_independent_acceptance": {
+    "passed": true,
+    "ZIP_extracted_and_manifest_verified": true,
+    "all_14_intervals_recomputed": true,
+    "raw_family_example_reconstructed": true,
+    "relocated_reproduction_identity_prepared_and_checked": true,
+    "new_training_run": false,
+    "final_figure_uncertainty_display_checked": true,
+    "zip_sha256": "0300631faa47ccb9ca4abf322c182bc7b90c043c959615b66ccb6d27c2702c82",
+    "zip_bytes": 26917635
+  },
+  "sources": [
+    {
+      "name": "LendingClub2017",
+      "url": "https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LC_Loan_sample_2017.csv",
+      "filter": "Fully Paid or Charged Off; positive loan_amnt; 21 original decision-time predictors",
+      "claim": "Previously untouched later cohort; terminal-status retrospective immediate-label replay, not strict as-of"
+    },
+    {
+      "name": "SouthGermanCredit",
+      "url": "https://archive.ics.uci.edu/static/public/573/south+german+credit+update.zip",
+      "filter": "All 1000 records; outcome coding per official R codebook; 20 decision-time predictors",
+      "claim": "New external benchmark; bad-credit oversampling, transformed amount, no guaranteed borrower identity"
+    }
+  ],
+  "old_data": "Development only, never newly unseen",
+  "excluded": "work/docx_completion; old E0-E3 branch",
+  "methods": [
+    "OrdinaryOnly",
+    "MinRisk",
+    "D-only",
+    "Pending-aware",
+    "ParBaLS-Laplace-cost-pending"
+  ],
+  "learners": [
+    "LR",
+    "XGB"
+  ],
+  "model": {
+    "ridge": 1,
+    "XGB": {
+      "n_estimators": 100,
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "max_bin": 256,
+      "tree_method": "hist",
+      "device": "cpu",
+      "n_jobs": 1
+    },
+    "backend_rationale": "GPU/device and user-service access unavailable under current sandbox; CPU specified before inspecting new outcomes, no fallback or outcome-based adjustment"
+  },
+  "seeds": [
+    51001,
+    51002,
+    51003,
+    51004,
+    51005,
+    51006,
+    51007,
+    51008,
+    51009,
+    51010,
+    51011,
+    51012,
+    51013,
+    51014,
+    51015,
+    51016,
+    51017,
+    51018,
+    51019,
+    51020
+  ],
+  "rounds": 10,
+  "rho": 0.1,
+  "candidate_ceiling": 128,
+  "reference_count": 128,
+  "neighbor": {
+    "universes": 10,
+    "posterior_draws": 32
+  },
+  "splits": "20% development / 60% replay / 20% sealed test by available entity ID and exact duplicate covariates; deterministic group permutation per seed; no target stratification; preprocessing D0 only; Q_ref development only",
+  "initial": "First quarter of replay is initial pool; lower half by fixed covariate score forms D0; remaining initial-pool rows stay unused",
+  "business": "D0 LR, frozen threshold at 70th percentile of development predictions; frozen costs PD times exposure/D0 mean; candidate cap shared uniform feature-only subset; B=rho retained candidate total cost",
+  "feedback": "All current O and C outcomes hidden until acquisition locks written. Policies each carry own acquired history, shared arrivals, business rules and D0 representation.",
+  "common_state": "MinRisk reference histories at rounds2/5/8. Fixed D/C/cost/B/learner. O treatments full/empty/top-half relevance/bottom-half relevance/matched random half. Relevance from D and Q covariates only.",
+  "primary": "Ten-round mean Brier PA vs MinRisk and PA vs adapted ParBaLS, two tasks and LR/XGB. Common-state matched-quantity interaction and old-M4 diagnostic prediction, no result-dependent expansion.",
+  "inference": "Conditional paired applicant-group test resampling, shared group weights across seeds; overlapping replay seeds are not independent n=20; seed spread descriptive only. All main endpoints simultaneous Bonferroni. Delta fixed before T outcomes via D0-legal development Brier *0.005.",
+  "diagnostic": "Fixed ridge prediction fit only on M4 worlds, locked before new T results. Dimensionless available-state information, budget and set-composition features. No new selector.",
+  "M5_complete": false
+}

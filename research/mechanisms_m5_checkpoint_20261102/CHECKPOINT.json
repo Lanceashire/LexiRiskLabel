@@ -1,0 +1,138 @@
+{
+  "stage": "paused_by_user_before_publication",
+  "utc": "2026-11-01T16:03:01.622924+00:00",
+  "M4_complete": true,
+  "M5_complete": false,
+  "registered_tasks": 40,
+  "complete_tasks": 8,
+  "partial_tasks": 8,
+  "complete_trajectories": 80,
+  "complete_main_rounds": 800,
+  "complete_common_state_branches": 720,
+  "completed": [
+    {
+      "task": "LendingClub2017_51001",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51002",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51003",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51004",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51005",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51006",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51007",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51008",
+      "complete": true,
+      "main_round_locks": 100,
+      "common_state_branch_locks": 90,
+      "raw_prediction_audit_passed": false
+    }
+  ],
+  "partial": [
+    {
+      "task": "LendingClub2017_51009",
+      "complete": false,
+      "main_round_locks": 46,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51010",
+      "complete": false,
+      "main_round_locks": 44,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51011",
+      "complete": false,
+      "main_round_locks": 42,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51012",
+      "complete": false,
+      "main_round_locks": 43,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51013",
+      "complete": false,
+      "main_round_locks": 44,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51014",
+      "complete": false,
+      "main_round_locks": 43,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51015",
+      "complete": false,
+      "main_round_locks": 41,
+      "common_state_branch_locks": 45,
+      "raw_prediction_audit_passed": false
+    },
+    {
+      "task": "LendingClub2017_51016",
+      "complete": false,
+      "main_round_locks": 17,
+      "common_state_branch_locks": 36,
+      "raw_prediction_audit_passed": false
+    }
+  ],
+  "test_outcome_evaluation_completed": false,
+  "full_prediction_audit_completed": false,
+  "mechanism_findings_from_M5": null,
+  "registration_sha256": "f79fe6bfc52b2ccfe4c4916ae4131c331325dba4ce79634f740411cd106a1c83",
+  "local_checkpoint_manifest_sha256": "a311e0ceb17276d98f70869b6c1ad60f669078cd3aeffbc91e6b7c2d08013a5f",
+  "local_checkpoint_files": 3435,
+  "training_session_exit_code": 130,
+  "controller_service_lock_released": true,
+  "local_files_stable_after_stop": true,
+  "resume": "Run the same registered controller: completed tasks verify and skip; partial tasks restart deterministically. No auto-resume authorized while paused."
+}

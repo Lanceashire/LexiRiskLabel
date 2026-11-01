@@ -1,0 +1,10 @@
+{
+  "scope": "only personal filesystem prefixes in public exports; original frozen code and registration unchanged locally; historical hashes identify original bytes",
+  "changes": [
+    {
+      "file": "code/engineering_checks.py",
+      "original_sha256": "2cc8319ad056cf672e3f4f8f88889514b4770f87c3ab69ccbf686d6d0cb348ca",
+      "public_sha256": "58fe420280bac954c34753ed7383d71756ee626a613da0df501c585b637bb6c8"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "intervals_recomputed": 14,
+  "maximum_recomputation_error": 4.336808689942018e-19,
+  "independent_world_sets_checked": 576,
+  "raw_family_examples_recomputed": 1,
+  "manifest_files": 78,
+  "GPU_or_new_training_required": false,
+  "scope": "all registered endpoint intervals and MC winner-risk accounting; complete local raw audits are indexed, public example is first-ID world"
+}

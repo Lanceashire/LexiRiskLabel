@@ -1,0 +1,7 @@
+learner,direction,metric,role,n_worlds,mean,SE,low,high,family,family_alpha,verdict
+LR,target,ParBaLS_minus_PA/linear,method_transfer_primary,64,1.9439622496479536e-06,4.070223542650306e-06,-1.0875737070240652e-05,1.4763661569536559e-05,4,0.01,within_delta_band
+XGB,target,ParBaLS_minus_PA/linear,method_transfer_primary,64,4.447780730818812e-05,9.037571187307382e-05,-0.00024017227146347643,0.0003291278860798527,4,0.01,unresolved
+LR,target,nonlinear_minus_linear_PA_gain,structure_primary,64,0.00011653504498388913,2.7241017657913335e-05,3.728378157588801e-05,0.00019578630839189024,2,0.01,positive_direction_only
+LR,unlock,ParBaLS_minus_PA/linear,method_transfer_primary,64,3.867109419674374e-05,6.974438119684357e-05,-0.00018099792074218442,0.0002583401091356719,4,0.01,unresolved
+XGB,unlock,ParBaLS_minus_PA/linear,method_transfer_primary,64,-0.0010165838798706116,0.0004528550634830081,-0.0024429099006672552,0.0004097421409260322,4,0.01,unresolved
+LR,unlock,nonlinear_minus_linear_PA_gain,structure_primary,64,-0.01574499594222703,0.0017663886012560042,-0.0208838835593115,-0.01060610832514256,2,0.01,meaningful_negative

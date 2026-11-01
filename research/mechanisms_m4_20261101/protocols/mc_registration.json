@@ -1,0 +1,33 @@
+{
+  "version": "M4_MC_frozen_model_diagnostic_v1",
+  "frozen_before_any_MC_label_or_score_draw": true,
+  "timestamp_utc": "2026-11-01T11:54:45.797481+00:00",
+  "main_registration_sha256": "34adf1e9e927854fc54094e9fee62dae3b81fde3fc08c55532de38071e1dee8b",
+  "world_ids": [
+    24000001,
+    24000002,
+    24000003,
+    24000004,
+    24000005,
+    24000006
+  ],
+  "M": [
+    2,
+    16,
+    128
+  ],
+  "selection_banks": 2,
+  "independent_verification_M": 256,
+  "reference": "same allowed Q_ref for scoring and independent model verification; external risk only from already independent family evaluation",
+  "primary_estimand": "mean over two banks of model-verification risk at M2 winner minus risk at M128 winner; paired across six independently generated worlds, LR two directions alpha=.01; XGB descriptive",
+  "source_hashes": {
+    "mc_diagnostic.py": "d7d72c92895f33b68bfd4899fb476fade6698a501fbbdac33e1ed3a168b2ab26",
+    "common.py": "b7ed709e79795ddf22cbdcc093ced226d1fe4c6c60f5f720d9af786a249f622e",
+    "deps/core.py": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c",
+    "deps/exact.py": "b70f6d2122ee888ee9c4d6ff6f6dbd98b81949545b65e6220ae0b0a0df4afbf7",
+    "deps/base.py": "80df864777f2e386d1db90035ce07515d00e908ea6e4cde1f9c065878e4a3de5",
+    "deps/stage_gate.py": "9a7b57f884b61430f7f94f0b6e16ab90d4f415024d893b727f57194e45835898"
+  },
+  "conditional_entry": "run only after family actual_space_identified=True",
+  "no_new_candidates": true
+}

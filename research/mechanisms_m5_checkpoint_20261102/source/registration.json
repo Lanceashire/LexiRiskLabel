@@ -1,0 +1,48 @@
+{
+  "version": "M5_fixed40_sharedT_v2_runtime_fork_20261101",
+  "registration_timestamp_utc": "2026-11-01T15:59:48.686651+00:00",
+  "M4_complete": true,
+  "new_outcomes_inspected_at_registration": false,
+  "source_hashes": {
+    "analysis.py": "cdc54a64ef95d50fe5db3f607e082d67719fb3ad4a3b2e515feb0fcaf89e5a11",
+    "common.py": "9d97c0a0cd3baca480eb58a9f6ca86e0520e9de1202e4758673716c54896bb71",
+    "controller.py": "bd87688aad18ceaf3da0c06ef45da74b8383146a6a8680304829470db6c1c1d1",
+    "data.py": "0256870253e1e661cdc40f521aac848684d16b3381eae4e74a804346028a3afb",
+    "diagnostic.py": "6fa9705936923947bdbcd567c7ccbd1df8b1d8f728438328e5c896267d4fa2a0",
+    "engineering_checks.py": "dac09331da43dc0235d4d45f4e7e5bb545656fe3096eca3c3fd5844bf4157b88",
+    "fetch_sources.py": "a7e6f246c922ab4fdc30aa5b334418ea10da28ebb5cde23dc5e0bb043ad2879e",
+    "neighbor.py": "f8cf4126dbb8630ec6dd98d6a5a198bd2a684d5e4e50f2a12b1fff61f819d87f",
+    "raw_audit.py": "e67f0083361a6bd32bf4bde5d051512b55e6152c5cfc3d229155d59623a6fb31",
+    "replay.py": "9aaa4677ef777afe833d72f8305660c02cbc42e19f495cdaa79dc0392b06ddfb",
+    "deps/core.py": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c",
+    "deps/exact.py": "b70f6d2122ee888ee9c4d6ff6f6dbd98b81949545b65e6220ae0b0a0df4afbf7",
+    "pre_label_scope.json": "19f37dd3532aa83007b666bc0389d88800974e21eca7f631908a7c1fa448e094",
+    "pre_label_amendment_v2.json": "30778187bf9a881d0c6e8c28e5816a5b9b96db17eb38a354161bb44820e59780",
+    "analysis_plan.json": "3350ce440d2d91f7db30ec73499d3cfb86d53cf759589bb4c54f4891947bd2dc",
+    "stage_governance_v1.json": "5b4c8207bebafd394ea900c547c498743b9668d67360c63bd273918ed2f5b698",
+    "source_download_receipts.json": "05b8d54e1e181414fe247cc763e11ad53c0cfd618200b7e752d45eaa1d27908a",
+    "diagnostic_frozen.json": "ad281f827412c34fcc29eed023b81aa2d0ff8417d1a6aafe7e65ae923fc6e2ed",
+    "engineering_checks.json": "e04f7ad4f6ea4d167a7af42493cdc7e3c9eca60df4470751838225f0fc3721e8",
+    "controlling_plan_v2.txt": "5eeccb8d0499c9182741de70d00b1903b83d01fcfa76b775c0f4801e072cd8ef",
+    "codetable.txt": "0040e7a173a06d1167447b2bbc4315ee1380fa3c25db321b9fd7d97ada0721bf",
+    "read_SouthGermanCredit.R": "92340012c6387dcc0fea9dcf47e2cc9659cda93c21bd688f3f694f0f0229ed68"
+  },
+  "data_hashes": {
+    "LendingClub2017": "52cdabfa3cf009b6875bf5e966c79d07dac54e3cfab491dbdc4ea2d3f1b06d63",
+    "SouthGermanCredit": "0b40d40eb7321693d559e247a556f88a6cc8df8489c3cb2ae084db7592584551"
+  },
+  "CPU_explicit_not_fallback": true,
+  "registered_tasks": 40,
+  "main_trajectories": 400,
+  "main_rounds": 4000,
+  "common_state_branches": 3600,
+  "base_learner_fits": 7600,
+  "source_status": "User-downloaded official/university sources; file headers and codebook inspected only before this registration",
+  "parent_registration_sha256": "12b1f453606dbd7bf1599ea644e7f331ea45a98f105598509b9df1de7a64cb2c",
+  "runtime_correction": {
+    "utc": "2026-11-01T16:00:03.856033+00:00",
+    "change": "Explicit fork multiprocessing context avoids default Python3.14 forkserver socket under sandbox. No acquisition/model/data/endpoint changes.",
+    "new_outcomes_inspected": false,
+    "runs_started": 0
+  }
+}

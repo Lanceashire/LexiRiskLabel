@@ -1,0 +1,18 @@
+{
+  "redactions": [
+    {
+      "file": "source/stage_governance_v1.json",
+      "local_sha256": "5b4c8207bebafd394ea900c547c498743b9668d67360c63bd273918ed2f5b698",
+      "public_sha256": "d3a26ae35a4f73381e165a9a2e1301fead674b3cc8c1e2c4ba049c010cfc0a95",
+      "reason": "Remove personal filesystem paths or conversational authorization quote; numerical settings unchanged."
+    },
+    {
+      "file": "source/source_download_receipts.json",
+      "local_sha256": "05b8d54e1e181414fe247cc763e11ad53c0cfd618200b7e752d45eaa1d27908a",
+      "public_sha256": "1f638b2511354d33e87ef821b25f23a056b2bbbfdef423468b38d1a50e0deb58",
+      "reason": "Remove personal filesystem paths or conversational authorization quote; numerical settings unchanged."
+    }
+  ],
+  "unchanged_local_registration_sha256": "f79fe6bfc52b2ccfe4c4916ae4131c331325dba4ce79634f740411cd106a1c83",
+  "registration_hashes": "Original local source hashes are retained as historical provenance. The public snapshot omits the private planning document, third-party codebook bytes, and per-applicant records. Public engineering checks run independently; a full relocated replay is not claimed validated."
+}

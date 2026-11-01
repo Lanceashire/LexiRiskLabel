@@ -1,0 +1,18 @@
+[
+  {
+    "dataset": "LendingClub2017",
+    "url": "https://bigblue.depaul.edu/jlee141/econdata/LendingClub_LoanData/LC_Loan_sample_2017.csv",
+    "bytes": 7013022,
+    "sha256": "52cdabfa3cf009b6875bf5e966c79d07dac54e3cfab491dbdc4ea2d3f1b06d63",
+    "outcome_values_inspected": false,
+    "received_utc": "2026-11-01T15:56:41.547659+00:00"
+  },
+  {
+    "dataset": "SouthGermanCredit",
+    "url": "https://archive.ics.uci.edu/static/public/573/south+german+credit+update.zip",
+    "bytes": 13130,
+    "sha256": "0b40d40eb7321693d559e247a556f88a6cc8df8489c3cb2ae084db7592584551",
+    "outcome_values_inspected": false,
+    "received_utc": "2026-11-01T15:56:41.552591+00:00"
+  }
+]

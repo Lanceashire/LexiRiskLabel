@@ -1,0 +1,18 @@
+{
+  "version": "M5_analysis_v1_20261101",
+  "primary_family_size": 20,
+  "family_alpha": 0.05,
+  "bootstrap_repetitions": 19999,
+  "bootstrap_seed": 809111,
+  "primary_endpoints": {
+    "algorithm_gain": "8 = 2 tasks x 2 learners x 2 comparators; average ten-round Brier(MinRisk/ParBaLS)-Brier(PA)",
+    "mechanism_interactions": "8 = 2 tasks x 2 learners x 2 contrasts: gain(high O)-gain(low O), gain(full O)-gain(empty O), on common MinRisk states at rounds2/5/8. Matched random half reported as quantity control without extra significance search.",
+    "explanation_prediction": "4 = 2 tasks x 2 learners; MAE(M4 constant)-MAE(M4 ridge) on 60 full-O common states, evaluated jointly by test-group resampling. No coefficient fit on new tasks."
+  },
+  "delta": "For each task, mean across20 seeds of .005 times D0 LR Brier on legal development set; fixed before evaluation of T. Diagnostic delta=0.",
+  "intervals": "Percentile paired applicant-group bootstrap with common group weights across all learners/replays/treatments and Bonferroni tail .05/(2*20); approximate conditional inference, not guaranteed full-population coverage. Centered bootstrap p and Holm20 also reported.",
+  "independent_unit": "Available entity/exact-duplicate group in one shared sealed T; not replay seed, round, or ordinary branch",
+  "scope": "Conditional on fitted finite procedures and this fixed historical cohort; no training-population coverage, no actual rejected-borrower counterfactual, no strict as-of outcome timing",
+  "stopping": "Run fixed40 replay tasks and complete audits once; report unresolved outcomes, no result-adaptive new seeds or lowering delta",
+  "diagnostic_extrapolation": "Report out-of-M4-feature-range share; failure is retained and does not trigger changing features or ridge."
+}

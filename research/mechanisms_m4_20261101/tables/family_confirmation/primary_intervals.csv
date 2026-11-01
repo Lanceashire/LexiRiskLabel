@@ -1,0 +1,5 @@
+learner,direction,metric,role,n_worlds,mean,SE,low,high,family,family_alpha,verdict
+LR,target,heldout_search_winner_gain,primary,512,-5.210886673488378e-06,1.0930770254947767e-06,-8.292573923923798e-06,-2.129199423052957e-06,4,0.02,negative_direction_only
+LR,target,Pending_aware_gain,primary,512,2.1916030832254283e-06,8.174718932068856e-07,-1.1307687264928568e-07,4.496283039100142e-06,4,0.02,within_delta_band
+LR,unlock,heldout_search_winner_gain,primary,512,0.0003780292692462395,3.097675988100794e-05,0.0002906971931357827,0.00046536134535669633,4,0.02,meaningful_positive
+LR,unlock,Pending_aware_gain,primary,512,0.0004375674265047008,2.6050816130534552e-05,0.000364122951814944,0.0005110119011944575,4,0.02,meaningful_positive

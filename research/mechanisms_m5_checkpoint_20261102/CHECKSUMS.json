@@ -1,0 +1,32 @@
+{
+  "files": {
+    "CHECKPOINT.json": "c4f0c87fe77f308684479224a572be0e70fd3ff93c00c167b177209e35bbbc1d",
+    "PUBLIC_REDACTION.json": "f3b318489a20a2158e62ade892e506871dd472c79cd7aeac1228ca4b70e7a7fc",
+    "README.md": "5b027c5242dc1c5165ddd19e4d3b4cf29ea7014bda0cd7a6c0ea0f969a46734a",
+    "SOURCE_PROVENANCE.json": "2dd5f178d13dae52d1d6b57675a5ed452ae3ba39abf845289aee102af6d022f5",
+    "requirements.txt": "ebb58dac9824fed21a2308f7a5436c1f9df65de46f93293237a5e6fec81f6e95",
+    "source/analysis.py": "cdc54a64ef95d50fe5db3f607e082d67719fb3ad4a3b2e515feb0fcaf89e5a11",
+    "source/analysis_plan.json": "3350ce440d2d91f7db30ec73499d3cfb86d53cf759589bb4c54f4891947bd2dc",
+    "source/common.py": "9d97c0a0cd3baca480eb58a9f6ca86e0520e9de1202e4758673716c54896bb71",
+    "source/controller.py": "bd87688aad18ceaf3da0c06ef45da74b8383146a6a8680304829470db6c1c1d1",
+    "source/data.py": "0256870253e1e661cdc40f521aac848684d16b3381eae4e74a804346028a3afb",
+    "source/deps/core.py": "353762ef4ee23dfe678c040fbf37f429f7f9c80783d70e6be0ae6ddf39292e8c",
+    "source/deps/exact.py": "b70f6d2122ee888ee9c4d6ff6f6dbd98b81949545b65e6220ae0b0a0df4afbf7",
+    "source/diagnostic.py": "6fa9705936923947bdbcd567c7ccbd1df8b1d8f728438328e5c896267d4fa2a0",
+    "source/diagnostic_development.csv": "c480b2072ccf75e8c4b714b7dfd81fae516a79526f0ebaaea1e03b6be0e1b167",
+    "source/diagnostic_frozen.json": "ad281f827412c34fcc29eed023b81aa2d0ff8417d1a6aafe7e65ae923fc6e2ed",
+    "source/engineering_checks.json": "e04f7ad4f6ea4d167a7af42493cdc7e3c9eca60df4470751838225f0fc3721e8",
+    "source/engineering_checks.py": "dac09331da43dc0235d4d45f4e7e5bb545656fe3096eca3c3fd5844bf4157b88",
+    "source/fetch_sources.py": "a7e6f246c922ab4fdc30aa5b334418ea10da28ebb5cde23dc5e0bb043ad2879e",
+    "source/neighbor.py": "f8cf4126dbb8630ec6dd98d6a5a198bd2a684d5e4e50f2a12b1fff61f819d87f",
+    "source/pre_label_amendment_v2.json": "30778187bf9a881d0c6e8c28e5816a5b9b96db17eb38a354161bb44820e59780",
+    "source/pre_label_scope.json": "19f37dd3532aa83007b666bc0389d88800974e21eca7f631908a7c1fa448e094",
+    "source/raw_audit.py": "e67f0083361a6bd32bf4bde5d051512b55e6152c5cfc3d229155d59623a6fb31",
+    "source/registration.json": "f79fe6bfc52b2ccfe4c4916ae4131c331325dba4ce79634f740411cd106a1c83",
+    "source/registration_v1_before_runtime_fix.json": "12b1f453606dbd7bf1599ea644e7f331ea45a98f105598509b9df1de7a64cb2c",
+    "source/replay.py": "9aaa4677ef777afe833d72f8305660c02cbc42e19f495cdaa79dc0392b06ddfb",
+    "source/source_download_receipts.json": "1f638b2511354d33e87ef821b25f23a056b2bbbfdef423468b38d1a50e0deb58",
+    "source/stage_governance_v1.json": "d3a26ae35a4f73381e165a9a2e1301fead674b3cc8c1e2c4ba049c010cfc0a95",
+    "verify_snapshot.py": "360f75e458cc8f5a654f3da23abfcb6c3f44db0e761d4fd411cc27d80d546801"
+  }
+}

@@ -24,9 +24,15 @@ acquired?" instead of collapsing them into one risk--utility weight.
 
 ## Status
 
+### M4 completed; M5 paused checkpoint added 2026-11-02
+
+The [current M4/M5 review entry](research/M4_M5_CURRENT_STATUS_20261102.md) links the completed [M4 evidence and reproduction package](research/mechanisms_m4_20261101/README.md) and the [M5 paused checkpoint](research/mechanisms_m5_checkpoint_20261102/README.md). M4 includes 512 independent finite-family worlds, 64 method/structure transfer worlds, and a six-world MC diagnostic. Its 14 registered intervals retain positive, reversed, equivalent and unresolved findings within their stated scope. The work studies mechanisms and their boundaries; it does not establish a universally better acquisition algorithm.
+
+M5 has a frozen protocol, newly obtained LendingClub 2017 and South German Credit sources, and passing engineering checks. Training completed for 8 of 40 replay tasks before the user requested a pause and publication. Full prediction audits and sealed-test evaluation have not run, so no M5 external-confirmation result is claimed. Raw credit data, applicant logs and test predictions remain local.
+
 ### M1–M3 mechanism evidence added 2026-11-01
 
-The [integrated report and archives](research/mechanisms_20261101/README.md) consolidate the exact M1 study, bounded M2 reversal investigations, and a newly registered M3 cost-pairing confirmation with 2,560 independent worlds and four label replicates per world. All 52 M3 contrasts, positive/negative/unresolved outcomes, frozen source, and audit records are retained. M4/M5 and the full real-task/strong-neighbor programme remain open. These M-stage labels are separate from the historical Phase 0–4 labels below.
+The [integrated report and archives](research/mechanisms_20261101/README.md) consolidate the exact M1 study, bounded M2 reversal investigations, and a newly registered M3 cost-pairing confirmation with 2,560 independent worlds and four label replicates per world. All 52 M3 contrasts, positive/negative/unresolved outcomes, frozen source, and audit records are retained. This release predates the M4 completion and M5 checkpoint linked above; its archived stage markers retain that historical meaning. These M-stage labels are separate from the historical Phase 0–4 labels below.
 
 ### Small development experiments added 2026-10-26
 
@@ -191,3 +197,4 @@ release.
 ## 中文说明
 
 本仓库是选择性标签条件下风险预算反馈获取研究的可复现工程包。代码、配置、冻结结果、fresh-seed 原始结果、统计与论文图均已纳入；第三方原始数据不随仓库重新分发。论文主张应聚焦于 LRBE 的数量—质量词典序分解、Quantity-first 的有限适用范围、预测风险与实际损失的区别，以及反馈恢复与决策恢复的不稳定对应关系。
+

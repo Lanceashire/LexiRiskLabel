@@ -1,0 +1,23 @@
+{
+  "version": "M4_authorized_20261101_v1",
+  "order": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "current_stage": "M4",
+  "historical_status": {
+    "M0": "complete; verified prior acceptance and bounded claims retained",
+    "M1": "complete; verified prior acceptance and bounded claims retained",
+    "M2": "complete; verified prior acceptance and bounded claims retained",
+    "M3": "complete; verified prior acceptance and bounded claims retained"
+  },
+  "M4_training_authorized": true,
+  "authorization": "来，现在我们继续研究m4争取发个dasfaa",
+  "M5_training_authorized": false,
+  "wrong_DOCX_branch_excluded": true,
+  "M3_acceptance_sha256": "7848b4cf3bd4ba62819f8e1fb351fd0ad181deab37e829186d4a34d1a6e378f5"
+}

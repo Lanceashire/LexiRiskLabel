@@ -1,0 +1,22 @@
+{
+  "files": {
+    "M4_ACCEPTANCE.json": "6836edb07162d066a6b45f83b087f557648f6f56d4b45d3310c57ce2fdd6eb66",
+    "M4_estimands_and_limits.zh.txt": "cae8152572f1c255d80895ef746f8f745b5fb878de0f1ad8b7ed1361fc0ee4ae",
+    "M4_localization_and_transfer_20261101.zip": "0300631faa47ccb9ca4abf322c182bc7b90c043c959615b66ccb6d27c2702c82",
+    "M4_localization_and_transfer_20261101.zip.sha256": "2c73a939842ee25e4782b23a74441bafda5909347f12238d0eb8277a0d4b46a5",
+    "M4_report.zh.txt": "05fac894dba2b4c8831c129a0de3d17ed38e734a7dcc7e4d7c3c12d972c108f9",
+    "PUBLIC_REDACTION.json": "57eeeb3331e53657dc905381c9138b1538d8c9612162186b17cf6554556ae8ee",
+    "README.md": "ecd57350ea16c11d7092d05092bf552db406e9f230a9708b8d2b917047971718",
+    "figures/M4_MC_ranking.png": "507b2da90dfff5cbb85d9c1ba3959e8bb2bc7615a2cb14dfdf0cc71bb5c6dff9",
+    "figures/M4_family_confirmation.png": "6d7904ad24df092272f4268eead080216aa1c3388feccdc7eb9d404cc26ad50d",
+    "figures/M4_method_transfer.png": "97f1cc4114717aa4102c37cd6c498cba958da3c0a59ebc4b3cf84e8cbcc86657",
+    "figures/M4_ranking_and_solver.png": "093e74187e28a2338199397a3af2a070039794f525635348cc4868b2eff3005e",
+    "portable_verification.json": "bf702d89f1f6cf3d73b860efda547819cbc8788c0dfcf99b3ef77d7eba3a61f0",
+    "protocols/mc_registration.json": "3baecb36280d68ce86be61faee8ac6c620ccde65baab07efa733282664faab28",
+    "protocols/registration.json": "34adf1e9e927854fc54094e9fee62dae3b81fde3fc08c55532de38071e1dee8b",
+    "protocols/stage_governance_v1.json": "d5035852c2f2aea9c123fc3c324c4526709c608955215bb3eeb56fb35d5c30d6",
+    "tables/family_confirmation/primary_intervals.csv": "2cf0d8fb2e03a412e1f5427b492360c02b746de08c20d772a66838fdcb01beda",
+    "tables/mc_diagnostic/primary_intervals.csv": "e7dcd9b42e001e395387ade4a7e7226dd3470d25ebb9e228ecb0fa4dd7339b9d",
+    "tables/transfer/primary_intervals.csv": "7dc1810914bf41c9a3db3d6f98eef0fc499da978e9dae0f496da37d8123da523"
+  }
+}

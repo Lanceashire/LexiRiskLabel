@@ -1,0 +1,12 @@
+{
+  "version": "M5_authorized_20261101_v1",
+  "current_stage": "M5",
+  "M0_M3_status": "Prior accepted bounded evidence retained; no recheck requested",
+  "M4_complete": true,
+  "M4_acceptance_sha256": "6836edb07162d066a6b45f83b087f557648f6f56d4b45d3310c57ce2fdd6eb66",
+  "M4_independent_delivery_sha256": "ffb6fd62d13b999bf57da7a3711f3afc303580fe454b4c3f46157440576ae2e0",
+  "authorization": "Explicit user authorization to begin M5, subsequently paused for publication.",
+  "M5_training_authorized": true,
+  "wrong_DOCX_branch_excluded": true,
+  "M5_complete": false
+}
