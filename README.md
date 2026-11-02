@@ -24,9 +24,13 @@ acquired?" instead of collapsing them into one risk--utility weight.
 
 ## Status
 
+### Current experiment consolidation and writing verification — 2026-11-02
+
+See [the current mechanism status](research/CURRENT_MECHANISM_RESEARCH_STATUS.md) and [the E0–E3 review package](research/mechanisms_followup_20261102_v3/README.md). The explicit prospective v2 experiment scope, fixed-action explanation and engineering schema checks are complete. Seven LR primary endpoints yield three practical positives, two within-band results and two unresolved results; not all original precision targets were met. Preparation currently means verifying evidence-based writing, with no full manuscript or submission PDF written. Earlier stage statuses below are historical snapshots.
+
 ### M5 registered retrospective study completed 2026-11-02
 
-The [current M1–M5 status](research/M4_M5_CURRENT_STATUS_20261102.md) links the completed [M4 evidence](research/mechanisms_m4_20261101/README.md) and [M5 full results and reproduction archive](research/mechanisms_m5_20261102/README.md). M5 completed all 40 replay tasks, 400 ten-round trajectories and 3,600 common-state branches. All 7,600 prediction branches were reconstructed exactly, and all 7,600 label-release commitments were checked. Twenty primary endpoint estimates, intervals and multiplicity adjustments were independently recomputed.
+The [historical M1–M5 completion status](research/M4_M5_CURRENT_STATUS_20261102.md) links the completed [M4 evidence](research/mechanisms_m4_20261101/README.md) and [M5 full results and reproduction archive](research/mechanisms_m5_20261102/README.md). M5 completed all 40 replay tasks, 400 ten-round trajectories and 3,600 common-state branches. All 7,600 prediction branches were reconstructed exactly, and all 7,600 label-release commitments were checked. Twenty primary endpoint estimates, intervals and multiplicity adjustments were independently recomputed.
 
 Completion refers to the registered study and audits. No practical positive advantage of Pending-aware over the two comparators was confirmed: all eight ten-round gain estimates were negative, seven excluded the registered positive threshold, and one remained unresolved. The frozen M4 diagnostic did not establish cross-task prediction; both XGBoost diagnostics were worse than the frozen constant baseline outside the M4 feature range. These are conditional retrospective findings, not real-reject counterfactuals, strict as-of online effects, or training-population coverage.
 
@@ -198,5 +202,5 @@ release.
 
 ## 中文说明
 
-本仓库是选择性标签条件下风险预算反馈获取研究的可复现工程包。代码、配置、冻结结果、fresh-seed 原始结果、统计与论文图均已纳入；第三方原始数据不随仓库重新分发。论文主张应聚焦于 LRBE 的数量—质量词典序分解、Quantity-first 的有限适用范围、预测风险与实际损失的区别，以及反馈恢复与决策恢复的不稳定对应关系。
+本仓库是选择性标签条件下风险预算反馈获取研究的可复现工程包。当前机制研究聚焦历史条件、资源控制与迁移边界，最新实验收束和写法核验见上述当前状态。既有算法及历史阶段保留作为参照；新结果须保留未定项、事前范围修订和有限外推范围。第三方真实原始行、个体标签、个体预测及私有日志不随本次公开材料分发。
 

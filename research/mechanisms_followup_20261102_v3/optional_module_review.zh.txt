@@ -1,0 +1,29 @@
+附加模块触发审查
+本审查按原推进书第九节逐条执行。当前没有必须新增训练的触发项；这不是宣布所有将来问题已解决。
+
+Variance/correlation factor split
+条件：E1 meaningful joint interaction and separate attribution intended
+证据：ThetaJ lower 8.5366e-5 < delta1e-4; manuscript keeps joint-history claim
+决定：not triggered for current claim
+
+Correct-logit/nonlinear semi-synthetic attribution
+条件：E2 matched resource comparison still shows PA misselection
+证据：LR CM positive beyond delta in469joint-match worlds; old real-data posthoc counterexample retained without unique-cause claim
+决定：not triggered by new E2; no model-misspecification attribution claimed
+
+Conditional bias/variance replication
+条件：Fixed-action and reselected-action interpretations genuinely conflict
+证据：J=E_PA-E_MinRisk exactly reconciles sign difference; maxerror6.94e-18 across512worlds
+决定：resolved with existing paired risk tables
+
+Short-term policy continuation
+条件：E3 clear historical dependence and long-term attribution needed
+证据：LR H within predeclared practical band; no long-term path-cause claim
+决定：not triggered
+
+Diagnostic v2 for deployment
+条件：Paper claims deployable transferable gain predictor
+证据：Paper reports frozen diagnostic transfer failure; proposes no deployable prediction rule
+决定：outside current paper claim
+
+冻结的两项未定结果不通过上述模块追加样本或更换门槛。若以后扩大到单因素因果归因或部署诊断器，需要新设计与新未见评价。

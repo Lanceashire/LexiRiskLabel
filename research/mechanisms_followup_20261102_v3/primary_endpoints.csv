@@ -1,0 +1,8 @@
+delta,endpoint,family_alpha,high,learner,low,multiplicity,n,n_entity_groups,point,predeclared_boundary_prediction_supported,primary,primary_LR,status,study,total_registered_worlds,verdict
+0.0001,anchor_J,0.025,0.0005495846276467066,LR,0.0003687433572052689,3,512,,0.00045916399242598775,,,True,primary,E1,512,supports_practical_positive
+0.0001,history_by_O_ThetaJ,0.025,0.0002227707473586554,LR,8.536614300110355e-05,3,512,,0.00015406844517987947,,,True,primary,E1,512,unresolved
+0.0001,broad_J,0.025,1.5703681967352674e-05,LR,4.362570018844674e-06,3,512,,1.0033125993098674e-05,,,True,primary,E1,512,within_practical_band
+0.0001,all_world_QM,0.015,0.0005613559616430731,LR,0.00034046914978491855,2,512,,0.00045091255571399585,,,True,primary,E2,512,supports_practical_positive
+0.0001,complete_match_world_CM,0.015,0.0021319763290778187,LR,0.001588460855088536,2,469,,0.0018602185920831775,,,True,primary,E2,512,supports_practical_positive
+0.0006303277598468151,J10,,0.0008006484286031142,LR,-1.6022921735419873e-05,,,1200,0.0003983212704624985,False,True,True,,E3,,unresolved
+0.0006303277598468151,H,,6.175349289895694e-05,LR,-2.8651330021236092e-05,,,1200,1.6643814716836014e-05,True,True,True,,E3,,within_practical_band

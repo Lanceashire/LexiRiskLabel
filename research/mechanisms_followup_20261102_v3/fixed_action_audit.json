@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "worlds": 512,
+  "MinRisk_and_D_only_invariance_rechecked": true,
+  "accounting_max_error": 6.938893903907228e-18,
+  "new_training_or_future_labels": false,
+  "identity": "J=E_PA-E_MinRisk; Delta_O J=Delta_O E_PA-Delta_O E_MinRisk",
+  "bias_variance_extension_triggered": false,
+  "reason": "opposite signs refer to absolute and relative gains; exact identity resolves the apparent contradiction"
+}

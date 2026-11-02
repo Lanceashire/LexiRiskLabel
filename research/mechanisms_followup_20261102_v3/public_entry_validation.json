@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "help_command_passed": true,
+  "out_of_scope_seed_rejected_before_training": true,
+  "no_reference_comparison_reported_as_not_performed": true,
+  "actual_reference_202_checks_passed": true,
+  "scientific_outcomes_changed": false
+}

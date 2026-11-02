@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "complete_resource_rows": 380,
+  "release_lock_pairs_checked": 380,
+  "all_expected_spends_feasible": true,
+  "all_predictions_bitwise_identical_to_original": true,
+  "historical_scientific_sources_changed": false,
+  "read_only_observer_used": true,
+  "role": "engineering completeness, not new scientific confirmation"
+}

@@ -1,0 +1,6 @@
+module,condition,evidence,decision,new_training
+Variance/correlation factor split,E1 meaningful joint interaction and separate attribution intended,ThetaJ lower 8.5366e-5 < delta1e-4; manuscript keeps joint-history claim,not triggered for current claim,False
+Correct-logit/nonlinear semi-synthetic attribution,E2 matched resource comparison still shows PA misselection,LR CM positive beyond delta in469joint-match worlds; old real-data posthoc counterexample retained without unique-cause claim,not triggered by new E2; no model-misspecification attribution claimed,False
+Conditional bias/variance replication,Fixed-action and reselected-action interpretations genuinely conflict,J=E_PA-E_MinRisk exactly reconciles sign difference; maxerror6.94e-18 across512worlds,resolved with existing paired risk tables,False
+Short-term policy continuation,E3 clear historical dependence and long-term attribution needed,LR H within predeclared practical band; no long-term path-cause claim,not triggered,False
+Diagnostic v2 for deployment,Paper claims deployable transferable gain predictor,Paper reports frozen diagnostic transfer failure; proposes no deployable prediction rule,outside current paper claim,False

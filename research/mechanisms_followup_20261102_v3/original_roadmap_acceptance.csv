@@ -1,0 +1,23 @@
+requirement,status,evidence,scope
+E0 source identity and clean environment,completed,v2 clean environment audit; v3 manifest and full380 resource/loss rows,"same physical machine, not an independent hardware claim"
+"E0 download, hashes, directory setup and optional proxy",completed,e0_public/run_public.py and original frozen source/data hashes,original scientific gate preserved
+"E0 locks, release order and seen-label ledger",completed,380 paired persisted-lock/release records audited; full engineering receipt,private individual journals remain local
+"E0 every-round risks, counts, budgets, overlaps and realized loss",completed,e0_verified/round_metrics_full.csv:380rows; results.json,realized loss is separate from expected-cost feasibility
+E0 paired entity loss transport,completed_with_format_mapping,380-row per_group_loss.index.csv maps lossless NPZ group/loss arrays,"NPZ+index rather than Parquet, all requested dimensions recoverable"
+E1 exact external bridge generator,completed_with_prospective_amendment,"v2 generator_amendment_v2.json, frozen before pilot labels","external16-world implementation unavailable, not claimed recovered"
+E1 32-world pilot and fixed confirmation,completed,"32excluded pilot worlds and512 independent confirmation worlds, audited",not all original target halfwidths promised
+E1 fixed actions and actual risk interpretation,completed,fixed_action_summary.csv and 固定动作解释汇总.txt; 512world invariant sets,"new analysis is a descriptive identity, not a new primary family"
+"E1 anchor, interaction and broad-history endpoints",completed_with_unresolved_result,"anchorpositive, broadwithinband, practicalThetaunresolved",no append after512
+E2 old-state feasibility then fresh confirmation,completed,240oldlearner-state diagnostics;32newpilot;512newconfirmation,old diagnosis not pooled with new worlds
+"E2 same count, spend cap and count/spend matching",completed,all controls frozen; alternative excludesPA; upto8random objectives,"finite procedure, not global optimum"
+E2 matching missingness and paired subgroup accounting,completed,469joint-match worlds; 43noncomplete kept; no solver timeouts,QM512 andCM469 not mixed
+"E3 source usage, maturity and fixed cohort",completed,"LC2012 term36,6000known groups,0known loanID overlap with old2014-17 samples","older unused cohort, not future year or new institution"
+E3 pre-T predictions and precision record,completed_with_limited_precision,delta and both boundary predictions frozen;1200testgroups vsJ10precisionplan2588,no extra seeds or cohort selection afterT
+E3 full ten-round and crossed histories,completed,"20fixedseeds,200trajectories,2000mainrecords480crossrecords","H is current-action state interaction, not long-term causal path effect"
+E3 uncertainty and independent validation,completed,all2480predictionrecordsrefitted;1200groups;19999pairedbootstrap rebuilt,"conditional on fixed trained models, not training-population coverage"
+Overall primary family and stops,completed,7LR endpoints;3positive2band2unresolved;alphas .025+.015+.010,no secondary promotion or shifted thresholds
+Full original precision targets,closed_with_preconfirmation_scope_amendment,precision_budget_amendment_before_confirmation.json,targets not all met; not labelled success
+Conditional optional modules,reviewed_not_triggered_for_current_claim,conditional_module_review.csv and trigger note,not an assertion all future scientific questions solved
+Evidence-based publication writing preparation,completed,投稿写法核验.txt and claim/evidence mapping,writing verification only; no full manuscript or submission requested
+Complete manuscript and anonymous submission PDF,excluded_by_latest_user_scope,user:现在还不急着写论文;投稿准备就是核验怎么写,"not written, not labelled completed"
+Curated GitHub publication,pending_publication,compact aggregated review package and current status update,"raw credit rows, individual labels/predictions/journals excluded"
