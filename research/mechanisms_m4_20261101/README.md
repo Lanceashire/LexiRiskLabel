@@ -33,4 +33,4 @@
 
 ParBaLS 是明确的 Laplace/cost/pending 适配，承接 [Hu 与 Mussmann 的官方实现](https://github.com/ADDAPT-ML/ParBaLS/tree/b3dcc7a76528c311a73d753e4385aca973ffac65)，未声称原 NUTS 全复现。MC 对比定位冻结模型中的模拟数量影响，不能据此保证模型正确或真实任务收益。
 
-**M4 验收时 M5 尚未执行。当前进度见 [M5 暂停检查点](../mechanisms_m5_checkpoint_20261102/README.md)。** 旧768轨迹只作为开发与内部稳健性；尚未宣称新机构/合格成熟队列的真实外部确认或新 SOTA。
+**M4 验收时 M5 尚未执行。当前进度见 [M5 完整结果](../mechanisms_m5_20261102/README.md)。** 旧768轨迹只作为开发与内部稳健性；尚未宣称新机构/合格成熟队列的真实外部确认或新 SOTA。

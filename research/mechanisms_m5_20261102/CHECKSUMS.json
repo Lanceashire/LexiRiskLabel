@@ -1,0 +1,27 @@
+{
+  "files": {
+    "M5_ACCEPTANCE.json": "bbbb4a1410d77e357c30ec2349bd701c5cf71c81e5a5d701e8a0bd382a47670a",
+    "M5_report.zh.txt": "8f889aadc62e2a5e0f046f11716cf3d1e08abf8dd507074e2cfb46b80f22525f",
+    "M5_results_and_reproduction_20261102.zip": "d6f1f260d07792bb75caf97738d3eac3ca2bf9cf418e2883162efa1f0bdfdcff",
+    "M5_results_and_reproduction_20261102.zip.sha256": "8439ec91f107b8db201ba9daaf160036b4a74319c9da8730c7937d3a8d74e86b",
+    "PUBLIC_REDACTION.json": "77962e285a646faa5f4f9d61a2df86582314f351339617d8bb911011dc0a946d",
+    "PUBLIC_SCOPE.json": "b9485096f9624961aa13bea015da766fe39b8635aa91af459e7525c799bc6c30",
+    "README.md": "d9dbdf965789fc6b46fc9387b2e291b763f49e03629e894d0caebfca57cdfee7",
+    "dataset_profiles.json": "384a2ac70322250145971a980cc81d9f405874f7a844d52f8dd06e9e75c1d936",
+    "figures/M5_diagnostic_domain_shift.png": "6eadcf381e6f58616d8266d5fd2b2d18f6dc943a1e07ded6089bcfcb8c2799eb",
+    "figures/M5_diagnostic_transfer.png": "924d4b4ecdbf170f5af9700f041fc96fe6c86437dc0b16480484bee8ec7860e3",
+    "figures/M5_feedback_interactions.png": "53b9829048f178073fed3a6e33b1543540b25ee478d835b98770ab423c0dd8ce",
+    "figures/M5_ten_round_gains.png": "2a811d5e0974faa27c90edb96ecfe6a2e166db40ea88c4369842b96cc4c11826",
+    "portable_verification.json": "c94715f2f07a0526603a1daa776958b409e503f889c7cc30faf075022bd13864",
+    "protocols/analysis_plan.json": "3350ce440d2d91f7db30ec73499d3cfb86d53cf759589bb4c54f4891947bd2dc",
+    "protocols/pre_label_amendment_v2.json": "30778187bf9a881d0c6e8c28e5816a5b9b96db17eb38a354161bb44820e59780",
+    "protocols/pre_label_scope.json": "19f37dd3532aa83007b666bc0389d88800974e21eca7f631908a7c1fa448e094",
+    "tables/LendingClub2017_seed_method_Brier.csv": "e33cc13612dee44f089e44e96e7654f489148840b2128861a2023d97943fac66",
+    "tables/SouthGermanCredit_seed_method_Brier.csv": "811afcc21af31764238dbf0be4ed807d8f7f620128e29aa57b6511a554e330cb",
+    "tables/diagnostic_domain_shift.csv": "42d00143ff1bc710bdb9335ff3ae0a879e8f22fd0965fe4274ad4321ee1274be",
+    "tables/primary_endpoints.csv": "d12c2b8747656dae38c096268b2cb9d16a162c6b5a93f1cb9fab95888cf1cba0",
+    "verification/engineering_checks.json": "e04f7ad4f6ea4d167a7af42493cdc7e3c9eca60df4470751838225f0fc3721e8",
+    "verification/raw_audit.json": "d68bae073202ce46a4ebef9b9c8cba6a117d2d4c440ee3c11a8f928866738a17",
+    "verification/release_commitment_audit.json": "def08632b57c4839679c3c6998e0e778019fedc190c3eefe90fc33d810780359"
+  }
+}

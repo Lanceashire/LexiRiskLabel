@@ -24,15 +24,17 @@ acquired?" instead of collapsing them into one risk--utility weight.
 
 ## Status
 
-### M4 completed; M5 paused checkpoint added 2026-11-02
+### M5 registered retrospective study completed 2026-11-02
 
-The [current M4/M5 review entry](research/M4_M5_CURRENT_STATUS_20261102.md) links the completed [M4 evidence and reproduction package](research/mechanisms_m4_20261101/README.md) and the [M5 paused checkpoint](research/mechanisms_m5_checkpoint_20261102/README.md). M4 includes 512 independent finite-family worlds, 64 method/structure transfer worlds, and a six-world MC diagnostic. Its 14 registered intervals retain positive, reversed, equivalent and unresolved findings within their stated scope. The work studies mechanisms and their boundaries; it does not establish a universally better acquisition algorithm.
+The [current M1–M5 status](research/M4_M5_CURRENT_STATUS_20261102.md) links the completed [M4 evidence](research/mechanisms_m4_20261101/README.md) and [M5 full results and reproduction archive](research/mechanisms_m5_20261102/README.md). M5 completed all 40 replay tasks, 400 ten-round trajectories and 3,600 common-state branches. All 7,600 prediction branches were reconstructed exactly, and all 7,600 label-release commitments were checked. Twenty primary endpoint estimates, intervals and multiplicity adjustments were independently recomputed.
 
-M5 has a frozen protocol, newly obtained LendingClub 2017 and South German Credit sources, and passing engineering checks. Training completed for 8 of 40 replay tasks before the user requested a pause and publication. Full prediction audits and sealed-test evaluation have not run, so no M5 external-confirmation result is claimed. Raw credit data, applicant logs and test predictions remain local.
+Completion refers to the registered study and audits. No practical positive advantage of Pending-aware over the two comparators was confirmed: all eight ten-round gain estimates were negative, seven excluded the registered positive threshold, and one remained unresolved. The frozen M4 diagnostic did not establish cross-task prediction; both XGBoost diagnostics were worse than the frozen constant baseline outside the M4 feature range. These are conditional retrospective findings, not real-reject counterfactuals, strict as-of online effects, or training-population coverage.
+
+The [earlier 8/40-task checkpoint](research/mechanisms_m5_checkpoint_20261102/README.md) remains a historical snapshot. Raw credit data, applicant-level logs and predictions remain local. A half-synthetic bridge is a proposed follow-up and has not run.
 
 ### M1–M3 mechanism evidence added 2026-11-01
 
-The [integrated report and archives](research/mechanisms_20261101/README.md) consolidate the exact M1 study, bounded M2 reversal investigations, and a newly registered M3 cost-pairing confirmation with 2,560 independent worlds and four label replicates per world. All 52 M3 contrasts, positive/negative/unresolved outcomes, frozen source, and audit records are retained. This release predates the M4 completion and M5 checkpoint linked above; its archived stage markers retain that historical meaning. These M-stage labels are separate from the historical Phase 0–4 labels below.
+The [integrated report and archives](research/mechanisms_20261101/README.md) consolidate the exact M1 study, bounded M2 reversal investigations, and a newly registered M3 cost-pairing confirmation with 2,560 independent worlds and four label replicates per world. All 52 M3 contrasts, positive/negative/unresolved outcomes, frozen source, and audit records are retained. This release predates the M4 and M5 completion results linked above; its archived stage markers retain that historical meaning. These M-stage labels are separate from the historical Phase 0–4 labels below.
 
 ### Small development experiments added 2026-10-26
 

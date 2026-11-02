@@ -1,0 +1,23 @@
+{
+  "version": "M5_pre_label_amendment_v2_20261101",
+  "utc": "2026-11-01T15:59:48.686176+00:00",
+  "new_task_outcomes_inspected": false,
+  "prior_scope_sha256": "19f37dd3532aa83007b666bc0389d88800974e21eca7f631908a7c1fa448e094",
+  "changes": [
+    {
+      "item": "outer split",
+      "from": "seed-specific outer test",
+      "to": "group seed 51000 fixes 20% development / 20% sealed T / 60% replay across every seed; replay seeds 51001..51020 change D0 and arrivals",
+      "reason": "Seal T globally, allow shared applicant-group resampling, avoid cross-replay T labels entering any training history"
+    },
+    {
+      "item": "entity grouping",
+      "rule": "Union available loan id and member_id plus exact covariate duplicates; missing IDs do not form groups. No guaranteed person-identity isolation for South German or missing member IDs."
+    },
+    {
+      "item": "ordinary branch diagnostics",
+      "rule": "Apply the same old-M4 rule to each treatment-specific state; only full-O states enter primary diagnostic endpoint"
+    }
+  ],
+  "fixed_decisions": "No task substitution, acquisition tuning, label-based source choice or optional sample expansion."
+}

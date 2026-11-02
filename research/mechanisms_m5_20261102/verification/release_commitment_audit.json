@@ -1,0 +1,168 @@
+{
+  "passed": true,
+  "tasks": 40,
+  "source_hashes_match_frozen_registration": true,
+  "release_commitments_verified": 7600,
+  "rows": [
+    {
+      "task": "LendingClub2017_51001",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51002",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51003",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51004",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51005",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51006",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51007",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51008",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51009",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51010",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51011",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51012",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51013",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51014",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51015",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51016",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51017",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51018",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51019",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "LendingClub2017_51020",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51001",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51002",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51003",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51004",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51005",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51006",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51007",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51008",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51009",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51010",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51011",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51012",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51013",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51014",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51015",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51016",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51017",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51018",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51019",
+      "release_commitments_verified": 190
+    },
+    {
+      "task": "SouthGermanCredit_51020",
+      "release_commitments_verified": 190
+    }
+  ]
+}

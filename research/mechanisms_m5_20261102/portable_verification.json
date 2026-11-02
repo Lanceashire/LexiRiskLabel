@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "primary_point_estimates_recomputed": 20,
+  "simultaneous_intervals_recomputed": 20,
+  "Holm_family_recomputed": 20,
+  "M4_diagnostic_rules_recomputed": 2,
+  "maximum_absolute_recomputation_error": 8.455117487225772e-11,
+  "manifest_files": 52,
+  "float32_equivalent_expression_max_difference": 4.260800778822446e-09,
+  "canonical_reduction_moments_preserve_original_dtype": true,
+  "original_credit_data_or_GPU_required": false,
+  "inference_scope": "Conditional fixed-model test-group bootstrap, not training-population coverage."
+}

@@ -1,0 +1,7 @@
+{
+  "included": "Aggregated task/seed/round/state statistics, aggregate bootstrap distributions, frozen source/metadata and old synthetic diagnostic development features.",
+  "excluded": "Raw credit data, applicant IDs/features, acquisition membership, individual test predictions/outcomes and private planning document.",
+  "source_redactions": "Public source snapshot retains original registration; personal download paths and conversational authorization quotes removed as documented in prior M5 checkpoint. No numeric results/settings changed.",
+  "source_local_registration_sha256": "f79fe6bfc52b2ccfe4c4916ae4131c331325dba4ce79634f740411cd106a1c83",
+  "full_training_relocation_validated": false
+}
